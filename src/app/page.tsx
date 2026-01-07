@@ -6,15 +6,14 @@ import {
   Accordion,
 } from "@/components/ui/accordion"
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { slugify } from '@/lib/utils';
 import {
-  Search,
   Expand,
   ListCollapse,
   ArrowUp,
-  ChevronLeft
+  ChevronLeft,
+  Menu,
 } from 'lucide-react';
 
 import { ThemeToggle } from './components/dossier/theme-toggle';
@@ -31,10 +30,10 @@ import {
 export default function DossierPage() {
   const allSectionIds = useMemo(() => sections.map(s => slugify(s.title)), []);
   
-  const [searchTerm, setSearchTerm] = useState('');
-  const [expandedSections, setExpandedSections] = useState<string[]>(allSectionIds);
+  const [expandedSections, setExpandedSections] = useState<string[]>([]);
   const [allExpanded, setAllExpanded] = useState(true);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   const contentRef = useRef<HTMLDivElement>(null);
 
   const logo = PlaceHolderImages.find(img => img.id === 'bmv-logo');
@@ -43,10 +42,21 @@ export default function DossierPage() {
     if (allExpanded) {
       setExpandedSections([]);
     } else {
-      setExpandedSections(allSectionIds);
+      const filteredIds = sections
+        .filter(section => !searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || hasSearchTerm(section.content, searchTerm))
+        .map(section => slugify(section.title));
+      setExpandedSections(filteredIds);
     }
     setAllExpanded(!allExpanded);
   };
+  
+  useEffect(() => {
+    const filteredIds = sections
+        .filter(section => !searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || hasSearchTerm(section.content, searchTerm))
+        .map(section => slugify(section.title));
+    setExpandedSections(filteredIds);
+    setAllExpanded(true);
+  }, [searchTerm, sections]);
 
   const scrollToTop = () => {
     contentRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
@@ -68,28 +78,42 @@ export default function DossierPage() {
     return () => contentEl.removeEventListener('scroll', checkScroll);
   }, []);
 
+  const hasSearchTerm = (nodes: React.ReactNode, term: string): boolean => {
+    if (!term.trim()) return true;
+    const lowerCaseTerm = term.toLowerCase();
+
+    return React.Children.toArray(nodes).some(node => {
+      if (typeof node === 'string') {
+        return node.toLowerCase().includes(lowerCaseTerm);
+      }
+      if (React.isValidElement(node) && node.props.children) {
+        return hasSearchTerm(node.props.children, term);
+      }
+      return false;
+    });
+  };
 
   return (
     <>
       <Sidebar side="left" collapsible="icon">
         <SidebarHeader>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-                {logo && <Image src={logo.imageUrl} alt="BMV Logo" width={32} height={32} className="rounded-md" data-ai-hint={logo.imageHint} />}
-                <div className="flex flex-col">
-                    <h1 className="text-md font-bold text-primary">Dossiê</h1>
+            <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                    {logo && <Image src={logo.imageUrl} alt="BMV Logo" width={32} height={32} className="rounded-md" data-ai-hint={logo.imageHint} />}
+                    <div className="flex flex-col">
+                        <h1 className="text-md font-bold text-primary">Dossiê</h1>
+                    </div>
                 </div>
+                <SidebarTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                        <ChevronLeft />
+                    </Button>
+                </SidebarTrigger>
             </div>
-            <SidebarTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <ChevronLeft />
-              </Button>
-            </SidebarTrigger>
-          </div>
         </SidebarHeader>
         <SidebarContent className="p-0">
           <div className="p-4">
-             <DossierSidebar searchTerm={searchTerm} />
+             <DossierSidebar searchTerm={searchTerm} onSearchTermChange={setSearchTerm} />
           </div>
         </SidebarContent>
       </Sidebar>
@@ -98,22 +122,11 @@ export default function DossierPage() {
           <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
                 <div className="flex items-center">
-                    <SidebarTrigger className="md:hidden" />
-                </div>
-
-                <div className="flex-1 flex justify-center px-4 lg:px-16">
-                    <div className="relative w-full max-w-md">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                        <Input
-                        type="search"
-                        id="searchInput"
-                        placeholder="Pesquisar no manual..."
-                        aria-label="Pesquisar"
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="pl-10"
-                        />
-                    </div>
+                    <SidebarTrigger asChild>
+                      <Button variant="ghost" size="icon" className="md:hidden">
+                        <Menu />
+                      </Button>
+                    </SidebarTrigger>
                 </div>
 
                 <div className="flex items-center space-x-2">

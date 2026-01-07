@@ -6,9 +6,10 @@ import { sections } from './content';
 
 interface DossierSidebarProps {
   searchTerm: string;
+  onSearchTermChange: (term: string) => void;
 }
 
-const tocItems = sections.map(section => {
+const tocItems = sections.flatMap(section => {
   const mainHeading = {
     level: 2,
     title: section.title,
@@ -27,13 +28,13 @@ const tocItems = sections.map(section => {
             title: title,
             id: slugify(title)
         }
-    }).filter(Boolean);
+    }).filter((item): item is { level: number; title: string; id: string } => item !== null && item.title !== null);
 
-  return [mainHeading];
-}).flat();
+  return [mainHeading, ...subHeadings];
+});
 
 
-export const DossierSidebar: React.FC<DossierSidebarProps> = ({ searchTerm }) => {
+export const DossierSidebar: React.FC<DossierSidebarProps> = ({ searchTerm, onSearchTermChange }) => {
   const [activeId, setActiveId] = useState('');
 
   useEffect(() => {
@@ -53,10 +54,27 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ searchTerm }) =>
 
     return () => elements.forEach(el => observer.unobserve(el!));
   }, []);
+  
+  const hasSearchTerm = (node: React.ReactNode, term: string): boolean => {
+    if (!term.trim()) return true;
+    const lowerCaseTerm = term.toLowerCase();
 
-  const filteredToc = tocItems.filter(item =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+    return React.Children.toArray(node).some(child => {
+        if (typeof child === 'string') {
+            return child.toLowerCase().includes(lowerCaseTerm);
+        }
+        if (React.isValidElement(child) && child.props.children) {
+            return hasSearchTerm(child.props.children, term);
+        }
+        return false;
+    });
+  };
+
+  const filteredToc = tocItems.filter(item => {
+    if (!item.title) return false;
+    const section = sections.find(s => s.title === item.title);
+    return item.title.toLowerCase().includes(searchTerm.toLowerCase()) || (section && hasSearchTerm(section.content, searchTerm));
+  });
 
   return (
     <div className="space-y-4">
@@ -65,7 +83,7 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ searchTerm }) =>
         <nav aria-label="Sumário">
           <ul className="space-y-2">
             {filteredToc.map((item) => (
-              <li key={item.id}>
+              <li key={item.id} className={item.level === 3 ? 'ml-4' : ''}>
                 <a
                   href={`#${item.id}`}
                   className={`block text-sm transition-colors hover:text-primary ${
