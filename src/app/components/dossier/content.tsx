@@ -48,7 +48,7 @@ export const sections = [
             Riscos Operacionais, Tecnológicos e Jurídicos<br/>
             e Diretrizes Estruturais de Evolução
             </h3>
-            <p className="max-w-3xl mx-auto text-base text-justify">
+            <p className="max-w-3xl mx-auto text-base">
             Material destinado à análise técnica, operacional, jurídica e estratégica da plataforma tecnológica BMV,
             com objetivo de subsidiar a tomada de decisão executiva, governança sistêmica, avaliação de riscos
             institucionais e direcionamento de ações estruturais corretivas.
