@@ -29,13 +29,14 @@ import {
 } from '@/components/ui/sidebar';
 
 export default function DossierPage() {
+  const allSectionIds = useMemo(() => sections.map(s => slugify(s.title)), []);
+  
   const [searchTerm, setSearchTerm] = useState('');
-  const [expandedSections, setExpandedSections] = useState<string[]>([]);
-  const [allExpanded, setAllExpanded] = useState(false);
+  const [expandedSections, setExpandedSections] = useState<string[]>(allSectionIds);
+  const [allExpanded, setAllExpanded] = useState(true);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  const allSectionIds = useMemo(() => sections.map(s => slugify(s.title)), []);
   const logo = PlaceHolderImages.find(img => img.id === 'bmv-logo');
 
   const toggleExpandAll = () => {
@@ -79,7 +80,7 @@ export default function DossierPage() {
                     <h1 className="text-md font-bold text-primary">Dossiê</h1>
                 </div>
             </div>
-            <SidebarTrigger>
+            <SidebarTrigger asChild>
               <Button variant="ghost" size="icon">
                 <ChevronLeft />
               </Button>
