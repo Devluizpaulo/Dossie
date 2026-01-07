@@ -6,6 +6,7 @@ import { sections } from './content';
 import React from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
+import { useDossierSearch } from '@/hooks/useDossierSearch';
 
 interface DossierSidebarProps {
   onSearchTermChange: (term: string) => void;
@@ -18,70 +19,45 @@ interface TocItem {
   children: TocItem[];
 }
 
-// Helper to recursively search for text in React nodes
-const hasSearchTerm = (nodes: React.ReactNode, term: string): boolean => {
-  if (!term.trim()) return true;
-  const lowerCaseTerm = term.toLowerCase();
-
-  return React.Children.toArray(nodes).some(node => {
-    if (typeof node === 'string') {
-      return node.toLowerCase().includes(lowerCaseTerm);
-    }
-    if (React.isValidElement(node) && (node.props as any).children) {
-      return hasSearchTerm((node.props as any).children, term);
-    }
-    return false;
-  });
-};
-
-
-const generateToc = (searchTerm: string) => {
+const generateToc = (searchTerm: string, hasSearchTerm: (nodes: React.ReactNode) => boolean): TocItem[] => {
   const tocItems: TocItem[] = [];
 
   sections.forEach(section => {
-    const sectionIsVisible = !searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || hasSearchTerm(section.content, searchTerm);
+    const sectionIsVisible = !searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || hasSearchTerm(section.content);
     
     if (sectionIsVisible) {
-      const mainHeading: TocItem = {
-        level: 2,
-        title: section.title,
-        id: slugify(section.title),
-        children: [],
-      };
-
-      const findSubHeadings = (nodes: React.ReactNode): TocItem[] => {
-        const headings: TocItem[] = [];
+      const subHeadings: TocItem[] = [];
+      
+      const findSubHeadings = (nodes: React.ReactNode) => {
         React.Children.forEach(nodes, node => {
           if (React.isValidElement(node)) {
             const nodeProps = node.props as any;
-            const isH3 = nodeProps.className && typeof nodeProps.className === 'string' && nodeProps.className.includes('text-xl font-semibold');
-            
-            if (isH3) {
-              const title = React.Children.toArray(nodeProps.children)
-                .filter(child => typeof child === 'string')
-                .join('');
-              if (title && (!searchTerm || title.toLowerCase().includes(searchTerm.toLowerCase()) || hasSearchTerm(section.content, searchTerm))) {
-                headings.push({
+            if (nodeProps.id && node.type === 'h3') {
+              const title = React.Children.toArray(nodeProps.children).find(child => typeof child === 'string') as string || '';
+              if (title && (!searchTerm || title.toLowerCase().includes(searchTerm.toLowerCase()))) {
+                subHeadings.push({
                   level: 3,
                   title: title,
-                  id: nodeProps.id || slugify(title),
+                  id: nodeProps.id,
                   children: []
                 });
               }
             } else if (nodeProps.children) {
-              // only dive deeper if the parent section is visible
-              headings.push(...findSubHeadings(nodeProps.children));
+              findSubHeadings(nodeProps.children);
             }
           }
         });
-        return headings;
       };
-      
-      const subHeadings = findSubHeadings(section.content);
-      
+
+      findSubHeadings(section.content);
+
       if (!searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || subHeadings.length > 0) {
-        mainHeading.children = subHeadings;
-        tocItems.push(mainHeading);
+        tocItems.push({
+          level: 2,
+          title: section.title,
+          id: slugify(section.title),
+          children: subHeadings,
+        });
       }
     }
   });
@@ -89,21 +65,28 @@ const generateToc = (searchTerm: string) => {
   return tocItems;
 };
 
-
 const allIds = sections.flatMap(section => {
   const ids = [slugify(section.title)];
-  React.Children.forEach(section.content, node => {
-    if (React.isValidElement(node) && (node.props as any).id) {
-      ids.push((node.props as any).id);
-    }
-  });
+  const findIds = (nodes: React.ReactNode) => {
+    React.Children.forEach(nodes, node => {
+      if (React.isValidElement(node)) {
+        if ((node.props as any).id) {
+          ids.push((node.props as any).id);
+        }
+        if ((node.props as any).children) {
+          findIds((node.props as any).children);
+        }
+      }
+    });
+  };
+  findIds(section.content);
   return ids;
 });
-
 
 export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChange }) => {
   const [activeId, setActiveId] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+  const { hasSearchTerm } = useDossierSearch(sections, searchTerm);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const term = event.target.value;
@@ -111,7 +94,7 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChan
     onSearchTermChange(term);
   };
   
-  const tocItems = generateToc(searchTerm);
+  const tocItems = generateToc(searchTerm, hasSearchTerm);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -128,12 +111,12 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChan
     const elements = allIds.map(id => document.getElementById(id)).filter(Boolean);
     elements.forEach(el => observer.observe(el!));
 
-    return () => elements.forEach(el => observer.unobserve(el!));
+    return () => elements.forEach(el => el && observer.unobserve(el));
   }, []);
   
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold text-foreground">Dossiê</h3>
+      <h3 className="text-lg font-semibold text-foreground">Sumário</h3>
       
       <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -166,7 +149,7 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChan
                     }
                   }}
                   className={`block text-sm font-medium transition-colors hover:text-primary ${
-                    activeId === item.id && (!item.children || item.children.length === 0)
+                    activeId === item.id
                       ? 'text-primary'
                       : 'text-foreground'
                   }`}

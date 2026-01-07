@@ -16,32 +16,13 @@ import {
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { slugify } from "@/lib/utils";
 import React from 'react';
-
-// A simple component to highlight search terms
-const Highlight = ({ text, highlight }: { text: string; highlight: string }) => {
-  if (!highlight || !highlight.trim()) {
-    return <>{text}</>;
-  }
-  const regex = new RegExp(`(${highlight})`, 'gi');
-  const parts = text.split(regex);
-  return (
-    <>
-      {parts.map((part, i) =>
-        regex.test(part) ? <mark key={i}>{part}</mark> : <React.Fragment key={i}>{part}</React.Fragment>
-      )}
-    </>
-  );
-};
-
-interface DossierContentProps {
-  searchTerm?: string;
-}
+import { useDossierSearch } from '@/hooks/useDossierSearch';
 
 export const sections = [
   {
-    title: "Inicio do Dossiê Técnico",
+    title: "Capa",
     content: (
-        <>
+        <div className="text-center py-16">
             <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-6">
                 Dossiê Técnico de Avaliação do Sistema Backoffice BMV.Global
             </h1>
@@ -52,13 +33,13 @@ export const sections = [
                 <span className="block">e Diretrizes Estruturais de Evolução</span>
             </h3>
 
-            <p className="text-justify mb-6 leading-relaxed">
+            <p className="text-justify mb-6 leading-relaxed max-w-4xl mx-auto">
                 Material destinado à análise técnica, operacional, jurídica e estratégica da plataforma tecnológica BMV,
                 com objetivo de subsidiar a tomada de decisão executiva, governança sistêmica, avaliação de riscos
                 institucionais e direcionamento de ações estruturais corretivas.
             </p>
 
-            <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground pt-4 border-t">
+            <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground pt-4 border-t max-w-4xl mx-auto justify-center">
                 <span className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>
                     Análise Técnica
@@ -76,7 +57,7 @@ export const sections = [
                     Estratégica
                 </span>
             </div>
-        </>
+        </div>
     )
   },
   {
@@ -84,12 +65,12 @@ export const sections = [
     content: (
       <>
         <h3 className="text-xl font-semibold mb-2 mt-4" id={slugify("Sistemas Avaliados")}>Sistemas Avaliados</h3>
-        <ul className="list-disc pl-6 space-y-1 mb-4">
+        <ul className="list-disc pl-6 space-y-1 mb-4 text-justify">
           <li>Sistema Atual (Backoffice) — <a href="https://backoffice.bmv.global" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://backoffice.bmv.global</a></li>
           <li>Sistema Legado (Backoffice) — <a href="https://legado-backoffice.bmv.global" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://legado-backoffice.bmv.global</a></li>
         </ul>
         <h3 className="text-xl font-semibold mb-2 mt-4" id={slugify("Fornecedor Avaliado")}>Fornecedor Avaliado</h3>
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc pl-6 space-y-1 text-justify">
           <li>Multiledgers — <a href="https://multiledgers.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://multiledgers.com</a></li>
         </ul>
       </>
@@ -1052,48 +1033,14 @@ export const sections = [
     }
 ];
 
-// Helper to recursively search for text in React nodes
-const hasSearchTerm = (nodes: React.ReactNode, term: string): boolean => {
-  if (!term || !term.trim()) return true;
-  const lowerCaseTerm = term.toLowerCase();
+interface DossierContentProps {
+  searchTerm?: string;
+  setExpandedSections: React.Dispatch<React.SetStateAction<string[]>>;
+}
 
-  return React.Children.toArray(nodes).some(node => {
-    if (typeof node === 'string') {
-      return node.toLowerCase().includes(lowerCaseTerm);
-    }
-    if (React.isValidElement(node) && (node.props as any).children) {
-      return hasSearchTerm((node.props as any).children, term);
-    }
-    return false;
-  });
-};
-
-export const DossierContent: React.FC<DossierContentProps> = ({ searchTerm }) => {
+export const DossierContent: React.FC<DossierContentProps> = ({ searchTerm, setExpandedSections }) => {
   
-  const addHighlight = (nodes: React.ReactNode): React.ReactNode => {
-    if (!searchTerm) return nodes;
-
-    return React.Children.map(nodes, node => {
-        if (typeof node === 'string') {
-            return <Highlight text={node} highlight={searchTerm} />;
-        }
-        if (React.isValidElement(node) && (node.props as any).children) {
-            if (node.type === 'a' || node.type === 'strong' || node.type === 'em' || node.type === 'p' || node.type === 'li') {
-                 return React.cloneElement(node as React.ReactElement, {
-                    ...(node.props as any),
-                    children: addHighlight((node.props as any).children),
-                });
-            }
-             return React.cloneElement(node, {
-                ...(node.props as any),
-                children: addHighlight((node.props as any).children),
-            });
-        }
-        return node;
-    });
-  };
-
-  const filteredSections = sections.filter(section => hasSearchTerm(section.content, searchTerm || ''));
+  const { filteredSections, Highlight, addHighlight } = useDossierSearch(sections, searchTerm, setExpandedSections);
 
   if (filteredSections.length === 0 && searchTerm) {
     return (
@@ -1110,19 +1057,16 @@ export const DossierContent: React.FC<DossierContentProps> = ({ searchTerm }) =>
 
   return (
     <>
-      {sections.map((section, index) => {
+      {filteredSections.map((section) => {
         const id = slugify(section.title);
-        const isVisible = !searchTerm || hasSearchTerm(section.content, searchTerm) || section.title.toLowerCase().includes(searchTerm.toLowerCase());
-        
-        if (!isVisible) return null;
 
         return (
           <AccordionItem value={id} key={id} id={id}>
             <AccordionTrigger className="text-2xl font-bold text-primary hover:no-underline font-headline">
-              <Highlight text={section.title} highlight={searchTerm || ''} />
+              <Highlight text={section.title} />
             </AccordionTrigger>
             <AccordionContent className="prose prose-lg dark:prose-invert max-w-none text-foreground text-base leading-relaxed space-y-4 pt-4 px-4 text-justify">
-              {searchTerm ? addHighlight(section.content) : section.content}
+              {addHighlight(section.content)}
             </AccordionContent>
           </AccordionItem>
         );

@@ -67,15 +67,8 @@ export default function DossierPage() {
   return (
     <>
       <Sidebar side="left" collapsible="icon">
-        <SidebarHeader className="border-b">
-            <div className="flex items-center justify-between gap-2">
-                <h1 className="text-sm font-bold text-primary truncate">Dossiê</h1>
-                <SidebarTrigger className="ml-auto">
-                    <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <ChevronLeft className="h-4 w-4" />
-                    </Button>
-                </SidebarTrigger>
-            </div>
+        <SidebarHeader className="border-b h-14 justify-center">
+            <Logo />
         </SidebarHeader>
         <SidebarContent className="p-0 flex flex-col">
           <div className="flex-1 overflow-y-auto p-3">
@@ -88,12 +81,8 @@ export default function DossierPage() {
           <header className="sticky top-0 z-40 w-full border-b bg-primary text-primary-foreground border-t-4 border-t-green-500 shadow-sm">
             <div className="container mx-auto px-3 sm:px-4 lg:px-6 flex h-14 items-center justify-between">
                 <div className="flex items-center gap-3">
-                    <SidebarTrigger className="md:hidden -ml-2">
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <Menu className="h-4 w-4" />
-                      </Button>
-                    </SidebarTrigger>
-                    <div className="hidden sm:block">
+                    <SidebarTrigger className="md:hidden -ml-2 h-8 w-8 text-primary-foreground hover:bg-primary-foreground/10" />
+                    <div className="sm:hidden">
                       <Logo />
                     </div>
                 </div>
@@ -121,7 +110,7 @@ export default function DossierPage() {
               onValueChange={setExpandedSections}
               className="w-full"
             >
-              <DossierContent />
+              <DossierContent searchTerm={searchTerm} setExpandedSections={setExpandedSections} />
             </Accordion>
           </main>
           <footer className="border-t mt-12 bg-muted/30">
@@ -145,3 +134,5 @@ export default function DossierPage() {
     </>
   );
 }
+
+    
