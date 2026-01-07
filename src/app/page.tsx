@@ -20,7 +20,7 @@ import {
   CheckCircle,
   Search,
   Expand,
-  Collapse,
+  ListCollapse,
   ArrowUp
 } from 'lucide-react';
 
@@ -87,7 +87,7 @@ export default function DossierPage() {
             <div className="flex items-center space-x-2">
               <ThemeToggle />
               <Button variant="outline" onClick={toggleExpandAll} className="hidden md:inline-flex">
-                {allExpanded ? <Collapse className="mr-2 h-4 w-4" /> : <Expand className="mr-2 h-4 w-4" />}
+                {allExpanded ? <ListCollapse className="mr-2 h-4 w-4" /> : <Expand className="mr-2 h-4 w-4" />}
                 {allExpanded ? 'Recolher Tudo' : 'Expandir Tudo'}
               </Button>
             </div>
