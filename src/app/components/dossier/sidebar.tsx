@@ -3,38 +3,60 @@
 import { useState, useEffect } from 'react';
 import { slugify } from '@/lib/utils';
 import { sections } from './content';
+import React from 'react';
 
 interface DossierSidebarProps {
-  searchTerm: string;
   onSearchTermChange: (term: string) => void;
 }
 
-const tocItems = sections.flatMap(section => {
-  const mainHeading = {
+interface TocItem {
+  level: number;
+  title: string;
+  id: string;
+  children?: TocItem[];
+}
+
+const tocItems: TocItem[] = sections.map(section => {
+  const mainHeading: TocItem = {
     level: 2,
     title: section.title,
     id: slugify(section.title),
+    children: [],
+  };
+
+  // Function to recursively find h3s
+  const findSubHeadings = (nodes: React.ReactNode): TocItem[] => {
+    const headings: TocItem[] = [];
+    React.Children.forEach(nodes, node => {
+      if (React.isValidElement(node)) {
+        // Check for h3 equivalent
+        if (node.props.className && typeof node.props.className === 'string' && node.props.className.includes('text-xl font-semibold')) {
+          const title = React.Children.toArray(node.props.children).join('');
+          if (title) {
+            headings.push({
+              level: 3,
+              title: title,
+              id: node.props.id || slugify(title),
+              children: []
+            });
+          }
+        }
+        if (node.props.children) {
+          headings.push(...findSubHeadings(node.props.children));
+        }
+      }
+    });
+    return headings;
   };
   
-  // Basic regex to find h3 content; for real-world use a parser would be better.
-  const contentString = JSON.stringify(section.content);
-  const subHeadings = (contentString.match(/"text-xl font-semibold[^>]*>([^<]+)/g) || [])
-    .map(h => {
-        const title = h.split('>').pop()?.replace(/"/g, '').trim();
-        if(!title) return null;
-        // This is a simplification; sub-ids might not perfectly match content.tsx
-        return {
-            level: 3,
-            title: title,
-            id: slugify(title)
-        }
-    }).filter((item): item is { level: number; title: string; id: string } => item !== null && item.title !== null);
-
-  return [mainHeading, ...subHeadings];
+  mainHeading.children = findSubHeadings(section.content);
+  return mainHeading;
 });
 
+const allIds = tocItems.flatMap(item => [item.id, ...(item.children?.map(child => child.id) || [])]);
 
-export const DossierSidebar: React.FC<DossierSidebarProps> = ({ searchTerm, onSearchTermChange }) => {
+
+export const DossierSidebar: React.FC<DossierSidebarProps> = () => {
   const [activeId, setActiveId] = useState('');
 
   useEffect(() => {
@@ -49,58 +71,77 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ searchTerm, onSe
       { rootMargin: `0% 0% -80% 0%` }
     );
 
-    const elements = tocItems.map(item => document.getElementById(item.id)).filter(Boolean);
+    const elements = allIds.map(id => document.getElementById(id)).filter(Boolean);
     elements.forEach(el => observer.observe(el!));
 
     return () => elements.forEach(el => observer.unobserve(el!));
   }, []);
   
-  const hasSearchTerm = (node: React.ReactNode, term: string): boolean => {
-    if (!term.trim()) return true;
-    const lowerCaseTerm = term.toLowerCase();
-
-    return React.Children.toArray(node).some(child => {
-        if (typeof child === 'string') {
-            return child.toLowerCase().includes(lowerCaseTerm);
-        }
-        if (React.isValidElement(child) && child.props.children) {
-            return hasSearchTerm(child.props.children, term);
-        }
-        return false;
-    });
-  };
-
-  const filteredToc = tocItems.filter(item => {
-    if (!item.title) return false;
-    const section = sections.find(s => s.title === item.title);
-    return item.title.toLowerCase().includes(searchTerm.toLowerCase()) || (section && hasSearchTerm(section.content, searchTerm));
-  });
-
   return (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold text-foreground">📑 Manual de Operações</h3>
-      {filteredToc.length > 0 ? (
+      
         <nav aria-label="Sumário">
-          <ul className="space-y-2">
-            {filteredToc.map((item) => (
-              <li key={item.id} className={item.level === 3 ? 'ml-4' : ''}>
+          <ul className="space-y-3">
+            {tocItems.map((item) => (
+              <li key={item.id}>
                 <a
                   href={`#${item.id}`}
-                  className={`block text-sm transition-colors hover:text-primary ${
-                    activeId === item.id
-                      ? 'font-semibold text-primary'
-                      : 'text-muted-foreground'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById(item.id)?.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                     // Update URL hash without jumping
+                    if(history.pushState) {
+                        history.pushState(null, "", `#${item.id}`);
+                    } else {
+                        location.hash = `#${item.id}`;
+                    }
+                  }}
+                  className={`block text-sm font-medium transition-colors hover:text-primary ${
+                    activeId === item.id && (!item.children || item.children.length === 0)
+                      ? 'text-primary'
+                      : 'text-foreground'
                   }`}
                 >
                   {item.title}
                 </a>
+                {item.children && item.children.length > 0 && (
+                  <ul className="pl-4 mt-2 space-y-2 border-l border-border">
+                    {item.children.map(child => (
+                       <li key={child.id}>
+                         <a
+                           href={`#${child.id}`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById(child.id)?.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                                });
+                                if(history.pushState) {
+                                    history.pushState(null, "", `#${child.id}`);
+                                } else {
+                                    location.hash = `#${child.id}`;
+                                }
+                            }}
+                           className={`block text-sm transition-colors hover:text-primary ${
+                            activeId === child.id
+                              ? 'font-semibold text-primary'
+                              : 'text-muted-foreground'
+                          }`}
+                         >
+                           {child.title}
+                         </a>
+                       </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
         </nav>
-      ) : (
-        <p className="text-sm text-muted-foreground">Nenhuma seção encontrada.</p>
-      )}
     </div>
   );
 };

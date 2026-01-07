@@ -12,8 +12,8 @@ import {
   Expand,
   ListCollapse,
   ArrowUp,
-  ChevronLeft,
   Menu,
+  ChevronLeft,
 } from 'lucide-react';
 
 import { ThemeToggle } from './components/dossier/theme-toggle';
@@ -30,10 +30,9 @@ import {
 export default function DossierPage() {
   const allSectionIds = useMemo(() => sections.map(s => slugify(s.title)), []);
   
-  const [expandedSections, setExpandedSections] = useState<string[]>([]);
+  const [expandedSections, setExpandedSections] = useState<string[]>(allSectionIds);
   const [allExpanded, setAllExpanded] = useState(true);
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
   const contentRef = useRef<HTMLDivElement>(null);
 
   const logo = PlaceHolderImages.find(img => img.id === 'bmv-logo');
@@ -42,22 +41,11 @@ export default function DossierPage() {
     if (allExpanded) {
       setExpandedSections([]);
     } else {
-      const filteredIds = sections
-        .filter(section => !searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || hasSearchTerm(section.content, searchTerm))
-        .map(section => slugify(section.title));
-      setExpandedSections(filteredIds);
+      setExpandedSections(allSectionIds);
     }
     setAllExpanded(!allExpanded);
   };
   
-  useEffect(() => {
-    const filteredIds = sections
-        .filter(section => !searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || hasSearchTerm(section.content, searchTerm))
-        .map(section => slugify(section.title));
-    setExpandedSections(filteredIds);
-    setAllExpanded(true);
-  }, [searchTerm, sections]);
-
   const scrollToTop = () => {
     contentRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -77,21 +65,6 @@ export default function DossierPage() {
     contentEl.addEventListener('scroll', checkScroll);
     return () => contentEl.removeEventListener('scroll', checkScroll);
   }, []);
-
-  const hasSearchTerm = (nodes: React.ReactNode, term: string): boolean => {
-    if (!term.trim()) return true;
-    const lowerCaseTerm = term.toLowerCase();
-
-    return React.Children.toArray(nodes).some(node => {
-      if (typeof node === 'string') {
-        return node.toLowerCase().includes(lowerCaseTerm);
-      }
-      if (React.isValidElement(node) && node.props.children) {
-        return hasSearchTerm(node.props.children, term);
-      }
-      return false;
-    });
-  };
 
   return (
     <>
@@ -113,7 +86,7 @@ export default function DossierPage() {
         </SidebarHeader>
         <SidebarContent className="p-0">
           <div className="p-4">
-             <DossierSidebar searchTerm={searchTerm} onSearchTermChange={setSearchTerm} />
+             <DossierSidebar onSearchTermChange={() => {}} />
           </div>
         </SidebarContent>
       </Sidebar>
@@ -147,7 +120,7 @@ export default function DossierPage() {
               onValueChange={setExpandedSections}
               className="w-full"
             >
-              <DossierContent searchTerm={searchTerm} />
+              <DossierContent searchTerm="" />
             </Accordion>
           </main>
           <footer className="border-t">
