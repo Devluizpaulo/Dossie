@@ -4,14 +4,16 @@ import { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import {
   Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { slugify } from '@/lib/utils';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 import {
   Home,
   ClipboardList,
@@ -21,7 +23,8 @@ import {
   Search,
   Expand,
   ListCollapse,
-  ArrowUp
+  ArrowUp,
+  Menu
 } from 'lucide-react';
 
 import { ThemeToggle } from './components/dossier/theme-toggle';
@@ -33,6 +36,7 @@ export default function DossierPage() {
   const [expandedSections, setExpandedSections] = useState<string[]>([]);
   const [allExpanded, setAllExpanded] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [isMobileSheetOpen, setIsMobileSheetOpen] = useState(false);
 
   const allSectionIds = useMemo(() => sections.map(s => slugify(s.title)), []);
 
@@ -74,28 +78,18 @@ export default function DossierPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center space-x-4">
-              {logo && <Image src={logo.imageUrl} alt="BMV Logo" width={40} height={40} className="rounded-md" data-ai-hint={logo.imageHint} />}
-              <div>
-                <h1 className="text-lg font-bold text-primary">BMV • Dossiê de Avaliação</h1>
-                <p className="text-sm text-muted-foreground">Guia técnico de avaliação do sistema</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-2">
-              <ThemeToggle />
-              <Button variant="outline" onClick={toggleExpandAll} className="hidden md:inline-flex">
-                {allExpanded ? <ListCollapse className="mr-2 h-4 w-4" /> : <Expand className="mr-2 h-4 w-4" />}
-                {allExpanded ? 'Recolher Tudo' : 'Expandir Tudo'}
-              </Button>
+       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between">
+          <div className="flex items-center space-x-4">
+            {logo && <Image src={logo.imageUrl} alt="BMV Logo" width={40} height={40} className="rounded-md" data-ai-hint={logo.imageHint} />}
+            <div className="hidden sm:block">
+              <h1 className="text-lg font-bold text-primary">BMV • Dossiê de Avaliação</h1>
+              <p className="text-sm text-muted-foreground">Guia técnico de avaliação do sistema</p>
             </div>
           </div>
-        </div>
-        <nav className="border-t">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-14 items-center justify-between">
-            <div className="relative w-full max-w-sm">
+
+          <div className="flex-1 flex justify-center px-4 lg:px-16">
+            <div className="relative w-full max-w-md">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
@@ -107,22 +101,53 @@ export default function DossierPage() {
                 className="pl-10"
               />
             </div>
-            <div className="hidden md:flex items-center space-x-4">
-              {navItems.map(item => (
-                <a key={item.label} href={item.href} className="flex items-center space-x-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
-                  <item.icon className="h-4 w-4" />
-                  <span>{item.label}</span>
-                </a>
-              ))}
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <nav className="hidden md:flex items-center space-x-1">
+                {navItems.map(item => (
+                  <Button variant="ghost" asChild key={item.label}>
+                    <a href={item.href} title={item.label} className="flex items-center space-x-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+                      <item.icon className="h-5 w-5" />
+                    </a>
+                  </Button>
+                ))}
+            </nav>
+            <ThemeToggle />
+            <Button variant="outline" onClick={toggleExpandAll} className="hidden lg:inline-flex">
+                {allExpanded ? <ListCollapse className="mr-2 h-4 w-4" /> : <Expand className="mr-2 h-4 w-4" />}
+                {allExpanded ? 'Recolher' : 'Expandir'}
+            </Button>
+            {/* Mobile Menu */}
+            <div className="md:hidden">
+                <Sheet open={isMobileSheetOpen} onOpenChange={setIsMobileSheetOpen}>
+                    <SheetTrigger asChild>
+                        <Button variant="outline" size="icon">
+                            <Menu className="h-5 w-5" />
+                            <span className="sr-only">Abrir menu</span>
+                        </Button>
+                    </SheetTrigger>
+                    <SheetContent side="right">
+                        <div className="flex flex-col space-y-4 pt-8">
+                             {navItems.map(item => (
+                                <a key={item.label} href={item.href} onClick={() => setIsMobileSheetOpen(false)} className="flex items-center space-x-3 text-lg font-medium text-foreground transition-colors hover:text-primary">
+                                <item.icon className="h-5 w-5" />
+                                <span>{item.label}</span>
+                                </a>
+                            ))}
+                        </div>
+                    </SheetContent>
+                </Sheet>
             </div>
           </div>
-        </nav>
+        </div>
       </header>
+
 
       <div className="container mx-auto flex-1 px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid md:grid-cols-[280px_1fr] lg:grid-cols-[320px_1fr] gap-12">
           <aside className="hidden md:block w-full">
-            <div className="sticky top-32">
+            <div className="sticky top-28">
               <DossierSidebar searchTerm={searchTerm} />
             </div>
           </aside>

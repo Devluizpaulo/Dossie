@@ -4,7 +4,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 8rem; /* Offset for sticky header */
+  scroll-padding-top: 6rem; /* Offset for sticky header */
 }
 
 @layer base {
