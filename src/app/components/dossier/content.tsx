@@ -19,7 +19,7 @@ import React from 'react';
 
 // A simple component to highlight search terms
 const Highlight = ({ text, highlight }: { text: string; highlight: string }) => {
-  if (!highlight.trim()) {
+  if (!highlight || !highlight.trim()) {
     return <>{text}</>;
   }
   const regex = new RegExp(`(${highlight})`, 'gi');
@@ -34,7 +34,7 @@ const Highlight = ({ text, highlight }: { text: string; highlight: string }) => 
 };
 
 interface DossierContentProps {
-  searchTerm: string;
+  searchTerm?: string;
 }
 
 export const sections = [
@@ -75,7 +75,7 @@ export const sections = [
   {
     title: 'Escopo da Avaliação',
     content: (
-      <ul className="list-disc pl-6 space-y-2">
+      <ul className="list-disc pl-6 space-y-2 text-justify">
         <li>Módulos Funcionais e Operacionais</li>
         <li>Governança de Dados, Identidade e Rastreabilidade</li>
         <li>Usabilidade e Aderência ao Sistema Legado</li>
@@ -975,7 +975,7 @@ export const sections = [
 
 // Helper to recursively search for text in React nodes
 const hasSearchTerm = (nodes: React.ReactNode, term: string): boolean => {
-  if (!term.trim()) return true;
+  if (!term || !term.trim()) return true;
   const lowerCaseTerm = term.toLowerCase();
 
   return React.Children.toArray(nodes).some(node => {
@@ -996,12 +996,14 @@ const hasSearchTerm = (nodes: React.ReactNode, term: string): boolean => {
 export const DossierContent: React.FC<DossierContentProps> = ({ searchTerm }) => {
   
   const addHighlight = (nodes: React.ReactNode): React.ReactNode => {
+    if (!searchTerm) return nodes;
+
     return React.Children.map(nodes, node => {
         if (typeof node === 'string') {
             return <Highlight text={node} highlight={searchTerm} />;
         }
         if (React.isValidElement(node) && node.props.children) {
-            if (node.type === 'a' || node.type === 'strong' || node.type === 'em') {
+            if (node.type === 'a' || node.type === 'strong' || node.type === 'em' || node.type === 'p' || node.type === 'li') {
                  return React.cloneElement(node as React.ReactElement, {
                     ...node.props,
                     children: addHighlight(node.props.children),
@@ -1042,7 +1044,7 @@ export const DossierContent: React.FC<DossierContentProps> = ({ searchTerm }) =>
         return (
           <AccordionItem value={id} key={id} id={id}>
             <AccordionTrigger className="text-2xl font-bold text-primary hover:no-underline font-headline">
-              <Highlight text={section.title} highlight={searchTerm} />
+              <Highlight text={section.title} highlight={searchTerm || ''} />
             </AccordionTrigger>
             <AccordionContent className="prose prose-lg dark:prose-invert max-w-none text-foreground text-base leading-relaxed space-y-4 pt-4 px-4 text-justify">
               {searchTerm ? addHighlight(section.content) : section.content}

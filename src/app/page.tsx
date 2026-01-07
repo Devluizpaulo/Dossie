@@ -72,12 +72,11 @@ export default function DossierPage() {
         <SidebarHeader>
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    {logo && <Image src={logo.imageUrl} alt="BMV Logo" width={32} height={32} className="rounded-md" data-ai-hint={logo.imageHint} />}
                     <div className="flex flex-col">
                         <h1 className="text-md font-bold text-primary">Dossiê</h1>
                     </div>
                 </div>
-                <SidebarTrigger asChild>
+                <SidebarTrigger>
                     <Button variant="ghost" size="icon">
                         <ChevronLeft />
                     </Button>
@@ -86,20 +85,21 @@ export default function DossierPage() {
         </SidebarHeader>
         <SidebarContent className="p-0">
           <div className="p-4">
-             <DossierSidebar onSearchTermChange={() => {}} />
+             <DossierSidebar />
           </div>
         </SidebarContent>
       </Sidebar>
       <SidebarInset>
         <div ref={contentRef} className="flex flex-col min-h-screen bg-background overflow-auto">
-          <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <header className="sticky top-0 z-40 w-full border-b bg-primary text-primary-foreground border-t-4 border-t-green-500">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
-                <div className="flex items-center">
-                    <SidebarTrigger asChild>
-                      <Button variant="ghost" size="icon" className="md:hidden">
+                <div className="flex items-center gap-4">
+                    <SidebarTrigger className="md:hidden">
+                      <Button variant="ghost" size="icon">
                         <Menu />
                       </Button>
                     </SidebarTrigger>
+                    {logo && <Image src={logo.imageUrl} alt="BMV Logo" width={100} height={32} data-ai-hint={logo.imageHint} />}
                 </div>
 
                 <div className="flex items-center space-x-2">
@@ -120,7 +120,7 @@ export default function DossierPage() {
               onValueChange={setExpandedSections}
               className="w-full"
             >
-              <DossierContent searchTerm="" />
+              <DossierContent />
             </Accordion>
           </main>
           <footer className="border-t">

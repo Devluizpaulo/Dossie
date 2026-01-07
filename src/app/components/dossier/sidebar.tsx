@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { slugify } from '@/lib/utils';
 import { sections } from './content';
 import React from 'react';
+import { Input } from '@/components/ui/input';
+import { Search } from 'lucide-react';
 
 interface DossierSidebarProps {
   onSearchTermChange: (term: string) => void;
@@ -13,51 +15,100 @@ interface TocItem {
   level: number;
   title: string;
   id: string;
-  children?: TocItem[];
+  children: TocItem[];
 }
 
-const tocItems: TocItem[] = sections.map(section => {
-  const mainHeading: TocItem = {
-    level: 2,
-    title: section.title,
-    id: slugify(section.title),
-    children: [],
-  };
+// Helper to recursively search for text in React nodes
+const hasSearchTerm = (nodes: React.ReactNode, term: string): boolean => {
+  if (!term.trim()) return true;
+  const lowerCaseTerm = term.toLowerCase();
 
-  // Function to recursively find h3s
-  const findSubHeadings = (nodes: React.ReactNode): TocItem[] => {
-    const headings: TocItem[] = [];
-    React.Children.forEach(nodes, node => {
-      if (React.isValidElement(node)) {
-        // Check for h3 equivalent
-        if (node.props.className && typeof node.props.className === 'string' && node.props.className.includes('text-xl font-semibold')) {
-          const title = React.Children.toArray(node.props.children).join('');
-          if (title) {
-            headings.push({
-              level: 3,
-              title: title,
-              id: node.props.id || slugify(title),
-              children: []
-            });
+  return React.Children.toArray(nodes).some(node => {
+    if (typeof node === 'string') {
+      return node.toLowerCase().includes(lowerCaseTerm);
+    }
+    if (React.isValidElement(node) && node.props.children) {
+      return hasSearchTerm(node.props.children, term);
+    }
+    return false;
+  });
+};
+
+
+const generateToc = (searchTerm: string) => {
+  const tocItems: TocItem[] = [];
+
+  sections.forEach(section => {
+    const sectionIsVisible = !searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || hasSearchTerm(section.content, searchTerm);
+    
+    if (sectionIsVisible) {
+      const mainHeading: TocItem = {
+        level: 2,
+        title: section.title,
+        id: slugify(section.title),
+        children: [],
+      };
+
+      const findSubHeadings = (nodes: React.ReactNode): TocItem[] => {
+        const headings: TocItem[] = [];
+        React.Children.forEach(nodes, node => {
+          if (React.isValidElement(node)) {
+            const isH3 = node.props.className && typeof node.props.className === 'string' && node.props.className.includes('text-xl font-semibold');
+            
+            if (isH3) {
+              const title = React.Children.toArray(node.props.children).join('');
+              if (title && (!searchTerm || title.toLowerCase().includes(searchTerm.toLowerCase()) || hasSearchTerm(section.content, searchTerm))) {
+                headings.push({
+                  level: 3,
+                  title: title,
+                  id: node.props.id || slugify(title),
+                  children: []
+                });
+              }
+            } else if (node.props.children) {
+              // only dive deeper if the parent section is visible
+              headings.push(...findSubHeadings(node.props.children));
+            }
           }
-        }
-        if (node.props.children) {
-          headings.push(...findSubHeadings(node.props.children));
-        }
+        });
+        return headings;
+      };
+      
+      const subHeadings = findSubHeadings(section.content);
+      
+      if (!searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || subHeadings.length > 0) {
+        mainHeading.children = subHeadings;
+        tocItems.push(mainHeading);
       }
-    });
-    return headings;
-  };
-  
-  mainHeading.children = findSubHeadings(section.content);
-  return mainHeading;
+    }
+  });
+
+  return tocItems;
+};
+
+
+const allIds = sections.flatMap(section => {
+  const ids = [slugify(section.title)];
+  React.Children.forEach(section.content, node => {
+    if (React.isValidElement(node) && node.props.id) {
+      ids.push(node.props.id);
+    }
+  });
+  return ids;
 });
 
-const allIds = tocItems.flatMap(item => [item.id, ...(item.children?.map(child => child.id) || [])]);
 
-
-export const DossierSidebar: React.FC<DossierSidebarProps> = () => {
+export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChange }) => {
   const [activeId, setActiveId] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+    onSearchTermChange(term);
+  };
+  
+  const tocItems = generateToc(searchTerm);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -81,6 +132,17 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = () => {
     <div className="space-y-4">
       <h3 className="text-lg font-semibold text-foreground">📑 Manual de Operações</h3>
       
+      <div className="relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            type="search"
+            placeholder="Buscar no dossiê..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="w-full pl-9"
+          />
+        </div>
+
         <nav aria-label="Sumário">
           <ul className="space-y-3">
             {tocItems.map((item) => (
