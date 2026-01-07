@@ -269,8 +269,8 @@ const SidebarTrigger = React.forwardRef<
     return (
       <Slot
         ref={ref}
-        onClick={(event: React.MouseEvent<HTMLElement>) => {
-          onClick?.(event);
+        onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
+          onClick?.(event as any);
           toggleSidebar();
         }}
         {...props}

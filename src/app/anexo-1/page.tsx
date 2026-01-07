@@ -1,0 +1,655 @@
+"use client";
+
+import { AnexoLayout } from "@/app/components/anexo-layout";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+
+export default function Anexo1() {
+  return (
+    <AnexoLayout title="Anexo I – Evidências Técnicas e Operacionais" number={1}>
+      <div className="max-w-5xl mx-auto space-y-8">
+        {/* 1. Apresentação */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">1. Apresentação</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-justify">
+              Este anexo constitui o registro formal e consolidado das evidências técnicas e operacionais identificadas durante o processo de análise comparativa entre o Sistema Atual e o Sistema Legado.
+            </p>
+            
+            <div>
+              <p className="font-semibold mb-2">Seu objetivo é garantir:</p>
+              <ul className="list-disc pl-6 space-y-1 text-justify">
+                <li>Rastreabilidade técnica das não conformidades</li>
+                <li>Padronização documental</li>
+                <li>Subsídios objetivos para tomada de decisão estratégica</li>
+                <li>Base técnica para auditorias, comitês executivos e avaliação de risco</li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="font-semibold mb-2">Cada evidência foi registrada de forma estruturada, contendo:</p>
+              <ul className="list-disc pl-6 space-y-1 text-justify">
+                <li>Código único de identificação</li>
+                <li>Descrição técnica objetiva</li>
+                <li>Contexto operacional</li>
+                <li>Impacto e risco associado</li>
+                <li>Análise técnica</li>
+                <li>Recomendação clara</li>
+                <li>Espaço próprio para evidência visual (prints)</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* 2. Matriz Resumo */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">2. Matriz Resumo de Evidências</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="overflow-x-auto">
+              <Table className="border">
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="bg-primary text-primary-foreground">Cód.</TableHead>
+                    <TableHead className="bg-primary text-primary-foreground">Descrição Sintética</TableHead>
+                    <TableHead className="bg-primary text-primary-foreground">Módulo Afetado</TableHead>
+                    <TableHead className="bg-primary text-primary-foreground">Tipo</TableHead>
+                    <TableHead className="bg-primary text-primary-foreground">Impacto Principal</TableHead>
+                    <TableHead className="bg-primary text-primary-foreground">Severidade</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-semibold">EV-01</TableCell>
+                    <TableCell>Busca por pedido retorna resultado incorreto</TableCell>
+                    <TableCell>Movimentações</TableCell>
+                    <TableCell>Erro funcional</TableCell>
+                    <TableCell>Compromete auditoria e rastreabilidade</TableCell>
+                    <TableCell><Badge variant="destructive">Alta</Badge></TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-semibold">EV-02</TableCell>
+                    <TableCell>Exibição inconsistente de nome de usuários</TableCell>
+                    <TableCell>Usuários</TableCell>
+                    <TableCell>Governança de dados</TableCell>
+                    <TableCell>Identificação ambígua</TableCell>
+                    <TableCell><Badge className="bg-orange-500">Média</Badge></TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-semibold">EV-03</TableCell>
+                    <TableCell>Ausência de ícones e tags financeiras</TableCell>
+                    <TableCell>Movimentações</TableCell>
+                    <TableCell>Governança / Usabilidade</TableCell>
+                    <TableCell>Risco de erro humano</TableCell>
+                    <TableCell><Badge variant="destructive">Alta</Badge></TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-semibold">EV-04</TableCell>
+                    <TableCell>Documento reenviado permanece recusado</TableCell>
+                    <TableCell>Gestão Documental</TableCell>
+                    <TableCell>Fluxo quebrado</TableCell>
+                    <TableCell>Bloqueio operacional</TableCell>
+                    <TableCell><Badge variant="destructive">Alta</Badge></TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-semibold">EV-05</TableCell>
+                    <TableCell>Campos obrigatórios não identificados</TableCell>
+                    <TableCell>Cadastro Usuários</TableCell>
+                    <TableCell>Usabilidade / Dados</TableCell>
+                    <TableCell>Cadastros inconsistentes</TableCell>
+                    <TableCell><Badge className="bg-orange-500">Média</Badge></TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-semibold">EV-06</TableCell>
+                    <TableCell>Campo "ID Transação NXT" indevido</TableCell>
+                    <TableCell>Certificados</TableCell>
+                    <TableCell>Governança / UX</TableCell>
+                    <TableCell>Ruído e dívida técnica</TableCell>
+                    <TableCell><Badge className="bg-orange-500">Média</Badge></TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-semibold">EV-07</TableCell>
+                    <TableCell>Filtro inoperante em pedidos SaaS</TableCell>
+                    <TableCell>Pedidos Certificado</TableCell>
+                    <TableCell>Governança / Busca</TableCell>
+                    <TableCell>Perda de rastreabilidade</TableCell>
+                    <TableCell><Badge variant="destructive">Alta</Badge></TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-semibold">EV-08</TableCell>
+                    <TableCell>Valores incorretos de DARE e Royalties</TableCell>
+                    <TableCell>Financeiro</TableCell>
+                    <TableCell>Erro financeiro</TableCell>
+                    <TableCell>Risco fiscal e regulatório</TableCell>
+                    <TableCell><Badge variant="destructive">Alta</Badge></TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-semibold">EV-09</TableCell>
+                    <TableCell>Ausência de acesso simples a logs de auditoria</TableCell>
+                    <TableCell>Governança / Segurança</TableCell>
+                    <TableCell>Governança de Dados</TableCell>
+                    <TableCell>Impossibilita rastreabilidade e auditoria</TableCell>
+                    <TableCell><Badge variant="destructive">Alta</Badge></TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* 3. Registro Detalhado */}
+        <div>
+          <h2 className="text-2xl font-bold mb-6">3. Registro Detalhado das Evidências</h2>
+
+          {/* EV-01 */}
+          <Card className="mb-6">
+            <CardHeader className="bg-muted/50">
+              <CardTitle className="text-xl flex items-center gap-3">
+                <Badge variant="destructive">EV-01</Badge>
+                <span>Busca por Pedido Retornando Resultado Incorreto</span>
+              </CardTitle>
+              <div className="flex gap-4 text-sm mt-2">
+                <span><strong>Módulo:</strong> SaaS Tesouro Verde → Pedido de Certificado → Movimentações</span>
+                <span><strong>Tipo:</strong> Erro funcional / Governança de dados</span>
+                <span><strong>Severidade:</strong> <Badge variant="destructive">Alta</Badge></span>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4 pt-6">
+              <div>
+                <h4 className="font-semibold mb-2">Descrição</h4>
+                <p className="text-justify">
+                  Ao acessar um pedido processado e acionar "Visualizar Movimentações", o sistema aplica automaticamente um filtro baseado no número do pedido, porém a tela de movimentações não possui este campo como critério de busca, retornando resultado vazio mesmo havendo movimentações válidas.
+                </p>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">Impacto</h4>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Perda de rastreabilidade entre Pedido → Distribuição → Movimentação</li>
+                  <li>Aumento de tempo operacional</li>
+                  <li>Risco de erro humano</li>
+                  <li>Auditoria e conciliação comprometidas</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-semibold mb-2">Análise Técnica</h4>
+                <p className="text-justify">
+                  Indica uso incorreto de identificador (pedido em vez de distribuição), falha de integração entre módulos e regressão funcional em relação ao sistema legado.
+                </p>
+              </div>
+
+              <Alert>
+                <AlertDescription>
+                  <strong>Recomendação:</strong>
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li>Corrigir navegação para utilizar Dist</li>
+                    <li>Garantir compatibilidade entre filtros aplicados e filtros disponíveis</li>
+                    <li>Tratar como correção estrutural, não UX</li>
+                  </ul>
+                </AlertDescription>
+              </Alert>
+
+              <div className="bg-muted p-4 rounded-lg">
+                <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Sistema Atual]</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Sistema Legado]</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* EV-02 */}
+          <Card className="mb-6">
+            <CardHeader className="bg-muted/50">
+              <CardTitle className="text-xl flex items-center gap-3">
+                <Badge className="bg-orange-500">EV-02</Badge>
+                <span>Exibição Inconsistente do Nome de Usuários</span>
+              </CardTitle>
+              <div className="flex gap-4 text-sm mt-2">
+                <span><strong>Módulo:</strong> Usuários → Gerenciar</span>
+                <span><strong>Tipo:</strong> Governança de dados / Usabilidade</span>
+                <span><strong>Severidade:</strong> <Badge className="bg-orange-500">Média</Badge></span>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4 pt-6">
+              <div>
+                <h4 className="font-semibold mb-2">Descrição</h4>
+                <p className="text-justify mb-2">Nomes são exibidos de forma inconsistente:</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Em alguns casos apenas o primeiro nome</li>
+                  <li>Em outros, nome e sobrenome concatenados sem espaçamento</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">Impacto</h4>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Identificação ambígua</li>
+                  <li>Risco de duplicidade</li>
+                  <li>Fragilidade em auditorias e atribuição de responsabilidades</li>
+                </ul>
+              </div>
+
+              <Alert>
+                <AlertDescription>
+                  <strong>Recomendação:</strong>
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li>Padronizar exibição de nome completo</li>
+                    <li>Corrigir concatenação e formatação</li>
+                    <li>Implementar tooltip ou expansão</li>
+                  </ul>
+                </AlertDescription>
+              </Alert>
+
+              <div className="bg-muted p-4 rounded-lg">
+                <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Atual]</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Legado]</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* EV-03 */}
+          <Card className="mb-6">
+            <CardHeader className="bg-muted/50">
+              <CardTitle className="text-xl flex items-center gap-3">
+                <Badge variant="destructive">EV-03</Badge>
+                <span>Ausência de Identificação Visual em Movimentações Financeiras</span>
+              </CardTitle>
+              <div className="flex gap-4 text-sm mt-2">
+                <span><strong>Módulo:</strong> Movimentações Financeiras</span>
+                <span><strong>Tipo:</strong> Governança / Usabilidade</span>
+                <span><strong>Severidade:</strong> <Badge variant="destructive">Alta</Badge></span>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4 pt-6">
+              <div>
+                <h4 className="font-semibold mb-2">Descrição</h4>
+                <p className="text-justify mb-2">O sistema atual não implementa:</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Tags RES / DIS / APO</li>
+                  <li>Ícones por tipo de transação</li>
+                  <li>Distinção clara entre saldo de origem e destino</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">Impacto</h4>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Dependência de conhecimento tácito</li>
+                  <li>Alto risco de erro humano</li>
+                  <li>Fragilidade de auditoria financeira</li>
+                </ul>
+              </div>
+
+              <Alert>
+                <AlertDescription>
+                  <strong>Recomendação:</strong> Reimplementar integralmente o modelo visual do sistema legado, como correção de governança.
+                </AlertDescription>
+              </Alert>
+
+              <div className="bg-muted p-4 rounded-lg">
+                <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Atual x Legado]</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* EV-04 */}
+          <Card className="mb-6">
+            <CardHeader className="bg-muted/50">
+              <CardTitle className="text-xl flex items-center gap-3">
+                <Badge variant="destructive">EV-04</Badge>
+                <span>Reenvio de Documentos Mantendo Status "Recusado"</span>
+              </CardTitle>
+              <div className="flex gap-4 text-sm mt-2">
+                <span><strong>Módulo:</strong> Gestão Documental</span>
+                <span><strong>Tipo:</strong> Erro funcional / Fluxo quebrado</span>
+                <span><strong>Severidade:</strong> <Badge variant="destructive">Alta</Badge></span>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4 pt-6">
+              <div>
+                <h4 className="font-semibold mb-2">Descrição</h4>
+                <p className="text-justify">
+                  Documentos recusados, ao serem reenviados, permanecem congelados no status "Recusado", sem retornar para "Pendente de Aprovação".
+                </p>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">Impacto</h4>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Bloqueio completo de processos</li>
+                  <li>Retrabalho manual</li>
+                  <li>Atrasos regulatórios</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-semibold mb-2">Análise Técnica</h4>
+                <p className="text-justify">
+                  Falha na máquina de estados do workflow documental.
+                </p>
+              </div>
+
+              <Alert>
+                <AlertDescription>
+                  <strong>Recomendação:</strong>
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li>Corrigir transição Recusado → Pendente</li>
+                    <li>Implementar histórico de versões</li>
+                    <li>Tratar como correção crítica</li>
+                  </ul>
+                </AlertDescription>
+              </Alert>
+
+              <div className="bg-muted p-4 rounded-lg">
+                <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT]</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* EV-05 */}
+          <Card className="mb-6">
+            <CardHeader className="bg-muted/50">
+              <CardTitle className="text-xl flex items-center gap-3">
+                <Badge className="bg-orange-500">EV-05</Badge>
+                <span>Ausência de Indicação de Campos Obrigatórios</span>
+              </CardTitle>
+              <div className="flex gap-4 text-sm mt-2">
+                <span><strong>Módulo:</strong> Cadastro de Usuários</span>
+                <span><strong>Tipo:</strong> Usabilidade / Governança de Dados</span>
+                <span><strong>Severidade:</strong> <Badge className="bg-orange-500">Média</Badge></span>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4 pt-6">
+              <div>
+                <h4 className="font-semibold mb-2">Descrição</h4>
+                <p className="text-justify">
+                  Campos obrigatórios não são sinalizados (asterisco), exceto CPF. Erros não indicam qual campo está faltando (ex.: CEP).
+                </p>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">Impacto</h4>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Cadastro confuso</li>
+                  <li>Erros recorrentes</li>
+                  <li>Dependência de suporte</li>
+                </ul>
+              </div>
+
+              <Alert>
+                <AlertDescription>
+                  <strong>Recomendação:</strong>
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li>Marcação visual obrigatória</li>
+                    <li>Mensagens de erro contextualizadas</li>
+                    <li>Paridade com sistema legado</li>
+                  </ul>
+                </AlertDescription>
+              </Alert>
+
+              <div className="bg-muted p-4 rounded-lg">
+                <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT]</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* EV-06 */}
+          <Card className="mb-6">
+            <CardHeader className="bg-muted/50">
+              <CardTitle className="text-xl flex items-center gap-3">
+                <Badge className="bg-orange-500">EV-06</Badge>
+                <span>Exibição Indevida do Campo "ID Transação NXT"</span>
+              </CardTitle>
+              <div className="flex gap-4 text-sm mt-2">
+                <span><strong>Módulo:</strong> Certificados → Detalhes</span>
+                <span><strong>Tipo:</strong> Governança / Usabilidade</span>
+                <span><strong>Severidade:</strong> <Badge className="bg-orange-500">Média</Badge></span>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4 pt-6">
+              <div>
+                <h4 className="font-semibold mb-2">Descrição</h4>
+                <p className="text-justify">
+                  Campo "ID Transação NXT" é exibido sem função operacional, mesmo após solicitação formal de remoção.
+                </p>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">Impacto</h4>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Confusão conceitual</li>
+                  <li>Ruído visual</li>
+                  <li>Dívida técnica</li>
+                </ul>
+              </div>
+
+              <Alert>
+                <AlertDescription>
+                  <strong>Recomendação:</strong>
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li>Remoção imediata do campo</li>
+                    <li>Curadoria da interface</li>
+                  </ul>
+                </AlertDescription>
+              </Alert>
+
+              <div className="bg-muted p-4 rounded-lg">
+                <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT]</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* EV-07 */}
+          <Card className="mb-6">
+            <CardHeader className="bg-muted/50">
+              <CardTitle className="text-xl flex items-center gap-3">
+                <Badge variant="destructive">EV-07</Badge>
+                <span>Filtro Inoperante em Pedidos de Certificado SaaS</span>
+              </CardTitle>
+              <div className="flex gap-4 text-sm mt-2">
+                <span><strong>Módulo:</strong> SaaS Tesouro Verde → Pedidos de Certificado</span>
+                <span><strong>Tipo:</strong> Governança / Busca</span>
+                <span><strong>Severidade:</strong> <Badge variant="destructive">Alta</Badge></span>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4 pt-6">
+              <div>
+                <h4 className="font-semibold mb-2">Descrição</h4>
+                <p className="text-justify">
+                  Campo de busca não reage à digitação e não filtra por nome, documento ou ID, diferentemente do sistema legado.
+                </p>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">Impacto</h4>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Localização inviável de pedidos</li>
+                  <li>Perda de rastreabilidade</li>
+                  <li>Baixa escalabilidade</li>
+                </ul>
+              </div>
+
+              <Alert>
+                <AlertDescription>
+                  <strong>Recomendação:</strong>
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li>Implementar busca incremental</li>
+                    <li>Filtros explícitos e documentados</li>
+                    <li>Indexação adequada no backend</li>
+                  </ul>
+                </AlertDescription>
+              </Alert>
+
+              <div className="bg-muted p-4 rounded-lg">
+                <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Atual x Legado]</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* EV-08 */}
+          <Card className="mb-6">
+            <CardHeader className="bg-muted/50">
+              <CardTitle className="text-xl flex items-center gap-3">
+                <Badge variant="destructive">EV-08</Badge>
+                <span>Inconsistência nos Cálculos de DARE e Royalties</span>
+              </CardTitle>
+              <div className="flex gap-4 text-sm mt-2">
+                <span><strong>Módulo:</strong> Tesouro Verde → DARE / Royalties</span>
+                <span><strong>Tipo:</strong> Erro funcional / Financeiro</span>
+                <span><strong>Severidade:</strong> <Badge variant="destructive">Alta</Badge></span>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4 pt-6">
+              <div>
+                <h4 className="font-semibold mb-2">Descrição</h4>
+                <p className="text-justify mb-2">
+                  Os valores de DARE e Royalties no sistema atual divergem do sistema legado, apresentando inconsistência matemática entre:
+                </p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>UCS</li>
+                  <li>Valores unitários</li>
+                  <li>TOTAL PUB / TOTAL PRI</li>
+                  <li>Percentuais aplicados</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">Impacto</h4>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Risco fiscal e regulatório</li>
+                  <li>Inviabiliza auditoria financeira</li>
+                  <li>Perda de confiabilidade do sistema</li>
+                </ul>
+              </div>
+
+              <Alert variant="destructive">
+                <AlertDescription>
+                  <strong>Recomendação:</strong>
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li>Revisar lógica de cálculo</li>
+                    <li>Garantir paridade com legado</li>
+                    <li>Implementar testes automatizados</li>
+                    <li><strong>Bloquear homologação enquanto persistir</strong></li>
+                  </ul>
+                </AlertDescription>
+              </Alert>
+
+              <div className="bg-muted p-4 rounded-lg">
+                <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Sistema Legado (correto)]</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Sistema Atual (divergente)]</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* EV-09 */}
+          <Card className="mb-6">
+            <CardHeader className="bg-muted/50">
+              <CardTitle className="text-xl flex items-center gap-3">
+                <Badge variant="destructive">EV-09</Badge>
+                <span>Ausência de Acesso Simples a Logs de Auditoria e Rastreabilidade de Ações</span>
+              </CardTitle>
+              <div className="flex gap-4 text-sm mt-2">
+                <span><strong>Módulo:</strong> Governança / Segurança / Auditoria</span>
+                <span><strong>Tipo:</strong> Governança de Dados / Rastreabilidade</span>
+                <span><strong>Severidade:</strong> <Badge variant="destructive">Alta</Badge></span>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4 pt-6">
+              <div>
+                <h4 className="font-semibold mb-2">Descrição</h4>
+                <p className="text-justify">
+                  Apesar de o sistema possuir um modelo robusto de usuários e permissões, <strong>não foi identificado, de forma simples e acessível</strong>, nenhum módulo ou funcionalidade que permita consultar logs de auditoria das ações realizadas no sistema (quem fez, o quê, quando).
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold mb-2">Análise Técnica</h4>
+                <p className="text-justify mb-2">
+                  Não é possível verificar de maneira objetiva:
+                </p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Qual usuário realizou determinada transação (ex.: inserção ou ajuste de UCF);</li>
+                  <li>Data e horário exatos da ação;</li>
+                  <li>Origem da alteração (interface, fluxo, módulo).</li>
+                </ul>
+                <p className="text-justify mt-3">
+                  Ainda que o mecanismo de log exista internamente, sua <strong>não exposição operacional caracteriza falha de governança</strong>, pois inviabiliza o uso prático da informação para controle, auditoria e responsabilização.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold mb-2">Impacto</h4>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Perda de rastreabilidade transacional;</li>
+                  <li>Impossibilidade de auditoria operacional efetiva;</li>
+                  <li>Dificuldade de apuração de erros ou inconsistências;</li>
+                  <li>Risco elevado de não conformidade regulatória e operacional.</li>
+                </ul>
+              </div>
+
+              <Alert variant="destructive">
+                <AlertDescription>
+                  <strong>Recomendação:</strong>
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li>Implementar (ou expor) módulo dedicado de <strong>Logs de Auditoria</strong>, com acesso controlado;</li>
+                    <li>Garantir registro mínimo de: usuário, ação, entidade afetada, valores antes/depois, data e hora;</li>
+                    <li>Disponibilizar consulta simples por filtros (usuário, período, tipo de ação);</li>
+                    <li><strong>Tratar como correção estrutural de governança, não como melhoria opcional.</strong></li>
+                  </ul>
+                </AlertDescription>
+              </Alert>
+
+              <div className="bg-muted p-4 rounded-lg">
+                <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Tela de configuração/administração sem opção de logs]</p>
+                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Sistema Legado mostrando funcionalidade de logs (se aplicável)]</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* 4. Considerações Finais */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">4. Considerações Finais</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-justify">
+              As evidências apresentadas demonstram falhas estruturais, funcionais e de governança, algumas de natureza crítica impeditiva, especialmente nos módulos financeiros, de movimentações e rastreabilidade.
+            </p>
+            
+            <Alert>
+              <AlertDescription className="text-justify">
+                Este anexo integra o dossiê técnico oficial e deve ser analisado em conjunto com os demais anexos para decisão sobre:
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Correções imediatas</li>
+                  <li>Reengenharia</li>
+                  <li>Ou substituição da solução tecnológica</li>
+                </ul>
+              </AlertDescription>
+            </Alert>
+
+            <div className="border-t pt-4 mt-6 text-sm text-muted-foreground">
+              <p><strong>Data:</strong> Janeiro/2026</p>
+              <p><strong>Versão:</strong> 1.0</p>
+              <p><strong>Documento:</strong> ANEXO I – Evidências Técnicas e Operacionais</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </AnexoLayout>
+  );
+}

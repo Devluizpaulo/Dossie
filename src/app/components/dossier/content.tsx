@@ -39,21 +39,44 @@ interface DossierContentProps {
 
 export const sections = [
   {
-    title: "Capa",
+    title: "Inicio do Dossiê Técnico",
     content: (
-        <div className="text-center py-16 px-4">
-            <h1 className="text-4xl font-bold text-primary mb-4 font-headline">Dossiê Técnico de Avaliação do Sistema Backoffice BMV.Global</h1>
-            <h3 className="text-xl text-muted-foreground mb-8">
-            Relatório Formal de Não Conformidades,<br/>
-            Riscos Operacionais, Tecnológicos e Jurídicos<br/>
-            e Diretrizes Estruturais de Evolução
+        <>
+            <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-6">
+                Dossiê Técnico de Avaliação do Sistema Backoffice BMV.Global
+            </h1>
+            
+            <h3 className="text-lg sm:text-xl font-semibold text-muted-foreground mb-6">
+                <span className="block mb-2">Relatório Formal de Não Conformidades,</span>
+                <span className="block mb-2">Riscos Operacionais, Tecnológicos e Jurídicos</span>
+                <span className="block">e Diretrizes Estruturais de Evolução</span>
             </h3>
-            <p className="max-w-3xl mx-auto text-base">
-            Material destinado à análise técnica, operacional, jurídica e estratégica da plataforma tecnológica BMV,
-            com objetivo de subsidiar a tomada de decisão executiva, governança sistêmica, avaliação de riscos
-            institucionais e direcionamento de ações estruturais corretivas.
+
+            <p className="text-justify mb-6 leading-relaxed">
+                Material destinado à análise técnica, operacional, jurídica e estratégica da plataforma tecnológica BMV,
+                com objetivo de subsidiar a tomada de decisão executiva, governança sistêmica, avaliação de riscos
+                institucionais e direcionamento de ações estruturais corretivas.
             </p>
-        </div>
+
+            <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground pt-4 border-t">
+                <span className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>
+                    Análise Técnica
+                </span>
+                <span className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>
+                    Operacional
+                </span>
+                <span className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>
+                    Jurídica
+                </span>
+                <span className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>
+                    Estratégica
+                </span>
+            </div>
+        </>
     )
   },
   {
@@ -915,60 +938,116 @@ export const sections = [
         )
     },
     {
-        title: '20. Conclusão Final (Versão Revisada – Ponto de Corte Técnico)',
+        title: '20. Conclusão',
         content: (
             <>
+                <h3 className="text-xl font-semibold mb-4 mt-4" id={slugify("Estado Atual do Sistema")}>Estado Atual do Sistema</h3>
+                
                 <p className="mb-4 text-justify">
-                    O sistema BMV, em seu estado atual, não atende aos requisitos mínimos de maturidade tecnológica, automação, governança de dados, rastreabilidade operacional e capacidade de escala necessários para sustentar, de forma segura, confiável e contínua, o modelo de negócio da organização.
+                    O sistema BMV, em seu estado atual, <strong>não atende aos requisitos mínimos</strong> de maturidade tecnológica, automação, governança de dados, rastreabilidade operacional e capacidade de escala necessários para sustentar, de forma segura, confiável e contínua, o modelo de negócio da organização.
                 </p>
+
+                <h3 className="text-xl font-semibold mb-4 mt-6" id={slugify("Esclarecimento sobre a Natureza da Avaliação")}>Esclarecimento sobre a Natureza da Avaliação</h3>
+                
                 <p className="mb-4 text-justify">
-                    Ressalta-se, de forma inequívoca, que a presente avaliação possui natureza estritamente técnica, estando orientada à qualidade do serviço sistêmico entregue — e não à qualidade do atendimento prestado pela equipe de suporte. A equipe responsável pelo suporte demonstra postura colaborativa e diligente, atuando dentro das limitações impostas pelo modelo atual. Contudo, esforço operacional e boa vontade não substituem arquitetura adequada, automação consistente, escalabilidade e governança técnica efetiva.
+                    Ressalta-se, de forma inequívoca, que esta avaliação possui <strong>natureza estritamente técnica</strong>, orientada à qualidade do serviço sistêmico entregue — e não à qualidade do atendimento prestado pela equipe de suporte. A equipe responsável demonstra postura colaborativa e diligente, atuando dentro das limitações impostas pelo modelo atual.
                 </p>
+                
                 <p className="mb-4 text-justify">
-                    Ao longo desta análise, ficou evidenciado que falhas estruturais e funcionais vêm sendo recorrente e indevidamente enquadradas como “melhorias evolutivas”, quando, na realidade, configuram não conformidades mandatórias. Essa abordagem posterga correções críticas, distorce prioridades técnicas e mantém a operação exposta a riscos operacionais, financeiros, jurídicos e reputacionais relevantes.
+                    Contudo, <strong>esforço operacional e boa vontade não substituem arquitetura adequada, automação consistente, escalabilidade e governança técnica efetiva.</strong>
                 </p>
+
+                <h3 className="text-xl font-semibold mb-4 mt-6" id={slugify("Classificação Inadequada de Falhas")}>Classificação Inadequada de Falhas</h3>
+                
                 <p className="mb-4 text-justify">
-                    Destaca-se, de forma especialmente crítica, o impacto direto dessas limitações sobre o cliente final, que representa a ponta do negócio. Clientes que já efetuaram o pagamento de transações não podem aguardar por dias para a simples conclusão de um processamento transacional que deveria ocorrer de forma automática e imediata. Interrupções dessa natureza no ambiente do financiador geram paralisações artificiais na cadeia de prestação de serviços da BMV, afetando diretamente a qualidade percebida, a previsibilidade operacional e a confiança do mercado.
+                    Falhas estruturais e funcionais vêm sendo recorrentemente enquadradas como "melhorias evolutivas", quando, na realidade, configuram <strong>não conformidades mandatórias</strong>. Essa abordagem posterga correções críticas, distorce prioridades técnicas e mantém a operação exposta a riscos operacionais, financeiros, jurídicos e reputacionais relevantes.
                 </p>
+
+                <h3 className="text-xl font-semibold mb-4 mt-6" id={slugify("Impacto no Cliente Final")}>Impacto no Cliente Final</h3>
+                
                 <p className="mb-4 text-justify">
-                    Esses atrasos e bloqueios operacionais comprometem a experiência do cliente final, impactam a continuidade da prestação de serviços, aumentam o risco de questionamentos contratuais e regulatórios e geram risco reputacional elevado, afetando a confiança de clientes, parceiros e investidores.
+                    O impacto direto dessas limitações sobre o cliente final merece destaque crítico. Clientes que já efetuaram pagamento de transações não podem aguardar dias para conclusão de processamento que deveria ocorrer de forma automática e imediata.
                 </p>
+                
                 <p className="mb-4 text-justify">
-                    Entretanto, há um ponto técnico de gravidade máxima que se sobrepõe a todas as demais análises realizadas neste dossiê: <strong>a ausência de integração efetiva, automação e escalabilidade da camada de Blockchain.</strong>
+                    Interrupções dessa natureza geram paralisações artificiais na cadeia de prestação de serviços, afetando diretamente a qualidade percebida, a previsibilidade operacional e a confiança do mercado. Esses atrasos aumentam o risco de questionamentos contratuais e regulatórios, gerando risco reputacional elevado junto a clientes, parceiros e investidores.
                 </p>
+
+                <h3 className="text-xl font-semibold mb-4 mt-6 text-red-600 dark:text-red-400" id={slugify("Ponto Crítico - Blockchain")}>
+                    ⚠️ Ponto Crítico: Ausência de Integração Efetiva da Blockchain
+                </h3>
+                
+                <p className="mb-4 text-justify font-medium">
+                    Há um ponto técnico de gravidade máxima que se sobrepõe a todas as demais análises: <strong>a ausência de integração efetiva, automação e escalabilidade da camada de Blockchain.</strong>
+                </p>
+                
                 <p className="mb-4 text-justify">
-                    A proposta conceitual e estratégica do sistema BMV está diretamente associada à tokenização, sendo a Blockchain o pilar central do modelo de negócio — e não um componente acessório. No entanto, conforme demonstrado ao longo deste relatório, a Blockchain atualmente opera de forma passiva, manual, não orquestrada e sem capacidade de escala, inviabilizando seu papel como motor transacional, mecanismo de rastreabilidade e base de confiança do sistema.
+                    A proposta conceitual e estratégica do sistema BMV está diretamente associada à tokenização, sendo a Blockchain o <strong>pilar central do modelo de negócio</strong> — e não um componente acessório. No entanto, conforme demonstrado neste relatório, a Blockchain atualmente opera de forma passiva, manual, não orquestrada e sem capacidade de escala, inviabilizando seu papel como motor transacional, mecanismo de rastreabilidade e base de confiança do sistema.
                 </p>
+                
+                <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg p-4 my-4 text-justify">
+                    <p className="text-sm text-red-900 dark:text-red-100 mb-0">
+                        <strong>Conclusão Técnica Crítica:</strong> Enquanto não forem resolvidas as questões relacionadas à criação automática de wallets, abastecimento automatizado, integração direta entre blockchain e saldos/movimentações, e capacidade de operação em escala, todo o contexto sistêmico ao redor — UX, fluxos operacionais, filtros, nomenclaturas, governança de dados e SLAs — torna-se secundário e insuficiente para discussão estratégica.
+                    </p>
+                </div>
+
                 <p className="mb-4 text-justify">
-                    Dessa forma, a análise técnica se encerra neste ponto. Enquanto não forem resolvidas, de maneira estrutural, as questões relacionadas à criação automática de wallets, abastecimento automatizado e rastreável, integração direta entre blockchain, saldos e movimentações, e capacidade de operação em escala compatível com tokenização, todo o contexto sistêmico ao redor — incluindo UX, fluxos operacionais, filtros, nomenclaturas, governança de dados e até SLAs — torna-se secundário e insuficiente para discussão estratégica.
+                    Sem uma Blockchain escalável, integrada e governada sistematicamente, <strong>não há tokenização viável, e consequentemente não há sustentação técnica para o modelo de negócio proposto.</strong>
                 </p>
+
+                <h3 className="text-xl font-semibold mb-4 mt-6" id={slugify("Viabilidade de Escala")}>Viabilidade de Escala</h3>
+                
                 <p className="mb-4 text-justify">
-                    Sem uma Blockchain escalável, integrada e governada de forma sistêmica, não há tokenização viável, e, consequentemente, não há sustentação técnica para o modelo de negócio proposto.
+                    Do ponto de vista estratégico, o modelo operacional atual não comporta operação de maior escala. A dependência excessiva de processos manuais, aliada à fragilidade da camada blockchain, impede crescimento seguro, previsível e auditável.
                 </p>
+                
                 <p className="mb-4 text-justify">
-                    Do ponto de vista estratégico, torna-se evidente que o modelo operacional atual não comporta uma operação de maior escala. A dependência excessiva de processos manuais, aliada à fragilidade da camada blockchain, impede o crescimento seguro, previsível e auditável. Para que a BMV possa expandir suas operações, é indispensável estabelecer um nível substancialmente mais elevado de confiança no sistema, o que somente será possível por meio de correções estruturais profundas, priorizadas a partir da Blockchain.
+                    Para expandir operações, é indispensável estabelecer nível substancialmente mais elevado de confiança no sistema, o que somente será possível por meio de <strong>correções estruturais profundas, priorizadas a partir da Blockchain.</strong>
                 </p>
+
+                <h3 className="text-xl font-semibold mb-4 mt-6" id={slugify("Capacidade Técnica e Compromisso")}>Capacidade Técnica e Compromisso</h3>
+                
                 <p className="mb-4 text-justify">
-                    Há capacidade técnica para evolução da solução, porém essa evolução não ocorrerá sem dedicação adequada de tempo, priorização executiva e comprometimento estrutural por parte do fornecedor. O projeto exige tratamento à altura de sua criticidade estratégica, com alocação de esforço compatível com a responsabilidade envolvida, de modo que a solução funcione de forma sustentável e equilibrada para ambas as empresas.
+                    Há capacidade técnica para evolução da solução. Contudo, essa evolução não ocorrerá sem:
                 </p>
-                <p className="mb-4 text-justify">
-                    Diante desse cenário, a responsabilidade pela decisão estratégica recai sobre a Diretoria, que deverá deliberar, de forma objetiva e responsável, entre:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-justify">
-                    <li>Implementar, como prioridade máxima, a correção estrutural e a escalabilidade da camada Blockchain;</li>
-                    <li>Conduzir uma reengenharia profunda do sistema, com a Blockchain como núcleo do core transacional;</li>
-                    <li>Ou, caso os riscos e custos não se justifiquem, avaliar a substituição integral da solução tecnológica.</li>
+                
+                <ul className="list-disc pl-6 space-y-2 mb-4 text-justify">
+                    <li>Dedicação adequada de tempo;</li>
+                    <li>Priorização executiva clara;</li>
+                    <li>Comprometimento estrutural por parte do fornecedor.</li>
                 </ul>
-                <p className="mt-4 text-justify">
-                    A postergação dessa decisão representa a manutenção consciente de um risco operacional, financeiro, jurídico e reputacional elevado, incompatível com a estratégia de crescimento, a credibilidade institucional e a sustentabilidade do negócio BMV.
+                
+                <p className="mb-4 text-justify">
+                    O projeto exige tratamento à altura de sua criticidade estratégica, com alocação de esforço compatível com a responsabilidade envolvida, de modo que a solução funcione de forma sustentável e equilibrada para ambas as empresas.
                 </p>
+
+                <h3 className="text-xl font-semibold mb-4 mt-6" id={slugify("Cenários de Decisão")}>Cenários de Decisão para a Diretoria</h3>
+                
+                <p className="mb-4 text-justify">
+                    A responsabilidade pela decisão estratégica recai sobre a Diretoria, que deverá deliberar, de forma objetiva e responsável, entre:
+                </p>
+                
+                <div className="space-y-3 mb-4">
+                    <div className="flex gap-3 text-justify">
+                        <span className="font-bold text-primary flex-shrink-0">1.</span>
+                        <p><strong>Correção Estrutural:</strong> Implementar como prioridade máxima a correção estrutural e escalabilidade da camada Blockchain.</p>
+                    </div>
+                    <div className="flex gap-3 text-justify">
+                        <span className="font-bold text-primary flex-shrink-0">2.</span>
+                        <p><strong>Reengenharia Profunda:</strong> Conduzir reengenharia profunda do sistema, com a Blockchain como núcleo do core transacional.</p>
+                    </div>
+                    <div className="flex gap-3 text-justify">
+                        <span className="font-bold text-primary flex-shrink-0">3.</span>
+                        <p><strong>Substituição Integral:</strong> Caso os riscos e custos não se justifiquem, avaliar a substituição integral da solução tecnológica.</p>
+                    </div>
+                </div>
+
+                <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 my-6">
+                    <p className="text-sm text-amber-900 dark:text-amber-100 font-semibold mb-0">
+                        A postergação dessa decisão representa a <strong>manutenção consciente de um risco operacional, financeiro, jurídico e reputacional elevado</strong>, incompatível com a estratégia de crescimento, credibilidade institucional e sustentabilidade do negócio BMV.
+                    </p>
+                </div>
             </>
-        )
-    },
-    {
-        title: 'Responsável pela Avaliação',
-        content: (
-            <p className="text-justify"><strong>Luiz Paulo Gonçalves Miguel de Jesus</strong> — Data: 05/01/2026</p>
         )
     }
 ];
@@ -982,12 +1061,8 @@ const hasSearchTerm = (nodes: React.ReactNode, term: string): boolean => {
     if (typeof node === 'string') {
       return node.toLowerCase().includes(lowerCaseTerm);
     }
-    if (React.isValidElement(node) && node.props.children) {
-      // Avoid infinite recursion for components that might include themselves
-      if (node.type === AccordionItem || node.type === Highlight) {
-        return false;
-      }
-      return hasSearchTerm(node.props.children, term);
+    if (React.isValidElement(node) && (node.props as any).children) {
+      return hasSearchTerm((node.props as any).children, term);
     }
     return false;
   });
@@ -1002,23 +1077,23 @@ export const DossierContent: React.FC<DossierContentProps> = ({ searchTerm }) =>
         if (typeof node === 'string') {
             return <Highlight text={node} highlight={searchTerm} />;
         }
-        if (React.isValidElement(node) && node.props.children) {
+        if (React.isValidElement(node) && (node.props as any).children) {
             if (node.type === 'a' || node.type === 'strong' || node.type === 'em' || node.type === 'p' || node.type === 'li') {
                  return React.cloneElement(node as React.ReactElement, {
-                    ...node.props,
-                    children: addHighlight(node.props.children),
+                    ...(node.props as any),
+                    children: addHighlight((node.props as any).children),
                 });
             }
              return React.cloneElement(node, {
-                ...node.props,
-                children: addHighlight(node.props.children),
+                ...(node.props as any),
+                children: addHighlight((node.props as any).children),
             });
         }
         return node;
     });
   };
 
-  const filteredSections = sections.filter(section => hasSearchTerm(section.content, searchTerm));
+  const filteredSections = sections.filter(section => hasSearchTerm(section.content, searchTerm || ''));
 
   if (filteredSections.length === 0 && searchTerm) {
     return (

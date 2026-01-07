@@ -1,12 +1,10 @@
 "use client";
 
 import { useState, useMemo, useEffect, useRef } from 'react';
-import Image from 'next/image';
 import {
   Accordion,
 } from "@/components/ui/accordion"
 import { Button } from '@/components/ui/button';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { slugify } from '@/lib/utils';
 import {
   Expand,
@@ -19,6 +17,7 @@ import {
 import { ThemeToggle } from './components/dossier/theme-toggle';
 import { DossierContent, sections } from './components/dossier/content';
 import { DossierSidebar } from './components/dossier/sidebar';
+import { Logo } from '@/components/logo';
 import {
   Sidebar,
   SidebarContent,
@@ -33,9 +32,8 @@ export default function DossierPage() {
   const [expandedSections, setExpandedSections] = useState<string[]>(allSectionIds);
   const [allExpanded, setAllExpanded] = useState(true);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   const contentRef = useRef<HTMLDivElement>(null);
-
-  const logo = PlaceHolderImages.find(img => img.id === 'bmv-logo');
 
   const toggleExpandAll = () => {
     if (allExpanded) {
@@ -69,37 +67,35 @@ export default function DossierPage() {
   return (
     <>
       <Sidebar side="left" collapsible="icon">
-        <SidebarHeader>
-            <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                    <div className="flex flex-col">
-                        <h1 className="text-md font-bold text-primary">Dossiê</h1>
-                    </div>
-                </div>
-                <SidebarTrigger>
-                    <Button variant="ghost" size="icon">
-                        <ChevronLeft />
+        <SidebarHeader className="border-b">
+            <div className="flex items-center justify-between gap-2">
+                <h1 className="text-sm font-bold text-primary truncate">Dossiê</h1>
+                <SidebarTrigger className="ml-auto">
+                    <Button variant="ghost" size="icon" className="h-8 w-8">
+                        <ChevronLeft className="h-4 w-4" />
                     </Button>
                 </SidebarTrigger>
             </div>
         </SidebarHeader>
-        <SidebarContent className="p-0">
-          <div className="p-4">
-             <DossierSidebar />
+        <SidebarContent className="p-0 flex flex-col">
+          <div className="flex-1 overflow-y-auto p-3">
+             <DossierSidebar onSearchTermChange={setSearchTerm} />
           </div>
         </SidebarContent>
       </Sidebar>
       <SidebarInset>
         <div ref={contentRef} className="flex flex-col min-h-screen bg-background overflow-auto">
-          <header className="sticky top-0 z-40 w-full border-b bg-primary text-primary-foreground border-t-4 border-t-green-500">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
-                <div className="flex items-center gap-4">
-                    <SidebarTrigger className="md:hidden">
-                      <Button variant="ghost" size="icon">
-                        <Menu />
+          <header className="sticky top-0 z-40 w-full border-b bg-primary text-primary-foreground border-t-4 border-t-green-500 shadow-sm">
+            <div className="container mx-auto px-3 sm:px-4 lg:px-6 flex h-14 items-center justify-between">
+                <div className="flex items-center gap-3">
+                    <SidebarTrigger className="md:hidden -ml-2">
+                      <Button variant="ghost" size="icon" className="h-8 w-8">
+                        <Menu className="h-4 w-4" />
                       </Button>
                     </SidebarTrigger>
-                    {logo && <Image src={logo.imageUrl} alt="BMV Logo" width={100} height={32} data-ai-hint={logo.imageHint} />}
+                    <div className="hidden sm:block">
+                      <Logo />
+                    </div>
                 </div>
 
                 <div className="flex items-center space-x-2">
@@ -107,10 +103,15 @@ export default function DossierPage() {
                 </div>
             </div>
            </header>
-          <main id="content" className="container mx-auto flex-1 px-4 sm:px-6 lg:px-8 py-8">
-            <div className="flex justify-end mb-4">
-                <Button variant="outline" onClick={toggleExpandAll}>
-                    {allExpanded ? <ListCollapse className="mr-2 h-4 w-4" /> : <Expand className="mr-2 h-4 w-4" />}
+          <main id="content" className="container mx-auto flex-1 px-3 sm:px-4 lg:px-6 py-6">
+            <div className="flex justify-end mb-6">
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={toggleExpandAll}
+                  className="gap-2"
+                >
+                    {allExpanded ? <ListCollapse className="h-4 w-4" /> : <Expand className="h-4 w-4" />}
                     {allExpanded ? 'Recolher' : 'Expandir'}
                 </Button>
             </div>
@@ -123,8 +124,8 @@ export default function DossierPage() {
               <DossierContent />
             </Accordion>
           </main>
-          <footer className="border-t">
-            <div className="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm text-muted-foreground">
+          <footer className="border-t mt-12 bg-muted/30">
+            <div className="container mx-auto py-4 px-3 sm:px-4 lg:px-6 text-center text-xs sm:text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()} BMV — Dossiê
             </div>
           </footer>
@@ -132,11 +133,11 @@ export default function DossierPage() {
             <Button
               variant="default"
               size="icon"
-              className="fixed bottom-8 right-8 rounded-full h-12 w-12 shadow-lg"
+              className="fixed bottom-6 right-6 rounded-full h-10 w-10 shadow-lg hover:shadow-xl transition-shadow"
               onClick={scrollToTop}
               aria-label="Voltar ao topo"
             >
-              <ArrowUp className="h-6 w-6" />
+              <ArrowUp className="h-5 w-5" />
             </Button>
           )}
         </div>

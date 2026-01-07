@@ -27,8 +27,8 @@ const hasSearchTerm = (nodes: React.ReactNode, term: string): boolean => {
     if (typeof node === 'string') {
       return node.toLowerCase().includes(lowerCaseTerm);
     }
-    if (React.isValidElement(node) && node.props.children) {
-      return hasSearchTerm(node.props.children, term);
+    if (React.isValidElement(node) && (node.props as any).children) {
+      return hasSearchTerm((node.props as any).children, term);
     }
     return false;
   });
@@ -53,21 +53,24 @@ const generateToc = (searchTerm: string) => {
         const headings: TocItem[] = [];
         React.Children.forEach(nodes, node => {
           if (React.isValidElement(node)) {
-            const isH3 = node.props.className && typeof node.props.className === 'string' && node.props.className.includes('text-xl font-semibold');
+            const nodeProps = node.props as any;
+            const isH3 = nodeProps.className && typeof nodeProps.className === 'string' && nodeProps.className.includes('text-xl font-semibold');
             
             if (isH3) {
-              const title = React.Children.toArray(node.props.children).join('');
+              const title = React.Children.toArray(nodeProps.children)
+                .filter(child => typeof child === 'string')
+                .join('');
               if (title && (!searchTerm || title.toLowerCase().includes(searchTerm.toLowerCase()) || hasSearchTerm(section.content, searchTerm))) {
                 headings.push({
                   level: 3,
                   title: title,
-                  id: node.props.id || slugify(title),
+                  id: nodeProps.id || slugify(title),
                   children: []
                 });
               }
-            } else if (node.props.children) {
+            } else if (nodeProps.children) {
               // only dive deeper if the parent section is visible
-              headings.push(...findSubHeadings(node.props.children));
+              headings.push(...findSubHeadings(nodeProps.children));
             }
           }
         });
@@ -90,8 +93,8 @@ const generateToc = (searchTerm: string) => {
 const allIds = sections.flatMap(section => {
   const ids = [slugify(section.title)];
   React.Children.forEach(section.content, node => {
-    if (React.isValidElement(node) && node.props.id) {
-      ids.push(node.props.id);
+    if (React.isValidElement(node) && (node.props as any).id) {
+      ids.push((node.props as any).id);
     }
   });
   return ids;
@@ -130,7 +133,7 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChan
   
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold text-foreground">📑 Manual de Operações</h3>
+      <h3 className="text-lg font-semibold text-foreground">Dossiê</h3>
       
       <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -204,6 +207,25 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChan
             ))}
           </ul>
         </nav>
+
+        {/* Annexes Links */}
+        <div className="border-t pt-4 mt-4">
+          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-3">Anexos</p>
+          <nav className="space-y-2">
+            <a href="/anexo-1" className="block text-sm text-primary hover:text-primary/80 transition-colors">
+              Anexo I – Evidências
+            </a>
+            <a href="/anexo-2" className="block text-sm text-primary hover:text-primary/80 transition-colors">
+              Anexo II – Linha do Tempo
+            </a>
+            <a href="/anexo-3" className="block text-sm text-primary hover:text-primary/80 transition-colors">
+              Anexo III – Riscos
+            </a>
+            <a href="/anexo-4" className="block text-sm text-primary hover:text-primary/80 transition-colors">
+              Anexo IV – Paridade Funcional
+            </a>
+          </nav>
+        </div>
     </div>
   );
 };
