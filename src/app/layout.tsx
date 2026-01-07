@@ -2,12 +2,18 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { SidebarProvider } from '@/components/ui/sidebar';
-import { Inter as FontSans } from 'next/font/google'
+import { Inter as FontSans, Poppins as FontHeadline } from 'next/font/google'
 import { cn } from '@/lib/utils';
 
 const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
+});
+
+const fontHeadline = FontHeadline({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-headline',
 });
 
 
@@ -25,7 +31,8 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          fontSans.variable,
+          fontHeadline.variable
         )}>
         <SidebarProvider>
           {children}
