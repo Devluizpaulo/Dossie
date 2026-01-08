@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth, useUser } from '@/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
-import { LogIn, UserPlus } from 'lucide-react';
+import { LogIn } from 'lucide-react';
 import { Logo } from "@/components/logo";
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -125,15 +125,9 @@ export default function AdminLoginPage() {
                   className="text-center"
                   disabled={isLoading}
                 />
-                <div className="grid grid-cols-2 gap-2">
-                    <Button variant="outline" type="button" onClick={() => setIsAdminFormOpen(true)} disabled={isLoading}>
-                        <UserPlus className="mr-2 h-4 w-4" />
-                        Cadastrar Admin
-                    </Button>
-                    <Button type="submit" className="w-full" disabled={isLoading}>
-                        {isLoading ? 'Verificando...' : 'Entrar'}
-                    </Button>
-                </div>
+                <Button type="submit" className="w-full" disabled={isLoading}>
+                    {isLoading ? 'Verificando...' : 'Entrar'}
+                </Button>
               </form>
             </CardContent>
           </Card>
