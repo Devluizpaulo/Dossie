@@ -10,6 +10,7 @@ import { Logo } from "@/components/logo";
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import { motion } from 'framer-motion';
 
 export default function AdminLoginPage() {
   const [email, setEmail] = useState('');
@@ -19,7 +20,6 @@ export default function AdminLoginPage() {
   const router = useRouter();
   const auth = useAuth();
   const { user, isUserLoading } = useUser();
-  const [claims, setClaims] = useState<IdTokenResult['claims'] | null>(null);
 
   useEffect(() => {
     if (!isUserLoading && user) {
@@ -37,10 +37,6 @@ export default function AdminLoginPage() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      toast({
-        title: "Login de Administrador bem-sucedido!",
-        description: "Você será redirecionado para o painel de controle.",
-      });
       // O useEffect cuidará do redirecionamento
     } catch (error: any) {
       let description = "Ocorreu um erro ao fazer login. Verifique suas credenciais.";
@@ -68,45 +64,56 @@ export default function AdminLoginPage() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-muted/40 p-4">
-      <div className="mb-8">
+      <motion.div 
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mb-8"
+      >
         <Logo />
-      </div>
-      <Card className="w-full max-w-md text-center">
-        <CardHeader>
-          <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center mb-4">
-            <LogIn className="h-8 w-8" />
-          </div>
-          <CardTitle className="text-2xl">Acesso Administrativo</CardTitle>
-          <CardDescription>
-            Entre com suas credenciais de Administrador.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleLogin} className="space-y-4">
-            <Input
-              type="email"
-              placeholder="admin@bmv.global"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="text-center"
-              disabled={isLoading}
-            />
-            <Input
-              type="password"
-              placeholder="Sua senha de administrador"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="text-center"
-              disabled={isLoading}
-            />
-            <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? 'Verificando...' : 'Entrar como Administrador'}
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.98, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <Card className="w-full max-w-md text-center">
+          <CardHeader>
+            <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center mb-4">
+              <LogIn className="h-8 w-8" />
+            </div>
+            <CardTitle className="text-2xl">Acesso Administrativo</CardTitle>
+            <CardDescription>
+              Entre com suas credenciais de Administrador.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleLogin} className="space-y-4">
+              <Input
+                type="email"
+                placeholder="admin@bmv.global"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="text-center"
+                disabled={isLoading}
+              />
+              <Input
+                type="password"
+                placeholder="Sua senha de administrador"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="text-center"
+                disabled={isLoading}
+              />
+              <Button type="submit" className="w-full" disabled={isLoading}>
+                {isLoading ? 'Verificando...' : 'Entrar como Administrador'}
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      </motion.div>
       <p className="text-xs text-muted-foreground mt-8 text-center max-w-sm">
         Este é um ponto de acesso restrito. Todas as atividades são monitoradas.
       </p>
