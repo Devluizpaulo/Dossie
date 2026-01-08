@@ -1,14 +1,14 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-const PROTECTED_ROUTES = ['/', '/anexo-1', '/anexo-2', '/anexo-3', '/anexo-4', '/anexo-5'];
+const PROTECTED_ROUTES = ['/', '/anexo-1', '/anexo-2', '/anexo-3', '/anexo-4', '/anexo-5', '/admin'];
 const PUBLIC_ROUTES = ['/login'];
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const sessionToken = request.cookies.get('firebase-session');
 
-  const isProtectedRoute = PROTECTED_ROUTES.includes(pathname);
+  const isProtectedRoute = PROTECTED_ROUTES.includes(pathname) || pathname.startsWith('/anexo-');
   const isPublicRoute = PUBLIC_ROUTES.includes(pathname);
 
   if (!sessionToken && isProtectedRoute) {
