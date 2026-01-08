@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { UserPlus } from 'lucide-react';
 import { Logo } from "@/components/logo";
@@ -23,6 +23,12 @@ export default function CreateMasterUserPage() {
   const auth = useAuth();
   const firestore = useFirestore();
   const { user, isUserLoading } = useUser();
+
+  useEffect(() => {
+    if (!isUserLoading && user) {
+      router.push('/');
+    }
+  }, [user, isUserLoading, router]);
 
   const handleCreateMasterUser = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -89,17 +95,12 @@ export default function CreateMasterUserPage() {
     }
   };
 
-  if (isUserLoading) {
+  if (isUserLoading || user) {
       return (
           <div className="flex min-h-screen items-center justify-center">
               <p>Carregando...</p>
           </div>
       )
-  }
-  
-  if (user) {
-    router.push('/');
-    return null;
   }
 
   return (
