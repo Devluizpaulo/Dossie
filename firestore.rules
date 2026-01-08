@@ -173,32 +173,46 @@ service cloud.firestore {
        * @principle Enforces strict document ownership via path-based security, with admin read-only override.
        */
       match /accessAttempts/{accessAttemptId} {
-        allow get, list, create, update, delete: if isOwner(userId) || isAdminMaster();
+        allow get, list, update, delete: if isOwner(userId) || isAdminMaster();
+        allow create: if true;
       }
     }
     
+    /**
+     * @description Manages user access attempt records. This rule is broader to allow
+     *   logging attempts even from unauthenticated users during the login flow.
+     * @path /accessAttempts/{accessAttemptId}
+     * @allow (create) Anyone can log an access attempt. This is necessary for the login flow.
+     * @allow (read, write) Only signed-in users can read/write generally, for security. Admins can override.
+     * @principle Allows anonymous writes for logging but restricts reads to authenticated users.
+     */
     match /accessAttempts/{accessAttemptId} {
-        allow read, write: if isSignedIn() || request.query.keys().hasAll(['accessCode']);
+        allow create: if true;
+        allow read, update, delete: if isSignedIn();
     }
     
     /**
      * @description Manages the list of email domains authorized to use the system.
      * @path /authorizedDomains/{domainId}
-     * @allow (read, write) Only users with the 'admin_master' role can read or write to this collection.
+     * @allow (read) Public read access is allowed so the client can check domains before login.
+     * @allow (write) Only users with the 'admin_master' role can write to this collection.
      * @principle Centralizes control over a critical security configuration, restricting it to top-level administrators.
      */
     match /authorizedDomains/{domainId} {
-      allow read, write: if isAdminMaster();
+      allow read: if true;
+      allow write: if isAdminMaster();
     }
 
     /**
      * @description Manages records of emitted dossiers.
      * @path /dossiers/{dossierId}
-     * @allow (read, write) Only users with the 'admin_master' role can manage these records.
-     * @principle Restricts access to sensitive emission records to administrators.
+     * @allow (read) Any signed-in user can read the dossier records.
+     * @allow (write) Only users with the 'admin_master' role can manage these records.
+     * @principle Restricts write access to sensitive emission records to administrators.
      */
     match /dossiers/{dossierId} {
-      allow read, write: if isAdminMaster();
+      allow read: if isSignedIn();
+      allow write: if isAdminMaster();
     }
 
     match /auditLogs/{logId} {
@@ -206,3 +220,5 @@ service cloud.firestore {
     }
   }
 }
+
+    
