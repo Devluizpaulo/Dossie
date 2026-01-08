@@ -124,6 +124,7 @@ body {
   body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    padding: 1.5rem;
   }
   
   .no-print,
@@ -137,13 +138,18 @@ body {
 
   main,
   #content,
-  #anexo-main,
-  #anexo-content-wrapper {
+  #anexo-main {
     display: block !important;
     overflow: visible !important;
     height: auto !important;
     padding: 0 !important;
     margin: 0 !important;
+  }
+  
+  #anexo-content-wrapper {
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
   }
 
   .print-container,
