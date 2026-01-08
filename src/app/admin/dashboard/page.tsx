@@ -2,11 +2,9 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { useUser } from '@/firebase/provider';
-import { useCollection, useMemoFirebase } from '@/firebase/firestore/use-collection';
+import { useUser, useFirestore, useAuth, useMemoFirebase } from '@/firebase/provider';
+import { useCollection } from '@/firebase/firestore/use-collection';
 import { collection, query, orderBy } from 'firebase/firestore';
-import { useFirestore } from '@/firebase/provider';
-import { useAuth } from '@/firebase/provider';
 import { signOut } from 'firebase/auth';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
