@@ -91,6 +91,16 @@ service cloud.firestore {
       let data = request.resource.data;
       return data.id == accessAttemptId && data.userId == userId;
     }
+    
+    function hasValidAuthorizedDomainCreateData(domainId) {
+      let data = request.resource.data;
+      return data.id == domainId &&
+             data.domain is string &&
+             data.responsible is string &&
+             data.justification is string &&
+             data.status == 'active';
+    }
+
 
     // Validation Functions for Update Operations
     // ------------------------------------------
@@ -115,6 +125,13 @@ service cloud.firestore {
       let incomingData = request.resource.data;
       let existingData = resource.data;
       return incomingData.id == existingData.id && incomingData.userId == existingData.userId;
+    }
+    
+    function hasValidAuthorizedDomainUpdateData() {
+      let incomingData = request.resource.data;
+      let existingData = resource.data;
+      return incomingData.id == existingData.id &&
+             incomingData.domain == existingData.domain;
     }
 
 
@@ -150,6 +167,16 @@ service cloud.firestore {
         allow update: if isOwner(userId) && hasValidAccessAttemptUpdateData();
         allow delete: if isOwner(userId);
       }
+    }
+    
+    /**
+     * @description Manages the list of email domains authorized to use the system.
+     * @path /authorizedDomains/{domainId}
+     * @allow (read, write) Only users with the 'admin_master' role can read or write to this collection.
+     * @principle Centralizes control over a critical security configuration, restricting it to top-level administrators.
+     */
+    match /authorizedDomains/{domainId} {
+      allow read, write: if isAdminMaster();
     }
   }
 }
