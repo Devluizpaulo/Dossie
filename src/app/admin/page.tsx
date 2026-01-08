@@ -1,36 +1,51 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@/firebase';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Shield, Users, Globe, KeyRound, ListChecks, FileText } from 'lucide-react';
+import { IdTokenResult } from 'firebase/auth';
 
 export default function AdminPage() {
     const { user, isUserLoading } = useUser();
     const router = useRouter();
+    const [claims, setClaims] = useState<IdTokenResult['claims'] | null>(null);
+    const [isLoadingClaims, setIsLoadingClaims] = useState(true);
 
     useEffect(() => {
-        if (!isUserLoading && !user) {
+        if (isUserLoading) return;
+        if (!user) {
             router.push('/login');
+            return;
         }
+
+        user.getIdTokenResult(true) // Force refresh to get latest claims
+            .then((idTokenResult) => {
+                setClaims(idTokenResult.claims);
+                setIsLoadingClaims(false);
+            })
+            .catch(() => {
+                // Error fetching claims, deny access
+                setIsLoadingClaims(false);
+                router.push('/');
+            });
+
     }, [user, isUserLoading, router]);
 
-    // This check will be enhanced with role validation
-    if (isUserLoading || !user) {
+    if (isUserLoading || isLoadingClaims) {
         return (
             <div className="flex min-h-screen items-center justify-center">
                 <p>Verificando permissões...</p>
             </div>
         );
     }
-    
-    // Placeholder for role check - to be replaced with custom claims
-    // if (user.role !== 'admin_master') {
-    //    router.push('/');
-    //    return null;
-    // }
+
+    if (!user || claims?.role !== 'admin_master') {
+       router.push('/');
+       return null;
+    }
 
     return (
         <div className="min-h-screen bg-muted/40 p-4 sm:p-6 lg:p-8">
