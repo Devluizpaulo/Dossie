@@ -12,6 +12,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 import { useAuth, useUser } from '@/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { motion } from 'framer-motion';
 
 export default function UserLoginPage() {
   const [email, setEmail] = useState('');
@@ -74,16 +75,27 @@ export default function UserLoginPage() {
 
   return (
     <div 
-      className="flex min-h-screen flex-col items-center justify-center p-4 bg-cover bg-center"
+      className="flex min-h-screen flex-col items-center justify-center md:justify-end p-4 bg-cover bg-center"
       style={{ backgroundImage: "url('/Image/Tech_37.jpg')" }}
     >
       <div className="absolute inset-0 bg-black/60 z-0" />
-      <div className="z-10 w-full max-w-md">
-        <div className="mb-8 flex justify-center">
-          <Logo />
-        </div>
+      <div className="z-10 w-full max-w-md md:mr-[8vw]">
+        
+        <motion.div
+            initial={{ opacity: 0, scale: 0.98, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+        >
         <Card className="w-full text-center">
           <CardHeader>
+            <motion.div 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="mb-6 flex justify-center"
+              >
+                <Logo />
+            </motion.div>
             <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center mb-4">
               <KeyRound className="h-8 w-8" />
             </div>
@@ -123,6 +135,7 @@ export default function UserLoginPage() {
               </Link>
           </CardFooter>
         </Card>
+        </motion.div>
         <p className="text-xs text-white/70 mt-8 text-center max-w-sm mx-auto">
           Este é um sistema restrito. O acesso é permitido apenas a usuários autorizados.
         </p>
