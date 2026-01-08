@@ -1,10 +1,11 @@
+
 "use client";
 
 import { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser, useFirestore, useAuth, useMemoFirebase } from '@/firebase';
 import { useCollection } from '@/firebase/firestore/use-collection';
-import { collection, query, orderBy } from 'firebase/firestore';
+import { collection, query, orderBy, doc, getDoc } from 'firebase/firestore';
 import { signOut } from 'firebase/auth';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -69,14 +70,15 @@ export default function AdminDashboardPage() {
             return;
         }
 
-        if (!user) {
+        if (!user || !firestore) {
             setAuthStatus('unauthenticated');
             router.push('/admin');
             return;
         }
 
-        user.getIdTokenResult().then(idTokenResult => {
-            if (idTokenResult.claims.role === 'admin_master') {
+        const userDocRef = doc(firestore, 'users', user.uid);
+        getDoc(userDocRef).then(docSnap => {
+            if (docSnap.exists() && docSnap.data().role === 'admin_master') {
                 setAuthStatus('authenticated');
             } else {
                 setAuthStatus('forbidden');
@@ -89,7 +91,7 @@ export default function AdminDashboardPage() {
                 router.push('/admin');
             }
         });
-    }, [user, isUserLoading, router, toast, auth]);
+    }, [user, isUserLoading, router, toast, auth, firestore]);
 
     const handleSignOut = async () => {
         if (auth) {

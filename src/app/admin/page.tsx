@@ -1,9 +1,11 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth, useUser } from '@/firebase';
+import { useAuth, useUser, useFirestore } from '@/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { LogIn } from 'lucide-react';
 import { Logo } from "@/components/logo";
@@ -22,26 +24,28 @@ export default function AdminLoginPage() {
   const router = useRouter();
   const auth = useAuth();
   const { user, isUserLoading } = useUser();
+  const firestore = useFirestore();
 
   useEffect(() => {
-    if (!isUserLoading && user) {
-        user.getIdTokenResult().then(idTokenResult => {
-            if (idTokenResult.claims.role === 'admin_master') {
-                router.push('/admin/dashboard');
-            }
-        });
+    if (!isUserLoading && user && firestore) {
+      const userDocRef = doc(firestore, 'users', user.uid);
+      getDoc(userDocRef).then(docSnap => {
+        if (docSnap.exists() && docSnap.data().role === 'admin_master') {
+          router.push('/admin/dashboard');
+        }
+      });
     }
-  }, [user, isUserLoading, router]);
+  }, [user, isUserLoading, router, firestore]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
-    if (!auth) {
+    if (!auth || !firestore) {
       toast({
         variant: "destructive",
         title: "Erro de Configuração",
-        description: "O serviço de autenticação não está disponível.",
+        description: "O serviço de autenticação ou Firestore não está disponível.",
       });
       setIsLoading(false);
       return;
@@ -49,17 +53,18 @@ export default function AdminLoginPage() {
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const idTokenResult = await userCredential.user.getIdTokenResult();
+      const userDocRef = doc(firestore, 'users', userCredential.user.uid);
+      const docSnap = await getDoc(userDocRef);
 
-      if (idTokenResult.claims.role === 'admin_master') {
-          router.push('/admin/dashboard');
+      if (docSnap.exists() && docSnap.data().role === 'admin_master') {
+        router.push('/admin/dashboard');
       } else {
-          await auth.signOut();
-          toast({
-              variant: "destructive",
-              title: "Acesso Negado",
-              description: "Você não tem permissão de administrador.",
-          });
+        await auth.signOut();
+        toast({
+          variant: "destructive",
+          title: "Acesso Negado",
+          description: "Você não tem permissão de administrador.",
+        });
       }
     } catch (error: any) {
       let description = "Ocorreu um erro ao fazer login. Verifique suas credenciais.";
@@ -149,5 +154,3 @@ export default function AdminLoginPage() {
     </>
   );
 }
-
-    
