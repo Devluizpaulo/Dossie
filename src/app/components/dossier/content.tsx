@@ -1068,7 +1068,7 @@ export const DossierContent: React.FC<DossierContentProps> = ({ searchTerm, setE
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.25, ease: 'easeOut', delay: index * 0.015 }}
                     >
-                        <AccordionItem value={id} id={id} className="soft-card border border-transparent bg-card/85">
+                        <AccordionItem value={id} id={id} data-state={searchTerm ? 'open' : undefined} className="soft-card border border-transparent bg-card/85">
                             <AccordionTrigger className="text-2xl font-bold text-primary hover:no-underline font-headline px-6 py-4">
                                 <Highlight text={section.title} />
                             </AccordionTrigger>

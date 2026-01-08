@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Printer } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/app/components/dossier/theme-toggle";
 
@@ -17,10 +17,14 @@ export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
   const nextAnexo = number < 5 ? `/anexo-${number + 1}` : null;
   const anexos = [1, 2, 3, 4, 5];
 
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-muted/40">
       {/* Header */}
-      <header className="sticky top-0 z-40 w-full border-b bg-background shadow-sm">
+      <header id="anexo-header" className="sticky top-0 z-40 w-full border-b bg-background shadow-sm no-print">
         <div className="container mx-auto px-3 sm:px-4 lg:px-6 flex h-14 items-center justify-between">
           <div className="flex items-center gap-3">
              <Link href={prevAnexo}>
@@ -36,7 +40,11 @@ export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
             </div>
           </div>
           <h1 className="text-sm font-semibold text-center flex-1 truncate px-2">{title}</h1>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1">
+            <Button variant="outline" size="sm" onClick={handlePrint} className="gap-2">
+              <Printer className="h-4 w-4" />
+              <span className="hidden sm:inline">Imprimir</span>
+            </Button>
             <ThemeToggle />
             {nextAnexo ? (
               <Link href={nextAnexo}>
@@ -58,7 +66,7 @@ export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
       </header>
 
       {/* Anexos Menu */}
-      <div className="w-full border-b bg-background/80">
+      <div className="w-full border-b bg-background/80 no-print">
         <div className="container mx-auto px-3 sm:px-4 lg:px-6 py-2">
           <nav className="flex gap-2 overflow-x-auto">
             {anexos.map((n) => (
@@ -73,10 +81,10 @@ export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
       </div>
 
       {/* Main Content with Sidebar */}
-      <main className="container mx-auto flex-1 px-3 sm:px-4 lg:px-6 py-6 sm:py-8 pb-24">
+      <main id="anexo-main" className="container mx-auto flex-1 px-3 sm:px-4 lg:px-6 py-6 sm:py-8 pb-24">
         <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6">
           {/* Sidebar Navigation */}
-          <aside className="bg-card border rounded-xl p-3 sm:p-4 h-fit sticky md:top-20">
+          <aside id="anexo-sidebar" className="bg-card border rounded-xl p-3 sm:p-4 h-fit sticky md:top-20 no-print">
             <h2 className="text-sm font-semibold mb-3">Anexos</h2>
             <nav className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible">
               {anexos.map((n) => (
@@ -94,13 +102,13 @@ export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
           </aside>
 
           {/* Main Card Content */}
-          <div className="bg-card p-4 sm:p-6 md:p-8 rounded-xl shadow-md">
+          <div id="anexo-content-wrapper" className="bg-card p-4 sm:p-6 md:p-8 rounded-xl shadow-md">
             {children}
           </div>
         </div>
       </main>
       {/* Fixed Footer Navigation */}
-      <footer className="fixed bottom-4 left-4 right-4 z-30">
+      <footer id="anexo-footer" className="fixed bottom-4 left-4 right-4 z-30 no-print">
         <div className="glass-panel rounded-2xl px-3 sm:px-4 py-2 sm:py-3 flex justify-between items-center gap-4">
           <Link href={prevAnexo}>
             <Button variant="outline" className="gap-2">

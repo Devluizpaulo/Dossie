@@ -12,6 +12,7 @@ import {
   ListCollapse,
   ArrowUp,
   LogOut,
+  Printer,
 } from 'lucide-react';
 import { useAuth, useUser } from '@/firebase';
 import { signOut } from 'firebase/auth';
@@ -79,6 +80,10 @@ export default function DossierPage() {
         router.push('/login');
     }
   };
+
+  const handlePrint = () => {
+    window.print();
+  };
   
     if (isUserLoading || !user) {
     return (
@@ -91,19 +96,19 @@ export default function DossierPage() {
 
   return (
     <div className="min-h-screen bg-muted/20 relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 opacity-70">
+      <div className="pointer-events-none absolute inset-0 opacity-70 no-print">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_24%,hsla(var(--accent),0.10),transparent_28%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_10%,hsla(var(--primary),0.08),transparent_30%)]" />
       </div>
 
       {/* Main Container */}
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 print-container">
         <div
           className="flex flex-col md:flex-row gap-6 lg:gap-8"
         >
           
           {/* Sidebar */}
-          <aside className="w-full md:w-72 lg:w-80 flex-shrink-0 md:py-6">
+          <aside id="dossier-sidebar" className="w-full md:w-72 lg:w-80 flex-shrink-0 md:py-6 no-print">
             <motion.div
               className="sticky top-6 h-[calc(100vh-3rem)] glass-panel p-4 rounded-2xl transition-opacity duration-300 md:opacity-80 md:hover:opacity-100"
               initial={{ opacity: 0, y: 20 }}
@@ -117,13 +122,13 @@ export default function DossierPage() {
           </aside>
 
           {/* Main View */}
-          <div className="flex-1 flex flex-col min-w-0 space-y-2 py-6">
+          <div className="flex-1 flex flex-col min-w-0 space-y-2 py-6 print-content">
             {/* Header */}
-            <header className="sticky top-6 z-30 flex justify-between items-center p-3 sm:p-4 glass-panel rounded-2xl border-b shadow-lg overflow-hidden">
+            <header id="dossier-header" className="sticky top-6 z-30 flex justify-between items-center p-3 sm:p-4 glass-panel rounded-2xl border-b shadow-lg overflow-hidden no-print">
                <div className="flex items-center gap-2">
                  <h1 className="text-lg font-semibold ml-1 hidden sm:block">Dossiê Técnico</h1>
                </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1">
                   <Button 
                     variant="outline" 
                     size="sm"
@@ -132,6 +137,15 @@ export default function DossierPage() {
                   >
                       {allExpanded ? <ListCollapse className="h-4 w-4" /> : <Expand className="h-4 w-4" />}
                       <span className="hidden sm:inline">{allExpanded ? 'Recolher' : 'Expandir'}</span>
+                  </Button>
+                <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={handlePrint}
+                    className="gap-2"
+                  >
+                      <Printer className="h-4 w-4" />
+                      <span className="hidden sm:inline">Imprimir</span>
                   </Button>
                 <ThemeToggle />
                 <Button 
@@ -165,6 +179,7 @@ export default function DossierPage() {
                   value={expandedSections}
                   onValueChange={setExpandedSections}
                   className="w-full space-y-2"
+                  id="dossier-accordion"
                 >
                   <DossierContent searchTerm={searchTerm} setExpandedSections={setExpandedSections} />
                 </Accordion>
@@ -176,7 +191,7 @@ export default function DossierPage() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 12 }}
                       transition={{ duration: 0.2, ease: 'easeOut' }}
-                      className="fixed bottom-6 right-6"
+                      className="fixed bottom-6 right-6 no-print"
                     >
                       <Button
                         variant="default"
