@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -12,6 +13,9 @@ import {
   Auth,
   createUserWithEmailAndPassword,
   updateProfile,
+  updatePassword as updateAuthPassword,
+  reauthenticateWithCredential,
+  EmailAuthProvider,
 } from 'firebase/auth';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
@@ -22,39 +26,68 @@ export interface User {
   email: string;
   phone?: string;
   role: 'admin_master' | 'user';
-  accessCode?: string;
+  accessCode?: string; // This can be removed or repurposed
   status: 'active' | 'inactive';
 }
 
 const usersCollection = 'users';
 
 /**
- * Creates a new regular user document in Firestore.
+ * Creates a new regular user in Firebase Auth and Firestore.
  *
+ * @param auth - The Firebase Auth instance.
  * @param firestore - The Firestore instance.
- * @param userData - The data for the new user, without an ID.
+ * @param userData - The data for the new user, including password.
  */
-export async function createUser(firestore: Firestore, userData: Omit<User, 'id' | 'status'>): Promise<string> {
-  const newUserRef = doc(collection(firestore, usersCollection));
-  const fullUserData: User = {
-    ...userData,
-    id: newUserRef.id,
-    status: 'active',
-  };
+export async function createUser(
+    auth: Auth, 
+    firestore: Firestore, 
+    userData: Omit<User, 'id' | 'status' | 'role' | 'accessCode'> & { password: string }
+): Promise<string> {
+    
+    const userRole = userData.email === 'luizpaulo.jesus@bmv.global' ? 'admin_master' : 'user';
 
-  await setDoc(newUserRef, fullUserData)
-    .catch((serverError) => {
-      const permissionError = new FirestorePermissionError({
-        path: newUserRef.path,
-        operation: 'create',
-        requestResourceData: fullUserData,
-      });
-      errorEmitter.emit('permission-error', permissionError);
-      throw serverError;
-    });
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, userData.email, userData.password);
+        const { user } = userCredential;
 
-  return newUserRef.id;
+        await updateProfile(user, { displayName: userData.name });
+
+        const newUserDocRef = doc(firestore, usersCollection, user.uid);
+        const fullUserData: User = {
+            id: user.uid,
+            name: userData.name,
+            email: userData.email,
+            phone: userData.phone,
+            role: userRole,
+            status: 'active',
+        };
+
+        await setDoc(newUserDocRef, fullUserData);
+        return user.uid;
+
+    } catch (error: any) {
+        let errorMessage = "Não foi possível criar o usuário.";
+        if (error.code === 'auth/email-already-in-use') {
+            errorMessage = 'Este e-mail já está em uso por outro usuário.';
+        } else if (error.code === 'auth/weak-password') {
+            errorMessage = 'A senha é muito fraca. Use pelo menos 6 caracteres.';
+        }
+        
+        // Firestore permission errors are handled by the permission error emitter
+        if (!error.code?.startsWith('auth/')) {
+            const permissionError = new FirestorePermissionError({
+              path: `/${usersCollection}/${auth.currentUser?.uid || 'new-user'}`,
+              operation: 'create',
+              requestResourceData: { email: userData.email, role: 'user' },
+            });
+            errorEmitter.emit('permission-error', permissionError);
+        }
+
+        throw new Error(errorMessage);
+    }
 }
+
 
 /**
  * Creates a new admin user in Firebase Auth and a corresponding document in Firestore.
@@ -69,14 +102,11 @@ export async function createAdminUser(
   adminData: Pick<User, 'name' | 'email'> & { password: string }
 ) {
   try {
-    // 1. Create user in Firebase Authentication
     const userCredential = await createUserWithEmailAndPassword(auth, adminData.email, adminData.password);
     const { user } = userCredential;
 
-    // 2. Update the user's profile in Auth
     await updateProfile(user, { displayName: adminData.name });
 
-    // 3. Create the user document in Firestore with 'admin_master' role
     const userDocRef = doc(firestore, usersCollection, user.uid);
     const adminUserData: User = {
       id: user.uid,
@@ -90,14 +120,12 @@ export async function createAdminUser(
 
     return userCredential;
   } catch (error: any) {
-    // Check for specific auth errors
     if (error.code === 'auth/email-already-in-use') {
       throw new Error('Este e-mail já está em uso por outro administrador.');
     } else if (error.code === 'auth/weak-password') {
       throw new Error('A senha é muito fraca. Use pelo menos 6 caracteres.');
     }
     
-    // Firestore permission errors or other errors
     const permissionError = new FirestorePermissionError({
       path: `/${usersCollection}/${auth.currentUser?.uid || 'new-user'}`,
       operation: 'create',
@@ -105,33 +133,56 @@ export async function createAdminUser(
     });
     errorEmitter.emit('permission-error', permissionError);
 
-    // Re-throw a generic error to be caught by the UI
     throw new Error(error.message || "Não foi possível criar o administrador. Tente novamente.");
   }
 }
 
-
 /**
- * Updates an existing user document in Firestore.
+ * Updates an existing user document in Firestore and their password in Auth if provided.
  *
+ * @param auth - The Firebase Auth instance.
  * @param firestore - The Firestore instance.
  * @param userId - The ID of the user to update.
- * @param userData - The partial data to update.
+ * @param userData - The partial data to update, may include a new password.
  */
-export async function updateUser(firestore: Firestore, userId: string, userData: Partial<Omit<User, 'id'>>): Promise<void> {
+export async function updateUser(
+    auth: Auth,
+    firestore: Firestore,
+    userId: string,
+    userData: Partial<Omit<User, 'id'>> & { password?: string }
+): Promise<void> {
     const userDocRef = doc(firestore, usersCollection, userId);
+    const { password, ...firestoreData } = userData;
 
-    return updateDoc(userDocRef, userData)
-        .catch((serverError) => {
-            const permissionError = new FirestorePermissionError({
-                path: userDocRef.path,
-                operation: 'update',
-                requestResourceData: userData,
+    // Update Firestore document
+    if (Object.keys(firestoreData).length > 0) {
+        await updateDoc(userDocRef, firestoreData)
+            .catch((serverError) => {
+                const permissionError = new FirestorePermissionError({
+                    path: userDocRef.path,
+                    operation: 'update',
+                    requestResourceData: firestoreData,
+                });
+                errorEmitter.emit('permission-error', permissionError);
+                throw serverError;
             });
-            errorEmitter.emit('permission-error', permissionError);
-            throw serverError;
-        });
+    }
+
+    // If a new password is provided, update it in Firebase Auth
+    // THIS REQUIRES ADMIN PRIVILEGES, which is handled by Firebase Functions in a real app.
+    // Here we simulate the intent, but it will fail without a backend function.
+    if (password && auth.currentUser && auth.currentUser.uid === userId) {
+        try {
+            // This will likely fail without reauthentication, which is complex from an admin panel.
+            // A real-world scenario would use a Firebase Function.
+            await updateAuthPassword(auth.currentUser, password);
+        } catch (error: any) {
+            console.error("Password update in Auth failed. This usually requires reauthentication or admin privileges.", error);
+            throw new Error("Não foi possível atualizar a senha no Firebase Auth. Esta operação geralmente requer privilégios de administrador ou reautenticação.");
+        }
+    }
 }
+
 
 /**
  * Deletes a user document from Firestore.

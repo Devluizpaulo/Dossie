@@ -1,24 +1,25 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
+import Link from 'next/link';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "@/components/ui/card";
 import { KeyRound } from 'lucide-react';
 import { Logo } from "@/components/logo";
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
-import { useAuth, useFirestore, useUser } from '@/firebase';
-import { signIn } from '@/firebase/non-blocking-login';
+import { useAuth, useUser } from '@/firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 export default function UserLoginPage() {
   const [email, setEmail] = useState('');
-  const [token, setToken] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const router = useRouter();
   const auth = useAuth();
-  const firestore = useFirestore();
   const { user, isUserLoading } = useUser();
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function UserLoginPage() {
     e.preventDefault();
     setIsLoading(true);
 
-    if (!auth || !firestore) {
+    if (!auth) {
         toast({
             variant: "destructive",
             title: "Erro de Configuração",
@@ -42,25 +43,21 @@ export default function UserLoginPage() {
     }
 
     try {
-        const loggedInUser = await signIn(auth, firestore, email, token);
-        if (loggedInUser) {
-            toast({
-                title: "Login bem-sucedido!",
-                description: "Redirecionando para o dossiê.",
-            });
-            router.push('/');
-        } else {
-            toast({
-                variant: "destructive",
-                title: "Falha no Login",
-                description: "E-mail ou token de acesso inválido. Por favor, verifique seus dados.",
-            });
-        }
+        await signInWithEmailAndPassword(auth, email, password);
+        toast({
+            title: "Login bem-sucedido!",
+            description: "Redirecionando para o dossiê.",
+        });
+        router.push('/');
     } catch (error: any) {
+        let description = "Ocorreu um erro inesperado. Tente novamente.";
+        if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
+            description = "E-mail ou senha inválidos. Por favor, verifique seus dados."
+        }
         toast({
             variant: "destructive",
-            title: "Erro inesperado",
-            description: error.message || "Ocorreu um erro durante o login. Tente novamente.",
+            title: "Falha no Login",
+            description: description,
         });
     } finally {
         setIsLoading(false);
@@ -87,7 +84,7 @@ export default function UserLoginPage() {
           </div>
           <CardTitle className="text-2xl">Acesso ao Dossiê</CardTitle>
           <CardDescription>
-            Use seu e-mail e token de acesso para entrar.
+            Use seu e-mail e senha para entrar.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -102,19 +99,24 @@ export default function UserLoginPage() {
               disabled={isLoading}
             />
             <Input
-              type="text"
-              placeholder="Seu token de acesso"
-              value={token}
-              onChange={(e) => setToken(e.target.value)}
+              type="password"
+              placeholder="Sua senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
               className="text-center"
               disabled={isLoading}
             />
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? 'Verificando...' : 'Entrar com Token'}
+              {isLoading ? 'Verificando...' : 'Entrar'}
             </Button>
           </form>
         </CardContent>
+        <CardFooter className="flex justify-center text-sm">
+            <Link href="/forgot-password">
+                <Button variant="link">Esqueceu sua senha?</Button>
+            </Link>
+        </CardFooter>
       </Card>
       <p className="text-xs text-muted-foreground mt-8 text-center max-w-sm">
         Este é um sistema restrito. O acesso é permitido apenas a usuários autorizados.
