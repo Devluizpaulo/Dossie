@@ -14,8 +14,7 @@
  * - Admin Write Access: An 'admin_master' can create, update, and delete any user document.
  *   This is crucial for managing users from the dashboard.
  * - User Enumeration Prevention: For non-admin users, listing the top-level
- *   `/users` collection is explicitly disallowed to protect user privacy, UNLESS
- *   it's for the specific purpose of token-based login.
+ *   `/users` collection is explicitly disallowed to protect user privacy.
  * - Strict Ownership for Writes: A regular user can only write to data within their
  *   own document tree. Admins cannot impersonate or write on behalf of users for sub-collections.
  * - Role Immutability (for users): A regular user cannot change their own `role` field.
@@ -154,15 +153,15 @@ service cloud.firestore {
      *   own profile. An 'admin_master' can read, create, and update any user's profile.
      * @path /users/{userId}
      * @allow (get) An admin can read any user profile. A regular user can only get their own.
-     * @allow (list) An admin can list all users. For login, any user can query if filtering by accessCode.
+     * @allow (list) An admin can list all users. Regular users cannot list users.
      * @allow (create, update) An admin can create or update any user profile. A user can only create/update their own.
      * @principle Restricts access to a user's own data, with an exception for admin read/write access based on role.
      */
     match /users/{userId} {
-      allow get: if isOwner(userId) || isAdminMaster();
-      allow list: if isAdminMaster() || (request.query.keys().hasAll(['email', 'accessCode']) && request.query.limit == 1);
+      allow get: if isOwner(userId) || isAdminMaster() || isSignedIn();
+      allow list: if isAdminMaster();
       // Allow create if user is creating their own doc (with valid data) OR if they are an admin
-      allow create: if isOwner(userId) && hasValidUserCreateData(userId) || isAdminMaster();
+      allow create: if (isOwner(userId) && hasValidUserCreateData(userId)) || isAdminMaster();
       allow update: if (isOwner(userId) && hasValidUserUpdateData()) || isAdminMaster();
       allow delete: if isOwner(userId) || isAdminMaster();
 
@@ -220,5 +219,3 @@ service cloud.firestore {
     }
   }
 }
-
-    
