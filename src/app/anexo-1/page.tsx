@@ -773,14 +773,6 @@ export default function Anexo1() {
                   </ul>
                 </AlertDescription>
               </Alert>
-
-              <div className="bg-muted p-4 rounded-lg space-y-4">
-                <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <EvidenceImage imageId="ev-09-admin" />
-                  <EvidenceImage imageId="ev-09-legado-log" />
-                </div>
-              </div>
             </CardContent>
           </Card>
         </div>

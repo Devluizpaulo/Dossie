@@ -139,18 +139,6 @@
       "description": "Sistema Atual: Cálculos de DARE e Royalties Os valores corretos são os que aparecem no relatório."
     },
     {
-      "id": "ev-09-admin",
-      "imageUrl": "/Image/ev-09-admin.png",
-      "imageHint": "admin dashboard",
-      "description": "Tela de administração do sistema atual sem opção visível para logs de auditoria."
-    },
-    {
-      "id": "ev-09-legado-log",
-      "imageUrl": "/Image/ev-09-legado-log.png",
-      "imageHint": "log file",
-      "description": "Exemplo de funcionalidade de log no sistema legado."
-    },
-    {
       "id": "paridade-estoque-atual",
       "imageUrl": "/Image/paridade-estoque-atual.png",
       "imageHint": "empty state",
