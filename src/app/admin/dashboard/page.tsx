@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, CircleUser } from 'lucide-react';
+import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut } from 'lucide-react';
 import { IdTokenResult } from 'firebase/auth';
 
 export default function AdminDashboardPage() {
@@ -43,7 +43,9 @@ export default function AdminDashboardPage() {
     }, [user, isUserLoading, router]);
 
     const handleSignOut = async () => {
-        await signOut(auth);
+        if (auth) {
+            await signOut(auth);
+        }
         router.push('/admin');
     };
 
