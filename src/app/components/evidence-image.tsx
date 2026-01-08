@@ -7,6 +7,8 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
+  DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog"
 import { ImageZoom } from './image-zoom';
 
@@ -56,6 +58,8 @@ export function EvidenceImage({ imageId, caption, className }: EvidenceImageProp
         </Card>
       </DialogTrigger>
       <DialogContent className="max-w-4xl p-2">
+        <DialogTitle className="sr-only">{imageCaption}</DialogTitle>
+        <DialogDescription className="sr-only">Imagem ampliada de: {imageCaption}</DialogDescription>
         <ImageZoom imageUrl={image.imageUrl} alt={imageCaption} />
       </DialogContent>
     </Dialog>
