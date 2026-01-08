@@ -69,9 +69,9 @@ export default function AdminDashboardPage() {
         router.push('/admin');
     };
 
-    const getUserInitials = (email: string | null | undefined) => {
-        if (!email) return '?';
-        return email.charAt(0).toUpperCase();
+    const getUserInitials = (name: string | null | undefined) => {
+        if (!name) return '?';
+        return name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
     }
     
     const formatTimestamp = (timestamp: any) => {
@@ -119,14 +119,14 @@ export default function AdminDashboardPage() {
                                         <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                                             <Avatar className="h-10 w-10">
                                                 {user && user.photoURL && <AvatarImage src={user.photoURL} alt={user.displayName || 'Admin'} />}
-                                                <AvatarFallback>{getUserInitials(user?.email)}</AvatarFallback>
+                                                <AvatarFallback>{getUserInitials(user?.displayName)}</AvatarFallback>
                                             </Avatar>
                                         </Button>
                                     </DropdownMenuTrigger>
                                     <DropdownMenuContent className="w-56" align="end" forceMount>
                                         <DropdownMenuLabel className="font-normal">
                                             <div className="flex flex-col space-y-1">
-                                                <p className="text-sm font-medium leading-none">Admin Master</p>
+                                                <p className="text-sm font-medium leading-none">{user?.displayName || 'Admin Master'}</p>
                                                 <p className="text-xs leading-none text-muted-foreground">
                                                     {user?.email}
                                                 </p>
@@ -144,7 +144,7 @@ export default function AdminDashboardPage() {
                     </header>
 
                     <main>
-                        <Tabs defaultValue="domains" className="w-full">
+                        <Tabs defaultValue="users" className="w-full">
                             <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
                                 <TabsTrigger value="users"><Users className="mr-2" /> Usuários</TabsTrigger>
                                 <TabsTrigger value="domains"><Globe className="mr-2" /> Domínios</TabsTrigger>
@@ -177,9 +177,60 @@ export default function AdminDashboardPage() {
                                         )}
                                         
                                         {!usersLoading && users && users.length > 0 && (
-                                             <p className="text-muted-foreground">
-                                                A tabela de usuários será implementada aqui.
-                                            </p>
+                                            <Table>
+                                                <TableHeader>
+                                                    <TableRow>
+                                                        <TableHead>Usuário</TableHead>
+                                                        <TableHead className="hidden sm:table-cell">Telefone</TableHead>
+                                                        <TableHead>Função</TableHead>
+                                                        <TableHead><span className="sr-only">Ações</span></TableHead>
+                                                    </TableRow>
+                                                </TableHeader>
+                                                <TableBody>
+                                                    {users.map((u) => (
+                                                        <TableRow key={u.id}>
+                                                            <TableCell>
+                                                                <div className="flex items-center gap-3">
+                                                                    <Avatar>
+                                                                        <AvatarFallback>{getUserInitials(u.name)}</AvatarFallback>
+                                                                    </Avatar>
+                                                                    <div>
+                                                                        <div className="font-medium">{u.name}</div>
+                                                                        <div className="text-sm text-muted-foreground">{u.email}</div>
+                                                                    </div>
+                                                                </div>
+                                                            </TableCell>
+                                                            <TableCell className="hidden sm:table-cell">{u.phone || 'Não informado'}</TableCell>
+                                                            <TableCell>
+                                                                <Badge variant={u.role === 'admin_master' ? 'destructive' : 'secondary'}>
+                                                                    {u.role === 'admin_master' ? 'Admin Master' : 'Usuário'}
+                                                                </Badge>
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                <DropdownMenu>
+                                                                    <DropdownMenuTrigger asChild>
+                                                                        <Button aria-haspopup="true" size="icon" variant="ghost">
+                                                                            <MoreHorizontal className="h-4 w-4" />
+                                                                            <span className="sr-only">Alternar menu</span>
+                                                                        </Button>
+                                                                    </DropdownMenuTrigger>
+                                                                    <DropdownMenuContent align="end">
+                                                                        <DropdownMenuLabel>Ações</DropdownMenuLabel>
+                                                                        <DropdownMenuItem>
+                                                                            <Edit className="mr-2 h-4 w-4" />
+                                                                            Editar
+                                                                        </DropdownMenuItem>
+                                                                        <DropdownMenuItem className="text-destructive">
+                                                                            <Trash2 className="mr-2 h-4 w-4" />
+                                                                            Excluir
+                                                                        </DropdownMenuItem>
+                                                                    </DropdownMenuContent>
+                                                                </DropdownMenu>
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    ))}
+                                                </TableBody>
+                                            </Table>
                                         )}
                                     </TabsContent>
                                     <TabsContent value="domains">
@@ -282,3 +333,5 @@ export default function AdminDashboardPage() {
     );
 }
 
+
+    
