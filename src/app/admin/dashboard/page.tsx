@@ -74,10 +74,22 @@ export default function AdminDashboardPage() {
             router.push('/admin');
             return;
         }
-        
-        setAuthStatus('authenticated');
-        
-    }, [user, isUserLoading, router]);
+
+        user.getIdTokenResult().then(idTokenResult => {
+            if (idTokenResult.claims.role === 'admin_master') {
+                setAuthStatus('authenticated');
+            } else {
+                setAuthStatus('forbidden');
+                toast({
+                    variant: "destructive",
+                    title: "Acesso Negado",
+                    description: "Você não tem permissão para acessar o painel de administração.",
+                });
+                if (auth) signOut(auth);
+                router.push('/admin');
+            }
+        });
+    }, [user, isUserLoading, router, toast, auth]);
 
     const handleSignOut = async () => {
         if (auth) {
@@ -595,5 +607,7 @@ export default function AdminDashboardPage() {
         </>
     );
 }
+
+    
 
     

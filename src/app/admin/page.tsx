@@ -48,9 +48,19 @@ export default function AdminLoginPage() {
     }
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // O useEffect cuidará do redirecionamento
-      router.push('/admin/dashboard');
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const idTokenResult = await userCredential.user.getIdTokenResult();
+
+      if (idTokenResult.claims.role === 'admin_master') {
+          router.push('/admin/dashboard');
+      } else {
+          await auth.signOut();
+          toast({
+              variant: "destructive",
+              title: "Acesso Negado",
+              description: "Você não tem permissão de administrador.",
+          });
+      }
     } catch (error: any) {
       let description = "Ocorreu um erro ao fazer login. Verifique suas credenciais.";
       if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
@@ -139,3 +149,5 @@ export default function AdminLoginPage() {
     </>
   );
 }
+
+    
