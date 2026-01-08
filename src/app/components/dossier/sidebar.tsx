@@ -6,7 +6,7 @@ import { sections } from './content';
 import React from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
-import { useDossierSearch } from '@/hooks/useDossierSearch.tsx';
+import { useDossierSearch } from '@/hooks/useDossierSearch';
 
 interface DossierSidebarProps {
   onSearchTermChange: (term: string) => void;
@@ -152,7 +152,7 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChan
               className={`block text-sm font-medium transition-colors hover:text-primary ${
                 activeId === item.id
                   ? 'text-primary'
-                  : 'text-foreground'
+                  : 'text-foreground/80'
               }`}
             >
               {item.title}
@@ -194,7 +194,7 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChan
   }
   
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 max-h-[calc(100vh-10rem)] overflow-y-auto pr-2">
       <h3 className="text-lg font-semibold text-foreground">Sumário</h3>
       
       <div className="relative">
