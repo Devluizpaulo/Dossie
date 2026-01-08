@@ -127,7 +127,7 @@ service cloud.firestore {
      */
     match /users/{userId} {
       allow get: if isOwner(userId) || isAdminMaster();
-      allow list: if isAdminMaster(); // CRITICAL: Only admin can list users.
+      allow list: if isAdminMaster();
       allow create: if (isOwner(userId) || isAdminMaster()) && hasValidUserCreateData(userId);
       allow update: if (isExistingOwner(userId) || isAdminMaster()) && hasValidUserUpdateData();
       allow delete: if isExistingOwner(userId) || isAdminMaster();
