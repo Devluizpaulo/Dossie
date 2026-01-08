@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from 'react';
 import { slugify } from '@/lib/utils';
 import { sections } from './content';
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import { useDossierSearch } from '@/hooks/useDossierSearch';
@@ -133,62 +134,78 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChan
   const renderToc = (items: TocItem[]) => {
     return (
       <ul className="space-y-3">
-        {items.map((item) => (
-          <li key={item.id}>
-            <a
-              href={`#${item.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById(item.id)?.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
-                });
-                if(history.pushState) {
-                    history.pushState(null, "", `#${item.id}`);
-                } else {
-                    location.hash = `#${item.id}`;
-                }
-              }}
-              className={`block text-sm font-medium transition-colors hover:text-primary ${
-                activeId === item.id
-                  ? 'text-primary'
-                  : 'text-foreground/80'
-              }`}
-            >
-              {item.title}
-            </a>
-            {item.children && item.children.length > 0 && (
-              <ul className="pl-4 mt-2 space-y-2 border-l border-border">
-                {item.children.map(child => (
-                   <li key={child.id}>
-                     <a
-                       href={`#${child.id}`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            document.getElementById(child.id)?.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                            });
-                            if(history.pushState) {
-                                history.pushState(null, "", `#${child.id}`);
-                            } else {
-                                location.hash = `#${child.id}`;
-                            }
-                        }}
-                       className={`block text-sm transition-colors hover:text-primary ${
-                        activeId === child.id
-                          ? 'font-semibold text-primary'
-                          : 'text-muted-foreground'
-                      }`}
-                     >
-                       {child.title}
-                     </a>
-                   </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
+        {items.map((item) => {
+          const isActive = activeId === item.id;
+          return (
+            <li key={item.id} className="relative group">
+              <a
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById(item.id)?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                  if(history.pushState) {
+                      history.pushState(null, "", `#${item.id}`);
+                  } else {
+                      location.hash = `#${item.id}`;
+                  }
+                }}
+                className={`relative block rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 hover:text-primary hover:translate-x-0.5 ${
+                  isActive ? 'text-primary' : 'text-foreground/80'
+                }`}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="toc-pill"
+                    className="absolute inset-0 rounded-lg bg-primary/10"
+                    transition={{ type: 'spring', stiffness: 260, damping: 28 }}
+                  />
+                )}
+                <span className="relative z-10">{item.title}</span>
+              </a>
+              {item.children && item.children.length > 0 && (
+                <ul className="pl-4 mt-2 space-y-2 border-l border-border/60">
+                  {item.children.map(child => {
+                    const isChildActive = activeId === child.id;
+                    return (
+                      <li key={child.id} className="relative">
+                        <a
+                          href={`#${child.id}`}
+                          onClick={(e) => {
+                              e.preventDefault();
+                              document.getElementById(child.id)?.scrollIntoView({
+                              behavior: 'smooth',
+                              block: 'start'
+                              });
+                              if(history.pushState) {
+                                  history.pushState(null, "", `#${child.id}`);
+                              } else {
+                                  location.hash = `#${child.id}`;
+                              }
+                          }}
+                          className={`relative block rounded-md px-3 py-1.5 text-sm transition-all duration-200 hover:text-primary hover:translate-x-0.5 ${
+                            isChildActive ? 'font-semibold text-primary' : 'text-muted-foreground'
+                          }`}
+                        >
+                          {isChildActive && (
+                            <motion.span
+                              layoutId="toc-child-pill"
+                              className="absolute inset-0 rounded-md bg-primary/8"
+                              transition={{ type: 'spring', stiffness: 260, damping: 32 }}
+                            />
+                          )}
+                          <span className="relative z-10">{child.title}</span>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </li>
+          );
+        })}
       </ul>
     );
   }

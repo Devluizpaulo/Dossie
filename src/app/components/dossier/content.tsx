@@ -16,6 +16,7 @@ import {
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { slugify } from "@/lib/utils";
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useDossierSearch } from '@/hooks/useDossierSearch.tsx';
 
 export const sections = [
@@ -1057,18 +1058,25 @@ export const DossierContent: React.FC<DossierContentProps> = ({ searchTerm, setE
 
   return (
     <>
-      {filteredSections.map((section) => {
+            {filteredSections.map((section, index) => {
         const id = slugify(section.title);
 
         return (
-          <AccordionItem value={id} key={id} id={id}>
-            <AccordionTrigger className="text-2xl font-bold text-primary hover:no-underline font-headline">
-              <Highlight text={section.title} />
-            </AccordionTrigger>
-            <AccordionContent className="prose prose-lg dark:prose-invert max-w-none text-foreground text-base leading-relaxed space-y-4 pt-4 px-4 text-justify">
-              {addHighlight(section.content)}
-            </AccordionContent>
-          </AccordionItem>
+                    <motion.div
+                        key={id}
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.25, ease: 'easeOut', delay: index * 0.015 }}
+                    >
+                        <AccordionItem value={id} id={id} className="soft-card border border-transparent bg-card/85">
+                            <AccordionTrigger className="text-2xl font-bold text-primary hover:no-underline font-headline px-2">
+                                <Highlight text={section.title} />
+                            </AccordionTrigger>
+                            <AccordionContent className="prose prose-lg dark:prose-invert max-w-none reading-width text-foreground text-base leading-relaxed space-y-4 pt-2 pb-6 px-4 text-justify">
+                                {addHighlight(section.content)}
+                            </AccordionContent>
+                        </AccordionItem>
+                    </motion.div>
         );
       })}
     </>
