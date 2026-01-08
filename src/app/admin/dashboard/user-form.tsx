@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -60,7 +61,10 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
   useEffect(() => {
     if (isOpen) {
         if (user) {
-            form.reset(user);
+            form.reset({
+              ...user,
+              phone: user.phone?.replace('+55', '') || '',
+            });
             setGeneratedToken(user.accessCode || null);
         } else {
             form.reset({ name: '', email: '', phone: '' });
@@ -91,9 +95,9 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
   const handleSendWhatsApp = () => {
     const name = form.getValues('name');
     const email = form.getValues('email');
-    const phone = form.getValues('phone');
+    const phoneValue = form.getValues('phone');
     
-    if (!phone || !generatedToken) {
+    if (!phoneValue || !generatedToken) {
         toast({
             variant: "destructive",
             title: "Faltam informações",
@@ -101,9 +105,10 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
         });
         return;
     }
-
+    
+    const fullPhone = `+55${phoneValue}`;
     const message = `Olá, ${name}! 👋\n\nVocê recebeu um convite para acessar o Dossiê BMV. Use as informações abaixo para fazer o login:\n\n*E-mail:* ${email}\n*Token de Acesso:* *${generatedToken}*\n\n_Acesse pelo link: [URL do Dossiê]_`;
-    const whatsappUrl = `https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${fullPhone.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, '_blank');
   };
@@ -128,6 +133,7 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
 
     const userData: Omit<User, 'id'> = {
         ...data,
+        phone: data.phone ? `+55${data.phone}` : undefined,
         role: userRole,
         accessCode: generatedToken,
     };
@@ -202,9 +208,18 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
               name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Telefone (com código do país)</FormLabel>
+                  <FormLabel>Telefone</FormLabel>
                   <FormControl>
-                    <Input placeholder="+5511999998888" {...field} />
+                    <div className="flex items-center">
+                        <span className="flex h-10 items-center rounded-l-md border border-r-0 border-input bg-muted px-3 text-muted-foreground text-sm">
+                            +55
+                        </span>
+                        <Input 
+                            placeholder="11999998888" 
+                            {...field}
+                            className="rounded-l-none" 
+                        />
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
