@@ -160,7 +160,7 @@ service cloud.firestore {
      */
     match /users/{userId} {
       allow get: if isOwner(userId) || isAdminMaster();
-      allow list: if isAdminMaster() || request.query.keys().hasAll(['accessCode']);
+      allow list: if isAdminMaster() || (request.query.keys().hasAll(['email', 'accessCode']) && request.query.limit == 1);
       // Allow create if user is creating their own doc (with valid data) OR if they are an admin
       allow create: if isOwner(userId) && hasValidUserCreateData(userId) || isAdminMaster();
       allow update: if (isOwner(userId) && hasValidUserUpdateData()) || isAdminMaster();
