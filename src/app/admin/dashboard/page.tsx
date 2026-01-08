@@ -12,32 +12,38 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut } from 'lucide-react';
 import { IdTokenResult } from 'firebase/auth';
 
+type AuthStatus = 'loading' | 'unauthenticated' | 'authenticated' | 'forbidden';
+
 export default function AdminDashboardPage() {
     const { user, isUserLoading } = useUser();
     const auth = useAuth();
     const router = useRouter();
-    const [claims, setClaims] = useState<IdTokenResult['claims'] | null>(null);
-    const [isLoadingClaims, setIsLoadingClaims] = useState(true);
+    const [authStatus, setAuthStatus] = useState<AuthStatus>('loading');
 
     useEffect(() => {
-        if (isUserLoading) return;
+        if (isUserLoading) {
+            setAuthStatus('loading');
+            return;
+        }
+
         if (!user) {
+            setAuthStatus('unauthenticated');
             router.push('/admin');
             return;
         }
 
         user.getIdTokenResult(true) // Force refresh to get latest claims
             .then((idTokenResult) => {
-                setClaims(idTokenResult.claims);
-                 if (idTokenResult.claims.role !== 'admin_master') {
-                    router.push('/admin'); // CORRECTION: Redirect to admin login
+                if (idTokenResult.claims.role === 'admin_master') {
+                    setAuthStatus('authenticated');
+                } else {
+                    setAuthStatus('forbidden');
+                    router.push('/admin');
                 }
-                setIsLoadingClaims(false);
             })
             .catch(() => {
-                // Error fetching claims, deny access
-                setIsLoadingClaims(false);
-                router.push('/admin'); // CORRECTION: Redirect to admin login
+                setAuthStatus('forbidden');
+                router.push('/admin');
             });
 
     }, [user, isUserLoading, router]);
@@ -55,7 +61,7 @@ export default function AdminDashboardPage() {
     }
 
 
-    if (isUserLoading || isLoadingClaims) {
+    if (authStatus !== 'authenticated') {
         return (
             <div className="flex min-h-screen items-center justify-center">
                 <p>Verificando permissões...</p>
@@ -63,15 +69,7 @@ export default function AdminDashboardPage() {
         );
     }
     
-    if (!user || claims?.role !== 'admin_master') {
-       return (
-         <div className="flex min-h-screen items-center justify-center">
-            <p>Acesso negado. Redirecionando para o login...</p>
-        </div>
-       );
-    }
-
-
+    // User is authenticated as admin_master, render the dashboard
     return (
         <div className="min-h-screen bg-muted/40 p-4 sm:p-6 lg:p-8">
             <div className="max-w-7xl mx-auto">
@@ -91,8 +89,8 @@ export default function AdminDashboardPage() {
                                 <DropdownMenuTrigger asChild>
                                     <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                                         <Avatar className="h-10 w-10">
-                                            {user.photoURL && <AvatarImage src={user.photoURL} alt={user.displayName || 'Admin'} />}
-                                            <AvatarFallback>{getUserInitials(user.email)}</AvatarFallback>
+                                            {user && user.photoURL && <AvatarImage src={user.photoURL} alt={user.displayName || 'Admin'} />}
+                                            <AvatarFallback>{getUserInitials(user?.email)}</AvatarFallback>
                                         </Avatar>
                                     </Button>
                                 </DropdownMenuTrigger>
@@ -101,7 +99,7 @@ export default function AdminDashboardPage() {
                                         <div className="flex flex-col space-y-1">
                                             <p className="text-sm font-medium leading-none">Admin Master</p>
                                             <p className="text-xs leading-none text-muted-foreground">
-                                                {user.email}
+                                                {user?.email}
                                             </p>
                                         </div>
                                     </DropdownMenuLabel>
