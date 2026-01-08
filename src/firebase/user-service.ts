@@ -4,7 +4,6 @@ import {
   Firestore,
   collection,
   doc,
-  addDoc,
   setDoc,
   updateDoc,
 } from 'firebase/firestore';
@@ -24,19 +23,19 @@ const usersCollection = 'users';
 
 /**
  * Creates a new user document in Firestore.
- * This is a non-blocking operation.
+ * This is a non-blocking operation that creates a document with a new auto-generated ID.
  *
  * @param firestore - The Firestore instance.
- * @param userData - The data for the new user.
+ * @param userData - The data for the new user, without an ID.
  */
-export async function createUser(firestore: Firestore, userData: Omit<User, 'id'>): Promise<void> {
+export async function createUser(firestore: Firestore, userData: Omit<User, 'id'>): Promise<string> {
   const newUserRef = doc(collection(firestore, usersCollection));
-  const fullUserData = {
+  const fullUserData: User = {
     ...userData,
     id: newUserRef.id,
   };
 
-  return setDoc(newUserRef, fullUserData)
+  await setDoc(newUserRef, fullUserData)
     .catch((serverError) => {
       const permissionError = new FirestorePermissionError({
         path: newUserRef.path,
@@ -44,10 +43,13 @@ export async function createUser(firestore: Firestore, userData: Omit<User, 'id'
         requestResourceData: fullUserData,
       });
       errorEmitter.emit('permission-error', permissionError);
-      // Re-throw the original error if you want the caller to be aware of it
+      // Re-throw the original error to let the caller handle UI feedback (e.g., toast).
       throw serverError;
     });
+
+  return newUserRef.id;
 }
+
 
 /**
  * Updates an existing user document in Firestore.

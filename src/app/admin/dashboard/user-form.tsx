@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useFirestore } from '@/firebase';
-import { createUser, type User } from '@/firebase/user-service';
+import { createUser, updateUser, type User } from '@/firebase/user-service';
 
 import { Button } from "@/components/ui/button";
 import {
@@ -58,12 +58,14 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
   });
 
   useEffect(() => {
-    if (user) {
-      form.reset(user);
-      setGeneratedToken(user.accessCode || null);
-    } else {
-      form.reset({ name: '', email: '', phone: '' });
-      setGeneratedToken(null);
+    if (isOpen) {
+        if (user) {
+            form.reset(user);
+            setGeneratedToken(user.accessCode || null);
+        } else {
+            form.reset({ name: '', email: '', phone: '' });
+            setGeneratedToken(null);
+        }
     }
   }, [user, form, isOpen]);
 
@@ -107,6 +109,10 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
   };
 
   const onSubmit = async (data: UserFormValues) => {
+    if (!firestore) {
+        toast({ variant: "destructive", title: "Erro", description: "Serviço do Firestore não está disponível." });
+        return;
+    }
     if (!generatedToken) {
       toast({
         variant: "destructive",
@@ -118,26 +124,35 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
 
     setIsSaving(true);
     
-    // Define role based on email
     const userRole = data.email === 'luizpaulo.jesus@bmv.global' ? 'admin_master' : 'user';
 
-    try {
-        await createUser(firestore, {
-            ...data,
-            role: userRole,
-            accessCode: generatedToken,
-        });
+    const userData: Omit<User, 'id'> = {
+        ...data,
+        role: userRole,
+        accessCode: generatedToken,
+    };
 
-        toast({
-            title: "Usuário criado com sucesso!",
-            description: `${data.name} foi adicionado à lista de usuários.`,
-        });
+    try {
+        if (user?.id) {
+            await updateUser(firestore, user.id, userData);
+            toast({
+                title: "Usuário atualizado com sucesso!",
+                description: `${data.name} foi atualizado.`,
+            });
+        } else {
+            await createUser(firestore, userData);
+            toast({
+                title: "Usuário criado com sucesso!",
+                description: `${data.name} foi adicionado à lista de usuários.`,
+            });
+        }
+        
         onOpenChange(false);
 
     } catch (error: any) {
         toast({
             variant: "destructive",
-            title: "Erro ao criar usuário",
+            title: user?.id ? "Erro ao atualizar usuário" : "Erro ao criar usuário",
             description: error.message || "Não foi possível salvar o usuário. Tente novamente.",
         });
     } finally {

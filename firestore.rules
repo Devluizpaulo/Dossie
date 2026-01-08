@@ -10,7 +10,7 @@
  * - Admin Read Access: An 'admin_master' can list and get any user document,
  *   which is essential for administrative dashboards. This is checked via a `get()`
  *   call to the user's own profile.
- * - Admin Write Access: An 'admin_master' can create and update any user document.
+ * - Admin Write Access: An 'admin_master' can create, update, and delete any user document.
  *   This is crucial for managing users from the dashboard.
  * - User Enumeration Prevention: For non-admin users, listing the top-level
  *   `/users` collection is explicitly disallowed to protect user privacy.
@@ -18,7 +18,7 @@
  *   own document tree. Admins cannot impersonate or write on behalf of users for sub-collections.
  * - Role Immutability (for users): A regular user cannot change their own `role` field.
  * - Profile Self-Creation: An authenticated user can create their own profile,
- *   but the initial role must be 'user'.
+ *   but the initial role must be 'user' unless they are the designated admin.
  */
 rules_version = '2';
 service cloud.firestore {
@@ -49,7 +49,8 @@ service cloud.firestore {
      */
     function isAdminMaster() {
       // Access the user's own profile document and check the 'role' field.
-      return isSignedIn() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin_master';
+      let userDoc = get(/databases/$(database)/documents/users/$(request.auth.uid));
+      return isSignedIn() && userDoc.data.role == 'admin_master';
     }
 
     /**
@@ -57,7 +58,9 @@ service cloud.firestore {
      * AND the document they are trying to modify actually exists.
      */
     function isExistingOwner(userId) {
-      return isOwner(userId) && exists(/databases/$(database)/documents/$(resource.path));
+      // This function is tricky for path-based ownership rules as `resource.path`
+      // refers to the full path. We'll rely on isOwner and resource checks directly.
+      return isOwner(userId);
     }
 
 
@@ -72,7 +75,8 @@ service cloud.firestore {
       let data = request.resource.data;
       // An admin can set any role, a user can only set their role to 'user'.
       let roleIsValid = (isAdminMaster() && data.role in ['admin_master', 'user']) || 
-                        (!isAdminMaster() && data.role == 'user');
+                        (data.email == 'luizpaulo.jesus@bmv.global' && data.role == 'admin_master') ||
+                        (data.role == 'user');
       
       return data.id == userId &&
              roleIsValid &&
@@ -128,9 +132,10 @@ service cloud.firestore {
     match /users/{userId} {
       allow get: if isOwner(userId) || isAdminMaster();
       allow list: if isAdminMaster();
-      allow create: if (isOwner(userId) && hasValidUserCreateData(userId)) || isAdminMaster();
-      allow update: if (isExistingOwner(userId) && hasValidUserUpdateData()) || isAdminMaster();
-      allow delete: if isExistingOwner(userId) || isAdminMaster();
+      // Allow create if user is creating their own doc (with valid data) OR if they are an admin
+      allow create: if isOwner(userId) && hasValidUserCreateData(userId) || isAdminMaster();
+      allow update: if (isOwner(userId) && hasValidUserUpdateData()) || isAdminMaster();
+      allow delete: if isOwner(userId) || isAdminMaster();
 
       /**
        * @description Manages a user's access attempt records. Access is strictly
@@ -142,8 +147,8 @@ service cloud.firestore {
         allow get: if isOwner(userId) || isAdminMaster();
         allow list: if isOwner(userId) || isAdminMaster();
         allow create: if isOwner(userId) && hasValidAccessAttemptCreateData(userId, accessAttemptId);
-        allow update: if isExistingOwner(userId) && hasValidAccessAttemptUpdateData();
-        allow delete: if isExistingOwner(userId);
+        allow update: if isOwner(userId) && hasValidAccessAttemptUpdateData();
+        allow delete: if isOwner(userId);
       }
     }
   }
