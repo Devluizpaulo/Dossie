@@ -6,6 +6,15 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { EvidenceImage } from "@/app/components/evidence-image";
+import { CheckCircle2 } from "lucide-react";
+import { BiSolidArchive, BiLeaf, BiSolidCartAlt, BiData } from "react-icons/bi";
+import { BsPatchCheck, BsCartPlusFill } from "react-icons/bs";
+import { FiCoffee } from "react-icons/fi";
+import { FaArrowRightArrowLeft } from "react-icons/fa6";
+import { RiBook2Line } from "react-icons/ri";
+
+
+
 
 export default function Anexo1() {
   return (
@@ -297,59 +306,83 @@ export default function Anexo1() {
                     <TableHeader>
                       <TableRow>
                         <TableHead className="bg-muted">TIPO</TableHead>
-                        <TableHead className="bg-muted text-center">Tag</TableHead>
                         <TableHead className="bg-muted text-center">Ícone</TableHead>
                         <TableHead className="bg-muted">TIPO</TableHead>
-                        <TableHead className="bg-muted text-center">Tag</TableHead>
                         <TableHead className="bg-muted text-center">Ícone</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
                       <TableRow>
                         <TableCell>Pedido de Selo Tesouro Verde</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">
+                          <BsPatchCheck className="w-5 h-5 mx-auto text-yellow-500" />
+                        </TableCell>
                         <TableCell>Abastecimento de Plataformas</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center align-middle">
+                          <div className="flex items-center justify-center">
+                            <BiSolidArchive size={20} className="text-yellow-500" />
+                          </div>
+                        </TableCell>
                       </TableRow>
                       <TableRow>
                         <TableCell>Revogação de CPR Verde</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">
+                          <BiData className="w-5 h-5 mx-auto text-yellow-500" />
+                        </TableCell>
                         <TableCell>Pedido de Ajuste entre Contas</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">
+                          <FaArrowRightArrowLeft className="w-5 h-5 mx-auto text-yellow-500" />
+                        </TableCell>
                       </TableRow>
                       <TableRow>
                         <TableCell>Pedido de Transferência Akses</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">
+                          <BiSolidCartAlt className="w-5 h-5 mx-auto text-yellow-500" />
+                        </TableCell>
                         <TableCell>Pedido de Selo SaaS</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">
+                          <BsPatchCheck className="w-5 h-5 mx-auto text-yellow-500" />
+                        </TableCell>
                       </TableRow>
                       <TableRow>
                         <TableCell>Taxa de Certificado – Cliente</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">
+                          <FiCoffee className="w-5 h-5 mx-auto text-yellow-500" />
+                        </TableCell>
                         <TableCell>Tesouro Verde Akses</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">
+                          <BsPatchCheck className="w-5 h-5 mx-auto text-yellow-500" />
+                        </TableCell>
                       </TableRow>
                       <TableRow>
                         <TableCell>Certificado – Cliente</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">
+                          <BsPatchCheck className="w-5 h-5 mx-auto text-yellow-500" />
+                        </TableCell>
                         <TableCell>Registro de CPR Verde</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">
+                          <RiBook2Line className="w-5 h-5 mx-auto text-yellow-500" />
+                        </TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell colSpan={3}></TableCell>
                         <TableCell>Certificado SaaS BMV (Akses)</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
-                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">
+                          <BsPatchCheck className="w-5 h-5 mx-auto text-yellow-500" />
+                        </TableCell>
+                        <TableCell>Particionamento</TableCell>
+                        <TableCell className="text-center">
+                          <BiLeaf className="w-5 h-5 mx-auto text-yellow-500" />
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Pedido de compra AKSES</TableCell>
+                        <TableCell className="text-center align-middle">
+                          <div className="flex items-center justify-center">
+                            <BsCartPlusFill size={20} className="text-yellow-500" />
+                          </div>
+                        </TableCell>
+                        <TableCell></TableCell>
+                        <TableCell className="text-center"></TableCell>
                       </TableRow>
                     </TableBody>
                   </Table>
@@ -406,14 +439,13 @@ export default function Anexo1() {
                   </AlertDescription>
                 </Alert>
               </div>
-
               <div className="bg-muted p-4 rounded-lg space-y-4">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <EvidenceImage imageId="ev-08-legado" />
-                  <EvidenceImage imageId="ev-08-atual" />
-                    <EvidenceImage imageId="ev-08-legado" />
-                  <EvidenceImage imageId="ev-08-atual" />
+                  <EvidenceImage imageId="ev-03-legado1" />
+                  <EvidenceImage imageId="ev-03-atual1" />
+                  <EvidenceImage imageId="ev-03-legado2" />
+                  <EvidenceImage imageId="ev-03-atual2" />
                 </div>
               </div>
             </CardContent>
@@ -469,7 +501,10 @@ export default function Anexo1() {
 
               <div className="bg-muted p-4 rounded-lg">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <EvidenceImage imageId="ev-04-atual" />
+                <div className="grid md:grid-cols-2 gap-4">
+                  <EvidenceImage imageId="ev-04-atual" />
+                  <EvidenceImage imageId="ev-04-atual2" />
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -517,7 +552,10 @@ export default function Anexo1() {
 
               <div className="bg-muted p-4 rounded-lg">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <EvidenceImage imageId="ev-05-atual" />
+                <div className="grid md:grid-cols-2 gap-4">
+                  <EvidenceImage imageId="ev-05-atual" />
+                  <EvidenceImage imageId="ev-05-legado" />
+                </div>
               </div>
             </CardContent>
           </Card>

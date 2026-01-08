@@ -43,92 +43,134 @@
       "description": "Sistema Legado: Nomes completos e corretamente formatados."
     },
     {
+      "id": "ev-03-atual-atual",
+      "imageUrl": "/Image/ev-03-atual1.png",
+      "imageHint": "financial transaction",
+      "description": "Comparativo: Sistema Legado (acima) com tags e ícones, e Sistema Atual (abaixo) sem identificação visual."
+    },
+    {
+      "id": "ev-03-legado1",
+      "imageUrl": "/Image/ev-03-legado1.png",
+      "imageHint": "financial transaction",
+      "description": "Sistema Legado: visão principal com tags e ícones no tipo de movimentação."
+    },
+    {
+      "id": "ev-03-atual1",
+      "imageUrl": "/Image/ev-03-atual1.png",
+      "imageHint": "financial transaction",
+      "description": "Sistema Atual: tela equivalente sem identificação visual do tipo."
+    },
+    {
+      "id": "ev-03-legado2",
+      "imageUrl": "/Image/tags.png",
+      "imageHint": "financial transaction",
+      "description": "Sistema Legado: detalhe adicional com legenda funcional e ícones."
+    },
+    {
+      "id": "ev-03-atual2",
+      "imageUrl": "/Image/ev-03-atual2.png",
+      "imageHint": "financial transaction",
+      "description": "Sistema Atual: detalhe adicional sem ícones ou legendas."
+    },
+    {
       "id": "ev-03-atual-legado",
-      "imageUrl": "https://images.unsplash.com/photo-1642543349642-0d04e91511c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjB0cmFuc2FjdGlvbnxlbnwwfHx8fDE3Njc4NjgxMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/ev-03-atual2.png",
       "imageHint": "financial transaction",
       "description": "Comparativo: Sistema Legado (acima) com tags e ícones, e Sistema Atual (abaixo) sem identificação visual."
     },
     {
       "id": "ev-04-atual",
-      "imageUrl": "https://images.unsplash.com/photo-1732780484431-03baf994c196?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkb2N1bWVudCUyMHN0YXR1c3xlbnwwfHx8fDE3Njc4NjgxMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/ev-04-atual.png",
+      "imageHint": "document status",
+      "description": "Documento permanece com status 'Recusado' após novo envio."
+    },
+    {
+      "id": "ev-04-atual2",
+      "imageUrl": "/Image/ev-04-atual1.png",
       "imageHint": "document status",
       "description": "Documento permanece com status 'Recusado' após novo envio."
     },
     {
       "id": "ev-05-atual",
-      "imageUrl": "https://images.unsplash.com/photo-1762330471287-be883db470c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWIlMjBmb3JtfGVufDB8fHx8MTc2Nzg2ODEyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/ev-05-atual.png",
       "imageHint": "web form",
       "description": "Formulário de cadastro sem indicação de campos obrigatórios."
     },
     {
+      "id": "ev-05-legado",
+      "imageUrl": "/Image/ev-05-legado.png",
+      "imageHint": "web form",
+      "description": "Comparativo: Sistema Legado (acima) com indicação de campos obrigatórios."
+    },
+    {
       "id": "ev-06-atual",
-      "imageUrl": "https://images.unsplash.com/photo-1618788372246-79faff0c3742?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx1c2VyJTIwaW50ZXJmYWNlfGVufDB8fHx8fDE3Njc4NjgxMjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/ev-06-atual.png",
       "imageHint": "user interface",
       "description": "Campo 'ID Transação NXT' exibido indevidamente nos detalhes do certificado."
     },
     {
       "id": "ev-07-atual-legado",
-      "imageUrl": "https://picsum.photos/seed/ev07/800/450",
+      "imageUrl": "/Image/ev-07-atual.png",
       "imageHint": "search filter",
       "description": "Comparativo: Filtro funcional no Sistema Legado (acima) vs. inoperante no Sistema Atual (abaixo)."
     },
     {
       "id": "ev-08-legado",
-      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmaW5hbmNpYWwlMjByZXBvcnR8ZW58MHx8fHwxNzY3ODY4MTI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/ev-08-legado.png",
       "imageHint": "financial report",
       "description": "Sistema Legado: Cálculos de DARE e Royalties corretos."
     },
     {
       "id": "ev-08-atual",
-      "imageUrl": "https://images.unsplash.com/photo-1636819483716-854492c76683?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3ByZWFkc2hlZXQlMjBlcnJvcnxlbnwwfHx8fDE3Njc4NjgxMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/ev-08-atual.png",
       "imageHint": "spreadsheet error",
       "description": "Sistema Atual: Cálculos de DARE e Royalties com valores divergentes."
     },
     {
       "id": "ev-09-admin",
-      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhZG1pbiUyMGRhc2hib2FyZHxlbnwwfHx8fDE3Njc3OTM1MjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/ev-09-admin.png",
       "imageHint": "admin dashboard",
       "description": "Tela de administração do sistema atual sem opção visível para logs de auditoria."
     },
     {
       "id": "ev-09-legado-log",
-      "imageUrl": "https://images.unsplash.com/photo-1616861771635-49063a4636ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsb2clMjBmaWxlfGVufDB8fHx8fDE3Njc4NjgxMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/ev-09-legado-log.png",
       "imageHint": "log file",
       "description": "Exemplo de funcionalidade de log no sistema legado."
     },
     {
       "id": "paridade-estoque-atual",
-      "imageUrl": "https://images.unsplash.com/photo-1614289294178-c4b207b7574d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlbXB0eSUyMHN0YXRlfGVufDB8fHx8fDE3Njc4NjgxMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/paridade-estoque-atual.png",
       "imageHint": "empty state",
       "description": "Sistema Atual: Ausência do dashboard inicial de Estoque."
     },
     {
       "id": "paridade-estoque-legado",
-      "imageUrl": "https://images.unsplash.com/photo-1748439281934-2803c6a3ee36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkYXNoYm9hcmQlMjBjaGFydHxlbnwwfHx8fDE3Njc4NjYzNTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/paridade-estoque-legado.png",
       "imageHint": "dashboard chart",
       "description": "Sistema Legado: Dashboard gerencial de Estoque com filtros e gráficos."
     },
     {
       "id": "paridade-cpr-atual",
-      "imageUrl": "https://images.unsplash.com/photo-1611224885990-ab7363d1f2a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxrYW5iYW4lMjBib2FyZHxlbnwwfHx8fDE3Njc4NjQ2MDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/paridade-cpr-atual.png",
       "imageHint": "kanban board",
       "description": "Sistema Atual: Kanban da CPR Verde sem dados operacionais."
     },
     {
       "id": "paridade-cpr-legado",
-      "imageUrl": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxrYW5iYW4lMjBib2FyZHxlbnwwfHx8fDE3Njc4NjQ2MDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/paridade-cpr-legado.png",
       "imageHint": "kanban board",
       "description": "Sistema Legado: Kanban da CPR Verde funcional e com dados."
     },
     {
       "id": "paridade-cde-atual",
-      "imageUrl": "https://images.unsplash.com/photo-1762174092777-a73b122249cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3ZWIlMjBmb3JtfGVufDB8fHx8MTc2Nzg2ODEyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/paridade-cde-atual.png",
       "imageHint": "web form",
       "description": "Sistema Atual: Página de solicitação de CDE existe, mas o fluxo é manual e externo."
     },
     {
       "id": "paridade-cde-legado",
-      "imageUrl": "https://images.unsplash.com/photo-1759984782117-4f333f6efe50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHJvY2VzcyUyMHdvcmtmbG93fGVufDB8fHx8fDE3Njc4NjgxMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/Image/paridade-cde-legado.png",
       "imageHint": "process workflow",
       "description": "Sistema Legado: Fluxo de solicitação de CDE totalmente automatizado e interno."
     },

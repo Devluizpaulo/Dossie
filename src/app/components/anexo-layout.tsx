@@ -1,6 +1,5 @@
 "use client";
 
-import { SidebarProvider, Sidebar, SidebarContent, SidebarHeader, SidebarTrigger, SidebarInset } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
@@ -16,6 +15,7 @@ interface AnexoLayoutProps {
 export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
   const prevAnexo = number > 1 ? `/anexo-${number - 1}` : "/";
   const nextAnexo = number < 5 ? `/anexo-${number + 1}` : null;
+  const anexos = [1, 2, 3, 4, 5];
 
   return (
     <div className="flex flex-col min-h-screen bg-muted/40">
@@ -56,6 +56,21 @@ export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
           </div>
         </div>
       </header>
+
+      {/* Anexos Menu */}
+      <div className="w-full border-b bg-background/80">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-6 py-2">
+          <nav className="flex gap-2 overflow-x-auto">
+            {anexos.map((n) => (
+              <Link key={n} href={`/anexo-${n}`}>
+                <Button size="sm" variant={n === number ? "default" : "outline"}>
+                  Anexo {n}
+                </Button>
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </div>
 
       {/* Main Content */}
       <main className="container mx-auto flex-1 px-3 sm:px-4 lg:px-6 py-6 sm:py-8 pb-24">
