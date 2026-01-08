@@ -97,11 +97,11 @@ export default function AdminLoginPage() {
           onOpenChange={setIsAdminFormOpen} 
       />
       <div 
-        className="flex min-h-screen flex-col items-center justify-center md:justify-end p-4 bg-cover bg-center"
+        className="flex min-h-screen flex-col items-center justify-center md:items-end p-4 bg-cover bg-center"
         style={{ backgroundImage: "url('/Image/Tech_37.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/60 z-0" />
-        <div className="z-10 w-full max-w-md md:mr-[8vw]">
+        <div className="z-10 w-full max-w-md md:mr-[4vw]">
             <motion.div
             initial={{ opacity: 0, scale: 0.98, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
