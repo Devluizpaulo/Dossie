@@ -37,7 +37,8 @@ export default function AdminLoginPage() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // O useEffect cuidará do redirecionamento
+      // Redirecionamento movido para cá para garantir a execução após o login
+      router.push('/admin/dashboard');
     } catch (error: any) {
       let description = "Ocorreu um erro ao fazer login. Verifique suas credenciais.";
       if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
