@@ -37,9 +37,19 @@ export default function AdminLoginPage() {
     e.preventDefault();
     setIsLoading(true);
 
+    if (!auth) {
+      toast({
+        variant: "destructive",
+        title: "Erro de Configuração",
+        description: "O serviço de autenticação não está disponível.",
+      });
+      setIsLoading(false);
+      return;
+    }
+
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      router.push('/admin/dashboard');
+      // A verificação no useEffect cuidará do redirecionamento
     } catch (error: any) {
       let description = "Ocorreu um erro ao fazer login. Verifique suas credenciais.";
       if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
@@ -117,7 +127,7 @@ export default function AdminLoginPage() {
                 <div className="grid grid-cols-2 gap-2">
                     <Button variant="outline" type="button" onClick={() => setIsUserFormOpen(true)} disabled={isLoading}>
                         <UserPlus className="mr-2 h-4 w-4" />
-                        Cadastrar
+                        Cadastrar Admin
                     </Button>
                     <Button type="submit" className="w-full" disabled={isLoading}>
                         {isLoading ? 'Verificando...' : 'Entrar'}
