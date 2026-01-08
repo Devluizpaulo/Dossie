@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState, useMemo } from 'react';
@@ -9,12 +10,17 @@ import { signOut } from 'firebase/auth';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle } from 'lucide-react';
+import { Badge } from "@/components/ui/badge";
+import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2 } from 'lucide-react';
 import { UserForm } from '@/app/admin/dashboard/user-form';
 import { DomainForm } from '@/app/admin/dashboard/domain-form';
 import type { User as FirestoreUser } from '@/firebase/user-service';
+import type { AuthorizedDomain } from '@/firebase/domain-service';
+import { format } from 'date-fns';
+
 
 type AuthStatus = 'loading' | 'unauthenticated' | 'authenticated' | 'forbidden';
 
@@ -32,6 +38,13 @@ export default function AdminDashboardPage() {
         return query(collection(firestore, 'users'), orderBy('name'));
     }, [firestore, authStatus]);
     const { data: users, isLoading: usersLoading } = useCollection<FirestoreUser>(usersQuery);
+    
+    const domainsQuery = useMemoFirebase(() => {
+        if (!firestore || authStatus !== 'authenticated') return null;
+        return query(collection(firestore, 'authorizedDomains'), orderBy('createdAt', 'desc'));
+    }, [firestore, authStatus]);
+    const { data: domains, isLoading: domainsLoading } = useCollection<AuthorizedDomain>(domainsQuery);
+
 
     useEffect(() => {
         if (isUserLoading) {
@@ -60,6 +73,12 @@ export default function AdminDashboardPage() {
         if (!email) return '?';
         return email.charAt(0).toUpperCase();
     }
+    
+    const formatTimestamp = (timestamp: any) => {
+        if (!timestamp) return 'N/A';
+        const date = timestamp.toDate();
+        return format(date, "dd/MM/yyyy 'às' HH:mm");
+    };
 
 
     if (authStatus !== 'authenticated') {
@@ -125,7 +144,7 @@ export default function AdminDashboardPage() {
                     </header>
 
                     <main>
-                        <Tabs defaultValue="users" className="w-full">
+                        <Tabs defaultValue="domains" className="w-full">
                             <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
                                 <TabsTrigger value="users"><Users className="mr-2" /> Usuários</TabsTrigger>
                                 <TabsTrigger value="domains"><Globe className="mr-2" /> Domínios</TabsTrigger>
@@ -175,10 +194,65 @@ export default function AdminDashboardPage() {
                                             Cadastre, ative e desative domínios de e-mail permitidos no sistema, com registro de auditoria completo para cada alteração. O domínio `@bmv.global` é permitido por padrão.
                                         </CardDescription>
 
-                                        <div className="text-center py-10 border-2 border-dashed rounded-lg">
-                                            <p className="text-muted-foreground">Nenhum domínio autorizado encontrado.</p>
-                                            <p className="text-sm text-muted-foreground mt-2">Comece adicionando um novo domínio para visualizá-lo aqui.</p>
-                                        </div>
+                                        {domainsLoading && <p>Carregando domínios...</p>}
+
+                                        {!domainsLoading && (!domains || domains.length === 0) && (
+                                            <div className="text-center py-10 border-2 border-dashed rounded-lg">
+                                                <p className="text-muted-foreground">Nenhum domínio autorizado encontrado.</p>
+                                                <p className="text-sm text-muted-foreground mt-2">Comece adicionando um novo domínio para visualizá-lo aqui.</p>
+                                            </div>
+                                        )}
+
+                                        {!domainsLoading && domains && domains.length > 0 && (
+                                            <Table>
+                                                <TableHeader>
+                                                    <TableRow>
+                                                        <TableHead>Domínio</TableHead>
+                                                        <TableHead>Responsável</TableHead>
+                                                        <TableHead className="hidden md:table-cell">Justificativa</TableHead>
+                                                        <TableHead className="hidden sm:table-cell">Data de Criação</TableHead>
+                                                        <TableHead>Status</TableHead>
+                                                        <TableHead><span className="sr-only">Ações</span></TableHead>
+                                                    </TableRow>
+                                                </TableHeader>
+                                                <TableBody>
+                                                    {domains.map((domain) => (
+                                                        <TableRow key={domain.id}>
+                                                            <TableCell className="font-medium">{domain.domain}</TableCell>
+                                                            <TableCell>{domain.responsible}</TableCell>
+                                                            <TableCell className="hidden md:table-cell text-xs text-muted-foreground max-w-xs truncate">{domain.justification}</TableCell>
+                                                            <TableCell className="hidden sm:table-cell">{formatTimestamp(domain.createdAt)}</TableCell>
+                                                            <TableCell>
+                                                                <Badge variant={domain.status === 'active' ? 'default' : 'secondary'}>
+                                                                    {domain.status === 'active' ? 'Ativo' : 'Inativo'}
+                                                                </Badge>
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                <DropdownMenu>
+                                                                    <DropdownMenuTrigger asChild>
+                                                                        <Button aria-haspopup="true" size="icon" variant="ghost">
+                                                                            <MoreHorizontal className="h-4 w-4" />
+                                                                            <span className="sr-only">Alternar menu</span>
+                                                                        </Button>
+                                                                    </DropdownMenuTrigger>
+                                                                    <DropdownMenuContent align="end">
+                                                                        <DropdownMenuLabel>Ações</DropdownMenuLabel>
+                                                                        <DropdownMenuItem>
+                                                                            <Edit className="mr-2 h-4 w-4" />
+                                                                            Editar
+                                                                        </DropdownMenuItem>
+                                                                        <DropdownMenuItem className="text-destructive">
+                                                                            <Trash2 className="mr-2 h-4 w-4" />
+                                                                            Desativar
+                                                                        </DropdownMenuItem>
+                                                                    </DropdownMenuContent>
+                                                                </DropdownMenu>
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    ))}
+                                                </TableBody>
+                                            </Table>
+                                        )}
                                     </TabsContent>
                                     <TabsContent value="sessions">
                                         <CardTitle className="mb-4">Controle de Sessões e Tokens</CardTitle>
@@ -207,3 +281,4 @@ export default function AdminDashboardPage() {
         </>
     );
 }
+
