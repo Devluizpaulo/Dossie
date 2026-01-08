@@ -15,7 +15,7 @@ interface AnexoLayoutProps {
 
 export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
   const prevAnexo = number > 1 ? `/anexo-${number - 1}` : "/";
-  const nextAnexo = number < 4 ? `/anexo-${number + 1}` : null;
+  const nextAnexo = number < 5 ? `/anexo-${number + 1}` : null;
 
   return (
     <SidebarProvider>
@@ -89,6 +89,17 @@ export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
                     title="Anexo IV – Paridade Funcional"
                   >
                     Anexo IV – Paridade Funcional
+                  </Link>
+                  <Link
+                    href="/anexo-5"
+                    className={`block text-sm transition-colors ${
+                      number === 5
+                        ? "text-primary font-semibold"
+                        : "text-foreground hover:text-primary"
+                    }`}
+                    title="Anexo V – Fluxos AS-IS e TO-BE"
+                  >
+                    Anexo V – Fluxos
                   </Link>
                 </nav>
               </div>

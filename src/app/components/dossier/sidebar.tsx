@@ -228,6 +228,9 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChan
             <a href="/anexo-4" className="block text-sm text-primary hover:text-primary/80 transition-colors">
               Anexo IV – Paridade Funcional
             </a>
+            <a href="/anexo-5" className="block text-sm text-primary hover:text-primary/80 transition-colors">
+              Anexo V – Fluxos
+            </a>
           </nav>
         </div>
     </div>

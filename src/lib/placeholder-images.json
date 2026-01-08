@@ -119,6 +119,18 @@
       "imageUrl": "https://images.unsplash.com/photo-1759984782117-4f333f6efe50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHJvY2VzcyUyMHdvcmtmbG93fGVufDB8fHx8MTc2Nzg2ODEyOHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "process workflow",
       "description": "Sistema Legado: Fluxo de solicitação de CDE totalmente automatizado e interno."
+    },
+    {
+      "id": "fluxo-as-is",
+      "imageUrl": "https://images.unsplash.com/photo-1588594285273-a55c48f08def?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmbG93Y2hhcnR8ZW58MHx8fHwxNzY4MjgzODUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "flowchart diagram",
+      "description": "Fluxo AS-IS: Ilustra o processo operacional atual, com suas etapas manuais e dependências externas."
+    },
+    {
+      "id": "fluxo-to-be",
+      "imageUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3JrZmxvd3xlbnwwfHx8fDE3NjgyODM4NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "workflow planning",
+      "description": "Fluxo TO-BE: Apresenta o modelo de processo ideal, otimizado com automação e integração sistêmica."
     }
   ]
 }
