@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState, useMemo } from 'react';
@@ -241,6 +240,11 @@ export default function AdminDashboardPage() {
                                                                             <Edit className="mr-2 h-4 w-4" />
                                                                             Editar
                                                                         </DropdownMenuItem>
+                                                                         <DropdownMenuItem>
+                                                                            <Ban className="mr-2 h-4 w-4" />
+                                                                            Inativar
+                                                                        </DropdownMenuItem>
+                                                                        <DropdownMenuSeparator />
                                                                         <DropdownMenuItem className="text-destructive">
                                                                             <Trash2 className="mr-2 h-4 w-4" />
                                                                             Excluir

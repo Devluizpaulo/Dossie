@@ -74,8 +74,17 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
   }, [user, form, isOpen]);
 
 
+  const generateStrongToken = (length = 12) => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let token = '';
+    for (let i = 0; i < length; i++) {
+      token += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return token;
+  };
+
   const handleGenerateToken = () => {
-    const token = Math.floor(100000 + Math.random() * 900000).toString();
+    const token = generateStrongToken();
     setGeneratedToken(token);
     toast({
       title: "Token Gerado!",
