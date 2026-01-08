@@ -117,10 +117,14 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
     }
 
     setIsSaving(true);
+    
+    // Define role based on email
+    const userRole = data.email === 'luizpaulo.jesus@bmv.global' ? 'admin_master' : 'user';
+
     try {
         await createUser(firestore, {
             ...data,
-            role: 'user', // Default role for new users
+            role: userRole,
             accessCode: generatedToken,
         });
 
