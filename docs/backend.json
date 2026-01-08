@@ -1,3 +1,4 @@
+
 {
   "entities": {
     "User": {
@@ -128,6 +129,51 @@
         "status",
         "createdAt"
       ]
+    },
+    "Dossier": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Dossier",
+      "type": "object",
+      "description": "Represents a record of a generated dossier.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the dossier emission record."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the generated dossier."
+        },
+        "recipientEmail": {
+          "type": "string",
+          "description": "The email address of the person who received the dossier.",
+          "format": "email"
+        },
+        "generatedBy": {
+          "type": "string",
+          "description": "The email of the admin who generated the dossier."
+        },
+        "includedAnnexes": {
+          "type": "array",
+          "description": "A list of annex IDs included in the dossier.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp of when the dossier was generated.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "recipientEmail",
+        "generatedBy",
+        "includedAnnexes",
+        "createdAt"
+      ]
     }
   },
   "auth": {
@@ -186,6 +232,22 @@
             {
               "name": "domainId",
               "description": "Unique identifier for the domain authorization record."
+            }
+          ]
+        }
+      },
+      {
+        "path": "dossiers/{dossierId}",
+        "definition": {
+          "entityName": "Dossier",
+          "schema": {
+            "$ref": "#/backend/entities/Dossier"
+          },
+          "description": "Stores records of generated dossiers. Access is restricted to administrators.",
+          "params": [
+            {
+              "name": "dossierId",
+              "description": "Unique identifier for the dossier record."
             }
           ]
         }

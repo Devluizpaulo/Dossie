@@ -14,11 +14,13 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from "@/components/ui/badge";
-import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter } from 'lucide-react';
+import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter, FileSpreadsheet, Download } from 'lucide-react';
 import { UserForm } from '@/app/admin/dashboard/user-form';
 import { DomainForm } from '@/app/admin/dashboard/domain-form';
+import { DossierForm } from '@/app/admin/dashboard/dossier-form';
 import type { User as FirestoreUser } from '@/firebase/user-service';
 import type { AuthorizedDomain } from '@/firebase/domain-service';
+import type { Dossier } from '@/firebase/dossier-service';
 import { format, formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { Input } from '@/components/ui/input';
@@ -37,6 +39,7 @@ export default function AdminDashboardPage() {
     const [authStatus, setAuthStatus] = useState<AuthStatus>('loading');
     const [isUserFormOpen, setIsUserFormOpen] = useState(false);
     const [isDomainFormOpen, setIsDomainFormOpen] = useState(false);
+    const [isDossierFormOpen, setIsDossierFormOpen] = useState(false);
 
     const usersQuery = useMemoFirebase(() => {
         if (!firestore || authStatus !== 'authenticated') return null;
@@ -49,6 +52,12 @@ export default function AdminDashboardPage() {
         return query(collection(firestore, 'authorizedDomains'), orderBy('createdAt', 'desc'));
     }, [firestore, authStatus]);
     const { data: domains, isLoading: domainsLoading } = useCollection<AuthorizedDomain>(domainsQuery);
+
+    const dossiersQuery = useMemoFirebase(() => {
+        if (!firestore || authStatus !== 'authenticated') return null;
+        return query(collection(firestore, 'dossiers'), orderBy('createdAt', 'desc'));
+    }, [firestore, authStatus]);
+    const { data: dossiers, isLoading: dossiersLoading } = useCollection<Dossier>(dossiersQuery);
 
     useEffect(() => {
         if (isUserLoading) {
@@ -107,6 +116,10 @@ export default function AdminDashboardPage() {
             <DomainForm
                 isOpen={isDomainFormOpen}
                 onOpenChange={setIsDomainFormOpen}
+            />
+            <DossierForm
+                isOpen={isDossierFormOpen}
+                onOpenChange={setIsDossierFormOpen}
             />
             <div className="min-h-screen bg-muted/40 p-4 sm:p-6 lg:p-8">
                 <div className="max-w-7xl mx-auto">
@@ -422,10 +435,78 @@ export default function AdminDashboardPage() {
                                         </Table>
                                     </TabsContent>
                                     <TabsContent value="dossiers">
-                                        <CardTitle className="mb-4">Emissão de Dossiês e Anexos</CardTitle>
-                                        <p className="text-muted-foreground">
-                                            Funcionalidades para gerar dossiês institucionais personalizados, selecionando anexos, aplicando templates e registrando cada emissão.
-                                        </p>
+                                        <div className="flex items-center justify-between mb-4">
+                                            <CardTitle>Emissão de Dossiês e Anexos</CardTitle>
+                                            <Button onClick={() => setIsDossierFormOpen(true)}>
+                                                <PlusCircle className="mr-2 h-4 w-4" />
+                                                Gerar Novo Dossiê
+                                            </Button>
+                                        </div>
+                                        <CardDescription className="mb-6">
+                                            Registre e visualize todas as emissões de dossiês institucionais, incluindo destinatários e anexos selecionados.
+                                        </CardDescription>
+
+                                        {dossiersLoading && <p>Carregando emissões de dossiês...</p>}
+
+                                        {!dossiersLoading && (!dossiers || dossiers.length === 0) && (
+                                            <div className="text-center py-10 border-2 border-dashed rounded-lg">
+                                                <p className="text-muted-foreground">Nenhuma emissão de dossiê encontrada.</p>
+                                                <p className="text-sm text-muted-foreground mt-2">Comece gerando um novo dossiê para visualizá-lo aqui.</p>
+                                            </div>
+                                        )}
+                                        
+                                        {!dossiersLoading && dossiers && dossiers.length > 0 && (
+                                            <Table>
+                                                <TableHeader>
+                                                    <TableRow>
+                                                        <TableHead>Dossiê</TableHead>
+                                                        <TableHead>Destinatário</TableHead>
+                                                        <TableHead className="hidden sm:table-cell">Data de Emissão</TableHead>
+                                                        <TableHead><span className="sr-only">Ações</span></TableHead>
+                                                    </TableRow>
+                                                </TableHeader>
+                                                <TableBody>
+                                                    {dossiers.map((d) => (
+                                                        <TableRow key={d.id}>
+                                                            <TableCell>
+                                                                <div className="font-medium">{d.title}</div>
+                                                                <div className="text-sm text-muted-foreground flex flex-wrap gap-1 mt-1">
+                                                                    {d.includedAnnexes.map(anexo => (
+                                                                        <Badge key={anexo} variant="secondary" className="font-normal">{anexo.replace('-', ' ')}</Badge>
+                                                                    ))}
+                                                                </div>
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                <div className="font-medium">{d.recipientEmail}</div>
+                                                                <div className="text-sm text-muted-foreground">Gerado por: {d.generatedBy}</div>
+                                                            </TableCell>
+                                                            <TableCell className="hidden sm:table-cell">{formatTimestamp(d.createdAt)}</TableCell>
+                                                            <TableCell>
+                                                                <DropdownMenu>
+                                                                    <DropdownMenuTrigger asChild>
+                                                                        <Button aria-haspopup="true" size="icon" variant="ghost">
+                                                                            <MoreHorizontal className="h-4 w-4" />
+                                                                            <span className="sr-only">Alternar menu</span>
+                                                                        </Button>
+                                                                    </DropdownMenuTrigger>
+                                                                    <DropdownMenuContent align="end">
+                                                                        <DropdownMenuLabel>Ações</DropdownMenuLabel>
+                                                                        <DropdownMenuItem>
+                                                                            <Download className="mr-2 h-4 w-4" />
+                                                                            Baixar PDF
+                                                                        </DropdownMenuItem>
+                                                                        <DropdownMenuItem className="text-destructive">
+                                                                            <Trash2 className="mr-2 h-4 w-4" />
+                                                                            Excluir Registro
+                                                                        </DropdownMenuItem>
+                                                                    </DropdownMenuContent>
+                                                                </DropdownMenu>
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    ))}
+                                                </TableBody>
+                                            </Table>
+                                        )}
                                     </TabsContent>
                                 </CardContent>
                             </Card>
