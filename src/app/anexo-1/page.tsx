@@ -20,7 +20,7 @@ export default function Anexo1() {
             <p className="text-justify">
               Este anexo constitui o registro formal e consolidado das evidências técnicas e operacionais identificadas durante o processo de análise comparativa entre o Sistema Atual e o Sistema Legado.
             </p>
-            
+
             <div>
               <p className="font-semibold mb-2">Seu objetivo é garantir:</p>
               <ul className="list-disc pl-6 space-y-1 text-justify">
@@ -167,7 +167,7 @@ export default function Anexo1() {
                   Ao acessar um pedido processado e acionar "Visualizar Movimentações", o sistema aplica automaticamente um filtro baseado no número do pedido, porém a tela de movimentações não possui este campo como critério de busca, retornando resultado vazio mesmo havendo movimentações válidas.
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Impacto</h4>
                 <ul className="list-disc pl-6 space-y-1">
@@ -201,6 +201,8 @@ export default function Anexo1() {
                 <div className="grid md:grid-cols-2 gap-4">
                   <EvidenceImage imageId="ev-01-atual" />
                   <EvidenceImage imageId="ev-01-legado" />
+                  <EvidenceImage imageId="ev-01-atual2" />
+                  <EvidenceImage imageId="ev-01-legado2" />
                 </div>
               </div>
             </CardContent>
@@ -228,7 +230,7 @@ export default function Anexo1() {
                   <li>Em outros, nome e sobrenome concatenados sem espaçamento</li>
                 </ul>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Impacto</h4>
                 <ul className="list-disc pl-6 space-y-1">
@@ -274,33 +276,145 @@ export default function Anexo1() {
             </CardHeader>
             <CardContent className="space-y-4 pt-6">
               <div>
-                <h4 className="font-semibold mb-2">Descrição</h4>
+                <h4 className="font-semibold mb-2">Contexto Operacional</h4>
+                <p className="text-justify">
+                  No sistema legado, a coluna <strong>Tipo</strong> possui papel central na interpretação das transações, pois:
+                </p>
+                <ul className="list-disc pl-6 space-y-1 mt-2">
+                  <li>Identifica explicitamente a natureza da operação</li>
+                  <li>É acompanhada por um ícone representativo</li>
+                  <li>Possui legenda funcional padronizada, permitindo leitura rápida, intuitiva e auditável</li>
+                </ul>
+                <p className="text-justify mt-3">
+                  Cada tipo de movimentação reflete regras de negócio distintas e impactos diretos nos estados de saldo (DIS, RES, APO).
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold mb-2">Principais Tipos de Movimentação Identificados no Sistema Legado</h4>
+                <div className="overflow-x-auto">
+                  <Table className="border text-sm">
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="bg-muted">TIPO</TableHead>
+                        <TableHead className="bg-muted text-center">Tag</TableHead>
+                        <TableHead className="bg-muted text-center">Ícone</TableHead>
+                        <TableHead className="bg-muted">TIPO</TableHead>
+                        <TableHead className="bg-muted text-center">Tag</TableHead>
+                        <TableHead className="bg-muted text-center">Ícone</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>Pedido de Selo Tesouro Verde</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell>Abastecimento de Plataformas</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Revogação de CPR Verde</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell>Pedido de Ajuste entre Contas</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Pedido de Transferência Akses</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell>Pedido de Selo SaaS</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Taxa de Certificado – Cliente</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell>Tesouro Verde Akses</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Certificado – Cliente</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell>Registro de CPR Verde</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell colSpan={3}></TableCell>
+                        <TableCell>Certificado SaaS BMV (Akses)</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                        <TableCell className="text-center">✓</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </div>
+                <p className="text-sm text-muted-foreground mt-2 text-justify">
+                  No sistema legado, cada uma dessas movimentações é corretamente classificada na coluna Tipo, possui ícone específico e conta com legenda funcional alinhada às regras de negócio e impactos financeiros.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold mb-2">Situação no Sistema Atual</h4>
                 <p className="text-justify mb-2">O sistema atual não implementa:</p>
                 <ul className="list-disc pl-6 space-y-1">
-                  <li>Tags RES / DIS / APO</li>
+                  <li>Tags RES / DIS / APO visíveis</li>
                   <li>Ícones por tipo de transação</li>
                   <li>Distinção clara entre saldo de origem e destino</li>
+                  <li>Legenda funcional padronizada</li>
                 </ul>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Impacto</h4>
+                <p className="text-justify mb-2">Essa padronização ausente ou incompleta resulta em:</p>
                 <ul className="list-disc pl-6 space-y-1">
-                  <li>Dependência de conhecimento tácito</li>
+                  <li>Perda de clareza semântica sobre a natureza das transações</li>
+                  <li>Dificuldade de leitura operacional</li>
+                  <li>Maior dependência de conhecimento tácito</li>
                   <li>Alto risco de erro humano</li>
-                  <li>Fragilidade de auditoria financeira</li>
+                  <li>Fragilidade nos processos de auditoria, conciliação e rastreabilidade</li>
                 </ul>
               </div>
 
-              <Alert>
-                <AlertDescription>
-                  <strong>Recomendação:</strong> Reimplementar integralmente o modelo visual do sistema legado, como correção de governança.
-                </AlertDescription>
-              </Alert>
+              <div>
+                <h4 className="font-semibold mb-2">Enquadramento e Recomendação</h4>
+                <p className="text-justify mb-2">
+                  A ausência de identificação adequada do tipo de movimentação compromete diretamente:
+                </p>
+                <ul className="list-disc pl-6 space-y-1 mb-3">
+                  <li>A governança transacional</li>
+                  <li>A integridade da leitura dos dados</li>
+                  <li>A capacidade de auditoria técnica e financeira</li>
+                  <li>A escalabilidade operacional da plataforma</li>
+                </ul>
+                <Alert>
+                  <AlertDescription>
+                    <strong>Recomendação:</strong> Reimplementar integralmente, no sistema atual, o modelo adotado no sistema legado para a coluna <strong>Tipo</strong>, garantindo:
+                    <ul className="list-disc pl-6 mt-2 space-y-1">
+                      <li>Classificação clara e inequívoca de cada movimentação</li>
+                      <li>Associação obrigatória de ícones padronizados</li>
+                      <li>Inclusão de legenda funcional visível e consistente</li>
+                      <li>Alinhamento total com as regras de negócio e impactos nos estados de saldo</li>
+                    </ul>
+                    <p className="mt-2"><strong>Este ajuste deve ser tratado como correção estrutural de governança e rastreabilidade, e não como melhoria estética ou opcional.</strong></p>
+                  </AlertDescription>
+                </Alert>
+              </div>
 
-              <div className="bg-muted p-4 rounded-lg">
+              <div className="bg-muted p-4 rounded-lg space-y-4">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <EvidenceImage imageId="ev-03-atual-legado" />
+                <div className="grid md:grid-cols-2 gap-4">
+                  <EvidenceImage imageId="ev-08-legado" />
+                  <EvidenceImage imageId="ev-08-atual" />
+                    <EvidenceImage imageId="ev-08-legado" />
+                  <EvidenceImage imageId="ev-08-atual" />
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -325,7 +439,7 @@ export default function Anexo1() {
                   Documentos recusados, ao serem reenviados, permanecem congelados no status "Recusado", sem retornar para "Pendente de Aprovação".
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Impacto</h4>
                 <ul className="list-disc pl-6 space-y-1">
@@ -380,7 +494,7 @@ export default function Anexo1() {
                   Campos obrigatórios não são sinalizados (asterisco), exceto CPF. Erros não indicam qual campo está faltando (ex.: CEP).
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Impacto</h4>
                 <ul className="list-disc pl-6 space-y-1">
@@ -428,7 +542,7 @@ export default function Anexo1() {
                   Campo "ID Transação NXT" é exibido sem função operacional, mesmo após solicitação formal de remoção.
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Impacto</h4>
                 <ul className="list-disc pl-6 space-y-1">
@@ -475,7 +589,7 @@ export default function Anexo1() {
                   Campo de busca não reage à digitação e não filtra por nome, documento ou ID, diferentemente do sistema legado.
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Impacto</h4>
                 <ul className="list-disc pl-6 space-y-1">
@@ -498,7 +612,7 @@ export default function Anexo1() {
 
               <div className="bg-muted p-4 rounded-lg">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                 <EvidenceImage imageId="ev-07-atual-legado" />
+                <EvidenceImage imageId="ev-07-atual-legado" />
               </div>
             </CardContent>
           </Card>
@@ -529,7 +643,7 @@ export default function Anexo1() {
                   <li>Percentuais aplicados</li>
                 </ul>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Impacto</h4>
                 <ul className="list-disc pl-6 space-y-1">
@@ -639,7 +753,7 @@ export default function Anexo1() {
             <p className="text-justify">
               As evidências apresentadas demonstram falhas estruturais, funcionais e de governança, algumas de natureza crítica impeditiva, especialmente nos módulos financeiros, de movimentações e rastreabilidade.
             </p>
-            
+
             <Alert>
               <AlertDescription className="text-justify">
                 Este anexo integra o dossiê técnico oficial e deve ser analisado em conjunto com os demais anexos para decisão sobre:

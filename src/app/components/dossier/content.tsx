@@ -17,30 +17,30 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { slugify } from "@/lib/utils";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useDossierSearch } from '@/hooks/useDossierSearch.tsx';
+import { useDossierSearch } from '@/hooks/useDossierSearch';
 
 export const sections = [
   {
     title: "Capa",
     content: (
-        <div className="text-center py-16">
-            <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-6">
-                Dossiê Técnico de Avaliação do Sistema Backoffice BMV.Global
+        <div className="max-w-4xl mx-auto py-8">
+            <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-3 text-justify">
+                Avaliação do Sistema Backoffice BMV.Global
             </h1>
             
-            <h3 className="text-lg sm:text-xl font-semibold text-muted-foreground mb-6">
-                <span className="block mb-2">Relatório Formal de Não Conformidades,</span>
-                <span className="block mb-2">Riscos Operacionais, Tecnológicos e Jurídicos</span>
+            <h3 className="text-lg sm:text-xl font-semibold text-muted-foreground mb-4">
+                <span className="block mb-1">Relatório Formal de Não Conformidades,</span>
+                <span className="block mb-1">Riscos Operacionais, Tecnológicos e Jurídicos</span>
                 <span className="block">e Diretrizes Estruturais de Evolução</span>
             </h3>
 
-            <p className="text-justify mb-6 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-justify mb-4">
                 Material destinado à análise técnica, operacional, jurídica e estratégica da plataforma tecnológica BMV,
                 com objetivo de subsidiar a tomada de decisão executiva, governança sistêmica, avaliação de riscos
                 institucionais e direcionamento de ações estruturais corretivas.
             </p>
 
-            <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground pt-4 border-t max-w-4xl mx-auto justify-center">
+            <div className="flex flex-wrap gap-2 sm:gap-3 text-xs sm:text-sm text-muted-foreground pt-3 border-t max-w-4xl mx-auto justify-center">
                 <span className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>
                     Análise Técnica
@@ -1041,7 +1041,7 @@ interface DossierContentProps {
 
 export const DossierContent: React.FC<DossierContentProps> = ({ searchTerm, setExpandedSections }) => {
   
-  const { filteredSections, Highlight, addHighlight } = useDossierSearch(sections, searchTerm, setExpandedSections);
+    const { filteredSections, Highlight, addHighlight, addEmphasis } = useDossierSearch(sections, searchTerm, setExpandedSections);
 
   if (filteredSections.length === 0 && searchTerm) {
     return (
@@ -1069,11 +1069,11 @@ export const DossierContent: React.FC<DossierContentProps> = ({ searchTerm, setE
                         transition={{ duration: 0.25, ease: 'easeOut', delay: index * 0.015 }}
                     >
                         <AccordionItem value={id} id={id} className="soft-card border border-transparent bg-card/85">
-                            <AccordionTrigger className="text-2xl font-bold text-primary hover:no-underline font-headline px-2">
+                            <AccordionTrigger className="text-2xl font-bold text-primary hover:no-underline font-headline px-6 py-4">
                                 <Highlight text={section.title} />
                             </AccordionTrigger>
-                            <AccordionContent className="prose prose-lg dark:prose-invert max-w-none reading-width text-foreground text-base leading-relaxed space-y-4 pt-2 pb-6 px-4 text-justify">
-                                {addHighlight(section.content)}
+                            <AccordionContent className="prose prose-lg dark:prose-invert max-w-none text-foreground text-base leading-relaxed space-y-4 pt-4 pb-8 px-8">
+                                {addHighlight(addEmphasis(section.content))}
                             </AccordionContent>
                         </AccordionItem>
                     </motion.div>

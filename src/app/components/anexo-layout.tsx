@@ -58,38 +58,35 @@ export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto flex-1 px-3 sm:px-4 lg:px-6 py-6 sm:py-8">
+      <main className="container mx-auto flex-1 px-3 sm:px-4 lg:px-6 py-6 sm:py-8 pb-24">
         <div className="bg-card p-4 sm:p-6 md:p-8 rounded-xl shadow-md">
             {children}
         </div>
       </main>
-
-      {/* Footer Navigation */}
-      <footer className="py-4">
-        <div className="container mx-auto px-3 sm:px-4 lg:px-6">
-          <div className="flex justify-between items-center gap-4">
-            <Link href={prevAnexo}>
-              <Button variant="outline" className="gap-2">
-                <ChevronLeft className="h-4 w-4" />
-                {number === 1 ? "Voltar ao Dossiê" : "Anexo Anterior"}
+      {/* Fixed Footer Navigation */}
+      <footer className="fixed bottom-4 left-4 right-4 z-30">
+        <div className="glass-panel rounded-2xl px-3 sm:px-4 py-2 sm:py-3 flex justify-between items-center gap-4">
+          <Link href={prevAnexo}>
+            <Button variant="outline" className="gap-2">
+              <ChevronLeft className="h-4 w-4" />
+              {number === 1 ? "Voltar ao Dossiê" : "Anexo Anterior"}
+            </Button>
+          </Link>
+          {nextAnexo ? (
+            <Link href={nextAnexo}>
+              <Button className="gap-2">
+                Próximo Anexo
+                <ChevronLeft className="h-4 w-4 rotate-180" />
               </Button>
             </Link>
-            {nextAnexo ? (
-              <Link href={nextAnexo}>
-                <Button className="gap-2">
-                  Próximo Anexo
-                  <ChevronLeft className="h-4 w-4 rotate-180" />
-                </Button>
-              </Link>
-            ) : (
-              <Link href="/">
-                <Button className="gap-2">
-                  Voltar ao Dossiê
-                  <ChevronLeft className="h-4 w-4 rotate-180" />
-                </Button>
-              </Link>
-            )}
-          </div>
+          ) : (
+            <Link href="/">
+              <Button className="gap-2">
+                Voltar ao Dossiê
+                <ChevronLeft className="h-4 w-4 rotate-180" />
+              </Button>
+            </Link>
+          )}
         </div>
       </footer>
     </div>

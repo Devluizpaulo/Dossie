@@ -34,6 +34,24 @@ export const useDossierSearch = (
 ) => {
   const lowerCaseSearchTerm = useMemo(() => searchTerm?.toLowerCase() || '', [searchTerm]);
 
+  // Emphasis for key domain terms to improve reading rhythm
+  const EMPHASIS_TERMS = useMemo(
+    () => [
+      'Automação', 'Escalabilidade', 'Governança', 'Rastreabilidade', 'Confiabilidade',
+      'Fluxo', 'Fluxos', 'Blockchain', 'Wallet', 'Identidade', 'Dados', 'Usuários',
+      'Riscos', 'Recomendações', 'Conclusão', 'Metodologia', 'Arquitetura', 'Legado',
+      'CDE', 'Boleto', 'Aprovação', 'Pagamento', 'Auditoria', 'Paridade', 'Não Conformidades',
+      'SLA', 'Operacional', 'Técnica', 'Jurídica', 'Estratégica'
+    ],
+    []
+  );
+
+  const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const emphasisRegex = useMemo(
+    () => new RegExp(`\\b(${EMPHASIS_TERMS.map(escapeRegExp).join('|')})\\b`, 'gi'),
+    [EMPHASIS_TERMS]
+  );
+
   const hasSearchTerm = useCallback((nodes: React.ReactNode): boolean => {
     if (!lowerCaseSearchTerm) return true;
 
@@ -73,20 +91,53 @@ export const useDossierSearch = (
             return <Highlight text={node} highlight={searchTerm} key={index} />;
         }
         if (React.isValidElement(node) && (node.props as any).children) {
-             return React.cloneElement(node, {
-                ...node.props,
-                key: index,
-                children: addHighlight((node.props as any).children),
-            });
+           return React.cloneElement(node as React.ReactElement<any>, {
+            key: index,
+            children: addHighlight((node.props as any).children),
+          });
         }
         return node;
     });
   }, [lowerCaseSearchTerm, searchTerm]);
 
+  const addEmphasis = useCallback((nodes: React.ReactNode): React.ReactNode => {
+    const emphasizeString = (text: string) => {
+      const parts = text.split(emphasisRegex);
+      if (parts.length === 1) return text;
+      return parts.map((part, i) =>
+        emphasisRegex.test(part) ? (
+          <strong key={`em-${i}`} className="font-semibold">{part}</strong>
+        ) : (
+          <React.Fragment key={`em-${i}`}>{part}</React.Fragment>
+        )
+      );
+    };
+
+    return React.Children.map(nodes, (node, index) => {
+      if (typeof node === 'string') {
+        return emphasizeString(node as string);
+      }
+      if (React.isValidElement(node)) {
+        const typeAny = (node as any).type;
+        // Skip links and code blocks to avoid breaking semantics
+        if (typeAny === 'a' || typeAny === 'code' || typeAny === 'pre') return node;
+        const childNodes = (node.props as any)?.children;
+        if (childNodes) {
+          return React.cloneElement(node as React.ReactElement<any>, {
+            key: index,
+            children: addEmphasis(childNodes),
+          });
+        }
+      }
+      return node;
+    });
+  }, [emphasisRegex]);
+
   return {
     filteredSections,
     Highlight: ({ text }: { text: string }) => <Highlight text={text} highlight={searchTerm} />,
     addHighlight,
+    addEmphasis,
     hasSearchTerm,
   };
 };

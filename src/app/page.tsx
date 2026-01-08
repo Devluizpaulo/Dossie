@@ -18,11 +18,6 @@ import { ThemeToggle } from './components/dossier/theme-toggle';
 import { DossierContent, sections } from './components/dossier/content';
 import { DossierSidebar } from './components/dossier/sidebar';
 import { Logo } from '@/components/logo';
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger
-} from '@/components/ui/sheet';
 
 export default function DossierPage() {
   const allSectionIds = useMemo(() => sections.map(s => slugify(s.title)), []);
@@ -79,9 +74,9 @@ export default function DossierPage() {
         >
           
           {/* Sidebar */}
-          <aside className="hidden md:block w-full md:w-80 lg:w-96 flex-shrink-0">
+          <aside className="w-full md:w-80 lg:w-96 flex-shrink-0">
             <motion.div
-              className="sticky top-6 glass-panel p-4 rounded-2xl transition-transform duration-200 hover:-translate-y-1"
+              className="sticky top-4 h-[calc(100vh-2rem)] glass-panel p-4 rounded-2xl transition-transform duration-200 hover:-translate-y-1 overflow-y-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0, transition: { delay: 0.05 } }}
             >
@@ -95,39 +90,10 @@ export default function DossierPage() {
           {/* Main View */}
           <div className="flex-1 flex flex-col min-w-0 space-y-2">
             {/* Header */}
-            <header className="relative flex justify-between items-center p-4 glass-panel rounded-2xl border-b shadow-sm overflow-hidden">
+            <header className="sticky top-4 z-30 flex justify-between items-center p-4 glass-panel rounded-2xl border-b shadow-sm overflow-hidden">
               <div className="flex items-center">
-                <Sheet>
-                  <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon" className="md:hidden mr-2 hover:scale-[1.02]">
-                      <Menu className="h-6 w-6" />
-                    </Button>
-                  </SheetTrigger>
-                  <SheetContent side="left" className="w-80 p-0 bg-transparent border-none">
-                    <motion.div
-                      initial={{ opacity: 0, x: -12 }}
-                      animate={{ opacity: 1, x: 0, transition: { duration: 0.25, ease: 'easeOut' } }}
-                      className="h-full flex flex-col gap-4 bg-card/90 dark:bg-card/80 backdrop-blur-xl border border-border/70 shadow-2xl rounded-r-2xl overflow-hidden"
-                    >
-                      <div className="flex items-center justify-between h-16 px-4 border-b bg-gradient-to-r from-primary/10 via-accent/10 to-transparent">
-                        <Logo />
-                        <div className="text-xs text-muted-foreground">Navegação rápida</div>
-                      </div>
-                      <div className="px-4 flex gap-2">
-                        <Button size="sm" variant="outline" className="flex-1" onClick={toggleExpandAll}>
-                          {allExpanded ? 'Recolher tudo' : 'Expandir tudo'}
-                        </Button>
-                        <Button size="sm" variant="secondary" className="flex-1" onClick={scrollToTop}>
-                          Ir ao topo
-                        </Button>
-                      </div>
-                      <div className="p-4 pb-6 overflow-y-auto flex-1">
-                        <DossierSidebar searchTerm={searchTerm} onSearchTermChange={setSearchTerm} />
-                      </div>
-                    </motion.div>
-                  </SheetContent>
-                </Sheet>
-                <h1 className="text-xl font-semibold">Dossiê Técnico</h1>
+                <Logo />
+                <h1 className="text-xl font-semibold ml-3">Dossiê Técnico</h1>
               </div>
               <div className="flex items-center space-x-2">
                   <Button 
@@ -155,7 +121,7 @@ export default function DossierPage() {
             <main
               id="content"
               ref={contentRef}
-              className="flex-1 overflow-y-auto p-6 glass-panel rounded-2xl shadow-sm relative"
+              className="flex-1 overflow-y-auto p-6 pb-24 glass-panel rounded-2xl shadow-sm relative"
             >
                 <Accordion
                   type="multiple"
@@ -188,6 +154,34 @@ export default function DossierPage() {
                   )}
                 </AnimatePresence>
             </main>
+            {/* Fixed Footer */}
+            <motion.div
+              className="fixed bottom-4 left-4 right-4 z-30"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0, transition: { duration: 0.25 } }}
+            >
+              <div className="glass-panel rounded-2xl px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={toggleExpandAll}
+                    className="gap-2"
+                    aria-label={allExpanded ? 'Recolher tudo' : 'Expandir tudo'}
+                  >
+                    {allExpanded ? <ListCollapse className="h-4 w-4" /> : <Expand className="h-4 w-4" />}
+                    <span className="hidden sm:inline">{allExpanded ? 'Recolher tudo' : 'Expandir tudo'}</span>
+                  </Button>
+                  <Button size="sm" variant="secondary" onClick={scrollToTop} className="gap-2" aria-label="Ir ao topo">
+                    <ArrowUp className="h-4 w-4" />
+                    <span className="hidden sm:inline">Topo</span>
+                  </Button>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ThemeToggle />
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
