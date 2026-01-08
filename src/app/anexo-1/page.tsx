@@ -5,6 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
+import { EvidenceImage } from "@/app/components/evidence-image";
 
 export default function Anexo1() {
   return (
@@ -195,10 +196,12 @@ export default function Anexo1() {
                 </AlertDescription>
               </Alert>
 
-              <div className="bg-muted p-4 rounded-lg">
-                <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Sistema Atual]</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Sistema Legado]</p>
+              <div className="bg-muted p-4 rounded-lg space-y-4">
+                <p className="text-sm font-semibold">Evidência Visual:</p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <EvidenceImage imageId="ev-01-atual" />
+                  <EvidenceImage imageId="ev-01-legado" />
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -246,10 +249,12 @@ export default function Anexo1() {
                 </AlertDescription>
               </Alert>
 
-              <div className="bg-muted p-4 rounded-lg">
+              <div className="bg-muted p-4 rounded-lg space-y-4">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Atual]</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Legado]</p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <EvidenceImage imageId="ev-02-atual" />
+                  <EvidenceImage imageId="ev-02-legado" />
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -295,7 +300,7 @@ export default function Anexo1() {
 
               <div className="bg-muted p-4 rounded-lg">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Atual x Legado]</p>
+                <EvidenceImage imageId="ev-03-atual-legado" />
               </div>
             </CardContent>
           </Card>
@@ -350,7 +355,7 @@ export default function Anexo1() {
 
               <div className="bg-muted p-4 rounded-lg">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT]</p>
+                <EvidenceImage imageId="ev-04-atual" />
               </div>
             </CardContent>
           </Card>
@@ -398,7 +403,7 @@ export default function Anexo1() {
 
               <div className="bg-muted p-4 rounded-lg">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT]</p>
+                <EvidenceImage imageId="ev-05-atual" />
               </div>
             </CardContent>
           </Card>
@@ -445,7 +450,7 @@ export default function Anexo1() {
 
               <div className="bg-muted p-4 rounded-lg">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT]</p>
+                <EvidenceImage imageId="ev-06-atual" />
               </div>
             </CardContent>
           </Card>
@@ -493,7 +498,7 @@ export default function Anexo1() {
 
               <div className="bg-muted p-4 rounded-lg">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Atual x Legado]</p>
+                 <EvidenceImage imageId="ev-07-atual-legado" />
               </div>
             </CardContent>
           </Card>
@@ -546,10 +551,12 @@ export default function Anexo1() {
                 </AlertDescription>
               </Alert>
 
-              <div className="bg-muted p-4 rounded-lg">
+              <div className="bg-muted p-4 rounded-lg space-y-4">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Sistema Legado (correto)]</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Sistema Atual (divergente)]</p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <EvidenceImage imageId="ev-08-legado" />
+                  <EvidenceImage imageId="ev-08-atual" />
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -612,10 +619,12 @@ export default function Anexo1() {
                 </AlertDescription>
               </Alert>
 
-              <div className="bg-muted p-4 rounded-lg">
+              <div className="bg-muted p-4 rounded-lg space-y-4">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Tela de configuração/administração sem opção de logs]</p>
-                <p className="text-sm text-muted-foreground italic">[INSERIR PRINT – Sistema Legado mostrando funcionalidade de logs (se aplicável)]</p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <EvidenceImage imageId="ev-09-admin" />
+                  <EvidenceImage imageId="ev-09-legado-log" />
+                </div>
               </div>
             </CardContent>
           </Card>

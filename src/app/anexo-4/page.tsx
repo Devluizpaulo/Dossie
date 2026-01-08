@@ -5,6 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
+import { EvidenceImage } from "@/app/components/evidence-image";
 
 export default function Anexo4() {
   return (
@@ -110,7 +111,7 @@ export default function Anexo4() {
                     href="https://www.youtube.com/watch?v=WAYd1Myw81k&t=63s" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                    className="text-primary hover:underline font-medium"
                   >
                     🎥 Acessar Vídeo de Referência (YouTube)
                   </a>
@@ -142,18 +143,14 @@ export default function Anexo4() {
                   <p className="font-semibold text-green-700 dark:text-green-300 mb-2">
                     ✓ Sistema Legado
                   </p>
-                  <p className="text-sm text-justify">
-                    Dashboard gerencial completo, com filtros por período, gráficos analíticos e histórico de transações recentes.
-                  </p>
+                  <EvidenceImage imageId="paridade-estoque-legado" caption="Dashboard gerencial completo, com filtros por período, gráficos analíticos e histórico de transações recentes." />
                 </div>
 
                 <div className="border-l-4 border-red-500 pl-4 bg-red-50 dark:bg-red-950/10 p-4 rounded">
                   <p className="font-semibold text-red-700 dark:text-red-300 mb-2">
                     ✗ Sistema Atual
                   </p>
-                  <p className="text-sm text-justify">
-                    Ausência total de dashboard inicial, sem visão consolidada, filtros temporais ou histórico imediato.
-                  </p>
+                  <EvidenceImage imageId="paridade-estoque-atual" caption="Ausência total de dashboard inicial, sem visão consolidada, filtros temporais ou histórico imediato." />
                 </div>
               </div>
 
@@ -192,22 +189,18 @@ export default function Anexo4() {
             </CardHeader>
             <CardContent className="space-y-4 pt-6">
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="border-l-4 border-green-500 pl-4 bg-green-50 dark:bg-green-950/10 p-4 rounded">
+                 <div className="border-l-4 border-green-500 pl-4 bg-green-50 dark:bg-green-950/10 p-4 rounded">
                   <p className="font-semibold text-green-700 dark:text-green-300 mb-2">
                     ✓ Sistema Legado
                   </p>
-                  <p className="text-sm text-justify">
-                    Kanban ativo, com histórico consistente, menus de ações por status e rastreabilidade completa.
-                  </p>
+                  <EvidenceImage imageId="paridade-cpr-legado" caption="Kanban ativo, com histórico consistente, menus de ações por status e rastreabilidade completa." />
                 </div>
 
                 <div className="border-l-4 border-amber-500 pl-4 bg-amber-50 dark:bg-amber-950/10 p-4 rounded">
                   <p className="font-semibold text-amber-700 dark:text-amber-300 mb-2">
                     ⚠ Sistema Atual
                   </p>
-                  <p className="text-sm text-justify">
-                    Kanban implementado, porém sem dados operacionais, impedindo validação prática dos fluxos.
-                  </p>
+                  <EvidenceImage imageId="paridade-cpr-atual" caption="Kanban implementado, porém sem dados operacionais, impedindo validação prática dos fluxos." />
                 </div>
               </div>
 
@@ -250,18 +243,14 @@ export default function Anexo4() {
                   <p className="font-semibold text-green-700 dark:text-green-300 mb-2">
                     ✓ Sistema Legado
                   </p>
-                  <p className="text-sm text-justify">
-                    Fluxos de Intenção de Movimentação e Solicitação de CDE executados <strong>integralmente dentro do sistema</strong>, com solicitação, validação, pagamento (quando aplicável) e emissão concluídos de forma sistêmica e rastreável.
-                  </p>
+                  <EvidenceImage imageId="paridade-cde-legado" caption="Fluxos de Intenção de Movimentação e Solicitação de CDE executados integralmente dentro do sistema, com solicitação, validação, pagamento (quando aplicável) e emissão concluídos de forma sistêmica e rastreável." />
                 </div>
 
                 <div className="border-l-4 border-red-500 pl-4 bg-red-50 dark:bg-red-950/10 p-4 rounded">
                   <p className="font-semibold text-red-700 dark:text-red-300 mb-2">
                     ✗ Sistema Atual
                   </p>
-                  <p className="text-sm text-justify">
-                    Existem páginas dedicadas para Intenção de Movimentação e Solicitação de CDE, porém <strong>não estão plenamente desenvolvidas nem integradas</strong> aos fluxos transacionais, resultando na obrigatoriedade de execução por canais externos (e-mail e processos manuais).
-                  </p>
+                  <EvidenceImage imageId="paridade-cde-atual" caption="Existem páginas dedicadas para Intenção de Movimentação e Solicitação de CDE, porém não estão plenamente desenvolvidas nem integradas aos fluxos transacionais, resultando na obrigatoriedade de execução por canais externos (e-mail e processos manuais)." />
                 </div>
               </div>
 
@@ -526,11 +515,6 @@ export default function Anexo4() {
               <div className="border rounded p-4 bg-green-50 dark:bg-green-950/10 border-green-200 dark:border-green-800">
                 <p className="font-semibold text-green-700 dark:text-green-300 mb-2">Paridade Atendida</p>
                 <p className="text-sm">Módulos com equivalência funcional</p>
-              </div>
-
-              <div className="border rounded p-4 bg-purple-50 dark:bg-purple-950/10 border-purple-200 dark:border-purple-800">
-                <p className="font-semibold text-purple-700 dark:text-purple-300 mb-2">Referência Técnica</p>
-                <p className="text-sm">Baseada em vídeo de apresentação do legado</p>
               </div>
             </div>
 

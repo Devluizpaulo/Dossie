@@ -5,6 +5,26 @@
       "description": "BMV logo placeholder",
       "imageUrl": "https://images.unsplash.com/photo-1629838095393-8a35515c15a1?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "logo white"
-    }
+    },
+    { "id": "ev-01-atual", "imageUrl": "https://picsum.photos/seed/ev01a/800/450", "imageHint": "dashboard chart", "description": "Sistema Atual: Busca por pedido com resultado vazio." },
+    { "id": "ev-01-legado", "imageUrl": "https://picsum.photos/seed/ev01b/800/450", "imageHint": "data table", "description": "Sistema Legado: Movimentações relacionadas ao pedido sendo exibidas." },
+    { "id": "ev-02-atual", "imageUrl": "https://picsum.photos/seed/ev02a/800/300", "imageHint": "user list", "description": "Sistema Atual: Nomes de usuários concatenados ou incompletos." },
+    { "id": "ev-02-legado", "imageUrl": "https://picsum.photos/seed/ev02b/800/300", "imageHint": "user interface", "description": "Sistema Legado: Nomes completos e corretamente formatados." },
+    { "id": "ev-03-atual-legado", "imageUrl": "https://picsum.photos/seed/ev03/800/450", "imageHint": "financial transaction", "description": "Comparativo: Sistema Legado (acima) com tags e ícones, e Sistema Atual (abaixo) sem identificação visual." },
+    { "id": "ev-04-atual", "imageUrl": "https://picsum.photos/seed/ev04/800/400", "imageHint": "document status", "description": "Documento permanece com status 'Recusado' após novo envio." },
+    { "id": "ev-05-atual", "imageUrl": "https://picsum.photos/seed/ev05/800/500", "imageHint": "web form", "description": "Formulário de cadastro sem indicação de campos obrigatórios." },
+    { "id": "ev-06-atual", "imageUrl": "https://picsum.photos/seed/ev06/800/400", "imageHint": "user interface", "description": "Campo 'ID Transação NXT' exibido indevidamente nos detalhes do certificado." },
+    { "id": "ev-07-atual-legado", "imageUrl": "https://picsum.photos/seed/ev07/800/450", "imageHint": "search filter", "description": "Comparativo: Filtro funcional no Sistema Legado (acima) vs. inoperante no Sistema Atual (abaixo)." },
+    { "id": "ev-08-legado", "imageUrl": "https://picsum.photos/seed/ev08a/800/400", "imageHint": "financial report", "description": "Sistema Legado: Cálculos de DARE e Royalties corretos." },
+    { "id_": "ev-08-atual", "imageUrl": "https://picsum.photos/seed/ev08b/800/400", "imageHint": "spreadsheet error", "description": "Sistema Atual: Cálculos de DARE e Royalties com valores divergentes." },
+    { "id": "ev-09-admin", "imageUrl": "https://picsum.photos/seed/ev09/800/450", "imageHint": "admin dashboard", "description": "Tela de administração do sistema atual sem opção visível para logs de auditoria." },
+    { "id": "ev-09-legado-log", "imageUrl": "https://picsum.photos/seed/ev09b/800/450", "imageHint": "log file", "description": "Exemplo de funcionalidade de log no sistema legado." },
+    { "id": "paridade-estoque-atual", "imageUrl": "https://picsum.photos/seed/paridade01a/800/450", "imageHint": "empty state", "description": "Sistema Atual: Ausência do dashboard inicial de Estoque." },
+    { "id": "paridade-estoque-legado", "imageUrl": "https://picsum.photos/seed/paridade01b/800/450", "imageHint": "dashboard chart", "description": "Sistema Legado: Dashboard gerencial de Estoque com filtros e gráficos." },
+    { "id": "paridade-cpr-atual", "imageUrl": "https://picsum.photos/seed/paridade02a/800/450", "imageHint": "kanban board", "description": "Sistema Atual: Kanban da CPR Verde sem dados operacionais." },
+    { "id": "paridade-cpr-legado", "imageUrl": "https://picsum.photos/seed/paridade02b/800/450", "imageHint": "kanban board", "description": "Sistema Legado: Kanban da CPR Verde funcional e com dados." },
+    { "id": "paridade-cde-atual", "imageUrl": "https://picsum.photos/seed/paridade03a/800/500", "imageHint": "web form", "description": "Sistema Atual: Página de solicitação de CDE existe, mas o fluxo é manual e externo." },
+    { "id": "paridade-cde-legado", "imageUrl": "https://picsum.photos/seed/paridade03b/800/500",_x000D_
+ "imageHint": "process workflow", "description": "Sistema Legado: Fluxo de solicitação de CDE totalmente automatizado e interno." }
   ]
 }
