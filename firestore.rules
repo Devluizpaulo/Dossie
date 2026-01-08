@@ -1,27 +1,23 @@
 /**
  * Core Philosophy: This ruleset enforces a strict user-ownership model,
- * but provides an exception for a master administrator role ('admin_master')
- * to have read-only access for governance and auditing purposes.
+ * with a role-based exception for a master administrator. The user's role is
+ * determined by reading their profile document in the `/users` collection.
  *
  * Data Structure: All data is nested hierarchically under /users/{userId}.
- * This path-based ownership model simplifies security rules by making the
- * user's ID a direct part of the resource path, eliminating the need for
- * complex cross-document reads (`get()`) for authorization.
+ * This path-based ownership model simplifies security rules for user-specific data.
  *
  * Key Security Decisions:
  * - Admin Read Access: An 'admin_master' can list and get any user document,
- *   which is essential for administrative dashboards.
+ *   which is essential for administrative dashboards. This is checked via a `get()`
+ *   call to the user's own profile.
  * - User Enumeration Prevention: For non-admin users, listing the top-level
  *   `/users` collection is explicitly disallowed to protect user privacy.
  * - Strict Ownership for Writes: A user can only write to data within their
- *   own document tree (i.e., `/users/{their_own_userId}/...`). Admins cannot
- *   impersonate or write on behalf of users through these rules.
- * - Profile Self-Creation: An authenticated user is permitted to create their
- *   own profile document, but only if the document ID matches their UID.
- *
- * Structural Segregation: The separation of user profiles (`/users`) from
- * their sensitive data (`/accessAttempts`) into a parent/subcollection
- * structure provides clear, secure, and performant access control.
+ *   own document tree. Admins cannot impersonate or write on behalf of users.
+ * - Role Immutability: The `role` field is immutable after creation to prevent
+ *   privilege escalation by the user.
+ * - Profile Self-Creation: An authenticated user can create their own profile,
+ *   but the initial role must be 'user'.
  */
 rules_version = '2';
 service cloud.firestore {
@@ -46,11 +42,13 @@ service cloud.firestore {
     }
 
     /**
-     * Checks if the authenticated user has the 'admin_master' custom claim.
+     * Checks if the authenticated user has the 'admin_master' role by reading
+     * their own user document from the /users collection.
      * This grants system-wide read privileges.
      */
     function isAdminMaster() {
-      return isSignedIn() && request.auth.token.role == 'admin_master';
+      // Access the user's own profile document and check the 'role' field.
+      return isSignedIn() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin_master';
     }
 
     /**
@@ -58,8 +56,9 @@ service cloud.firestore {
      * AND the document they are trying to modify actually exists.
      */
     function isExistingOwner(userId) {
-      return isOwner(userId) && resource != null;
+      return isOwner(userId) && exists(/databases/$(database)/documents/$(resource.path));
     }
+
 
     // Validation Functions for Create Operations
     // ------------------------------------------
@@ -90,8 +89,7 @@ service cloud.firestore {
 
     /**
      * Enforces immutability for critical fields on a User document.
-     * The unique user ID and role should never change after creation,
-     * except by a trusted backend process (not covered here).
+     * The unique user ID and role should never change after creation.
      */
     function hasValidUserUpdateData() {
       return request.resource.data.id == resource.data.id &&
@@ -113,14 +111,12 @@ service cloud.firestore {
     // ================
 
     /**
-     * @description Manages user profile documents. A user can create, read,
-     *   update, and delete their own profile. An 'admin_master' can read any
-     *   user's profile and list all users.
+     * @description Manages user profile documents. A user can manage their
+     *   own profile. An 'admin_master' can read any user's profile and list all users.
      * @path /users/{userId}
      * @allow (get) An admin can get any user profile. A regular user can only get their own.
      * @allow (list) An admin can list all users. Regular users cannot.
-     * @deny (get) A user with UID 'user123' cannot get the profile for 'user456'.
-     * @principle Restricts access to a user's own data, with an exception for admin read access.
+     * @principle Restricts access to a user's own data, with an exception for admin read access based on role field.
      */
     match /users/{userId} {
       allow get: if isOwner(userId) || isAdminMaster();
@@ -133,9 +129,6 @@ service cloud.firestore {
        * @description Manages a user's access attempt records. Access is strictly
        *   limited to the owner of the parent user document. Admins can also read.
        * @path /users/{userId}/accessAttempts/{accessAttemptId}
-       * @allow (list) An authenticated user 'user123' can list their own access attempts.
-       * @allow (get) An admin can read any user's access attempts.
-       * @deny (get) An authenticated user 'user456' cannot read attempts for 'user123'.
        * @principle Enforces strict document ownership via path-based security, with admin read-only override.
        */
       match /accessAttempts/{accessAttemptId} {

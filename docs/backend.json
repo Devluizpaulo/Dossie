@@ -8,7 +8,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "Unique identifier for the user."
+          "description": "Unique identifier for the user, matching the Firebase Auth UID."
         },
         "name": {
           "type": "string",
@@ -48,7 +48,7 @@
         },
         "accessCode": {
           "type": "string",
-          "description": "The one time access code sent to the user's email.  This code is time-sensitive."
+          "description": "The one time access code sent to the user's email. This code is time-sensitive."
         },
         "securityCode": {
           "type": "string",
@@ -89,7 +89,7 @@
           "schema": {
             "$ref": "#/backend/entities/User"
           },
-          "description": "Stores user profile information. The 'userId' parameter is the unique identifier for the user.",
+          "description": "Stores user profile information, including their role. The 'userId' is the Firebase Auth UID.",
           "params": [
             {
               "name": "userId",
@@ -105,7 +105,7 @@
           "schema": {
             "$ref": "#/backend/entities/AccessAttempt"
           },
-          "description": "Stores access attempts associated with a user. Uses path-based ownership for simplified security rules. The 'userId' parameter is the unique identifier for the user. The 'accessAttemptId' parameter is the unique identifier for the access attempt.",
+          "description": "Stores access attempts for a user. Access is controlled via path-based ownership.",
           "params": [
             {
               "name": "userId",
@@ -118,7 +118,6 @@
           ]
         }
       }
-    ],
-    "reasoning": "This Firestore data structure prioritizes security and efficiency for the BMV Dossier Viewer application. It employs path-based ownership and denormalization to ensure authorization independence, enabling atomic operations and simplifying security rules. Since the application requires email/token based authentication and post login security code validation, the `users/{userId}/accessAttempts/{accessAttemptId}` subcollection enforces path-based ownership, providing a straightforward way to control access. The separation of concerns enforced by storing user data and access attempts in dedicated collections simplifies security rules and enhances debuggability. This approach eliminates the need for complex queries or `get()` calls in security rules, as authorization is based solely on the authenticated user's ID and path-based ownership.\n\n**QAPs (Rules are not Filters)**\n*   The chosen structure uses dedicated collections for different data types (users and access attempts), ensuring that list operations can be secured effectively without filtering data based on its content.  Path based ownership provides a straightforward approach to securing user specific data."
+    ]
   }
 }
