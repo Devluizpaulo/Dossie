@@ -1,7 +1,7 @@
 /**
- * Core Philosophy: This ruleset enforces a strict user-ownership model.
- * All user-specific data, such as access attempts, is stored within a
- * subcollection under that user's own document, ensuring data isolation.
+ * Core Philosophy: This ruleset enforces a strict user-ownership model,
+ * but provides an exception for a master administrator role ('admin_master')
+ * to have read-only access for governance and auditing purposes.
  *
  * Data Structure: All data is nested hierarchically under /users/{userId}.
  * This path-based ownership model simplifies security rules by making the
@@ -9,20 +9,15 @@
  * complex cross-document reads (`get()`) for authorization.
  *
  * Key Security Decisions:
- * - User Enumeration Prevention: Listing the top-level `/users` collection is
- *   explicitly disallowed to protect user privacy and prevent data scraping.
- * - Strict Ownership: A user can only access data within their own document
- *   tree (i.e., `/users/{their_own_userId}/...`). All access to other
- *   users' data is denied.
+ * - Admin Read Access: An 'admin_master' can list and get any user document,
+ *   which is essential for administrative dashboards.
+ * - User Enumeration Prevention: For non-admin users, listing the top-level
+ *   `/users` collection is explicitly disallowed to protect user privacy.
+ * - Strict Ownership for Writes: A user can only write to data within their
+ *   own document tree (i.e., `/users/{their_own_userId}/...`). Admins cannot
+ *   impersonate or write on behalf of users through these rules.
  * - Profile Self-Creation: An authenticated user is permitted to create their
- *   own profile document in the `/users` collection, but only if the document
- *   ID matches their authentication UID.
- *
- * Denormalization for Authorization: The rules rely on path-based ownership.
- * The `userId` in the path `/users/{userId}` is the sole authority for
- * access decisions on that document and its subcollections. Additionally,
- * documents within these paths are expected to contain a corresponding `userId`
- * field to maintain relational integrity on creation and updates.
+ *   own profile document, but only if the document ID matches their UID.
  *
  * Structural Segregation: The separation of user profiles (`/users`) from
  * their sensitive data (`/accessAttempts`) into a parent/subcollection
@@ -48,6 +43,14 @@ service cloud.firestore {
      */
     function isOwner(userId) {
       return isSignedIn() && request.auth.uid == userId;
+    }
+
+    /**
+     * Checks if the authenticated user has the 'admin_master' custom claim.
+     * This grants system-wide read privileges.
+     */
+    function isAdminMaster() {
+      return isSignedIn() && request.auth.token.role == 'admin_master';
     }
 
     /**
@@ -111,32 +114,33 @@ service cloud.firestore {
 
     /**
      * @description Manages user profile documents. A user can create, read,
-     *   update, and delete their own profile, but cannot see other user profiles.
+     *   update, and delete their own profile. An 'admin_master' can read any
+     *   user's profile and list all users.
      * @path /users/{userId}
-     * @allow (create) An authenticated user with UID 'user123' can create their own profile at `/users/user123`.
-     * @deny (list) No user, authenticated or not, can list all documents in the `/users` collection.
-     * @deny (get) A user with UID 'user123' cannot get the profile for 'user456' at `/users/user456`.
-     * @principle Restricts access to a user's own data tree and prevents user enumeration.
+     * @allow (get) An admin can get any user profile. A regular user can only get their own.
+     * @allow (list) An admin can list all users. Regular users cannot.
+     * @deny (get) A user with UID 'user123' cannot get the profile for 'user456'.
+     * @principle Restricts access to a user's own data, with an exception for admin read access.
      */
     match /users/{userId} {
-      allow get: if isOwner(userId);
-      allow list: if false; // CRITICAL: Prevents listing all users in the application.
+      allow get: if isOwner(userId) || isAdminMaster();
+      allow list: if isAdminMaster(); // CRITICAL: Only admin can list users.
       allow create: if isOwner(userId) && hasValidUserCreateData(userId);
       allow update: if isExistingOwner(userId) && hasValidUserUpdateData();
       allow delete: if isExistingOwner(userId);
 
       /**
        * @description Manages a user's access attempt records. Access is strictly
-       *   limited to the owner of the parent user document.
+       *   limited to the owner of the parent user document. Admins can also read.
        * @path /users/{userId}/accessAttempts/{accessAttemptId}
-       * @allow (list) An authenticated user 'user123' can list all documents at `/users/user123/accessAttempts`.
-       * @allow (create) An authenticated user 'user123' can create a new document at `/users/user123/accessAttempts/attempt_abc`.
-       * @deny (get) An authenticated user 'user456' cannot read a document at `/users/user123/accessAttempts/attempt_abc`.
-       * @principle Enforces strict document ownership via path-based security.
+       * @allow (list) An authenticated user 'user123' can list their own access attempts.
+       * @allow (get) An admin can read any user's access attempts.
+       * @deny (get) An authenticated user 'user456' cannot read attempts for 'user123'.
+       * @principle Enforces strict document ownership via path-based security, with admin read-only override.
        */
       match /accessAttempts/{accessAttemptId} {
-        allow get: if isOwner(userId);
-        allow list: if isOwner(userId);
+        allow get: if isOwner(userId) || isAdminMaster();
+        allow list: if isOwner(userId) || isAdminMaster();
         allow create: if isOwner(userId) && hasValidAccessAttemptCreateData(userId, accessAttemptId);
         allow update: if isExistingOwner(userId) && hasValidAccessAttemptUpdateData();
         allow delete: if isExistingOwner(userId);
