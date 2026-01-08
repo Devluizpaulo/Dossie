@@ -14,13 +14,17 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from "@/components/ui/badge";
-import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone } from 'lucide-react';
+import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter } from 'lucide-react';
 import { UserForm } from '@/app/admin/dashboard/user-form';
 import { DomainForm } from '@/app/admin/dashboard/domain-form';
 import type { User as FirestoreUser } from '@/firebase/user-service';
 import type { AuthorizedDomain } from '@/firebase/domain-service';
 import { format, formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Calendar } from '@/components/ui/calendar';
 
 
 type AuthStatus = 'loading' | 'unauthenticated' | 'authenticated' | 'forbidden';
@@ -76,7 +80,7 @@ export default function AdminDashboardPage() {
     
     const formatTimestamp = (timestamp: any) => {
         if (!timestamp) return 'N/A';
-        const date = timestamp.toDate();
+        const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
         return format(date, "dd/MM/yyyy 'às' HH:mm");
     };
 
@@ -354,10 +358,68 @@ export default function AdminDashboardPage() {
                                         </Table>
                                     </TabsContent>
                                     <TabsContent value="logs">
-                                        <CardTitle className="mb-4">Auditoria e Logs</CardTitle>
-                                        <p className="text-muted-foreground">
-                                            Módulo de auditoria com filtros avançados para rastrear todas as ações críticas no sistema. Os logs serão imutáveis e exportáveis.
-                                        </p>
+                                        <div className="flex items-center justify-between mb-4">
+                                            <CardTitle>Auditoria e Logs</CardTitle>
+                                            <Button variant="outline">
+                                                <Filter className="mr-2 h-4 w-4" />
+                                                Exportar Logs
+                                            </Button>
+                                        </div>
+                                        <CardDescription className="mb-6">
+                                            Rastreie todas as ações críticas no sistema. Os logs são imutáveis e servem como registro oficial para auditoria.
+                                        </CardDescription>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                                            <Input placeholder="Filtrar por usuário..." />
+                                            <Select>
+                                                <SelectTrigger>
+                                                    <SelectValue placeholder="Filtrar por ação..." />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    <SelectItem value="create_user">Criação de Usuário</SelectItem>
+                                                    <SelectItem value="add_domain">Adição de Domínio</SelectItem>
+                                                    <SelectItem value="login">Login</SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                            <Popover>
+                                                <PopoverTrigger asChild>
+                                                    <Button variant="outline">Filtrar por data...</Button>
+                                                </PopoverTrigger>
+                                                <PopoverContent className="w-auto p-0">
+                                                    <Calendar mode="range" />
+                                                </PopoverContent>
+                                            </Popover>
+                                            <Button>Aplicar Filtros</Button>
+                                        </div>
+                                        <Table>
+                                            <TableHeader>
+                                                <TableRow>
+                                                    <TableHead>Data</TableHead>
+                                                    <TableHead>Usuário</TableHead>
+                                                    <TableHead>Ação</TableHead>
+                                                    <TableHead>Detalhes</TableHead>
+                                                </TableRow>
+                                            </TableHeader>
+                                            <TableBody>
+                                                <TableRow>
+                                                    <TableCell>{formatTimestamp(new Date('2024-07-28T10:00:00Z'))}</TableCell>
+                                                    <TableCell>luizpaulo.jesus@bmv.global</TableCell>
+                                                    <TableCell><Badge variant="secondary">Criação de Usuário</Badge></TableCell>
+                                                    <TableCell className="text-xs text-muted-foreground">Usuário 'joao.silva@cliente.com' criado.</TableCell>
+                                                </TableRow>
+                                                <TableRow>
+                                                    <TableCell>{formatTimestamp(new Date('2024-07-28T10:05:00Z'))}</TableCell>
+                                                    <TableCell>luizpaulo.jesus@bmv.global</TableCell>
+                                                    <TableCell><Badge variant="secondary">Adição de Domínio</Badge></TableCell>
+                                                    <TableCell className="text-xs text-muted-foreground">Domínio 'cliente.com' autorizado.</TableCell>
+                                                </TableRow>
+                                                <TableRow>
+                                                    <TableCell>{formatTimestamp(new Date('2024-07-28T11:30:00Z'))}</TableCell>
+                                                    <TableCell>joao.silva@cliente.com</TableCell>
+                                                    <TableCell><Badge>Login</Badge></TableCell>
+                                                    <TableCell className="text-xs text-muted-foreground">Login bem-sucedido a partir do IP 192.168.1.10.</TableCell>
+                                                </TableRow>
+                                            </TableBody>
+                                        </Table>
                                     </TabsContent>
                                     <TabsContent value="dossiers">
                                         <CardTitle className="mb-4">Emissão de Dossiês e Anexos</CardTitle>
@@ -375,7 +437,4 @@ export default function AdminDashboardPage() {
     );
 }
 
-
-    
-    
     
