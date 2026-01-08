@@ -14,12 +14,13 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from "@/components/ui/badge";
-import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2 } from 'lucide-react';
+import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone } from 'lucide-react';
 import { UserForm } from '@/app/admin/dashboard/user-form';
 import { DomainForm } from '@/app/admin/dashboard/domain-form';
 import type { User as FirestoreUser } from '@/firebase/user-service';
 import type { AuthorizedDomain } from '@/firebase/domain-service';
-import { format } from 'date-fns';
+import { format, formatDistanceToNow } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 
 
 type AuthStatus = 'loading' | 'unauthenticated' | 'authenticated' | 'forbidden';
@@ -45,6 +46,11 @@ export default function AdminDashboardPage() {
     }, [firestore, authStatus]);
     const { data: domains, isLoading: domainsLoading } = useCollection<AuthorizedDomain>(domainsQuery);
 
+    const exampleSessions = useMemo(() => [
+        { id: '1', userName: 'Alice', userEmail: 'alice@example.com', device: 'Desktop', ip: '192.168.1.10', lastActivity: new Date(Date.now() - 1000 * 60 * 5), expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24) },
+        { id: '2', userName: 'Beto', userEmail: 'beto@example.com', device: 'Smartphone', ip: '10.0.0.5', lastActivity: new Date(Date.now() - 1000 * 60 * 30), expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 12) },
+        { id: '3', userName: 'Carla', userEmail: 'carla@example.com', device: 'Desktop', ip: '203.0.113.25', lastActivity: new Date(Date.now() - 1000 * 60 * 60 * 2), expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 4) },
+    ], []);
 
     useEffect(() => {
         if (isUserLoading) {
@@ -79,6 +85,10 @@ export default function AdminDashboardPage() {
         const date = timestamp.toDate();
         return format(date, "dd/MM/yyyy 'às' HH:mm");
     };
+
+    const formatLastActivity = (date: Date) => {
+        return formatDistanceToNow(date, { addSuffix: true, locale: ptBR });
+    }
 
 
     if (authStatus !== 'authenticated') {
@@ -307,9 +317,47 @@ export default function AdminDashboardPage() {
                                     </TabsContent>
                                     <TabsContent value="sessions">
                                         <CardTitle className="mb-4">Controle de Sessões e Tokens</CardTitle>
-                                        <p className="text-muted-foreground">
-                                            Painel para visualizar sessões ativas, tokens emitidos, seus tempos de expiração e a capacidade de revogá-los manualmente para forçar o logout de usuários.
-                                        </p>
+                                        <CardDescription className="mb-6">
+                                            Visualize sessões ativas, seus tempos de expiração e revogue-as manualmente para forçar o logout de usuários.
+                                        </CardDescription>
+                                        <Table>
+                                            <TableHeader>
+                                                <TableRow>
+                                                    <TableHead>Usuário</TableHead>
+                                                    <TableHead>Dispositivo / IP</TableHead>
+                                                    <TableHead>Última Atividade</TableHead>
+                                                    <TableHead>Expira em</TableHead>
+                                                    <TableHead><span className="sr-only">Ações</span></TableHead>
+                                                </TableRow>
+                                            </TableHeader>
+                                            <TableBody>
+                                                {exampleSessions.map((session) => (
+                                                    <TableRow key={session.id}>
+                                                        <TableCell>
+                                                            <div className="font-medium">{session.userName}</div>
+                                                            <div className="text-sm text-muted-foreground">{session.userEmail}</div>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <div className="flex items-center gap-2">
+                                                                {session.device === 'Desktop' ? <Laptop className="h-4 w-4 text-muted-foreground" /> : <Smartphone className="h-4 w-4 text-muted-foreground" />}
+                                                                <div>
+                                                                    <div>{session.device}</div>
+                                                                    <div className="text-xs text-muted-foreground">{session.ip}</div>
+                                                                </div>
+                                                            </div>
+                                                        </TableCell>
+                                                        <TableCell>{formatLastActivity(session.lastActivity)}</TableCell>
+                                                        <TableCell>{formatDistanceToNow(session.expiresAt, { locale: ptBR })}</TableCell>
+                                                        <TableCell>
+                                                            <Button variant="destructive" size="sm">
+                                                                <Ban className="mr-2 h-4 w-4" />
+                                                                Revogar
+                                                            </Button>
+                                                        </TableCell>
+                                                    </TableRow>
+                                                ))}
+                                            </TableBody>
+                                        </Table>
                                     </TabsContent>
                                     <TabsContent value="logs">
                                         <CardTitle className="mb-4">Auditoria e Logs</CardTitle>
@@ -334,4 +382,5 @@ export default function AdminDashboardPage() {
 }
 
 
+    
     
