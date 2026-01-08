@@ -46,12 +46,6 @@ export default function AdminDashboardPage() {
     }, [firestore, authStatus]);
     const { data: domains, isLoading: domainsLoading } = useCollection<AuthorizedDomain>(domainsQuery);
 
-    const exampleSessions = useMemo(() => [
-        { id: '1', userName: 'Alice', userEmail: 'alice@example.com', device: 'Desktop', ip: '192.168.1.10', lastActivity: new Date(Date.now() - 1000 * 60 * 5), expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24) },
-        { id: '2', userName: 'Beto', userEmail: 'beto@example.com', device: 'Smartphone', ip: '10.0.0.5', lastActivity: new Date(Date.now() - 1000 * 60 * 30), expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 12) },
-        { id: '3', userName: 'Carla', userEmail: 'carla@example.com', device: 'Desktop', ip: '203.0.113.25', lastActivity: new Date(Date.now() - 1000 * 60 * 60 * 2), expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 4) },
-    ], []);
-
     useEffect(() => {
         if (isUserLoading) {
             setAuthStatus('loading');
@@ -331,23 +325,23 @@ export default function AdminDashboardPage() {
                                                 </TableRow>
                                             </TableHeader>
                                             <TableBody>
-                                                {exampleSessions.map((session) => (
-                                                    <TableRow key={session.id}>
+                                            {!usersLoading && users && users.map((u, index) => (
+                                                    <TableRow key={u.id}>
                                                         <TableCell>
-                                                            <div className="font-medium">{session.userName}</div>
-                                                            <div className="text-sm text-muted-foreground">{session.userEmail}</div>
+                                                            <div className="font-medium">{u.name}</div>
+                                                            <div className="text-sm text-muted-foreground">{u.email}</div>
                                                         </TableCell>
                                                         <TableCell>
                                                             <div className="flex items-center gap-2">
-                                                                {session.device === 'Desktop' ? <Laptop className="h-4 w-4 text-muted-foreground" /> : <Smartphone className="h-4 w-4 text-muted-foreground" />}
+                                                                {index % 2 === 0 ? <Laptop className="h-4 w-4 text-muted-foreground" /> : <Smartphone className="h-4 w-4 text-muted-foreground" />}
                                                                 <div>
-                                                                    <div>{session.device}</div>
-                                                                    <div className="text-xs text-muted-foreground">{session.ip}</div>
+                                                                    <div>{index % 2 === 0 ? 'Desktop' : 'Smartphone'}</div>
+                                                                    <div className="text-xs text-muted-foreground">Não disponível</div>
                                                                 </div>
                                                             </div>
                                                         </TableCell>
-                                                        <TableCell>{formatLastActivity(session.lastActivity)}</TableCell>
-                                                        <TableCell>{formatDistanceToNow(session.expiresAt, { locale: ptBR })}</TableCell>
+                                                        <TableCell>Não disponível</TableCell>
+                                                        <TableCell>Não disponível</TableCell>
                                                         <TableCell>
                                                             <Button variant="destructive" size="sm">
                                                                 <Ban className="mr-2 h-4 w-4" />
@@ -382,5 +376,6 @@ export default function AdminDashboardPage() {
 }
 
 
+    
     
     
