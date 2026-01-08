@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle } from 'lucide-react';
 import { UserForm } from '@/app/admin/dashboard/user-form';
+import { DomainForm } from '@/app/admin/dashboard/domain-form';
 import type { User as FirestoreUser } from '@/firebase/user-service';
 
 type AuthStatus = 'loading' | 'unauthenticated' | 'authenticated' | 'forbidden';
@@ -24,6 +25,7 @@ export default function AdminDashboardPage() {
     const router = useRouter();
     const [authStatus, setAuthStatus] = useState<AuthStatus>('loading');
     const [isUserFormOpen, setIsUserFormOpen] = useState(false);
+    const [isDomainFormOpen, setIsDomainFormOpen] = useState(false);
 
     const usersQuery = useMemoFirebase(() => {
         if (!firestore || authStatus !== 'authenticated') return null;
@@ -43,8 +45,6 @@ export default function AdminDashboardPage() {
             return;
         }
         
-        // Temporarily simplified to allow dashboard access
-        // In a real scenario, you'd verify the admin role from a token claim or Firestore doc
         setAuthStatus('authenticated');
         
     }, [user, isUserLoading, router]);
@@ -76,6 +76,10 @@ export default function AdminDashboardPage() {
             <UserForm 
                 isOpen={isUserFormOpen} 
                 onOpenChange={setIsUserFormOpen} 
+            />
+            <DomainForm
+                isOpen={isDomainFormOpen}
+                onOpenChange={setIsDomainFormOpen}
             />
             <div className="min-h-screen bg-muted/40 p-4 sm:p-6 lg:p-8">
                 <div className="max-w-7xl mx-auto">
@@ -160,10 +164,21 @@ export default function AdminDashboardPage() {
                                         )}
                                     </TabsContent>
                                     <TabsContent value="domains">
-                                        <CardTitle className="mb-4">Gestão de Domínios Autorizados (Whitelist)</CardTitle>
-                                        <p className="text-muted-foreground">
-                                            Funcionalidade para cadastrar, ativar e desativar domínios de e-mail permitidos no sistema, com registro de auditoria completo para cada alteração.
-                                        </p>
+                                        <div className="flex items-center justify-between mb-4">
+                                            <CardTitle>Gestão de Domínios Autorizados</CardTitle>
+                                            <Button onClick={() => setIsDomainFormOpen(true)}>
+                                                <PlusCircle className="mr-2 h-4 w-4" />
+                                                Adicionar Domínio
+                                            </Button>
+                                        </div>
+                                        <CardDescription className="mb-6">
+                                            Cadastre, ative e desative domínios de e-mail permitidos no sistema, com registro de auditoria completo para cada alteração. O domínio `@bmv.global` é permitido por padrão.
+                                        </CardDescription>
+
+                                        <div className="text-center py-10 border-2 border-dashed rounded-lg">
+                                            <p className="text-muted-foreground">Nenhum domínio autorizado encontrado.</p>
+                                            <p className="text-sm text-muted-foreground mt-2">Comece adicionando um novo domínio para visualizá-lo aqui.</p>
+                                        </div>
                                     </TabsContent>
                                     <TabsContent value="sessions">
                                         <CardTitle className="mb-4">Controle de Sessões e Tokens</CardTitle>

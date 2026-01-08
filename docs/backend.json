@@ -83,6 +83,51 @@
         "attemptedAt",
         "isSuccessful"
       ]
+    },
+    "AuthorizedDomain": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "AuthorizedDomain",
+      "type": "object",
+      "description": "Represents an email domain authorized to access the system.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the domain record."
+        },
+        "domain": {
+          "type": "string",
+          "description": "The domain name (e.g., 'example.com')."
+        },
+        "responsible": {
+          "type": "string",
+          "description": "The name of the person responsible for this domain."
+        },
+        "justification": {
+          "type": "string",
+          "description": "The reason for authorizing this domain."
+        },
+        "status": {
+          "type": "string",
+          "description": "The current status of the domain authorization.",
+          "enum": [
+            "active",
+            "inactive"
+          ]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp of when the domain was added.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "domain",
+        "responsible",
+        "justification",
+        "status",
+        "createdAt"
+      ]
     }
   },
   "auth": {
@@ -125,6 +170,22 @@
             {
               "name": "accessAttemptId",
               "description": "Unique identifier for the access attempt."
+            }
+          ]
+        }
+      },
+      {
+        "path": "authorizedDomains/{domainId}",
+        "definition": {
+          "entityName": "AuthorizedDomain",
+          "schema": {
+            "$ref": "#/backend/entities/AuthorizedDomain"
+          },
+          "description": "Stores the list of email domains authorized to use the system.",
+          "params": [
+            {
+              "name": "domainId",
+              "description": "Unique identifier for the domain authorization record."
             }
           ]
         }
