@@ -11,8 +11,10 @@ import {
   Expand,
   ListCollapse,
   ArrowUp,
-  Menu,
 } from 'lucide-react';
+import { useUser } from '@/firebase';
+import { useRouter } from 'next/navigation';
+
 
 import { ThemeToggle } from './components/dossier/theme-toggle';
 import { DossierContent, sections } from './components/dossier/content';
@@ -28,6 +30,16 @@ export default function DossierPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [scrollProgress, setScrollProgress] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
+  const { user, isUserLoading } = useUser();
+  const router = useRouter();
+
+
+  useEffect(() => {
+    if (!isUserLoading && !user) {
+      router.push('/login');
+    }
+  }, [user, isUserLoading, router]);
+
 
   const toggleExpandAll = () => {
     if (allExpanded) {
@@ -57,6 +69,15 @@ export default function DossierPage() {
     contentEl.addEventListener('scroll', checkScroll);
     return () => contentEl.removeEventListener('scroll', checkScroll);
   }, []);
+  
+    if (isUserLoading || !user) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <p>Carregando...</p>
+      </div>
+    );
+  }
+
 
   return (
     <div className="min-h-screen page-shell relative overflow-hidden">

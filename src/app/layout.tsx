@@ -1,9 +1,9 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import { SidebarProvider } from '@/components/ui/sidebar';
 import { Inter as FontSans, Poppins as FontHeadline } from 'next/font/google'
 import { cn } from '@/lib/utils';
+import { FirebaseClientProvider } from '@/firebase';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -34,9 +34,9 @@ export default function RootLayout({
           fontSans.variable,
           fontHeadline.variable
         )}>
-        <SidebarProvider>
-          {children}
-        </SidebarProvider>
+        <FirebaseClientProvider>
+            {children}
+        </FirebaseClientProvider>
         <Toaster />
       </body>
     </html>
