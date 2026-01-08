@@ -109,8 +109,14 @@
       "description": "Campo 'ID Transação NXT' exibido indevidamente nos detalhes do certificado."
     },
     {
-      "id": "ev-07-atual-legado",
+      "id": "ev-07-atual",
       "imageUrl": "/Image/ev-07-atual.png",
+      "imageHint": "search filter",
+      "description": "Comparativo: Filtro funcional no Sistema Legado (acima) vs. inoperante no Sistema Atual (abaixo)."
+    },
+    {
+      "id": "ev-07-legado",
+      "imageUrl": "/Image/ev-07-legado.png",
       "imageHint": "search filter",
       "description": "Comparativo: Filtro funcional no Sistema Legado (acima) vs. inoperante no Sistema Atual (abaixo)."
     },
@@ -125,6 +131,12 @@
       "imageUrl": "/Image/ev-08-atual.png",
       "imageHint": "spreadsheet error",
       "description": "Sistema Atual: Cálculos de DARE e Royalties com valores divergentes."
+    },
+    {
+      "id": "ev-08-relatorio",
+      "imageUrl": "/Image/ev-08-atual-relatorio.png",
+      "imageHint": "spreadsheet error",
+      "description": "Sistema Atual: Cálculos de DARE e Royalties Os valores corretos são os que aparecem no relatório."
     },
     {
       "id": "ev-09-admin",

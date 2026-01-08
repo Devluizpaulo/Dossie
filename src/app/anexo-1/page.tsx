@@ -6,7 +6,6 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { EvidenceImage } from "@/app/components/evidence-image";
-import { CheckCircle2 } from "lucide-react";
 import { BiSolidArchive, BiLeaf, BiSolidCartAlt, BiData } from "react-icons/bi";
 import { BsPatchCheck, BsCartPlusFill } from "react-icons/bs";
 import { FiCoffee } from "react-icons/fi";
@@ -650,7 +649,10 @@ export default function Anexo1() {
 
               <div className="bg-muted p-4 rounded-lg">
                 <p className="text-sm font-semibold mb-2">Evidência Visual:</p>
-                <EvidenceImage imageId="ev-07-atual-legado" />
+                <div className="grid md:grid-cols-2 gap-4">
+                  <EvidenceImage imageId="ev-07-atual" />
+                  <EvidenceImage imageId="ev-07-legado" />
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -708,6 +710,7 @@ export default function Anexo1() {
                 <div className="grid md:grid-cols-2 gap-4">
                   <EvidenceImage imageId="ev-08-legado" />
                   <EvidenceImage imageId="ev-08-atual" />
+                  <EvidenceImage imageId="ev-08-relatorio" />
                 </div>
               </div>
             </CardContent>
