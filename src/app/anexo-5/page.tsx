@@ -157,6 +157,65 @@ export default function Anexo5() {
           </CardContent>
         </Card>
 
+        {/* 4. Solicitação de CDE */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">Fluxo 3: Solicitação de CDE</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div>
+              <h3 className="text-xl font-semibold mb-3">Fluxo de Solicitação de CDE (AS-IS)</h3>
+              <p className="text-justify mb-4">
+                O processo atual para solicitar uma Certidão de Disponibilidade de Estoque (CDE) é inteiramente manual, dependendo de e-mails e da emissão de boletos em sistemas externos como o Omie.
+              </p>
+              <div className="bg-muted p-4 rounded-lg">
+                <EvidenceImage 
+                  imageId="solicitacao-cde-as-is" 
+                  caption="Diagrama do fluxo atual (AS-IS) para Solicitação de CDE."
+                />
+              </div>
+              <Alert className="mt-4">
+                <AlertDescription>
+                  <p className="font-semibold mb-2">Pontos Críticos do Fluxo AS-IS:</p>
+                  <ul className="list-disc pl-6 space-y-1 text-sm">
+                    <li>Processo iniciado fora da plataforma (e-mail).</li>
+                    <li>Aprovação interna manual e sequencial.</li>
+                    <li>Emissão de boleto em sistema de terceiros (Omie).</li>
+                    <li>Pagamento e confirmação não integrados.</li>
+                    <li>CDE emitida e enviada manualmente ao cliente.</li>
+                  </ul>
+                </AlertDescription>
+              </Alert>
+            </div>
+
+            <Separator />
+            
+            <div>
+              <h3 className="text-xl font-semibold mb-3">Fluxo de Solicitação de CDE (TO-BE)</h3>
+              <p className="text-justify mb-4">
+                O fluxo ideal automatiza todo o processo, desde a solicitação até a emissão da CDE, centralizando todas as etapas na plataforma BMV.
+              </p>
+              <div className="bg-muted p-4 rounded-lg">
+                <EvidenceImage 
+                  imageId="solicitacao-cde-to-be" 
+                  caption="Diagrama do fluxo ideal (TO-BE) para Solicitação de CDE."
+                />
+              </div>
+              <Alert variant="destructive" className="mt-4">
+                <AlertDescription>
+                  <p className="font-semibold mb-2">Principais Ganhos com o Fluxo TO-BE:</p>
+                  <ul className="list-disc pl-6 space-y-1 text-sm">
+                    <li><strong>Jornada Unificada:</strong> Cliente realiza a solicitação pela sua carteira na BMV.</li>
+                    <li><strong>Aprovação Simplificada:</strong> Backoffice aprova a solicitação dentro do sistema.</li>
+                    <li><strong>Pagamento Integrado:</strong> Boleto é emitido e o pagamento é confirmado automaticamente na plataforma.</li>
+                    <li><strong>Emissão Automática:</strong> A CDE é gerada e disponibilizada ao cliente instantaneamente após o pagamento.</li>
+                  </ul>
+                </AlertDescription>
+              </Alert>
+            </div>
+          </CardContent>
+        </Card>
+
 
         {/* Conclusão */}
         <Card>

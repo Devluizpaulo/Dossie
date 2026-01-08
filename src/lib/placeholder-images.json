@@ -143,6 +143,18 @@
       "imageUrl": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhdXRvbWF0ZWQlMjB3b3JrZmxvd3xlbnwwfHx8fDE3NjgyODM4ODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "automated workflow",
       "description": "Fluxo de Intenção de Movimentação Ideal (TO-BE): Processo automatizado via plataforma digital."
+    },
+    {
+      "id": "solicitacao-cde-as-is",
+      "imageUrl": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3JrZmxvdyUyMGRpYWdyYW18ZW58MHx8fHwxNzY4MjgzODg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "workflow diagram",
+      "description": "Fluxo de Solicitação de CDE Atual (AS-IS): Processo manual, dependente de e-mail e intervenções."
+    },
+    {
+      "id": "solicitacao-cde-to-be",
+      "imageUrl": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhdXRvbWF0ZWQlMjB3b3JrZmxvd3xlbnwwfHx8fDE3NjgyODM4ODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "automated workflow",
+      "description": "Fluxo de Solicitação de CDE Ideal (TO-BE): Processo automatizado e integrado na plataforma."
     }
   ]
 }
