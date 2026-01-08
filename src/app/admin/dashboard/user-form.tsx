@@ -140,7 +140,7 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
     
     const userRole = data.email === 'luizpaulo.jesus@bmv.global' ? 'admin_master' : 'user';
 
-    const userData: Omit<User, 'id'> = {
+    const userData: Omit<User, 'id' | 'status'> = {
         ...data,
         phone: data.phone ? `+55${data.phone}` : undefined,
         role: userRole,

@@ -8,16 +8,17 @@ import { collection, query, orderBy } from 'firebase/firestore';
 import { signOut } from 'firebase/auth';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from "@/components/ui/badge";
-import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter, FileSpreadsheet, Download } from 'lucide-react';
+import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter, FileSpreadsheet, Download, CheckCircle, XCircle } from 'lucide-react';
 import { UserForm } from '@/app/admin/dashboard/user-form';
 import { DomainForm } from '@/app/admin/dashboard/domain-form';
 import { DossierForm } from '@/app/admin/dashboard/dossier-form';
-import type { User as FirestoreUser } from '@/firebase/user-service';
+import { updateUser, deleteUser, type User as FirestoreUser } from '@/firebase/user-service';
 import type { AuthorizedDomain } from '@/firebase/domain-service';
 import type { Dossier } from '@/firebase/dossier-service';
 import { format, formatDistanceToNow } from 'date-fns';
@@ -26,6 +27,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
+import { useToast } from '@/hooks/use-toast';
 
 
 type AuthStatus = 'loading' | 'unauthenticated' | 'authenticated' | 'forbidden';
@@ -35,10 +37,13 @@ export default function AdminDashboardPage() {
     const auth = useAuth();
     const firestore = useFirestore();
     const router = useRouter();
+    const { toast } = useToast();
+
     const [authStatus, setAuthStatus] = useState<AuthStatus>('loading');
     const [isUserFormOpen, setIsUserFormOpen] = useState(false);
     const [isDomainFormOpen, setIsDomainFormOpen] = useState(false);
     const [isDossierFormOpen, setIsDossierFormOpen] = useState(false);
+    const [selectedUser, setSelectedUser] = useState<FirestoreUser | undefined>(undefined);
 
     const usersQuery = useMemoFirebase(() => {
         if (!firestore || authStatus !== 'authenticated') return null;
@@ -81,6 +86,52 @@ export default function AdminDashboardPage() {
         router.push('/admin');
     };
 
+    const handleEditUser = (userToEdit: FirestoreUser) => {
+        setSelectedUser(userToEdit);
+        setIsUserFormOpen(true);
+    };
+
+    const handleCreateUser = () => {
+        setSelectedUser(undefined);
+        setIsUserFormOpen(true);
+    };
+
+    const handleToggleUserStatus = async (userToToggle: FirestoreUser) => {
+        if (!firestore) return;
+        const newStatus = userToToggle.status === 'active' ? 'inactive' : 'active';
+        try {
+            await updateUser(firestore, userToToggle.id!, { status: newStatus });
+            toast({
+                title: "Status do usuário atualizado!",
+                description: `O usuário ${userToToggle.name} foi ${newStatus === 'active' ? 'ativado' : 'inativado'}.`,
+            });
+        } catch (error: any) {
+            toast({
+                variant: "destructive",
+                title: "Erro ao atualizar status",
+                description: error.message,
+            });
+        }
+    };
+    
+    const handleDeleteUser = async (userId: string) => {
+        if (!firestore) return;
+        try {
+            // Note: Deleting from Auth requires admin SDK, so we only delete from Firestore here.
+            await deleteUser(firestore, userId);
+            toast({
+                title: "Usuário excluído com sucesso!",
+                description: "O registro do usuário foi removido do Firestore.",
+            });
+        } catch (error: any) {
+            toast({
+                variant: "destructive",
+                title: "Erro ao excluir usuário",
+                description: error.message,
+            });
+        }
+    };
+
     const getUserInitials = (name: string | null | undefined) => {
         if (!name) return '?';
         return name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
@@ -110,7 +161,8 @@ export default function AdminDashboardPage() {
         <>
             <UserForm 
                 isOpen={isUserFormOpen} 
-                onOpenChange={setIsUserFormOpen} 
+                onOpenChange={setIsUserFormOpen}
+                user={selectedUser}
             />
             <DomainForm
                 isOpen={isDomainFormOpen}
@@ -178,7 +230,7 @@ export default function AdminDashboardPage() {
                                     <TabsContent value="users">
                                         <div className="flex items-center justify-between mb-4">
                                             <CardTitle>Gestão de Usuários</CardTitle>
-                                            <Button onClick={() => setIsUserFormOpen(true)}>
+                                            <Button onClick={handleCreateUser}>
                                                 <PlusCircle className="mr-2 h-4 w-4" />
                                                 Criar Novo Usuário
                                             </Button>
@@ -203,6 +255,7 @@ export default function AdminDashboardPage() {
                                                         <TableHead>Usuário</TableHead>
                                                         <TableHead className="hidden sm:table-cell">Telefone</TableHead>
                                                         <TableHead>Função</TableHead>
+                                                        <TableHead>Status</TableHead>
                                                         <TableHead><span className="sr-only">Ações</span></TableHead>
                                                     </TableRow>
                                                 </TableHeader>
@@ -227,6 +280,11 @@ export default function AdminDashboardPage() {
                                                                 </Badge>
                                                             </TableCell>
                                                             <TableCell>
+                                                                <Badge variant={u.status === 'active' ? 'default' : 'outline'}>
+                                                                    {u.status === 'active' ? 'Ativo' : 'Inativo'}
+                                                                </Badge>
+                                                            </TableCell>
+                                                            <TableCell>
                                                                 <DropdownMenu>
                                                                     <DropdownMenuTrigger asChild>
                                                                         <Button aria-haspopup="true" size="icon" variant="ghost">
@@ -236,19 +294,35 @@ export default function AdminDashboardPage() {
                                                                     </DropdownMenuTrigger>
                                                                     <DropdownMenuContent align="end">
                                                                         <DropdownMenuLabel>Ações</DropdownMenuLabel>
-                                                                        <DropdownMenuItem>
+                                                                        <DropdownMenuItem onClick={() => handleEditUser(u)}>
                                                                             <Edit className="mr-2 h-4 w-4" />
                                                                             Editar
                                                                         </DropdownMenuItem>
-                                                                         <DropdownMenuItem>
-                                                                            <Ban className="mr-2 h-4 w-4" />
-                                                                            Inativar
+                                                                         <DropdownMenuItem onClick={() => handleToggleUserStatus(u)}>
+                                                                            {u.status === 'active' ? <Ban className="mr-2 h-4 w-4" /> : <CheckCircle className="mr-2 h-4 w-4" />}
+                                                                            {u.status === 'active' ? 'Inativar' : 'Ativar'}
                                                                         </DropdownMenuItem>
                                                                         <DropdownMenuSeparator />
-                                                                        <DropdownMenuItem className="text-destructive">
-                                                                            <Trash2 className="mr-2 h-4 w-4" />
-                                                                            Excluir
-                                                                        </DropdownMenuItem>
+                                                                        <AlertDialog>
+                                                                            <AlertDialogTrigger asChild>
+                                                                                <button className="relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 text-destructive w-full">
+                                                                                    <Trash2 className="mr-2 h-4 w-4" />
+                                                                                    Excluir
+                                                                                </button>
+                                                                            </AlertDialogTrigger>
+                                                                            <AlertDialogContent>
+                                                                                <AlertDialogHeader>
+                                                                                    <AlertDialogTitle>Você tem certeza?</AlertDialogTitle>
+                                                                                    <AlertDialogDescription>
+                                                                                        Esta ação não pode ser desfeita. Isso excluirá permanentemente o usuário "{u.name}" e removerá seus dados de nossos servidores.
+                                                                                    </AlertDialogDescription>
+                                                                                </AlertDialogHeader>
+                                                                                <AlertDialogFooter>
+                                                                                    <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                                                                                    <AlertDialogAction onClick={() => handleDeleteUser(u.id!)}>Continuar</AlertDialogAction>
+                                                                                </AlertDialogFooter>
+                                                                            </AlertDialogContent>
+                                                                        </AlertDialog>
                                                                     </DropdownMenuContent>
                                                                 </DropdownMenu>
                                                             </TableCell>

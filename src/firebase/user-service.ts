@@ -6,6 +6,7 @@ import {
   doc,
   setDoc,
   updateDoc,
+  deleteDoc,
 } from 'firebase/firestore';
 import {
   Auth,
@@ -22,6 +23,7 @@ export interface User {
   phone?: string;
   role: 'admin_master' | 'user';
   accessCode?: string;
+  status: 'active' | 'inactive';
 }
 
 const usersCollection = 'users';
@@ -32,11 +34,12 @@ const usersCollection = 'users';
  * @param firestore - The Firestore instance.
  * @param userData - The data for the new user, without an ID.
  */
-export async function createUser(firestore: Firestore, userData: Omit<User, 'id'>): Promise<string> {
+export async function createUser(firestore: Firestore, userData: Omit<User, 'id' | 'status'>): Promise<string> {
   const newUserRef = doc(collection(firestore, usersCollection));
   const fullUserData: User = {
     ...userData,
     id: newUserRef.id,
+    status: 'active',
   };
 
   await setDoc(newUserRef, fullUserData)
@@ -80,6 +83,7 @@ export async function createAdminUser(
       name: adminData.name,
       email: adminData.email,
       role: 'admin_master',
+      status: 'active',
     };
 
     await setDoc(userDocRef, adminUserData);
@@ -114,7 +118,7 @@ export async function createAdminUser(
  * @param userId - The ID of the user to update.
  * @param userData - The partial data to update.
  */
-export async function updateUser(firestore: Firestore, userId: string, userData: Partial<User>): Promise<void> {
+export async function updateUser(firestore: Firestore, userId: string, userData: Partial<Omit<User, 'id'>>): Promise<void> {
     const userDocRef = doc(firestore, usersCollection, userId);
 
     return updateDoc(userDocRef, userData)
@@ -127,4 +131,25 @@ export async function updateUser(firestore: Firestore, userId: string, userData:
             errorEmitter.emit('permission-error', permissionError);
             throw serverError;
         });
+}
+
+/**
+ * Deletes a user document from Firestore.
+ * Note: This does not delete the user from Firebase Authentication.
+ *
+ * @param firestore - The Firestore instance.
+ * @param userId - The ID of the user to delete.
+ */
+export async function deleteUser(firestore: Firestore, userId: string): Promise<void> {
+  const userDocRef = doc(firestore, usersCollection, userId);
+
+  return deleteDoc(userDocRef)
+    .catch((serverError) => {
+      const permissionError = new FirestorePermissionError({
+        path: userDocRef.path,
+        operation: 'delete',
+      });
+      errorEmitter.emit('permission-error', permissionError);
+      throw serverError;
+    });
 }
