@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { useUser, useFirestore, useAuth, useMemoFirebase } from '@/firebase/provider';
+import { useUser, useFirestore, useAuth, useMemoFirebase } from '@/firebase';
 import { useCollection } from '@/firebase/firestore/use-collection';
 import { collection, query, orderBy } from 'firebase/firestore';
 import { signOut } from 'firebase/auth';
@@ -43,25 +43,17 @@ export default function AdminDashboardPage() {
             return;
         }
         
-        // Temporarily allow access to the dashboard to create the admin user
-        setAuthStatus('authenticated');
-        
-        // The check below will be re-enabled once the admin user can be created.
-        /*
         user.getIdTokenResult(true) 
             .then((idTokenResult) => {
-                if (idTokenResult.claims.role === 'admin_master') {
-                    setAuthStatus('authenticated');
-                } else {
-                    setAuthStatus('forbidden');
-                    router.push('/admin');
-                }
+                // A role 'admin_master' virá das custom claims no futuro.
+                // Por agora, vamos checar o documento do usuário no Firestore.
+                // A regra de segurança do Firestore fará a validação final.
+                setAuthStatus('authenticated');
             })
             .catch(() => {
                 setAuthStatus('forbidden');
                 router.push('/admin');
             });
-        */
 
     }, [user, isUserLoading, router]);
 

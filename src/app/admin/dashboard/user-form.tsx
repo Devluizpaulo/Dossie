@@ -166,7 +166,7 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
         <DialogHeader>
           <DialogTitle>{user ? 'Editar Usuário' : 'Criar Novo Usuário'}</DialogTitle>
           <DialogDescription>
-            Preencha as informações abaixo para criar ou editar um usuário.
+            Preencha as informações abaixo para criar ou editar um usuário comum.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>

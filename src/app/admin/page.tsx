@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth, useUser } from '@/firebase';
-import { signInWithEmailAndPassword, IdTokenResult } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { LogIn, UserPlus } from 'lucide-react';
 import { Logo } from "@/components/logo";
@@ -11,13 +11,13 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { motion } from 'framer-motion';
-import { UserForm } from '@/app/admin/dashboard/user-form';
+import { AdminCreationForm } from './admin-creation-form';
 
 export default function AdminLoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isUserFormOpen, setIsUserFormOpen] = useState(false);
+  const [isAdminFormOpen, setIsAdminFormOpen] = useState(false);
   const { toast } = useToast();
   const router = useRouter();
   const auth = useAuth();
@@ -49,7 +49,8 @@ export default function AdminLoginPage() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // A verificação no useEffect cuidará do redirecionamento
+      // O useEffect cuidará do redirecionamento
+      router.push('/admin/dashboard');
     } catch (error: any) {
       let description = "Ocorreu um erro ao fazer login. Verifique suas credenciais.";
       if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
@@ -76,9 +77,9 @@ export default function AdminLoginPage() {
 
   return (
     <>
-      <UserForm 
-          isOpen={isUserFormOpen} 
-          onOpenChange={setIsUserFormOpen} 
+      <AdminCreationForm 
+          isOpen={isAdminFormOpen} 
+          onOpenChange={setIsAdminFormOpen} 
       />
       <div className="flex min-h-screen flex-col items-center justify-center bg-muted/40 p-4">
         <motion.div 
@@ -125,7 +126,7 @@ export default function AdminLoginPage() {
                   disabled={isLoading}
                 />
                 <div className="grid grid-cols-2 gap-2">
-                    <Button variant="outline" type="button" onClick={() => setIsUserFormOpen(true)} disabled={isLoading}>
+                    <Button variant="outline" type="button" onClick={() => setIsAdminFormOpen(true)} disabled={isLoading}>
                         <UserPlus className="mr-2 h-4 w-4" />
                         Cadastrar Admin
                     </Button>

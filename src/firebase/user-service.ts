@@ -7,6 +7,11 @@ import {
   setDoc,
   updateDoc,
 } from 'firebase/firestore';
+import {
+  Auth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from 'firebase/auth';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 
@@ -22,8 +27,7 @@ export interface User {
 const usersCollection = 'users';
 
 /**
- * Creates a new user document in Firestore.
- * This is a non-blocking operation that creates a document with a new auto-generated ID.
+ * Creates a new regular user document in Firestore.
  *
  * @param firestore - The Firestore instance.
  * @param userData - The data for the new user, without an ID.
@@ -43,17 +47,68 @@ export async function createUser(firestore: Firestore, userData: Omit<User, 'id'
         requestResourceData: fullUserData,
       });
       errorEmitter.emit('permission-error', permissionError);
-      // Re-throw the original error to let the caller handle UI feedback (e.g., toast).
       throw serverError;
     });
 
   return newUserRef.id;
 }
 
+/**
+ * Creates a new admin user in Firebase Auth and a corresponding document in Firestore.
+ *
+ * @param auth - The Firebase Auth instance.
+ * @param firestore - The Firestore instance.
+ * @param adminData - The admin's name, email, and password.
+ */
+export async function createAdminUser(
+  auth: Auth,
+  firestore: Firestore,
+  adminData: Pick<User, 'name' | 'email'> & { password: string }
+) {
+  try {
+    // 1. Create user in Firebase Authentication
+    const userCredential = await createUserWithEmailAndPassword(auth, adminData.email, adminData.password);
+    const { user } = userCredential;
+
+    // 2. Update the user's profile in Auth
+    await updateProfile(user, { displayName: adminData.name });
+
+    // 3. Create the user document in Firestore with 'admin_master' role
+    const userDocRef = doc(firestore, usersCollection, user.uid);
+    const adminUserData: User = {
+      id: user.uid,
+      name: adminData.name,
+      email: adminData.email,
+      role: 'admin_master',
+    };
+
+    await setDoc(userDocRef, adminUserData);
+
+    return userCredential;
+  } catch (error: any) {
+    // Check for specific auth errors
+    if (error.code === 'auth/email-already-in-use') {
+      throw new Error('Este e-mail já está em uso por outro administrador.');
+    } else if (error.code === 'auth/weak-password') {
+      throw new Error('A senha é muito fraca. Use pelo menos 6 caracteres.');
+    }
+    
+    // Firestore permission errors or other errors
+    const permissionError = new FirestorePermissionError({
+      path: `/${usersCollection}/${auth.currentUser?.uid || 'new-user'}`,
+      operation: 'create',
+      requestResourceData: { email: adminData.email, role: 'admin_master' },
+    });
+    errorEmitter.emit('permission-error', permissionError);
+
+    // Re-throw a generic error to be caught by the UI
+    throw new Error(error.message || "Não foi possível criar o administrador. Tente novamente.");
+  }
+}
+
 
 /**
  * Updates an existing user document in Firestore.
- * This is a non-blocking operation.
  *
  * @param firestore - The Firestore instance.
  * @param userId - The ID of the user to update.
