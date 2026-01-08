@@ -30,14 +30,14 @@ export default function AdminDashboardPage() {
             .then((idTokenResult) => {
                 setClaims(idTokenResult.claims);
                  if (idTokenResult.claims.role !== 'admin_master') {
-                    router.push('/');
+                    router.push('/admin'); // CORRECTION: Redirect to admin login
                 }
                 setIsLoadingClaims(false);
             })
             .catch(() => {
                 // Error fetching claims, deny access
                 setIsLoadingClaims(false);
-                router.push('/');
+                router.push('/admin'); // CORRECTION: Redirect to admin login
             });
 
     }, [user, isUserLoading, router]);
@@ -66,7 +66,7 @@ export default function AdminDashboardPage() {
     if (!user || claims?.role !== 'admin_master') {
        return (
          <div className="flex min-h-screen items-center justify-center">
-            <p>Acesso negado. Redirecionando...</p>
+            <p>Acesso negado. Redirecionando para o login...</p>
         </div>
        );
     }
