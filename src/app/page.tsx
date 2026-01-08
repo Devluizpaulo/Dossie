@@ -11,8 +11,10 @@ import {
   Expand,
   ListCollapse,
   ArrowUp,
+  LogOut,
 } from 'lucide-react';
-import { useUser } from '@/firebase';
+import { useAuth, useUser } from '@/firebase';
+import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 
 
@@ -32,6 +34,7 @@ export default function DossierPage() {
   const contentRef = useRef<HTMLDivElement>(null);
   const { user, isUserLoading } = useUser();
   const router = useRouter();
+  const auth = useAuth();
 
 
   useEffect(() => {
@@ -69,6 +72,13 @@ export default function DossierPage() {
     contentEl.addEventListener('scroll', checkScroll);
     return () => contentEl.removeEventListener('scroll', checkScroll);
   }, []);
+
+  const handleSignOut = async () => {
+    if (auth) {
+        await signOut(auth);
+        router.push('/login');
+    }
+  };
   
     if (isUserLoading || !user) {
     return (
@@ -124,6 +134,15 @@ export default function DossierPage() {
                       <span className="hidden sm:inline">{allExpanded ? 'Recolher' : 'Expandir'}</span>
                   </Button>
                 <ThemeToggle />
+                <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={handleSignOut}
+                    className="gap-2"
+                  >
+                      <LogOut className="h-4 w-4" />
+                      <span className="hidden sm:inline">Sair</span>
+                  </Button>
               </div>
 
               <div className="absolute left-3 right-3 -bottom-0.5 h-1 rounded-full bg-border/60 overflow-hidden">
