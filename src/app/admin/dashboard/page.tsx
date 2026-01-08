@@ -2,14 +2,19 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useUser } from '@/firebase';
+import { useAuth, useUser } from '@/firebase';
+import { signOut } from 'firebase/auth';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Shield, Users, Globe, KeyRound, ListChecks, FileText } from 'lucide-react';
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
+import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, CircleUser } from 'lucide-react';
 import { IdTokenResult } from 'firebase/auth';
 
 export default function AdminDashboardPage() {
     const { user, isUserLoading } = useUser();
+    const auth = useAuth();
     const router = useRouter();
     const [claims, setClaims] = useState<IdTokenResult['claims'] | null>(null);
     const [isLoadingClaims, setIsLoadingClaims] = useState(true);
@@ -36,6 +41,17 @@ export default function AdminDashboardPage() {
             });
 
     }, [user, isUserLoading, router]);
+
+    const handleSignOut = async () => {
+        await signOut(auth);
+        router.push('/admin');
+    };
+
+    const getUserInitials = (email: string | null | undefined) => {
+        if (!email) return '?';
+        return email.charAt(0).toUpperCase();
+    }
+
 
     if (isUserLoading || isLoadingClaims) {
         return (
@@ -69,7 +85,31 @@ export default function AdminDashboardPage() {
                             </CardDescription>
                         </div>
                         <div>
-                            {/* User Menu can be added here */}
+                             <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+                                        <Avatar className="h-10 w-10">
+                                            {user.photoURL && <AvatarImage src={user.photoURL} alt={user.displayName || 'Admin'} />}
+                                            <AvatarFallback>{getUserInitials(user.email)}</AvatarFallback>
+                                        </Avatar>
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent className="w-56" align="end" forceMount>
+                                    <DropdownMenuLabel className="font-normal">
+                                        <div className="flex flex-col space-y-1">
+                                            <p className="text-sm font-medium leading-none">Admin Master</p>
+                                            <p className="text-xs leading-none text-muted-foreground">
+                                                {user.email}
+                                            </p>
+                                        </div>
+                                    </DropdownMenuLabel>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem onClick={handleSignOut}>
+                                        <LogOut className="mr-2 h-4 w-4" />
+                                        <span>Sair</span>
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
                     </Card>
                 </header>
