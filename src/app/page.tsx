@@ -78,7 +78,9 @@ export default function DossierPage() {
     if (auth) {
         await signOut(auth);
         
-        const userRole = await user?.getIdTokenResult()?.then(r => r.claims.role);
+        const userDoc = user ? await user.getIdTokenResult() : null;
+        const userRole = userDoc?.claims.role;
+
         if (userRole === 'admin_master') {
             router.push('/admin');
         } else {
