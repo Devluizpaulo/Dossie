@@ -96,60 +96,66 @@ export default function AdminLoginPage() {
           isOpen={isAdminFormOpen} 
           onOpenChange={setIsAdminFormOpen} 
       />
-      <div className="flex min-h-screen flex-col items-center justify-center bg-muted/40 p-4">
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-8"
-        >
-          <Logo />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-        >
-          <Card className="w-full max-w-md text-center">
-            <CardHeader>
-              <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center mb-4">
-                <LogIn className="h-8 w-8" />
-              </div>
-              <CardTitle className="text-2xl">Acesso Administrativo</CardTitle>
-              <CardDescription>
-                Entre com suas credenciais de Administrador.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleLogin} className="space-y-4">
-                <Input
-                  type="email"
-                  placeholder="admin@bmv.global"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="text-center"
-                  disabled={isLoading}
-                />
-                <Input
-                  type="password"
-                  placeholder="Sua senha de administrador"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="text-center"
-                  disabled={isLoading}
-                />
-                <Button type="submit" className="w-full" disabled={isLoading}>
-                    {isLoading ? 'Verificando...' : 'Entrar'}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </motion.div>
-        <p className="text-xs text-muted-foreground mt-8 text-center max-w-sm">
-          Este é um ponto de acesso restrito. Todas as atividades são monitoradas.
-        </p>
+      <div 
+        className="flex min-h-screen flex-col items-center justify-center p-4 bg-cover bg-center"
+        style={{ backgroundImage: "url('/Image/Tech_37.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/60 z-0" />
+        <div className="z-10 w-full max-w-md">
+            <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-8 flex justify-center"
+            >
+            <Logo />
+            </motion.div>
+            <motion.div
+            initial={{ opacity: 0, scale: 0.98, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+            <Card className="w-full text-center">
+                <CardHeader>
+                <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                    <LogIn className="h-8 w-8" />
+                </div>
+                <CardTitle className="text-2xl">Acesso Administrativo</CardTitle>
+                <CardDescription>
+                    Entre com suas credenciais de Administrador.
+                </CardDescription>
+                </CardHeader>
+                <CardContent>
+                <form onSubmit={handleLogin} className="space-y-4">
+                    <Input
+                    type="email"
+                    placeholder="admin@bmv.global"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="text-center"
+                    disabled={isLoading}
+                    />
+                    <Input
+                    type="password"
+                    placeholder="Sua senha de administrador"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    className="text-center"
+                    disabled={isLoading}
+                    />
+                    <Button type="submit" className="w-full" disabled={isLoading}>
+                        {isLoading ? 'Verificando...' : 'Entrar'}
+                    </Button>
+                </form>
+                </CardContent>
+            </Card>
+            </motion.div>
+            <p className="text-xs text-white/70 mt-8 text-center max-w-sm mx-auto">
+            Este é um ponto de acesso restrito. Todas as atividades são monitoradas.
+            </p>
+        </div>
       </div>
     </>
   );

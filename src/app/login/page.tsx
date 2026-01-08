@@ -73,54 +73,60 @@ export default function UserLoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-muted/40 p-4">
-      <div className="mb-8">
-        <Logo />
+    <div 
+      className="flex min-h-screen flex-col items-center justify-center p-4 bg-cover bg-center"
+      style={{ backgroundImage: "url('/Image/Tech_37.jpg')" }}
+    >
+      <div className="absolute inset-0 bg-black/60 z-0" />
+      <div className="z-10 w-full max-w-md">
+        <div className="mb-8 flex justify-center">
+          <Logo />
+        </div>
+        <Card className="w-full text-center">
+          <CardHeader>
+            <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center mb-4">
+              <KeyRound className="h-8 w-8" />
+            </div>
+            <CardTitle className="text-2xl">Acesso ao Dossiê</CardTitle>
+            <CardDescription>
+              Use seu e-mail e senha para entrar.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleLogin} className="space-y-4">
+              <Input
+                type="email"
+                placeholder="seu-email@exemplo.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="text-center"
+                disabled={isLoading}
+              />
+              <Input
+                type="password"
+                placeholder="Sua senha"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="text-center"
+                disabled={isLoading}
+              />
+              <Button type="submit" className="w-full" disabled={isLoading}>
+                {isLoading ? 'Verificando...' : 'Entrar'}
+              </Button>
+            </form>
+          </CardContent>
+          <CardFooter className="flex justify-center text-sm">
+              <Link href="/forgot-password">
+                  <Button variant="link">Esqueceu sua senha?</Button>
+              </Link>
+          </CardFooter>
+        </Card>
+        <p className="text-xs text-white/70 mt-8 text-center max-w-sm mx-auto">
+          Este é um sistema restrito. O acesso é permitido apenas a usuários autorizados.
+        </p>
       </div>
-      <Card className="w-full max-w-md text-center">
-        <CardHeader>
-          <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center mb-4">
-            <KeyRound className="h-8 w-8" />
-          </div>
-          <CardTitle className="text-2xl">Acesso ao Dossiê</CardTitle>
-          <CardDescription>
-            Use seu e-mail e senha para entrar.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleLogin} className="space-y-4">
-            <Input
-              type="email"
-              placeholder="seu-email@exemplo.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="text-center"
-              disabled={isLoading}
-            />
-            <Input
-              type="password"
-              placeholder="Sua senha"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="text-center"
-              disabled={isLoading}
-            />
-            <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? 'Verificando...' : 'Entrar'}
-            </Button>
-          </form>
-        </CardContent>
-        <CardFooter className="flex justify-center text-sm">
-            <Link href="/forgot-password">
-                <Button variant="link">Esqueceu sua senha?</Button>
-            </Link>
-        </CardFooter>
-      </Card>
-      <p className="text-xs text-muted-foreground mt-8 text-center max-w-sm">
-        Este é um sistema restrito. O acesso é permitido apenas a usuários autorizados.
-      </p>
     </div>
   );
 }
