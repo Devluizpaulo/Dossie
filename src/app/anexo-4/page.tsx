@@ -179,6 +179,56 @@ export default function Anexo4() {
             </CardContent>
           </Card>
 
+          {/* Exemplo 1.5: Home - Dashboard Principal */}
+          <Card className="mb-6 border-red-200 dark:border-red-800">
+            <CardHeader className="bg-red-50 dark:bg-red-950/20">
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-xl">Módulo: Home (Dashboard Principal)</CardTitle>
+                <Badge variant="destructive">REGRESSÃO FUNCIONAL</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4 pt-6">
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="border-l-4 border-green-500 pl-4 bg-green-50 dark:bg-green-950/10 p-4 rounded">
+                  <p className="font-semibold text-green-700 dark:text-green-300 mb-2">
+                    ✓ Sistema Legado
+                  </p>
+                  <EvidenceImage imageId="paridade-home-legado" caption="Dashboard inicial abrangente com visão consolidada de KPIs, métricas operacionais, alertas críticos e atalhos contextualizados para módulos principais." />
+                </div>
+
+                <div className="border-l-4 border-red-500 pl-4 bg-red-50 dark:bg-red-950/10 p-4 rounded">
+                  <p className="font-semibold text-red-700 dark:text-red-300 mb-2">
+                    ✗ Sistema Atual
+                  </p>
+                  <EvidenceImage imageId="paridade-home-atual" caption="Ausência total de dashboard na página inicial, com apresentação vazia ou redirecionamento direto para módulos específicos, sem visão holística." />
+                </div>
+              </div>
+
+              <Table>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-semibold w-1/3">Análise de Paridade</TableCell>
+                    <TableCell>Ausência total da funcionalidade, sem substituição equivalente.</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-semibold">Impacto Operacional</TableCell>
+                    <TableCell>Perda de ponto de entrada único, dificuldade de identificação rápida de situações críticas e falta de visão executiva.</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-semibold">Risco Associado</TableCell>
+                    <TableCell>Operacional, gerencial e estratégico.</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-semibold">Classificação Técnica</TableCell>
+                    <TableCell>
+                      <Badge className="bg-orange-600">Criticidade: Média</Badge>
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+
           {/* Exemplo 2: Estoque - CPR Verde */}
           <Card className="mb-6 border-amber-200 dark:border-amber-800">
             <CardHeader className="bg-amber-50 dark:bg-amber-950/20">

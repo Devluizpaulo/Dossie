@@ -44,53 +44,44 @@ export default function Anexo5() {
         <Card>
           <CardHeader>
             <CardTitle className="text-2xl">Fluxo 1: Jornada da UCS</CardTitle>
+            <p className="text-sm text-muted-foreground mt-2">
+              Comparação: Processo Atual vs. Modelo Ideal
+            </p>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <h3 className="text-xl font-semibold mb-3">Jornada da UCS dentro do Sistema BMV (AS-IS)</h3>
               <p className="text-justify mb-4">
-                O fluxograma abaixo representa o estado atual da jornada da UCS. As etapas, da geração da safra até a aposentadoria, ocorrem majoritariamente dentro do sistema de backoffice, com a blockchain atuando como um registro posterior, e não como o motor da transação.
+                A jornada da UCS representa o ciclo completo de uma Unidade de Crédito de Safra, da geração até a aposentadoria. A comparação abaixo ilustra o estado atual (com centralidade no backoffice) versus o modelo ideal (com automação nativa na blockchain Polkadot).
               </p>
               <div className="bg-muted p-4 rounded-lg">
                 <EvidenceImage 
                   imageId="jornada-ucs-as-is" 
-                  caption="Diagrama do fluxo de processo AS-IS, detalhando as etapas operacionais vigentes no sistema BMV."
+                  caption="Fluxo comparativo: AS-IS (processo atual centralizado no backoffice) vs. TO-BE (automação nativa na blockchain)."
                 />
               </div>
-              <Alert className="mt-4">
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <Alert className="border-orange-200 dark:border-orange-800 bg-orange-50 dark:bg-orange-950/20">
                 <AlertDescription>
-                  <p className="font-semibold mb-2">Pontos Críticos do Fluxo AS-IS:</p>
-                  <ul className="list-disc pl-6 space-y-1 text-sm">
-                    <li>O particionamento da safra é um processo interno do sistema.</li>
-                    <li>A custódia e as movimentações (trading, investimento, transferência) são controladas pelo backoffice.</li>
-                    <li>A rastreabilidade depende da integridade da base de dados interna.</li>
-                    <li>O processo é suscetível a intervenções manuais e potenciais inconsistências.</li>
+                  <p className="font-semibold text-orange-700 dark:text-orange-300 mb-2">🔴 Estado Atual (AS-IS)</p>
+                  <ul className="list-disc pl-4 space-y-1 text-sm">
+                    <li>Etapas controladas internamente no backoffice</li>
+                    <li>Blockchain atua como registro posterior</li>
+                    <li>Rastreabilidade depende da base de dados interna</li>
+                    <li>Suscetível a intervenções manuais e inconsistências</li>
                   </ul>
                 </AlertDescription>
               </Alert>
-            </div>
 
-            <Separator />
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Jornada da UCS dentro do Blockchain (TO-BE)</h3>
-              <p className="text-justify mb-4">
-                O modelo TO-BE propõe uma reengenharia onde a jornada da UCS ocorre nativamente na blockchain. Cada etapa, desde a geração até a aposentadoria, é uma transação on-chain, garantindo imutabilidade, transparência e automação.
-              </p>
-              <div className="bg-muted p-4 rounded-lg">
-                <EvidenceImage 
-                  imageId="jornada-ucs-to-be" 
-                  caption="Diagrama do fluxo de processo TO-BE, com a jornada da UCS ocorrendo diretamente na blockchain (Polkadot)."
-                />
-              </div>
-              <Alert variant="destructive" className="mt-4">
+              <Alert variant="destructive">
                 <AlertDescription>
-                  <p className="font-semibold mb-2">Principais Ganhos com o Fluxo TO-BE:</p>
-                  <ul className="list-disc pl-6 space-y-1 text-sm">
-                    <li><strong>Automação Nativa:</strong> Particionamento (tokenização) e distribuição para as carteiras (wallets) ocorrem de forma automática.</li>
-                    <li><strong>Rastreabilidade Total:</strong> Todas as movimentações e a aposentadoria são registradas de forma imutável na blockchain.</li>
-                    <li><strong>Governança Descentralizada:</strong> Reduz a dependência de uma base de dados central e de intervenções manuais.</li>
-                    <li><strong>Escalabilidade:</strong> O modelo é inerentemente mais escalável e seguro para suportar um volume maior de transações.</li>
+                  <p className="font-semibold mb-2">✅ Modelo Ideal (TO-BE)</p>
+                  <ul className="list-disc pl-4 space-y-1 text-sm">
+                    <li>Jornada nativa na blockchain (Polkadot)</li>
+                    <li>Cada etapa é uma transação on-chain imutável</li>
+                    <li>Automação total do particionamento e distribuição</li>
+                    <li>Governança descentralizada e escalável</li>
                   </ul>
                 </AlertDescription>
               </Alert>
@@ -102,54 +93,46 @@ export default function Anexo5() {
         <Card>
           <CardHeader>
             <CardTitle className="text-2xl">Fluxo 2: Intenção de Movimentação</CardTitle>
+            <p className="text-sm text-muted-foreground mt-2">
+              Comparação: Processo Atual vs. Modelo Ideal
+            </p>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <h3 className="text-xl font-semibold mb-3">Fluxo de Intenção de Movimentação (AS-IS)</h3>
               <p className="text-justify mb-4">
-                O processo atual para uma intenção de movimentação é manual e fragmentado, dependendo de canais de comunicação externos como e-mail, e de ações manuais no backoffice.
+                Uma intenção de movimentação permite ao cliente solicitar transferências, trading ou investimentos de suas UCS. A comparação abaixo mostra o fluxo manual atual versus o processo automatizado ideal.
               </p>
               <div className="bg-muted p-4 rounded-lg">
                 <EvidenceImage 
                   imageId="intencao-movimentacao-as-is" 
-                  caption="Diagrama do fluxo atual (AS-IS) para Intenção de Movimentação."
+                  caption="Fluxo comparativo: AS-IS (processo manual via e-mail) vs. TO-BE (autoatendimento digital integrado)."
                 />
               </div>
-              <Alert className="mt-4">
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <Alert className="border-orange-200 dark:border-orange-800 bg-orange-50 dark:bg-orange-950/20">
                 <AlertDescription>
-                  <p className="font-semibold mb-2">Pontos Críticos do Fluxo AS-IS:</p>
-                  <ul className="list-disc pl-6 space-y-1 text-sm">
-                    <li>Dependência de e-mail para iniciar a solicitação.</li>
-                    <li>Operador precisa executar a movimentação manualmente no sistema.</li>
-                    <li>Comunicação de volta para o cliente também é manual.</li>
-                    <li>Não há rastreabilidade sistêmica da solicitação inicial.</li>
-                    <li>Alto risco de erro humano e atrasos.</li>
+                  <p className="font-semibold text-orange-700 dark:text-orange-300 mb-2">🔴 Estado Atual (AS-IS)</p>
+                  <ul className="list-disc pl-4 space-y-1 text-sm">
+                    <li>Dependência de e-mail para iniciar solicitação</li>
+                    <li>Operador executa movimentação manualmente</li>
+                    <li>Comunicação de retorno também manual</li>
+                    <li>Sem rastreabilidade sistêmica da solicitação</li>
+                    <li>Alto risco de erro humano e atrasos</li>
                   </ul>
                 </AlertDescription>
               </Alert>
-            </div>
 
-            <Separator />
-            
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Fluxo de Intenção de Movimentação (TO-BE)</h3>
-              <p className="text-justify mb-4">
-                O fluxo ideal automatiza o processo, centralizando todas as ações na plataforma digital da BMV, proporcionando uma experiência mais fluida e segura para o cliente e para o operador.
-              </p>
-              <div className="bg-muted p-4 rounded-lg">
-                <EvidenceImage 
-                  imageId="intencao-movimentacao-to-be" 
-                  caption="Diagrama do fluxo ideal (TO-BE) para Intenção de Movimentação."
-                />
-              </div>
-              <Alert variant="destructive" className="mt-4">
+              <Alert variant="destructive">
                 <AlertDescription>
-                  <p className="font-semibold mb-2">Principais Ganhos com o Fluxo TO-BE:</p>
-                  <ul className="list-disc pl-6 space-y-1 text-sm">
-                    <li><strong>Autoatendimento:</strong> Cliente solicita a movimentação diretamente em sua carteira digital.</li>
-                    <li><strong>Processo Simplificado:</strong> O operador apenas aprova a movimentação já registrada no sistema.</li>
-                    <li><strong>Automação e Rastreabilidade:</strong> A visualização na carteira é imediata após a aprovação, e todo o processo é rastreável.</li>
-                    <li><strong>Redução de Erros:</strong> Minimiza o risco de erros manuais e melhora a eficiência operacional.</li>
+                  <p className="font-semibold mb-2">✅ Modelo Ideal (TO-BE)</p>
+                  <ul className="list-disc pl-4 space-y-1 text-sm">
+                    <li>Autoatendimento direto na carteira digital</li>
+                    <li>Operador apenas aprova a solicitação registrada</li>
+                    <li>Visualização na carteira é imediata</li>
+                    <li>Processo totalmente rastreável e auditável</li>
+                    <li>Minimiza erros e melhora eficiência</li>
                   </ul>
                 </AlertDescription>
               </Alert>
@@ -161,54 +144,46 @@ export default function Anexo5() {
         <Card>
           <CardHeader>
             <CardTitle className="text-2xl">Fluxo 3: Solicitação de CDE</CardTitle>
+            <p className="text-sm text-muted-foreground mt-2">
+              Comparação: Processo Atual vs. Modelo Ideal
+            </p>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <h3 className="text-xl font-semibold mb-3">Fluxo de Solicitação de CDE (AS-IS)</h3>
               <p className="text-justify mb-4">
-                O processo atual para solicitar uma Certidão de Disponibilidade de Estoque (CDE) é inteiramente manual, dependendo de e-mails e da emissão de boletos em sistemas externos como o Omie.
+                A Certidão de Disponibilidade de Estoque (CDE) é um documento solicitado para fins de conformidade e comercialização. A comparação abaixo mostra o processo fragmentado atual versus o fluxo integrado ideal.
               </p>
               <div className="bg-muted p-4 rounded-lg">
                 <EvidenceImage 
                   imageId="solicitacao-cde-as-is" 
-                  caption="Diagrama do fluxo atual (AS-IS) para Solicitação de CDE."
+                  caption="Fluxo comparativo: AS-IS (processo manual com sistemas externos) vs. TO-BE (fluxo integrado e automático)."
                 />
               </div>
-              <Alert className="mt-4">
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <Alert className="border-orange-200 dark:border-orange-800 bg-orange-50 dark:bg-orange-950/20">
                 <AlertDescription>
-                  <p className="font-semibold mb-2">Pontos Críticos do Fluxo AS-IS:</p>
-                  <ul className="list-disc pl-6 space-y-1 text-sm">
-                    <li>Processo iniciado fora da plataforma (e-mail).</li>
-                    <li>Aprovação interna manual e sequencial.</li>
-                    <li>Emissão de boleto em sistema de terceiros (Omie).</li>
-                    <li>Pagamento e confirmação não integrados.</li>
-                    <li>CDE emitida e enviada manualmente ao cliente.</li>
+                  <p className="font-semibold text-orange-700 dark:text-orange-300 mb-2">🔴 Estado Atual (AS-IS)</p>
+                  <ul className="list-disc pl-4 space-y-1 text-sm">
+                    <li>Processo iniciado fora da plataforma (e-mail)</li>
+                    <li>Aprovação interna manual e sequencial</li>
+                    <li>Emissão de boleto em sistema de terceiros (Omie)</li>
+                    <li>Pagamento e confirmação não integrados</li>
+                    <li>CDE emitida e enviada manualmente</li>
                   </ul>
                 </AlertDescription>
               </Alert>
-            </div>
 
-            <Separator />
-            
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Fluxo de Solicitação de CDE (TO-BE)</h3>
-              <p className="text-justify mb-4">
-                O fluxo ideal automatiza todo o processo, desde a solicitação até a emissão da CDE, centralizando todas as etapas na plataforma BMV.
-              </p>
-              <div className="bg-muted p-4 rounded-lg">
-                <EvidenceImage 
-                  imageId="solicitacao-cde-to-be" 
-                  caption="Diagrama do fluxo ideal (TO-BE) para Solicitação de CDE."
-                />
-              </div>
-              <Alert variant="destructive" className="mt-4">
+              <Alert variant="destructive">
                 <AlertDescription>
-                  <p className="font-semibold mb-2">Principais Ganhos com o Fluxo TO-BE:</p>
-                  <ul className="list-disc pl-6 space-y-1 text-sm">
-                    <li><strong>Jornada Unificada:</strong> Cliente realiza a solicitação pela sua carteira na BMV.</li>
-                    <li><strong>Aprovação Simplificada:</strong> Backoffice aprova a solicitação dentro do sistema.</li>
-                    <li><strong>Pagamento Integrado:</strong> Boleto é emitido e o pagamento é confirmado automaticamente na plataforma.</li>
-                    <li><strong>Emissão Automática:</strong> A CDE é gerada e disponibilizada ao cliente instantaneamente após o pagamento.</li>
+                  <p className="font-semibold mb-2">✅ Modelo Ideal (TO-BE)</p>
+                  <ul className="list-disc pl-4 space-y-1 text-sm">
+                    <li>Solicitação centralizada na carteira BMV</li>
+                    <li>Aprovação simplificada dentro do sistema</li>
+                    <li>Boleto emitido e pagamento integrado</li>
+                    <li>Confirmação automática na plataforma</li>
+                    <li>CDE gerada e disponibilizada instantaneamente</li>
                   </ul>
                 </AlertDescription>
               </Alert>

@@ -151,6 +151,18 @@
       "description": "Sistema Legado: Dashboard gerencial de Estoque com filtros e gráficos."
     },
     {
+      "id": "paridade-home-legado",
+      "imageUrl": "/Image/paridade-home-legado.png",
+      "imageHint": "dashboard chart",
+      "description": "Sistema Legado: Dashboard inicial abrangente com visão consolidada de KPIs, métricas operacionais e atalhos para módulos principais."
+    },
+    {
+      "id": "paridade-home-atual",
+      "imageUrl": "/Image/paridade-home-atual.png",
+      "imageHint": "empty state",
+      "description": "Sistema Atual: Ausência total de dashboard na página inicial, sem visão holística de KPIs."
+    },
+    {
       "id": "paridade-cpr-atual",
       "imageUrl": "/Image/paridade-cpr-atual.png",
       "imageHint": "kanban board",
@@ -176,39 +188,33 @@
     },
     {
       "id": "jornada-ucs-as-is",
-      "imageUrl": "https://images.unsplash.com/photo-1588594285273-a55c48f08def?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmbG93Y2hhcnR8ZW58MHx8fHwxNzY4MjgzODUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "flowchart diagram",
-      "description": "Fluxo AS-IS: Ilustra o processo operacional atual da Jornada da UCS dentro do Sistema BMV."
+      "imageUrl": "/Image/fluxo-jornada-ucs.png",
+      "imageHint": "flowchart comparison",
+      "description": "Fluxo da Jornada da UCS: Comparação entre processo atual (AS-IS) centralizado no backoffice vs. modelo ideal (TO-BE) com automação nativa na blockchain Polkadot."
     },
     {
       "id": "jornada-ucs-to-be",
-      "imageUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3JrZmxvd3xlbnwwfHx8fDE3NjgyODM4NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "workflow planning",
-      "description": "Fluxo TO-BE: Apresenta o modelo ideal da Jornada da UCS, otimizado com a blockchain Polkadot."
+      "imageUrl": "/Image/fluxo-jornada-ucs.png",
+      "imageHint": "flowchart comparison",
+      "description": "Fluxo da Jornada da UCS: Comparação entre processo atual (AS-IS) e modelo ideal (TO-BE) - veja acima."
     },
     {
       "id": "intencao-movimentacao-as-is",
-      "imageUrl": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3JrZmxvdyUyMGRpYWdyYW18ZW58MHx8fHwxNzY4MjgzODg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "workflow diagram",
-      "description": "Fluxo de Intenção de Movimentação Atual (AS-IS): Processo manual via e-mail e backoffice."
-    },
-    {
-      "id": "intencao-movimentacao-to-be",
-      "imageUrl": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhdXRvbWF0ZWQlMjB3b3JrZmxvd3xlbnwwfHx8fDE3NjgyODM4ODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "automated workflow",
-      "description": "Fluxo de Intenção de Movimentação Ideal (TO-BE): Processo automatizado via plataforma digital."
+      "imageUrl": "/Image/intencao-movimentacao.png",
+      "imageHint": "workflow comparison",
+      "description": "Fluxo de Intenção de Movimentação: Comparação entre processo manual atual (AS-IS) via e-mail vs. modelo ideal (TO-BE) com autoatendimento digital integrado."
     },
     {
       "id": "solicitacao-cde-as-is",
-      "imageUrl": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3JrZmxvdyUyMGRpYWdyYW18ZW58MHx8fHwxNzY4MjgzODg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "workflow diagram",
-      "description": "Fluxo de Solicitação de CDE Atual (AS-IS): Processo manual, dependente de e-mail e intervenções."
+      "imageUrl": "/Image/paridade-cde-atual.png",
+      "imageHint": "workflow comparison",
+      "description": "Fluxo de Solicitação de CDE: Comparação entre processo fragmentado atual (AS-IS) com sistemas externos vs. modelo ideal (TO-BE) com integração automática."
     },
     {
       "id": "solicitacao-cde-to-be",
-      "imageUrl": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhdXRvbWF0ZWQlMjB3b3JrZmxvd3xlbnwwfHx8fDE3NjgyODM4ODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "automated workflow",
-      "description": "Fluxo de Solicitação de CDE Ideal (TO-BE): Processo automatizado e integrado na plataforma."
+      "imageUrl": "/Image/paridade-cde-atual.png",
+      "imageHint": "workflow comparison",
+      "description": "Fluxo de Solicitação de CDE: Comparação entre processo atual (AS-IS) e modelo ideal (TO-BE) - veja acima."
     }
   ]
 }
