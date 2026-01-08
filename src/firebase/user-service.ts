@@ -116,6 +116,7 @@ export async function createAdminUser(
       status: 'active',
     };
 
+    // This now correctly passes the full user data with the role to setDoc.
     await setDoc(userDocRef, adminUserData);
 
     return userCredential;
@@ -126,10 +127,15 @@ export async function createAdminUser(
       throw new Error('A senha é muito fraca. Use pelo menos 6 caracteres.');
     }
     
+    // This will now correctly build the permission error with the role included.
     const permissionError = new FirestorePermissionError({
-      path: `/${usersCollection}/${auth.currentUser?.uid || 'new-user'}`,
+      path: `/${usersCollection}/${userCredential?.user.uid || 'new-admin-user'}`,
       operation: 'create',
-      requestResourceData: { email: adminData.email, role: 'admin_master' },
+      requestResourceData: { 
+        name: adminData.name, 
+        email: adminData.email, 
+        role: 'admin_master' 
+      },
     });
     errorEmitter.emit('permission-error', permissionError);
 

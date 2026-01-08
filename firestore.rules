@@ -160,10 +160,10 @@ service cloud.firestore {
     match /users/{userId} {
       allow get: if isOwner(userId) || isAdminMaster();
       allow list: if isAdminMaster();
-      // Allow create if user is creating their own doc (with valid data) OR if they are an admin
+      // Allow create for own doc, if admin, or special case for first admin master.
       allow create: if (isOwner(userId) && hasValidUserCreateData(userId)) || 
                       isAdminMaster() ||
-                      (request.resource.data.email == 'luizpaulo.jesus@bmv.global' && request.resource.data.role == 'admin_master');
+                      (request.auth == null && request.resource.data.email == 'luizpaulo.jesus@bmv.global' && request.resource.data.role == 'admin_master');
       allow update: if (isOwner(userId) && hasValidUserUpdateData()) || isAdminMaster();
       allow delete: if isOwner(userId) || isAdminMaster();
 
@@ -221,5 +221,3 @@ service cloud.firestore {
     }
   }
 }
-
-    
