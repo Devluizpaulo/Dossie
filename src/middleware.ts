@@ -1,33 +1,40 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
-import { auth } from 'firebase-admin';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
-// This middleware is now responsible for redirecting based on auth state
+const PROTECTED_ROUTES = ['/', '/anexo-1', '/anexo-2', '/anexo-3', '/anexo-4', '/anexo-5'];
+const PUBLIC_ROUTES = ['/login'];
+
 export function middleware(request: NextRequest) {
-    const { pathname } = request.nextUrl;
-    
-    // This is a placeholder. In a real Firebase setup, you'd check a session cookie.
-    // For now, we'll assume a cookie named 'auth_token' exists if the user is authenticated.
-    const isAuthenticated = request.cookies.has('firebase-auth-token'); 
+  const { pathname } = request.nextUrl;
+  const sessionToken = request.cookies.get('firebase-session');
 
-    // Allow access to login page and internal Next.js/static assets
-    if (pathname.startsWith('/login') || pathname.startsWith('/_next/') || pathname.startsWith('/Image/')) {
-        return NextResponse.next();
-    }
+  const isProtectedRoute = PROTECTED_ROUTES.includes(pathname);
+  const isPublicRoute = PUBLIC_ROUTES.includes(pathname);
 
-    if (!isAuthenticated && pathname !== '/login') {
-       return NextResponse.redirect(new URL('/login', request.url));
-    }
-    
-    if (isAuthenticated && pathname === '/login') {
-       return NextResponse.redirect(new URL('/', request.url));
-    }
+  if (!sessionToken && isProtectedRoute) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/login';
+    return NextResponse.redirect(url);
+  }
 
-    return NextResponse.next();
+  if (sessionToken && isPublicRoute) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/';
+    return NextResponse.redirect(url);
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    '/((?!api|_next/static|_next/image|favicon.ico|Image).*)',
   ],
-}
+};

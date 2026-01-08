@@ -2,32 +2,46 @@
 
 import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
-import { Lock } from 'lucide-react';
+import { UserPlus } from 'lucide-react';
 import { Logo } from "@/components/logo";
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
-import { initiateAnonymousSignIn } from '@/firebase/non-blocking-login';
-import { useAuth, useUser } from '@/firebase';
+import { useAuth, useUser, useFirestore } from '@/firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+import { setDocumentNonBlocking } from '@/firebase/non-blocking-updates';
 
-export default function LoginPage() {
+export default function CreateMasterUserPage() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [accessCode, setAccessCode] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const router = useRouter();
   const auth = useAuth();
+  const firestore = useFirestore();
   const { user, isUserLoading } = useUser();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleCreateMasterUser = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+
+    if (!auth || !firestore) {
+        toast({
+            variant: "destructive",
+            title: "Erro de Inicialização",
+            description: "Os serviços do Firebase não estão disponíveis.",
+        });
+        setIsLoading(false);
+        return;
+    }
 
     if (!email.endsWith('@bmv.global')) {
         toast({
             variant: "destructive",
-            title: "Acesso Negado",
+            title: "Domínio Inválido",
             description: "Apenas e-mails com domínio @bmv.global são permitidos.",
         });
         setIsLoading(false);
@@ -35,37 +49,57 @@ export default function LoginPage() {
     }
 
     try {
-        // We now use anonymous sign-in as a base for our custom token auth.
-        // The actual validation happens against the Firestore database.
-        initiateAnonymousSignIn(auth);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const firebaseUser = userCredential.user;
+
+        if (firebaseUser) {
+            const userDocRef = doc(firestore, "users", firebaseUser.uid);
+            
+            const userData = {
+                id: firebaseUser.uid,
+                name: name,
+                email: firebaseUser.email,
+                role: 'admin_master',
+            };
+
+            setDocumentNonBlocking(userDocRef, userData, { merge: false });
+
+            toast({
+                title: "Usuário Master Criado!",
+                description: "Você será redirecionado para o painel.",
+            });
+            
+            router.push('/');
+        }
+    } catch (error: any) {
+        let description = "Ocorreu um erro ao criar o usuário. Tente novamente.";
+        if (error.code === 'auth/email-already-in-use') {
+            description = "Este e-mail já está em uso. Tente fazer login ou use outro e-mail.";
+        } else if (error.code === 'auth/weak-password') {
+            description = "A senha é muito fraca. Use pelo menos 6 caracteres.";
+        }
         
         toast({
-            title: "Verificando...",
-            description: "Aguarde enquanto validamos suas credenciais.",
-        });
-
-    } catch (error: any) {
-        toast({
             variant: "destructive",
-            title: "Erro de Autenticação",
-            description: "Ocorreu um erro. Verifique suas credenciais e tente novamente.",
+            title: "Erro na Criação",
+            description: description,
         });
+    } finally {
         setIsLoading(false);
     }
   };
 
-  // Redirect if user is already logged in
-  if (!isUserLoading && user) {
-    router.push('/');
-  }
-
-  // Show a loading state while checking auth
   if (isUserLoading) {
       return (
           <div className="flex min-h-screen items-center justify-center">
               <p>Carregando...</p>
           </div>
       )
+  }
+  
+  if (user) {
+    router.push('/');
+    return null;
   }
 
   return (
@@ -76,15 +110,24 @@ export default function LoginPage() {
       <Card className="w-full max-w-md text-center">
         <CardHeader>
           <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center mb-4">
-            <Lock className="h-8 w-8" />
+            <UserPlus className="h-8 w-8" />
           </div>
-          <CardTitle className="text-2xl">Acesso Institucional</CardTitle>
+          <CardTitle className="text-2xl">Criar Usuário Master</CardTitle>
           <CardDescription>
-            Use seu e-mail corporativo e código de acesso.
+            Este é o primeiro acesso. Crie a conta de administrador.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleCreateMasterUser} className="space-y-4">
+            <Input
+              type="text"
+              placeholder="Nome Completo"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              className="text-center"
+              disabled={isLoading}
+            />
             <Input
               type="email"
               placeholder="seu-email@bmv.global"
@@ -96,21 +139,21 @@ export default function LoginPage() {
             />
             <Input
               type="password"
-              placeholder="Seu código de acesso"
-              value={accessCode}
-              onChange={(e) => setAccessCode(e.target.value)}
+              placeholder="Crie uma senha forte"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
               className="text-center"
               disabled={isLoading}
             />
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? 'Verificando...' : 'Acessar Painel'}
+              {isLoading ? 'Criando...' : 'Criar Administrador'}
             </Button>
           </form>
         </CardContent>
       </Card>
       <p className="text-xs text-muted-foreground mt-8 text-center max-w-sm">
-        Este é um sistema de acesso restrito. Se você acredita que isso é um erro ou precisa de acesso, entre em contato com o administrador de sistemas.
+        Esta tela é para a configuração inicial do administrador do sistema. Após a criação, o acesso será feito pela tela de login padrão.
       </p>
     </div>
   );
