@@ -1,15 +1,16 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { slugify } from '@/lib/utils';
 import { sections } from './content';
 import React from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
-import { useDossierSearch } from '@/hooks/useDossierSearch';
+import { useDossierSearch } from '@/hooks/useDossierSearch.tsx';
 
 interface DossierSidebarProps {
   onSearchTermChange: (term: string) => void;
+  searchTerm: string;
 }
 
 interface TocItem {
@@ -19,62 +20,17 @@ interface TocItem {
   children: TocItem[];
 }
 
-const generateToc = (searchTerm: string, hasSearchTerm: (nodes: React.ReactNode) => boolean): TocItem[] => {
-  const tocItems: TocItem[] = [];
-
-  sections.forEach(section => {
-    const sectionIsVisible = !searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || hasSearchTerm(section.content);
-    
-    if (sectionIsVisible) {
-      const subHeadings: TocItem[] = [];
-      
-      const findSubHeadings = (nodes: React.ReactNode) => {
-        React.Children.forEach(nodes, node => {
-          if (React.isValidElement(node)) {
-            const nodeProps = node.props as any;
-            if (nodeProps.id && node.type === 'h3') {
-              const title = React.Children.toArray(nodeProps.children).find(child => typeof child === 'string') as string || '';
-              if (title && (!searchTerm || title.toLowerCase().includes(searchTerm.toLowerCase()))) {
-                subHeadings.push({
-                  level: 3,
-                  title: title,
-                  id: nodeProps.id,
-                  children: []
-                });
-              }
-            } else if (nodeProps.children) {
-              findSubHeadings(nodeProps.children);
-            }
-          }
-        });
-      };
-
-      findSubHeadings(section.content);
-
-      if (!searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || subHeadings.length > 0) {
-        tocItems.push({
-          level: 2,
-          title: section.title,
-          id: slugify(section.title),
-          children: subHeadings,
-        });
-      }
-    }
-  });
-
-  return tocItems;
-};
-
 const allIds = sections.flatMap(section => {
   const ids = [slugify(section.title)];
   const findIds = (nodes: React.ReactNode) => {
     React.Children.forEach(nodes, node => {
       if (React.isValidElement(node)) {
-        if ((node.props as any).id) {
-          ids.push((node.props as any).id);
+        const nodeProps = node.props as any;
+        if (nodeProps.id && (node.type === 'h3' || node.type === 'h4')) {
+          ids.push(nodeProps.id);
         }
-        if ((node.props as any).children) {
-          findIds((node.props as any).children);
+        if (nodeProps.children) {
+          findIds(nodeProps.children);
         }
       }
     });
@@ -83,18 +39,78 @@ const allIds = sections.flatMap(section => {
   return ids;
 });
 
-export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChange }) => {
+export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChange, searchTerm }) => {
   const [activeId, setActiveId] = useState('');
-  const [searchTerm, setSearchTerm] = useState('');
+  
   const { hasSearchTerm } = useDossierSearch(sections, searchTerm);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const term = event.target.value;
-    setSearchTerm(term);
-    onSearchTermChange(term);
+    onSearchTermChange(event.target.value);
   };
   
-  const tocItems = generateToc(searchTerm, hasSearchTerm);
+  const generateToc = useCallback((searchTerm: string): TocItem[] => {
+    const tocItems: TocItem[] = [];
+  
+    sections.forEach(section => {
+      const sectionIsVisible = !searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || hasSearchTerm(section.content);
+      
+      if (sectionIsVisible) {
+        const subHeadings: TocItem[] = [];
+        
+        const findSubHeadings = (nodes: React.ReactNode, level: number) => {
+          React.Children.forEach(nodes, node => {
+            if (React.isValidElement(node)) {
+              const nodeProps = node.props as any;
+              const nodeType = node.type as string;
+
+              if (nodeProps.id && (nodeType === 'h3' || nodeType === 'h4')) {
+                const title = React.Children.toArray(nodeProps.children).find(child => typeof child === 'string') as string || '';
+                
+                if (title && (!searchTerm || title.toLowerCase().includes(searchTerm.toLowerCase()))) {
+                  const newSubHeading: TocItem = {
+                    level: level,
+                    title: title,
+                    id: nodeProps.id,
+                    children: []
+                  };
+
+                  if (nodeType === 'h3') {
+                    subHeadings.push(newSubHeading);
+                  } else if (nodeType === 'h4' && subHeadings.length > 0) {
+                    subHeadings[subHeadings.length - 1].children.push(newSubHeading);
+                  }
+                }
+              }
+              
+              if (nodeProps.children) {
+                if (nodeType === 'h3') {
+                  // Ao encontrar um h3, o próximo nível de aninhamento para h4 é 4
+                  findSubHeadings(nodeProps.children, 4);
+                } else {
+                  findSubHeadings(nodeProps.children, level);
+                }
+              }
+            }
+          });
+        };
+  
+        findSubHeadings(section.content, 3);
+  
+        if (!searchTerm || section.title.toLowerCase().includes(searchTerm.toLowerCase()) || subHeadings.length > 0) {
+          tocItems.push({
+            level: 2,
+            title: section.title,
+            id: slugify(section.title),
+            children: subHeadings,
+          });
+        }
+      }
+    });
+  
+    return tocItems;
+  }, [hasSearchTerm]);
+  
+  const tocItems = useMemo(() => generateToc(searchTerm), [searchTerm, generateToc]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -113,6 +129,69 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChan
 
     return () => elements.forEach(el => el && observer.unobserve(el));
   }, []);
+
+  const renderToc = (items: TocItem[]) => {
+    return (
+      <ul className="space-y-3">
+        {items.map((item) => (
+          <li key={item.id}>
+            <a
+              href={`#${item.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById(item.id)?.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+                if(history.pushState) {
+                    history.pushState(null, "", `#${item.id}`);
+                } else {
+                    location.hash = `#${item.id}`;
+                }
+              }}
+              className={`block text-sm font-medium transition-colors hover:text-primary ${
+                activeId === item.id
+                  ? 'text-primary'
+                  : 'text-foreground'
+              }`}
+            >
+              {item.title}
+            </a>
+            {item.children && item.children.length > 0 && (
+              <ul className="pl-4 mt-2 space-y-2 border-l border-border">
+                {item.children.map(child => (
+                   <li key={child.id}>
+                     <a
+                       href={`#${child.id}`}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById(child.id)?.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                            });
+                            if(history.pushState) {
+                                history.pushState(null, "", `#${child.id}`);
+                            } else {
+                                location.hash = `#${child.id}`;
+                            }
+                        }}
+                       className={`block text-sm transition-colors hover:text-primary ${
+                        activeId === child.id
+                          ? 'font-semibold text-primary'
+                          : 'text-muted-foreground'
+                      }`}
+                     >
+                       {child.title}
+                     </a>
+                   </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    );
+  }
   
   return (
     <div className="space-y-4">
@@ -130,65 +209,7 @@ export const DossierSidebar: React.FC<DossierSidebarProps> = ({ onSearchTermChan
         </div>
 
         <nav aria-label="Sumário">
-          <ul className="space-y-3">
-            {tocItems.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById(item.id)?.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start'
-                    });
-                     // Update URL hash without jumping
-                    if(history.pushState) {
-                        history.pushState(null, "", `#${item.id}`);
-                    } else {
-                        location.hash = `#${item.id}`;
-                    }
-                  }}
-                  className={`block text-sm font-medium transition-colors hover:text-primary ${
-                    activeId === item.id
-                      ? 'text-primary'
-                      : 'text-foreground'
-                  }`}
-                >
-                  {item.title}
-                </a>
-                {item.children && item.children.length > 0 && (
-                  <ul className="pl-4 mt-2 space-y-2 border-l border-border">
-                    {item.children.map(child => (
-                       <li key={child.id}>
-                         <a
-                           href={`#${child.id}`}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                document.getElementById(child.id)?.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                                });
-                                if(history.pushState) {
-                                    history.pushState(null, "", `#${child.id}`);
-                                } else {
-                                    location.hash = `#${child.id}`;
-                                }
-                            }}
-                           className={`block text-sm transition-colors hover:text-primary ${
-                            activeId === child.id
-                              ? 'font-semibold text-primary'
-                              : 'text-muted-foreground'
-                          }`}
-                         >
-                           {child.title}
-                         </a>
-                       </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
+          {renderToc(tocItems)}
         </nav>
 
         {/* Annexes Links */}

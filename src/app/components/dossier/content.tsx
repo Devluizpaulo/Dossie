@@ -16,7 +16,7 @@ import {
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { slugify } from "@/lib/utils";
 import React from 'react';
-import { useDossierSearch } from '@/hooks/useDossierSearch';
+import { useDossierSearch } from '@/hooks/useDossierSearch.tsx';
 
 export const sections = [
   {
@@ -746,7 +746,7 @@ export const sections = [
                     Além disso, não existem definições formais sobre: critérios de priorização (Crítica, Alta, Média ou Baixa); prazos-alvo de resposta e solução (Target Times); e fluxo estruturado de escalonamento, permitindo que demandas não resolvidas avancem automaticamente para níveis superiores de suporte ou desenvolvimento.
                 </p>
                 <p className="mb-4 text-justify">
-                    Essa lacuna de governança compromete a mensuração de desempenho do suporte, dificulta a responsabilização em casos de falhas e impacta diretamente a disponibilidade e a confiabilidade da aplicação. Como consequência, o cenário atual tem limitado a capacidade de escalar os serviços de forma sustentável, prejudicando tanto a operação quanto a estratégia de crescimento das partes envolvidas.
+                    Essa lacuna de governança compromete a mensuração de desempenho do suporte, dificulta a responsabilização em casos de falhas e impacta directamente a disponibilidade e a confiabilidade da aplicação. Como consequência, o cenário atual tem limitado a capacidade de escalar os serviços de forma sustentável, prejudicando tanto a operação quanto a estratégia de crescimento das partes envolvidas.
                 </p>
                 <p className="mb-4 text-justify">
                     Diante desse contexto, torna-se fundamental estabelecer, de forma clara e acordada entre os envolvidos, o tempo efetivamente dedicado ao projeto, os limites de atuação do suporte e os critérios objetivos para distinção entre correções e melhorias, a fim de destravar pendências recorrentes, aumentar a eficiência operacional e garantir maior previsibilidade e estabilidade ao Sistema BMV.

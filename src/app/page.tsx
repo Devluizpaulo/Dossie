@@ -11,7 +11,6 @@ import {
   ListCollapse,
   ArrowUp,
   Menu,
-  ChevronLeft,
 } from 'lucide-react';
 
 import { ThemeToggle } from './components/dossier/theme-toggle';
@@ -65,45 +64,43 @@ export default function DossierPage() {
   }, []);
 
   return (
-    <>
-      <Sidebar side="left" collapsible="icon">
-        <SidebarHeader className="border-b h-14 justify-center">
-            <Logo />
-        </SidebarHeader>
-        <SidebarContent className="p-0 flex flex-col">
-          <div className="flex-1 overflow-y-auto p-3">
-             <DossierSidebar onSearchTermChange={setSearchTerm} />
-          </div>
-        </SidebarContent>
-      </Sidebar>
-      <SidebarInset>
-        <div ref={contentRef} className="flex flex-col min-h-screen bg-background overflow-auto">
-          <header className="sticky top-0 z-40 w-full border-b bg-primary text-primary-foreground border-t-4 border-t-green-500 shadow-sm">
-            <div className="container mx-auto px-3 sm:px-4 lg:px-6 flex h-14 items-center justify-between">
-                <div className="flex items-center gap-3">
-                    <SidebarTrigger className="md:hidden -ml-2 h-8 w-8 text-primary-foreground hover:bg-primary-foreground/10" />
-                    <div className="sm:hidden">
-                      <Logo />
-                    </div>
-                </div>
+    <div className="flex h-screen bg-gray-100 dark:bg-gray-900">
+      {/* Sidebar */}
+      <div className="hidden md:flex flex-col w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700">
+        <div className="flex items-center justify-center h-16 border-b border-gray-200 dark:border-gray-700">
+          <Logo />
+        </div>
+        <div className="flex-1 overflow-y-auto p-4">
+          <DossierSidebar searchTerm={searchTerm} onSearchTermChange={setSearchTerm} />
+        </div>
+      </div>
 
-                <div className="flex items-center space-x-2">
-                    <ThemeToggle />
-                </div>
-            </div>
-           </header>
-          <main id="content" className="container mx-auto flex-1 px-3 sm:px-4 lg:px-6 py-6">
-            <div className="flex justify-end mb-6">
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  onClick={toggleExpandAll}
-                  className="gap-2"
-                >
-                    {allExpanded ? <ListCollapse className="h-4 w-4" /> : <Expand className="h-4 w-4" />}
-                    {allExpanded ? 'Recolher' : 'Expandir'}
-                </Button>
-            </div>
+      {/* Main View */}
+      <div className="flex-1 flex flex-col overflow-hidden">
+        {/* Header */}
+        <header className="flex justify-between items-center p-4 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+          <div className="flex items-center">
+            <button className="md:hidden mr-4">
+              <Menu className="h-6 w-6 text-gray-500" />
+            </button>
+            <h1 className="text-xl font-semibold text-gray-800 dark:text-white">Dossiê Técnico</h1>
+          </div>
+          <div className="flex items-center space-x-4">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={toggleExpandAll}
+                className="gap-2"
+              >
+                  {allExpanded ? <ListCollapse className="h-4 w-4" /> : <Expand className="h-4 w-4" />}
+                  {allExpanded ? 'Recolher' : 'Expandir'}
+              </Button>
+            <ThemeToggle />
+          </div>
+        </header>
+
+        {/* Content */}
+        <main id="content" ref={contentRef} className="flex-1 overflow-y-auto p-6">
             <Accordion
               type="multiple"
               value={expandedSections}
@@ -112,13 +109,9 @@ export default function DossierPage() {
             >
               <DossierContent searchTerm={searchTerm} setExpandedSections={setExpandedSections} />
             </Accordion>
-          </main>
-          <footer className="border-t mt-12 bg-muted/30">
-            <div className="container mx-auto py-4 px-3 sm:px-4 lg:px-6 text-center text-xs sm:text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} BMV — Dossiê
-            </div>
-          </footer>
-          {showBackToTop && (
+        </main>
+        
+        {showBackToTop && (
             <Button
               variant="default"
               size="icon"
@@ -129,10 +122,7 @@ export default function DossierPage() {
               <ArrowUp className="h-5 w-5" />
             </Button>
           )}
-        </div>
-      </SidebarInset>
-    </>
+      </div>
+    </div>
   );
 }
-
-    
