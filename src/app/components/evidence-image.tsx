@@ -1,8 +1,15 @@
 "use client";
 
 import Image from 'next/image';
-import { getImage, ImagePlaceholder } from '@/lib/placeholder-images';
-import { Card, CardContent, CardDescription, CardFooter } from '@/components/ui/card';
+import { getImage } from '@/lib/placeholder-images';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { ImageZoom } from './image-zoom';
+
 
 interface EvidenceImageProps {
   imageId: string;
@@ -21,26 +28,36 @@ export function EvidenceImage({ imageId, caption, className }: EvidenceImageProp
     );
   }
 
+  const imageCaption = caption || image.description;
+
   return (
-    <Card className={className}>
-        <CardContent className="p-2">
-            <div className="aspect-video relative overflow-hidden rounded-md">
-                <Image
-                    src={image.imageUrl}
-                    alt={caption || image.description}
-                    fill
-                    className="object-cover"
-                    data-ai-hint={image.imageHint}
-                />
-            </div>
-        </CardContent>
-        {(caption || image.description) && (
-            <CardFooter className="p-2 pt-0">
-                <p className="text-xs text-muted-foreground text-center w-full">
-                    {caption || image.description}
-                </p>
-            </CardFooter>
-        )}
-    </Card>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Card className={`${className} cursor-zoom-in`}>
+            <CardContent className="p-2">
+                <div className="aspect-video relative overflow-hidden rounded-md">
+                    <Image
+                        src={image.imageUrl}
+                        alt={imageCaption}
+                        fill
+                        className="object-cover"
+                        data-ai-hint={image.imageHint}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                </div>
+            </CardContent>
+            {imageCaption && (
+                <CardFooter className="p-2 pt-0">
+                    <p className="text-xs text-muted-foreground text-center w-full">
+                        {imageCaption}
+                    </p>
+                </CardFooter>
+            )}
+        </Card>
+      </DialogTrigger>
+      <DialogContent className="max-w-4xl p-2">
+        <ImageZoom imageUrl={image.imageUrl} alt={imageCaption} />
+      </DialogContent>
+    </Dialog>
   );
 }
