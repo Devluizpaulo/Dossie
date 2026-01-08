@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { KeyRound } from 'lucide-react';
 import { Logo } from "@/components/logo";
@@ -8,7 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@/firebase';
+import { useAuth, useFirestore, useUser } from '@/firebase';
+import { signIn } from '@/firebase/non-blocking-login';
 
 export default function UserLoginPage() {
   const [email, setEmail] = useState('');
@@ -17,20 +18,62 @@ export default function UserLoginPage() {
   const { toast } = useToast();
   const router = useRouter();
   const auth = useAuth();
+  const firestore = useFirestore();
+  const { user, isUserLoading } = useUser();
+
+  useEffect(() => {
+    if (!isUserLoading && user) {
+      router.push('/');
+    }
+  }, [user, isUserLoading, router]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Placeholder for token-based login logic
-    toast({
-        variant: "destructive",
-        title: "Funcionalidade em Desenvolvimento",
-        description: "O login de usuário com token ainda será implementado.",
-    });
+    if (!auth || !firestore) {
+        toast({
+            variant: "destructive",
+            title: "Erro de Configuração",
+            description: "Serviços do Firebase não estão disponíveis.",
+        });
+        setIsLoading(false);
+        return;
+    }
 
-    setIsLoading(false);
+    try {
+        const loggedInUser = await signIn(auth, firestore, email, token);
+        if (loggedInUser) {
+            toast({
+                title: "Login bem-sucedido!",
+                description: "Redirecionando para o dossiê.",
+            });
+            router.push('/');
+        } else {
+            toast({
+                variant: "destructive",
+                title: "Falha no Login",
+                description: "E-mail ou token de acesso inválido. Por favor, verifique seus dados.",
+            });
+        }
+    } catch (error: any) {
+        toast({
+            variant: "destructive",
+            title: "Erro inesperado",
+            description: error.message || "Ocorreu um erro durante o login. Tente novamente.",
+        });
+    } finally {
+        setIsLoading(false);
+    }
   };
+
+  if (isUserLoading || user) {
+    return (
+        <div className="flex min-h-screen items-center justify-center">
+            <p>Carregando...</p>
+        </div>
+    )
+  }
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-muted/40 p-4">
@@ -51,7 +94,7 @@ export default function UserLoginPage() {
           <form onSubmit={handleLogin} className="space-y-4">
             <Input
               type="email"
-              placeholder="seu-email@bmv.global"
+              placeholder="seu-email@exemplo.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -59,7 +102,7 @@ export default function UserLoginPage() {
               disabled={isLoading}
             />
             <Input
-              type="password" // Visually it's a password, but we treat it as a token
+              type="text"
               placeholder="Seu token de acesso"
               value={token}
               onChange={(e) => setToken(e.target.value)}
@@ -68,7 +111,7 @@ export default function UserLoginPage() {
               disabled={isLoading}
             />
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? 'Entrando...' : 'Entrar com Token'}
+              {isLoading ? 'Verificando...' : 'Entrar com Token'}
             </Button>
           </form>
         </CardContent>

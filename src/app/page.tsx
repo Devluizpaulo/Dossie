@@ -77,7 +77,13 @@ export default function DossierPage() {
   const handleSignOut = async () => {
     if (auth) {
         await signOut(auth);
-        router.push('/login');
+        
+        const userRole = await user?.getIdTokenResult()?.then(r => r.claims.role);
+        if (userRole === 'admin_master') {
+            router.push('/admin');
+        } else {
+            router.push('/login');
+        }
     }
   };
 
@@ -88,7 +94,7 @@ export default function DossierPage() {
     if (isUserLoading || !user) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <p>Carregando...</p>
+        <p>Verificando acesso...</p>
       </div>
     );
   }
