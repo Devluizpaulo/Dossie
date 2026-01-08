@@ -3,14 +3,14 @@ import type { NextRequest } from 'next/server'
 import { auth } from 'firebase-admin';
 
 // This middleware is now responsible for redirecting based on auth state
-// It will be more complex once we have Firebase Auth integrated
 export function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
     
-    // This is a placeholder. We will need to check for a valid Firebase session cookie.
-    const isAuthenticated = false; // Replace with actual Firebase Auth check
+    // This is a placeholder. In a real Firebase setup, you'd check a session cookie.
+    // For now, we'll assume a cookie named 'auth_token' exists if the user is authenticated.
+    const isAuthenticated = request.cookies.has('firebase-auth-token'); 
 
-    // Allow access to login page and static assets
+    // Allow access to login page and internal Next.js/static assets
     if (pathname.startsWith('/login') || pathname.startsWith('/_next/') || pathname.startsWith('/Image/')) {
         return NextResponse.next();
     }

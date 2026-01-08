@@ -64,9 +64,13 @@ service cloud.firestore {
     /**
      * Validates the core fields for a new User document.
      * Ensures the document's internal `id` matches the document's path ID.
+     * The role must be 'user' on creation by a user.
      */
     function hasValidUserCreateData(userId) {
-      return request.resource.data.id == userId;
+      let data = request.resource.data;
+      return data.id == userId &&
+             data.role == 'user' &&
+             data.email is string;
     }
 
     /**
@@ -83,10 +87,12 @@ service cloud.firestore {
 
     /**
      * Enforces immutability for critical fields on a User document.
-     * The unique user ID should never change after creation.
+     * The unique user ID and role should never change after creation,
+     * except by a trusted backend process (not covered here).
      */
     function hasValidUserUpdateData() {
-      return request.resource.data.id == resource.data.id;
+      return request.resource.data.id == resource.data.id &&
+             request.resource.data.role == resource.data.role;
     }
 
     /**

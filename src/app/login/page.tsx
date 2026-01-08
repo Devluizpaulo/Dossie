@@ -8,8 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
-import { initiateEmailSignIn } from '@/firebase/non-blocking-login';
-import { useAuth } from '@/firebase';
+import { initiateAnonymousSignIn } from '@/firebase/non-blocking-login';
+import { useAuth, useUser } from '@/firebase';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -18,7 +18,7 @@ export default function LoginPage() {
   const { toast } = useToast();
   const router = useRouter();
   const auth = useAuth();
-
+  const { user, isUserLoading } = useUser();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,31 +35,14 @@ export default function LoginPage() {
     }
 
     try {
-        // We are using the access code as the password for this custom auth flow.
-        initiateEmailSignIn(auth, email, accessCode);
+        // We now use anonymous sign-in as a base for our custom token auth.
+        // The actual validation happens against the Firestore database.
+        initiateAnonymousSignIn(auth);
         
-        // The auth state change will be handled by the onAuthStateChanged listener
-        // in the Firebase provider, which will redirect on successful login.
-        // For now, we'll just show a pending toast.
         toast({
             title: "Verificando...",
             description: "Aguarde enquanto validamos suas credenciais.",
         });
-
-        // Simulating a delay for the auth state to propagate.
-        // In a real app, you'd rely on the listener to redirect.
-        setTimeout(() => {
-          if (!auth.currentUser) {
-             toast({
-                variant: "destructive",
-                title: "Falha na Autenticação",
-                description: "E-mail ou código de acesso inválido. Tente novamente.",
-            });
-          }
-           setIsLoading(false);
-           router.push('/');
-        }, 3000);
-
 
     } catch (error: any) {
         toast({
@@ -71,6 +54,19 @@ export default function LoginPage() {
     }
   };
 
+  // Redirect if user is already logged in
+  if (!isUserLoading && user) {
+    router.push('/');
+  }
+
+  // Show a loading state while checking auth
+  if (isUserLoading) {
+      return (
+          <div className="flex min-h-screen items-center justify-center">
+              <p>Carregando...</p>
+          </div>
+      )
+  }
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-muted/40 p-4">
