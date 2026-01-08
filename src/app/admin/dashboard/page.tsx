@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth, useUser, useCollection } from '@/firebase';
+import { useAuth, useUser, useCollection, useMemoFirebase } from '@/firebase';
 import { collection, query, orderBy } from 'firebase/firestore';
 import { useFirestore } from '@/firebase';
 import { signOut } from 'firebase/auth';
@@ -25,7 +25,10 @@ export default function AdminDashboardPage() {
     const [authStatus, setAuthStatus] = useState<AuthStatus>('loading');
     const [isUserFormOpen, setIsUserFormOpen] = useState(false);
 
-    const usersQuery = firestore ? query(collection(firestore, 'users'), orderBy('name')) : null;
+    const usersQuery = useMemoFirebase(() => {
+        if (!firestore) return null;
+        return query(collection(firestore, 'users'), orderBy('name'));
+    }, [firestore]);
     const { data: users, isLoading: usersLoading } = useCollection<FirestoreUser>(usersQuery);
 
     useEffect(() => {
