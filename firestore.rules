@@ -10,12 +10,13 @@
  * - Admin Read Access: An 'admin_master' can list and get any user document,
  *   which is essential for administrative dashboards. This is checked via a `get()`
  *   call to the user's own profile.
+ * - Admin Write Access: An 'admin_master' can create and update any user document.
+ *   This is crucial for managing users from the dashboard.
  * - User Enumeration Prevention: For non-admin users, listing the top-level
  *   `/users` collection is explicitly disallowed to protect user privacy.
- * - Strict Ownership for Writes: A user can only write to data within their
- *   own document tree. Admins cannot impersonate or write on behalf of users.
- * - Role Immutability: The `role` field is immutable after creation to prevent
- *   privilege escalation by the user.
+ * - Strict Ownership for Writes: A regular user can only write to data within their
+ *   own document tree. Admins cannot impersonate or write on behalf of users for sub-collections.
+ * - Role Immutability (for users): A regular user cannot change their own `role` field.
  * - Profile Self-Creation: An authenticated user can create their own profile,
  *   but the initial role must be 'user'.
  */
@@ -66,12 +67,15 @@ service cloud.firestore {
     /**
      * Validates the core fields for a new User document.
      * Ensures the document's internal `id` matches the document's path ID.
-     * The role must be 'user' on creation by a user.
      */
     function hasValidUserCreateData(userId) {
       let data = request.resource.data;
+      // An admin can set any role, a user can only set their role to 'user'.
+      let roleIsValid = (isAdminMaster() && data.role in ['admin_master', 'user']) || 
+                        (!isAdminMaster() && data.role == 'user');
+      
       return data.id == userId &&
-             data.role == 'user' &&
+             roleIsValid &&
              data.email is string;
     }
 
@@ -89,11 +93,14 @@ service cloud.firestore {
 
     /**
      * Enforces immutability for critical fields on a User document.
-     * The unique user ID and role should never change after creation.
+     * The unique user ID should never change.
+     * Only an admin can change a role. A user cannot change their own role.
      */
     function hasValidUserUpdateData() {
-      return request.resource.data.id == resource.data.id &&
-             request.resource.data.role == resource.data.role;
+        let isRoleUnchanged = request.resource.data.role == resource.data.role;
+
+        return request.resource.data.id == resource.data.id &&
+               (isAdminMaster() || isRoleUnchanged);
     }
 
     /**
@@ -112,18 +119,18 @@ service cloud.firestore {
 
     /**
      * @description Manages user profile documents. A user can manage their
-     *   own profile. An 'admin_master' can read any user's profile and list all users.
+     *   own profile. An 'admin_master' can read, create, and update any user's profile.
      * @path /users/{userId}
-     * @allow (get) An admin can get any user profile. A regular user can only get their own.
-     * @allow (list) An admin can list all users. Regular users cannot.
-     * @principle Restricts access to a user's own data, with an exception for admin read access based on role field.
+     * @allow (get, list) An admin can read any user profile and list all users. A regular user can only get their own.
+     * @allow (create, update) An admin can create or update any user profile. A user can only create/update their own.
+     * @principle Restricts access to a user's own data, with an exception for admin read/write access based on role.
      */
     match /users/{userId} {
       allow get: if isOwner(userId) || isAdminMaster();
       allow list: if isAdminMaster(); // CRITICAL: Only admin can list users.
-      allow create: if isOwner(userId) && hasValidUserCreateData(userId);
-      allow update: if isExistingOwner(userId) && hasValidUserUpdateData();
-      allow delete: if isExistingOwner(userId);
+      allow create: if (isOwner(userId) || isAdminMaster()) && hasValidUserCreateData(userId);
+      allow update: if (isExistingOwner(userId) || isAdminMaster()) && hasValidUserUpdateData();
+      allow delete: if isExistingOwner(userId) || isAdminMaster();
 
       /**
        * @description Manages a user's access attempt records. Access is strictly

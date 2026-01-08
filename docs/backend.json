@@ -19,10 +19,21 @@
           "description": "The user's institutional email address.",
           "format": "email"
         },
+        "phone": {
+          "type": "string",
+          "description": "The user's phone number, including country code."
+        },
         "role": {
           "type": "string",
           "description": "The role of the user, which determines their access level.",
-          "enum": ["admin_master", "user"]
+          "enum": [
+            "admin_master",
+            "user"
+          ]
+        },
+        "accessCode": {
+          "type": "string",
+          "description": "The one-time access code generated for the user."
         }
       },
       "required": [

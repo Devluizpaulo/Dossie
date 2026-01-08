@@ -2,23 +2,31 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth, useUser } from '@/firebase';
+import { useAuth, useUser, useCollection } from '@/firebase';
+import { collection, query, orderBy } from 'firebase/firestore';
+import { useFirestore } from '@/firebase';
 import { signOut } from 'firebase/auth';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut } from 'lucide-react';
-import { IdTokenResult } from 'firebase/auth';
+import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle } from 'lucide-react';
+import { UserForm } from '@/app/admin/dashboard/user-form';
+import type { User as FirestoreUser } from '@/firebase/user-service';
 
 type AuthStatus = 'loading' | 'unauthenticated' | 'authenticated' | 'forbidden';
 
 export default function AdminDashboardPage() {
     const { user, isUserLoading } = useUser();
     const auth = useAuth();
+    const firestore = useFirestore();
     const router = useRouter();
     const [authStatus, setAuthStatus] = useState<AuthStatus>('loading');
+    const [isUserFormOpen, setIsUserFormOpen] = useState(false);
+
+    const usersQuery = firestore ? query(collection(firestore, 'users'), orderBy('name')) : null;
+    const { data: users, isLoading: usersLoading } = useCollection<FirestoreUser>(usersQuery);
 
     useEffect(() => {
         if (isUserLoading) {
@@ -31,14 +39,8 @@ export default function AdminDashboardPage() {
             router.push('/admin');
             return;
         }
-
-        // DEVELOPMENT ONLY: Temporarily grant access to any logged-in user.
-        // The real check for 'admin_master' will be re-enabled later.
-        setAuthStatus('authenticated');
         
-        /*
-        // PRODUCTION-READY CHECK:
-        user.getIdTokenResult(true) // Force refresh to get latest claims
+        user.getIdTokenResult(true) 
             .then((idTokenResult) => {
                 if (idTokenResult.claims.role === 'admin_master') {
                     setAuthStatus('authenticated');
@@ -51,7 +53,6 @@ export default function AdminDashboardPage() {
                 setAuthStatus('forbidden');
                 router.push('/admin');
             });
-        */
 
     }, [user, isUserLoading, router]);
 
@@ -78,96 +79,123 @@ export default function AdminDashboardPage() {
     
     // User is authenticated as admin_master, render the dashboard
     return (
-        <div className="min-h-screen bg-muted/40 p-4 sm:p-6 lg:p-8">
-            <div className="max-w-7xl mx-auto">
-                <header className="mb-8">
-                    <Card className="flex items-center justify-between p-4">
-                        <div>
-                            <CardTitle className="text-2xl flex items-center gap-3">
-                                <Shield className="h-7 w-7 text-primary" />
-                                Painel Administrativo Master
-                            </CardTitle>
-                            <CardDescription className="mt-1">
-                                Central de governança, auditoria e controle do sistema.
-                            </CardDescription>
-                        </div>
-                        <div>
-                             <DropdownMenu>
-                                <DropdownMenuTrigger asChild>
-                                    <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-                                        <Avatar className="h-10 w-10">
-                                            {user && user.photoURL && <AvatarImage src={user.photoURL} alt={user.displayName || 'Admin'} />}
-                                            <AvatarFallback>{getUserInitials(user?.email)}</AvatarFallback>
-                                        </Avatar>
-                                    </Button>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent className="w-56" align="end" forceMount>
-                                    <DropdownMenuLabel className="font-normal">
-                                        <div className="flex flex-col space-y-1">
-                                            <p className="text-sm font-medium leading-none">Admin Master</p>
-                                            <p className="text-xs leading-none text-muted-foreground">
-                                                {user?.email}
-                                            </p>
-                                        </div>
-                                    </DropdownMenuLabel>
-                                    <DropdownMenuSeparator />
-                                    <DropdownMenuItem onClick={handleSignOut}>
-                                        <LogOut className="mr-2 h-4 w-4" />
-                                        <span>Sair</span>
-                                    </DropdownMenuItem>
-                                </DropdownMenuContent>
-                            </DropdownMenu>
-                        </div>
-                    </Card>
-                </header>
-
-                <main>
-                    <Tabs defaultValue="users" className="w-full">
-                        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
-                            <TabsTrigger value="users"><Users className="mr-2" /> Usuários</TabsTrigger>
-                            <TabsTrigger value="domains"><Globe className="mr-2" /> Domínios</TabsTrigger>
-                            <TabsTrigger value="sessions"><KeyRound className="mr-2" /> Sessões</TabsTrigger>
-                            <TabsTrigger value="logs"><ListChecks className="mr-2" /> Auditoria</TabsTrigger>
-                            <TabsTrigger value="dossiers"><FileText className="mr-2" /> Dossiês</TabsTrigger>
-                        </TabsList>
-                        
-                        <Card className="mt-4">
-                            <CardContent className="pt-6">
-                                <TabsContent value="users">
-                                    <CardTitle className="mb-4">Gestão de Usuários Autenticados</CardTitle>
-                                    <p className="text-muted-foreground">
-                                        Módulo para visualizar, revogar e gerenciar todos os usuários que acessaram o sistema. A implementação incluirá uma tabela com dados de usuários, status e ações administrativas.
-                                    </p>
-                                </TabsContent>
-                                <TabsContent value="domains">
-                                    <CardTitle className="mb-4">Gestão de Domínios Autorizados (Whitelist)</CardTitle>
-                                    <p className="text-muted-foreground">
-                                        Funcionalidade para cadastrar, ativar e desativar domínios de e-mail permitidos no sistema, com registro de auditoria completo para cada alteração.
-                                    </p>
-                                </TabsContent>
-                                <TabsContent value="sessions">
-                                     <CardTitle className="mb-4">Controle de Sessões e Tokens</CardTitle>
-                                     <p className="text-muted-foreground">
-                                        Painel para visualizar sessões ativas, tokens emitidos, seus tempos de expiração e a capacidade de revogá-los manualmente para forçar o logout de usuários.
-                                    </p>
-                                </TabsContent>
-                                <TabsContent value="logs">
-                                     <CardTitle className="mb-4">Auditoria e Logs</CardTitle>
-                                     <p className="text-muted-foreground">
-                                        Módulo de auditoria com filtros avançados para rastrear todas as ações críticas no sistema. Os logs serão imutáveis e exportáveis.
-                                    </p>
-                                </TabsContent>
-                                <TabsContent value="dossiers">
-                                    <CardTitle className="mb-4">Emissão de Dossiês e Anexos</CardTitle>
-                                    <p className="text-muted-foreground">
-                                        Funcionalidades para gerar dossiês institucionais personalizados, selecionando anexos, aplicando templates e registrando cada emissão.
-                                    </p>
-                                </TabsContent>
-                            </CardContent>
+        <>
+            <UserForm 
+                isOpen={isUserFormOpen} 
+                onOpenChange={setIsUserFormOpen} 
+            />
+            <div className="min-h-screen bg-muted/40 p-4 sm:p-6 lg:p-8">
+                <div className="max-w-7xl mx-auto">
+                    <header className="mb-8">
+                        <Card className="flex items-center justify-between p-4">
+                            <div>
+                                <CardTitle className="text-2xl flex items-center gap-3">
+                                    <Shield className="h-7 w-7 text-primary" />
+                                    Painel Administrativo Master
+                                </CardTitle>
+                                <CardDescription className="mt-1">
+                                    Central de governança, auditoria e controle do sistema.
+                                </CardDescription>
+                            </div>
+                            <div>
+                                <DropdownMenu>
+                                    <DropdownMenuTrigger asChild>
+                                        <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+                                            <Avatar className="h-10 w-10">
+                                                {user && user.photoURL && <AvatarImage src={user.photoURL} alt={user.displayName || 'Admin'} />}
+                                                <AvatarFallback>{getUserInitials(user?.email)}</AvatarFallback>
+                                            </Avatar>
+                                        </Button>
+                                    </DropdownMenuTrigger>
+                                    <DropdownMenuContent className="w-56" align="end" forceMount>
+                                        <DropdownMenuLabel className="font-normal">
+                                            <div className="flex flex-col space-y-1">
+                                                <p className="text-sm font-medium leading-none">Admin Master</p>
+                                                <p className="text-xs leading-none text-muted-foreground">
+                                                    {user?.email}
+                                                </p>
+                                            </div>
+                                        </DropdownMenuLabel>
+                                        <DropdownMenuSeparator />
+                                        <DropdownMenuItem onClick={handleSignOut}>
+                                            <LogOut className="mr-2 h-4 w-4" />
+                                            <span>Sair</span>
+                                        </DropdownMenuItem>
+                                    </DropdownMenuContent>
+                                </DropdownMenu>
+                            </div>
                         </Card>
-                    </Tabs>
-                </main>
+                    </header>
+
+                    <main>
+                        <Tabs defaultValue="users" className="w-full">
+                            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
+                                <TabsTrigger value="users"><Users className="mr-2" /> Usuários</TabsTrigger>
+                                <TabsTrigger value="domains"><Globe className="mr-2" /> Domínios</TabsTrigger>
+                                <TabsTrigger value="sessions"><KeyRound className="mr-2" /> Sessões</TabsTrigger>
+                                <TabsTrigger value="logs"><ListChecks className="mr-2" /> Auditoria</TabsTrigger>
+                                <TabsTrigger value="dossiers"><FileText className="mr-2" /> Dossiês</TabsTrigger>
+                            </TabsList>
+                            
+                            <Card className="mt-4">
+                                <CardContent className="pt-6">
+                                    <TabsContent value="users">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <CardTitle>Gestão de Usuários</CardTitle>
+                                            <Button onClick={() => setIsUserFormOpen(true)}>
+                                                <PlusCircle className="mr-2 h-4 w-4" />
+                                                Criar Novo Usuário
+                                            </Button>
+                                        </div>
+                                        <CardDescription className="mb-6">
+                                            Adicione, gerencie e visualize todos os usuários com acesso ao dossiê.
+                                        </CardDescription>
+
+                                        {usersLoading && <p>Carregando usuários...</p>}
+
+                                        {!usersLoading && (!users || users.length === 0) && (
+                                            <div className="text-center py-10 border-2 border-dashed rounded-lg">
+                                                <p className="text-muted-foreground">Nenhum usuário encontrado.</p>
+                                                <p className="text-sm text-muted-foreground mt-2">Comece criando um novo usuário para visualizar aqui.</p>
+                                            </div>
+                                        )}
+                                        
+                                        {!usersLoading && users && users.length > 0 && (
+                                             <p className="text-muted-foreground">
+                                                A tabela de usuários será implementada aqui.
+                                            </p>
+                                        )}
+                                    </TabsContent>
+                                    <TabsContent value="domains">
+                                        <CardTitle className="mb-4">Gestão de Domínios Autorizados (Whitelist)</CardTitle>
+                                        <p className="text-muted-foreground">
+                                            Funcionalidade para cadastrar, ativar e desativar domínios de e-mail permitidos no sistema, com registro de auditoria completo para cada alteração.
+                                        </p>
+                                    </TabsContent>
+                                    <TabsContent value="sessions">
+                                        <CardTitle className="mb-4">Controle de Sessões e Tokens</CardTitle>
+                                        <p className="text-muted-foreground">
+                                            Painel para visualizar sessões ativas, tokens emitidos, seus tempos de expiração e a capacidade de revogá-los manualmente para forçar o logout de usuários.
+                                        </p>
+                                    </TabsContent>
+                                    <TabsContent value="logs">
+                                        <CardTitle className="mb-4">Auditoria e Logs</CardTitle>
+                                        <p className="text-muted-foreground">
+                                            Módulo de auditoria com filtros avançados para rastrear todas as ações críticas no sistema. Os logs serão imutáveis e exportáveis.
+                                        </p>
+                                    </TabsContent>
+                                    <TabsContent value="dossiers">
+                                        <CardTitle className="mb-4">Emissão de Dossiês e Anexos</CardTitle>
+                                        <p className="text-muted-foreground">
+                                            Funcionalidades para gerar dossiês institucionais personalizados, selecionando anexos, aplicando templates e registrando cada emissão.
+                                        </p>
+                                    </TabsContent>
+                                </CardContent>
+                            </Card>
+                        </Tabs>
+                    </main>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
