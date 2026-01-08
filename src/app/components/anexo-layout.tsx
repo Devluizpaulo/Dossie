@@ -72,10 +72,31 @@ export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
         </div>
       </div>
 
-      {/* Main Content */}
+      {/* Main Content with Sidebar */}
       <main className="container mx-auto flex-1 px-3 sm:px-4 lg:px-6 py-6 sm:py-8 pb-24">
-        <div className="bg-card p-4 sm:p-6 md:p-8 rounded-xl shadow-md">
+        <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6">
+          {/* Sidebar Navigation */}
+          <aside className="bg-card border rounded-xl p-3 sm:p-4 h-fit sticky md:top-20">
+            <h2 className="text-sm font-semibold mb-3">Anexos</h2>
+            <nav className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible">
+              {anexos.map((n) => (
+                <Link key={n} href={`/anexo-${n}`}>
+                  <Button
+                    size="sm"
+                    variant={n === number ? "default" : "outline"}
+                    className="w-full justify-start"
+                  >
+                    {`Anexo ${n}`}
+                  </Button>
+                </Link>
+              ))}
+            </nav>
+          </aside>
+
+          {/* Main Card Content */}
+          <div className="bg-card p-4 sm:p-6 md:p-8 rounded-xl shadow-md">
             {children}
+          </div>
         </div>
       </main>
       {/* Fixed Footer Navigation */}
