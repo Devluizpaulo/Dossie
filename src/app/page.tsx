@@ -114,13 +114,13 @@ export default function DossierPage() {
         >
           
           {/* Sidebar */}
-          <aside id="dossier-sidebar" className="w-full md:w-72 lg:w-80 flex-shrink-0 md:py-6 no-print">
+          <aside id="dossier-sidebar" className="w-full md:w-72 lg:w-80 flex-shrink-0 md:sticky md:top-0 md:h-screen md:py-6 no-print">
             <motion.div
-              className="sticky top-6 h-[calc(100vh-3rem)] glass-panel p-4 rounded-2xl transition-opacity duration-300 md:opacity-80 md:hover:opacity-100"
+              className="h-full glass-panel p-4 rounded-2xl transition-opacity duration-300 md:opacity-80 md:hover:opacity-100 flex flex-col"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0, transition: { delay: 0.05 } }}
             >
-              <div className="flex items-center justify-center mb-4 pb-4 border-b">
+              <div className="flex items-center justify-center mb-4 pb-4 border-b flex-shrink-0">
                 <Logo />
               </div>
               <DossierSidebar searchTerm={searchTerm} onSearchTermChange={setSearchTerm} />
@@ -128,9 +128,12 @@ export default function DossierPage() {
           </aside>
 
           {/* Main View */}
-          <div className="flex-1 flex flex-col min-w-0 space-y-2 py-6 print-content">
+          <div 
+            ref={contentRef}
+            className="flex-1 flex flex-col min-w-0 md:h-screen md:overflow-y-auto space-y-2 py-6 print-content"
+          >
             {/* Header */}
-            <header id="dossier-header" className="sticky top-6 z-30 flex justify-between items-center p-3 sm:p-4 glass-panel rounded-2xl border-b shadow-lg overflow-hidden no-print">
+            <header id="dossier-header" className="sticky top-6 md:top-0 z-30 flex justify-between items-center p-3 sm:p-4 glass-panel rounded-2xl border-b shadow-lg overflow-hidden no-print">
                <div className="flex items-center gap-2">
                  <h1 className="text-lg font-semibold ml-1 hidden sm:block">Dossiê Técnico</h1>
                </div>
@@ -177,8 +180,7 @@ export default function DossierPage() {
             {/* Content */}
             <main
               id="content"
-              ref={contentRef}
-              className="flex-1 overflow-y-auto px-2 pt-2 pb-24 space-y-2"
+              className="flex-1 px-2 pt-2 pb-24 space-y-2"
             >
                 <Accordion
                   type="multiple"
