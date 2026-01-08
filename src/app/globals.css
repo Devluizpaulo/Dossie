@@ -156,9 +156,8 @@ body {
   }
 
   .soft-card {
-    border: 1px solid #ccc !important;
+    border: none !important;
     box-shadow: none !important;
-    border-radius: 0 !important;
     page-break-inside: avoid;
   }
 
@@ -217,5 +216,9 @@ body {
 
   [data-state='closed'] > div {
     display: none !important;
+  }
+  
+  #dossier-accordion > div > div {
+    border-bottom: none !important;
   }
 }
