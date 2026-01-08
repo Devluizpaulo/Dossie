@@ -37,7 +37,7 @@ export default function LoginPage() {
         await signInWithEmailAndPassword(auth, email, password);
         toast({
             title: "Login bem-sucedido!",
-            description: "Você será redirecionado para o painel.",
+            description: "Você será redirecionado para o dossiê.",
         });
         router.push('/');
     } catch (error: any) {
