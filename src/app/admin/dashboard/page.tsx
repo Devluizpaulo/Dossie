@@ -90,6 +90,15 @@ export default function AdminDashboardPage() {
                 if (auth) signOut(auth);
                 router.push('/admin');
             }
+        }).catch(() => {
+            setAuthStatus('forbidden');
+            toast({
+                variant: "destructive",
+                title: "Erro de Permissão",
+                description: "Não foi possível verificar suas permissões de acesso.",
+            });
+            if (auth) signOut(auth);
+            router.push('/admin');
         });
     }, [user, isUserLoading, router, toast, auth, firestore]);
 
@@ -613,3 +622,4 @@ export default function AdminDashboardPage() {
     
 
     
+
