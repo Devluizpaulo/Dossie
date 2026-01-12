@@ -124,12 +124,15 @@ export function UserForm({ isOpen, onOpenChange, user }: UserFormProps) {
             const newUserData = { ...data, password: data.password };
             await createUser(auth, firestore, newUserData);
             setNewUserCredentials({ email: data.email, password: data.password, phone: data.phone });
-            setShowSuccessDialog(true);
+            
             toast({
                 title: "Usuário criado com sucesso!",
                 description: `${data.name} foi adicionado à lista de usuários.`,
             });
-            onOpenChange(false); // Close the creation form
+            
+            // Open success dialog BEFORE closing the creation form to avoid race condition with redirection
+            setShowSuccessDialog(true);
+            onOpenChange(false);
         }
     } catch (error: any) {
         toast({
