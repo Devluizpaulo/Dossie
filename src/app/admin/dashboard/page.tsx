@@ -15,7 +15,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from "@/components/ui/badge";
-import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter, FileSpreadsheet, Download, CheckCircle, XCircle } from 'lucide-react';
+import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter, FileSpreadsheet, Download, CheckCircle, XCircle, Palette } from 'lucide-react';
 import { UserForm } from '@/app/admin/dashboard/user-form';
 import { DomainForm } from '@/app/admin/dashboard/domain-form';
 import { DossierForm } from '@/app/admin/dashboard/dossier-form';
@@ -240,12 +240,13 @@ export default function AdminDashboardPage() {
 
                     <main>
                         <Tabs defaultValue="users" className="w-full">
-                            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
+                            <TabsList className="grid w-full grid-cols-3 sm:grid-cols-4 md:grid-cols-6">
                                 <TabsTrigger value="users"><Users className="mr-2" /> Usuários</TabsTrigger>
                                 <TabsTrigger value="domains"><Globe className="mr-2" /> Domínios</TabsTrigger>
                                 <TabsTrigger value="sessions"><KeyRound className="mr-2" /> Sessões</TabsTrigger>
                                 <TabsTrigger value="logs"><ListChecks className="mr-2" /> Auditoria</TabsTrigger>
                                 <TabsTrigger value="dossiers"><FileText className="mr-2" /> Dossiês</TabsTrigger>
+                                <TabsTrigger value="whitelabel"><Palette className="mr-2" /> White Label</TabsTrigger>
                             </TabsList>
                             
                             <Card className="mt-4">
@@ -609,6 +610,59 @@ export default function AdminDashboardPage() {
                                             </Table>
                                         )}
                                     </TabsContent>
+                                    <TabsContent value="whitelabel">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <CardTitle>Requisitos para Sistema White Label</CardTitle>
+                                        </div>
+                                        <CardDescription className="mb-6">
+                                            Esta seção detalha os requisitos funcionais e técnicos para a criação de um sistema white label, servindo como escopo para orçamento de desenvolvimento.
+                                        </CardDescription>
+
+                                        <div className="space-y-6 prose prose-lg dark:prose-invert max-w-none">
+                                            <section>
+                                                <h4>Princípio do Sistema</h4>
+                                                <p>O sistema white label permitirá que parceiros de negócio (Operadores) utilizem a plataforma da BMV com sua própria marca, oferecendo os serviços a seus próprios clientes finais. A BMV atuará como a provedora da tecnologia de base, enquanto o Operador terá uma instância personalizada e isolada para gerenciar sua operação.</p>
+                                            </section>
+
+                                            <section>
+                                                <h4>Arquitetura e Premissas</h4>
+                                                <ul>
+                                                    <li><strong>Multi-Tenancy:</strong> A arquitetura deve suportar múltiplos Operadores (tenants), com total isolamento de dados entre eles. Cada Operador só pode ver e gerenciar seus próprios clientes e dados.</li>
+                                                    <li><strong>Administração Central (BMV):</strong> A BMV, como administradora master, deve ter um painel para gerenciar todos os Operadores, visualizar relatórios consolidados e administrar o faturamento.</li>
+                                                    <li><strong>Domínio Personalizado:</strong> Cada Operador deve poder apontar seu próprio subdomínio (ex: `app.parceiro.com`) para sua instância da plataforma.</li>
+                                                </ul>
+                                            </section>
+
+                                            <section>
+                                                <h4>Telas e Funcionalidades Essenciais</h4>
+                                                
+                                                <h5>1. Painel de Administração Master (BMV)</h5>
+                                                <ul>
+                                                    <li><strong>Gestão de Operadores:</strong> Tela para cadastrar, visualizar, ativar/inativar e configurar Operadores.</li>
+                                                    <li><strong>Dashboard Consolidado:</strong> Visão geral com estatísticas de todos os Operadores (nº de clientes, volume de transações, etc.).</li>
+                                                    <li><strong>Faturamento:</strong> Módulo para gerar e gerenciar as faturas para cada Operador, com base no uso (ex: por cliente, por transação).</li>
+                                                </ul>
+
+                                                <h5>2. Painel do Operador (Parceiro)</h5>
+                                                <ul>
+                                                    <li><strong>Dashboard do Operador:</strong> Visão geral de sua própria operação (seus clientes, suas transações).</li>
+                                                    <li><strong>Gestão de Clientes:</strong> CRUD completo para que o Operador gerencie seus próprios clientes finais. O Operador não pode ver clientes de outros Operadores.</li>
+                                                    <li><strong>Customização da Marca (Branding):</strong>
+                                                        <ul>
+                                                            <li>Upload de logo.</li>
+                                                            <li>Definição de esquema de cores primárias.</li>
+                                                            <li>Configuração de domínio/subdomínio.</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><strong>Relatórios:</strong> Relatórios de sua própria operação.</li>
+                                                    <li><strong>Configurações de Faturamento:</strong> Tela para o Operador visualizar suas faturas da BMV e gerenciar detalhes de pagamento.</li>
+                                                </ul>
+
+                                                <h5>3. Visão do Cliente Final</h5>
+                                                <p>A experiência do cliente final permanece similar à atual, mas totalmente imersa na marca do Operador (logo, cores, URL). O cliente final pertence a um, e somente um, Operador.</p>
+                                            </section>
+                                        </div>
+                                    </TabsContent>
                                 </CardContent>
                             </Card>
                         </Tabs>
@@ -622,4 +676,5 @@ export default function AdminDashboardPage() {
     
 
     
+
 
