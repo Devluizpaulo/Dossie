@@ -132,10 +132,11 @@ body {
   #dossier-header,
   #anexo-header,
   #anexo-sidebar,
-  #anexo-footer {
+  #anexo-footer,
+  .print-hide {
     display: none !important;
   }
-
+  
   main,
   #content {
     display: block !important;
@@ -149,22 +150,32 @@ body {
     padding: 0 !important;
   }
 
-  #anexo-content-wrapper, #anexo-main .mb-6 {
-    padding: 0 !important;
+  #anexo-content-wrapper {
     box-shadow: none !important;
     border: none !important;
     margin: 0 !important;
     page-break-inside: avoid;
   }
-
-  #anexo-main > div > div > .mb-6 {
-    margin-bottom: 2rem !important;
+  
+  #admin-dashboard [data-state="inactive"] {
+      display: none;
   }
   
+  #admin-dashboard .prose {
+    font-size: 11pt;
+  }
+
+  #admin-dashboard .card, #admin-dashboard .card-content {
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+  }
+
+
   #anexo-content-wrapper > .space-y-8 > .mb-6 {
     margin-bottom: 2rem !important;
   }
-
+  
   .print-container,
   .print-content {
     display: block !important;
@@ -178,7 +189,7 @@ body {
     border: none !important;
     box-shadow: none !important;
     page-break-inside: avoid;
-    margin-bottom: 2rem !important;
+    margin-bottom: 0 !important;
   }
   
   .bg-muted, .p-4, .rounded-lg, .space-y-4 {
@@ -252,3 +263,5 @@ body {
     border-bottom: none !important;
   }
 }
+
+    

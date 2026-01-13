@@ -15,7 +15,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from "@/components/ui/badge";
-import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter, FileSpreadsheet, Download, CheckCircle, XCircle, Palette } from 'lucide-react';
+import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter, FileSpreadsheet, Download, CheckCircle, XCircle, Palette, Printer } from 'lucide-react';
 import { UserForm } from '@/app/admin/dashboard/user-form';
 import { DomainForm } from '@/app/admin/dashboard/domain-form';
 import { DossierForm } from '@/app/admin/dashboard/dossier-form';
@@ -195,9 +195,9 @@ export default function AdminDashboardPage() {
                 isOpen={isDossierFormOpen}
                 onOpenChange={setIsDossierFormOpen}
             />
-            <div className="min-h-screen bg-muted/40 p-4 sm:p-6 lg:p-8">
+            <div id="admin-dashboard" className="min-h-screen bg-muted/40 p-4 sm:p-6 lg:p-8">
                 <div className="max-w-7xl mx-auto">
-                    <header className="mb-8">
+                    <header className="mb-8 print-hide">
                         <Card className="flex items-center justify-between p-4">
                             <div>
                                 <CardTitle className="text-2xl flex items-center gap-3">
@@ -240,7 +240,7 @@ export default function AdminDashboardPage() {
 
                     <main>
                         <Tabs defaultValue="users" className="w-full">
-                            <TabsList className="grid w-full grid-cols-3 sm:grid-cols-4 md:grid-cols-6">
+                            <TabsList className="grid w-full grid-cols-3 sm:grid-cols-4 md:grid-cols-6 print-hide">
                                 <TabsTrigger value="users"><Users className="mr-2" /> Usuários</TabsTrigger>
                                 <TabsTrigger value="domains"><Globe className="mr-2" /> Domínios</TabsTrigger>
                                 <TabsTrigger value="sessions"><KeyRound className="mr-2" /> Sessões</TabsTrigger>
@@ -613,6 +613,10 @@ export default function AdminDashboardPage() {
                                     <TabsContent value="whitelabel">
                                         <div className="flex items-center justify-between mb-4">
                                             <CardTitle>Requisitos para Sistema White Label</CardTitle>
+                                             <Button variant="outline" onClick={() => window.print()}>
+                                                <Printer className="mr-2 h-4 w-4" />
+                                                Imprimir Escopo
+                                            </Button>
                                         </div>
                                         <CardDescription className="mb-6">
                                             Esta seção detalha os requisitos funcionais e técnicos para a criação de um sistema white label, servindo como escopo para orçamento de desenvolvimento.
@@ -678,3 +682,6 @@ export default function AdminDashboardPage() {
     
 
 
+
+
+    
