@@ -18,7 +18,7 @@ import { Badge } from "@/components/ui/badge";
 import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter, FileSpreadsheet, Download, CheckCircle, XCircle, Palette, Printer, Leaf } from 'lucide-react';
 import { UserForm } from '@/app/admin/dashboard/user-form';
 import { DomainForm } from '@/app/admin/dashboard/domain-form';
-import { SafraForm } from '@/app/admin/dashboard/dossier-form';
+import { DossierForm } from '@/app/admin/dashboard/dossier-form';
 import { updateUser, deleteUser, type User as FirestoreUser } from '@/firebase/user-service';
 import type { AuthorizedDomain } from '@/firebase/domain-service';
 import type { Dossier } from '@/firebase/dossier-service';
@@ -43,7 +43,7 @@ export default function AdminDashboardPage() {
     const [authStatus, setAuthStatus] = useState<AuthStatus>('loading');
     const [isUserFormOpen, setIsUserFormOpen] = useState(false);
     const [isDomainFormOpen, setIsDomainFormOpen] = useState(false);
-    const [isSafraFormOpen, setIsSafraFormOpen] = useState(false);
+    const [isDossierFormOpen, setIsDossierFormOpen] = useState(false);
     const [selectedUser, setSelectedUser] = useState<FirestoreUser | undefined>(undefined);
 
     const usersQuery = useMemoFirebase(() => {
@@ -191,9 +191,9 @@ export default function AdminDashboardPage() {
                 isOpen={isDomainFormOpen}
                 onOpenChange={setIsDomainFormOpen}
             />
-            <SafraForm
-                isOpen={isSafraFormOpen}
-                onOpenChange={setIsSafraFormOpen}
+            <DossierForm
+                isOpen={isDossierFormOpen}
+                onOpenChange={setIsDossierFormOpen}
             />
             <div id="admin-dashboard" className="min-h-screen bg-muted/40 p-4 sm:p-6 lg:p-8">
                 <div className="max-w-7xl mx-auto">
@@ -538,14 +538,14 @@ export default function AdminDashboardPage() {
                                     </TabsContent>
                                     <TabsContent value="dossiers">
                                         <div className="flex items-center justify-between mb-4">
-                                            <CardTitle>Engenharia de Ativos</CardTitle>
-                                            <Button onClick={() => setIsSafraFormOpen(true)}>
+                                            <CardTitle>Emissões de Dossiês</CardTitle>
+                                            <Button onClick={() => setIsDossierFormOpen(true)}>
                                                 <PlusCircle className="mr-2 h-4 w-4" />
-                                                Criar Nova Safra
+                                                Gerar Novo Dossiê
                                             </Button>
                                         </div>
                                         <CardDescription className="mb-6">
-                                            Gerencie o ciclo de vida dos ativos, desde a criação da safra até a sua distribuição e particionamento.
+                                            Visualize e gerencie todos os registros de dossiês gerados e enviados pelo sistema.
                                         </CardDescription>
 
                                         {dossiersLoading && <p>Carregando emissões de dossiês...</p>}
