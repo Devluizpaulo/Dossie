@@ -15,10 +15,10 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from "@/components/ui/badge";
-import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter, FileSpreadsheet, Download, CheckCircle, XCircle, Palette, Printer } from 'lucide-react';
+import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter, FileSpreadsheet, Download, CheckCircle, XCircle, Palette, Printer, Leaf } from 'lucide-react';
 import { UserForm } from '@/app/admin/dashboard/user-form';
 import { DomainForm } from '@/app/admin/dashboard/domain-form';
-import { DossierForm } from '@/app/admin/dashboard/dossier-form';
+import { SafraForm } from '@/app/admin/dashboard/dossier-form';
 import { updateUser, deleteUser, type User as FirestoreUser } from '@/firebase/user-service';
 import type { AuthorizedDomain } from '@/firebase/domain-service';
 import type { Dossier } from '@/firebase/dossier-service';
@@ -43,7 +43,7 @@ export default function AdminDashboardPage() {
     const [authStatus, setAuthStatus] = useState<AuthStatus>('loading');
     const [isUserFormOpen, setIsUserFormOpen] = useState(false);
     const [isDomainFormOpen, setIsDomainFormOpen] = useState(false);
-    const [isDossierFormOpen, setIsDossierFormOpen] = useState(false);
+    const [isSafraFormOpen, setIsSafraFormOpen] = useState(false);
     const [selectedUser, setSelectedUser] = useState<FirestoreUser | undefined>(undefined);
 
     const usersQuery = useMemoFirebase(() => {
@@ -191,9 +191,9 @@ export default function AdminDashboardPage() {
                 isOpen={isDomainFormOpen}
                 onOpenChange={setIsDomainFormOpen}
             />
-            <DossierForm
-                isOpen={isDossierFormOpen}
-                onOpenChange={setIsDossierFormOpen}
+            <SafraForm
+                isOpen={isSafraFormOpen}
+                onOpenChange={setIsSafraFormOpen}
             />
             <div id="admin-dashboard" className="min-h-screen bg-muted/40 p-4 sm:p-6 lg:p-8">
                 <div className="max-w-7xl mx-auto">
@@ -538,14 +538,14 @@ export default function AdminDashboardPage() {
                                     </TabsContent>
                                     <TabsContent value="dossiers">
                                         <div className="flex items-center justify-between mb-4">
-                                            <CardTitle>Emissão de Dossiês e Anexos</CardTitle>
-                                            <Button onClick={() => setIsDossierFormOpen(true)}>
+                                            <CardTitle>Engenharia de Ativos</CardTitle>
+                                            <Button onClick={() => setIsSafraFormOpen(true)}>
                                                 <PlusCircle className="mr-2 h-4 w-4" />
-                                                Gerar Novo Dossiê
+                                                Criar Nova Safra
                                             </Button>
                                         </div>
                                         <CardDescription className="mb-6">
-                                            Registre e visualize todas as emissões de dossiês institucionais, incluindo destinatários e anexos selecionados.
+                                            Gerencie o ciclo de vida dos ativos, desde a criação da safra até a sua distribuição e particionamento.
                                         </CardDescription>
 
                                         {dossiersLoading && <p>Carregando emissões de dossiês...</p>}
