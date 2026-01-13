@@ -611,317 +611,332 @@ export default function AdminDashboardPage() {
                                         )}
                                     </TabsContent>
                                     <TabsContent value="whitelabel">
-                                        <div className="flex items-center justify-between mb-4">
+                                        <div className="flex items-center justify-between mb-4 print-hide">
                                             <CardTitle>Requisitos para Sistema White Label</CardTitle>
                                              <Button variant="outline" onClick={() => window.print()}>
                                                 <Printer className="mr-2 h-4 w-4" />
                                                 Imprimir Escopo
                                             </Button>
                                         </div>
-                                        <CardDescription className="mb-6">
+                                        <CardDescription className="mb-6 print-hide">
                                             Esta seção detalha os requisitos funcionais e técnicos para a criação de um sistema white label, servindo como escopo para orçamento de desenvolvimento.
                                         </CardDescription>
 
-                                        <div className="space-y-6 prose prose-lg dark:prose-invert max-w-none">
-                                            <section>
-                                                <h4>Princípio do Sistema</h4>
-                                                <p>O sistema white label permitirá que parceiros de negócio (Operadores) utilizem a plataforma da BMV com sua própria marca, oferecendo os serviços a seus próprios clientes finais. A BMV atuará como a provedora da tecnologia de base, enquanto o Operador terá uma instância personalizada e isolada para gerenciar sua operação.</p>
-                                            </section>
+                                        <div className="flex gap-8">
+                                            <aside className="w-56 flex-shrink-0 sticky top-24 h-fit print-hide">
+                                                <nav className="flex flex-col space-y-2">
+                                                    <h3 className="font-semibold px-3">Navegação</h3>
+                                                     <a href="#wl-principio" className="text-sm p-3 rounded-md hover:bg-muted">Princípio do Sistema</a>
+                                                     <a href="#wl-arquitetura" className="text-sm p-3 rounded-md hover:bg-muted">Arquitetura e Premissas</a>
+                                                     <a href="#wl-telas" className="text-sm p-3 rounded-md hover:bg-muted">Telas e Funcionalidades</a>
+                                                     <a href="#wl-bmv-digital" className="text-sm p-3 rounded-md hover:bg-muted">BMV Digital</a>
+                                                     <a href="#wl-tesouro-verde" className="text-sm p-3 rounded-md hover:bg-muted">Tesouro Verde</a>
+                                                     <a href="#wl-kanban" className="text-sm p-3 rounded-md hover:bg-muted">Fluxo Kanban</a>
+                                                     <a href="#wl-estoque" className="text-sm p-3 rounded-md hover:bg-muted">Gestão de Estoque</a>
+                                                     <a href="#wl-admin" className="text-sm p-3 rounded-md hover:bg-muted">Módulos Administrativos</a>
+                                                </nav>
+                                            </aside>
+                                            <div className="space-y-6 prose prose-lg dark:prose-invert max-w-none flex-1">
+                                                <section id="wl-principio">
+                                                    <h4>Princípio do Sistema</h4>
+                                                    <p>O sistema white label permitirá que parceiros de negócio (Operadores) utilizem a plataforma da BMV com sua própria marca, oferecendo os serviços a seus próprios clientes finais. A BMV atuará como a provedora da tecnologia de base, enquanto o Operador terá uma instância personalizada e isolada para gerenciar sua operação.</p>
+                                                </section>
 
-                                            <section>
-                                                <h4>Arquitetura e Premissas</h4>
-                                                <ul>
-                                                    <li><strong>Multi-Tenancy:</strong> A arquitetura deve suportar múltiplos Operadores (tenants), com total isolamento de dados entre eles. Cada Operador só pode ver e gerenciar seus próprios clientes e dados.</li>
-                                                    <li><strong>Administração Central (BMV):</strong> A BMV, como administradora master, deve ter um painel para gerenciar todos os Operadores, visualizar relatórios consolidados e administrar o faturamento.</li>
-                                                    <li><strong>Domínio Personalizado:</strong> Cada Operador deve poder apontar seu próprio subdomínio (ex: `app.parceiro.com`) para sua instância da plataforma.</li>
-                                                </ul>
-                                            </section>
+                                                <section id="wl-arquitetura">
+                                                    <h4>Arquitetura e Premissas</h4>
+                                                    <ul>
+                                                        <li><strong>Multi-Tenancy:</strong> A arquitetura deve suportar múltiplos Operadores (tenants), com total isolamento de dados entre eles. Cada Operador só pode ver e gerenciar seus próprios clientes e dados.</li>
+                                                        <li><strong>Administração Central (BMV):</strong> A BMV, como administradora master, deve ter um painel para gerenciar todos os Operadores, visualizar relatórios consolidados e administrar o faturamento.</li>
+                                                        <li><strong>Domínio Personalizado:</strong> Cada Operador deve poder apontar seu próprio subdomínio (ex: `app.parceiro.com`) para sua instância da plataforma.</li>
+                                                    </ul>
+                                                </section>
 
-                                            <section>
-                                                <h4>Telas e Funcionalidades Essenciais</h4>
+                                                <section id="wl-telas">
+                                                    <h4>Telas e Funcionalidades Essenciais</h4>
+                                                    
+                                                    <h5>1. Painel de Administração Master (BMV)</h5>
+                                                    <ul>
+                                                        <li><strong>Gestão de Operadores:</strong> Tela para cadastrar, visualizar, ativar/inativar e configurar Operadores.</li>
+                                                        <li><strong>Dashboard Consolidado:</strong> Visão geral com estatísticas de todos os Operadores (nº de clientes, volume de transações, etc.).</li>
+                                                        <li><strong>Faturamento:</strong> Módulo para gerar e gerenciar as faturas para cada Operador, com base no uso (ex: por cliente, por transação).</li>
+                                                    </ul>
+
+                                                    <h5>2. Painel do Operador (Parceiro)</h5>
+                                                    <ul>
+                                                        <li><strong>Dashboard do Operador:</strong> Visão geral de sua própria operação (seus clientes, suas transações).</li>
+                                                        <li><strong>Gestão de Clientes:</strong> CRUD completo para que o Operador gerencie seus próprios clientes finais. O Operador não pode ver clientes de outros Operadores.</li>
+                                                        <li><strong>Customização da Marca (Branding):</strong>
+                                                            <ul>
+                                                                <li>Upload de logo.</li>
+                                                                <li>Definição de esquema de cores primárias.</li>
+                                                                <li>Configuração de domínio/subdomínio.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><strong>Relatórios:</strong> Relatórios de sua própria operação.</li>
+                                                        <li><strong>Configurações de Faturamento:</strong> Tela para o Operador visualizar suas faturas da BMV e gerenciar detalhes de pagamento.</li>
+                                                    </ul>
+
+                                                    <h5>3. Visão do Cliente Final</h5>
+                                                    <p>A experiência do cliente final permanece similar à atual, mas totalmente imersa na marca do Operador (logo, cores, URL). O cliente final pertence a um, e somente um, Operador.</p>
+                                                </section>
                                                 
-                                                <h5>1. Painel de Administração Master (BMV)</h5>
-                                                <ul>
-                                                    <li><strong>Gestão de Operadores:</strong> Tela para cadastrar, visualizar, ativar/inativar e configurar Operadores.</li>
-                                                    <li><strong>Dashboard Consolidado:</strong> Visão geral com estatísticas de todos os Operadores (nº de clientes, volume de transações, etc.).</li>
-                                                    <li><strong>Faturamento:</strong> Módulo para gerar e gerenciar as faturas para cada Operador, com base no uso (ex: por cliente, por transação).</li>
-                                                </ul>
+                                                <section id="wl-bmv-digital">
+                                                    <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">BMV Digital</h4>
+                                                    <p>A BMV Digital é a plataforma central responsável pela gestão e movimentação de saldo de clientes e produtores, atuando como a camada transacional e orquestradora das operações da BMV.</p>
+                                                    <p>Nessa plataforma são registradas todas as intenções de movimentação, que dão origem às operações financeiras, comerciais e operacionais. Essas intenções são formalizadas por meio de pedidos, garantindo rastreabilidade, controle, validações e integração sistêmica antes da efetiva liquidação.</p>
 
-                                                <h5>2. Painel do Operador (Parceiro)</h5>
-                                                <ul>
-                                                    <li><strong>Dashboard do Operador:</strong> Visão geral de sua própria operação (seus clientes, suas transações).</li>
-                                                    <li><strong>Gestão de Clientes:</strong> CRUD completo para que o Operador gerencie seus próprios clientes finais. O Operador não pode ver clientes de outros Operadores.</li>
-                                                    <li><strong>Customização da Marca (Branding):</strong>
-                                                        <ul>
-                                                            <li>Upload de logo.</li>
-                                                            <li>Definição de esquema de cores primárias.</li>
-                                                            <li>Configuração de domínio/subdomínio.</li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><strong>Relatórios:</strong> Relatórios de sua própria operação.</li>
-                                                    <li><strong>Configurações de Faturamento:</strong> Tela para o Operador visualizar suas faturas da BMV e gerenciar detalhes de pagamento.</li>
-                                                </ul>
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Funcionalidades e Módulos</h5>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Pedido de Compras:</strong>
+                                                            <p>Registro e controle das intenções de aquisição de ativos, com fluxo de validação e acompanhamento do status da operação.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Pedido de Vendas:</strong>
+                                                            <p>Gestão das intenções de venda, permitindo o controle do ciclo comercial desde a solicitação até a conclusão.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Pedido de Transferência:</strong>
+                                                            <p>Formalização das intenções de transferência de ativos, incluindo UCSs, entre clientes, produtores, carteiras ou sistemas integrados.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Pedido de Certificados:</strong>
+                                                            <p>Gestão das intenções de emissão, movimentação e controle de certificados, organizada por tipo de operação:</p>
+                                                            <ul className="list-disc pl-6 mt-2">
+                                                                <li>Cliente</li>
+                                                                <li>Distribuidor Financeiro</li>
+                                                                <li>Distribuidor Geral</li>
+                                                                <li>SaaS Tesouro Verde</li>
+                                                                <li>SaaS BMV</li>
+                                                                <li>CDE</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Integração de Movimentação:</strong>
+                                                            <p>Módulo responsável por integrar e sincronizar as movimentações entre os sistemas internos e externos, assegurando consistência, automação e confiabilidade dos dados.</p>
+                                                        </li>
+                                                    </ul>
 
-                                                <h5>3. Visão do Cliente Final</h5>
-                                                <p>A experiência do cliente final permanece similar à atual, mas totalmente imersa na marca do Operador (logo, cores, URL). O cliente final pertence a um, e somente um, Operador.</p>
-                                            </section>
-                                            
-                                            <section>
-                                                <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">BMV Digital</h4>
-                                                <p>A BMV Digital é a plataforma central responsável pela gestão e movimentação de saldo de clientes e produtores, atuando como a camada transacional e orquestradora das operações da BMV.</p>
-                                                <p>Nessa plataforma são registradas todas as intenções de movimentação, que dão origem às operações financeiras, comerciais e operacionais. Essas intenções são formalizadas por meio de pedidos, garantindo rastreabilidade, controle, validações e integração sistêmica antes da efetiva liquidação.</p>
-
-                                                <h5 className="font-semibold text-lg mt-6 mb-3">Funcionalidades e Módulos</h5>
-                                                <ul>
-                                                    <li>
-                                                        <strong>Pedido de Compras:</strong>
-                                                        <p>Registro e controle das intenções de aquisição de ativos, com fluxo de validação e acompanhamento do status da operação.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Pedido de Vendas:</strong>
-                                                        <p>Gestão das intenções de venda, permitindo o controle do ciclo comercial desde a solicitação até a conclusão.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Pedido de Transferência:</strong>
-                                                        <p>Formalização das intenções de transferência de ativos, incluindo UCSs, entre clientes, produtores, carteiras ou sistemas integrados.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Pedido de Certificados:</strong>
-                                                        <p>Gestão das intenções de emissão, movimentação e controle de certificados, organizada por tipo de operação:</p>
-                                                        <ul className="list-disc pl-6 mt-2">
-                                                            <li>Cliente</li>
-                                                            <li>Distribuidor Financeiro</li>
-                                                            <li>Distribuidor Geral</li>
-                                                            <li>SaaS Tesouro Verde</li>
-                                                            <li>SaaS BMV</li>
-                                                            <li>CDE</li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Integração de Movimentação:</strong>
-                                                        <p>Módulo responsável por integrar e sincronizar as movimentações entre os sistemas internos e externos, assegurando consistência, automação e confiabilidade dos dados.</p>
-                                                    </li>
-                                                </ul>
-
-                                                <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
-                                                <p>A BMV Digital consolida todos os pedidos que representam intenções de movimentação de saldo, ativos e certificados, funcionando como o ponto único de entrada para as operações da BMV, com foco em governança, escalabilidade e segurança operacional.</p>
-                                            </section>
-                                            <section>
-                                                <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Tesouro Verde</h4>
-                                                <p>A plataforma Tesouro Verde é responsável pela gestão operacional, financeira e regulatória dos programas ambientais, atuando como o ambiente onde são tratadas, processadas e consolidadas todas as solicitações relacionadas a selos, programas, parceiros e repasses financeiros.</p>
-                                                <p>Todas as funcionalidades da plataforma operam de forma integrada, seguindo uma lógica de câmbio e processamento, na qual cada pedido percorre etapas bem definidas de validação, aprovação, pagamento e conclusão, garantindo rastreabilidade, conformidade e segurança operacional.</p>
-                                            
-                                                <h5 className="font-semibold text-lg mt-6 mb-3">Módulos da Plataforma</h5>
-                                                <ul>
-                                                    <li>
-                                                        <strong>Parceiros</strong>
-                                                        <p>Gestão de parceiros institucionais, operacionais e comerciais vinculados aos programas do Tesouro Verde, definindo papéis, responsabilidades e regras de atuação.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Programas</strong>
-                                                        <p>Cadastro e administração dos programas ambientais, incluindo critérios, regras de elegibilidade, parâmetros operacionais e vínculo com selos e royalties.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Pedidos de Selos</strong>
-                                                        <p>Módulo central da plataforma, responsável pelo tratamento completo dos pedidos de selos ambientais, desde a solicitação até o encerramento do processo.</p>
-                                                        <p>Os pedidos seguem um fluxo lógico e controlado, passando pelos seguintes status operacionais:</p>
-                                                        <ul className="list-disc pl-6 mt-2">
-                                                            <li>Pendente de Aprovação</li>
-                                                            <li>Pendente de Pagamento</li>
-                                                            <li>Pagamentos Efetuados</li>
-                                                            <li>Pré-processados</li>
-                                                            <li>Processados</li>
-                                                            <li>Falhas</li>
-                                                            <li>Negados</li>
-                                                            <li>Arquivados</li>
-                                                        </ul>
-                                                        <p>Esse fluxo garante que cada pedido seja corretamente analisado, validado, processado e registrado, assegurando consistência entre as etapas financeiras, operacionais e regulatórias.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>DARE / Royalties</strong>
-                                                        <p>Módulo responsável pela gestão financeira e fiscal, incluindo cálculo, controle e repasse de DAREs e royalties associados aos programas e selos, garantindo aderência às regras contratuais e regulatórias.</p>
-                                                    </li>
-                                                </ul>
-
-                                                <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
-                                                <p>A plataforma Tesouro Verde funciona como o motor operacional dos programas ambientais, onde todas as solicitações são tratadas de forma integrada, seguindo uma lógica clara de processamento e câmbio de informações entre módulos, assegurando transparência, governança e eficiência do início ao fim do ciclo operacional.</p>
-                                            </section>
-                                            <section>
-                                                <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Fluxo Kanban de Pedidos – BMV Digital</h4>
-                                                <p>Todos os pedidos da plataforma BMV Digital são tratados por meio de um fluxo Kanban padronizado, que representa visualmente o ciclo completo da intenção de movimentação, desde a solicitação inicial até o encerramento do processo.</p>
-                                                <p>Esse fluxo garante governança, rastreabilidade, controle operacional e financeiro, permitindo que cada pedido avance de forma lógica e validada entre as etapas.</p>
-
-                                                <h5 className="font-semibold text-lg mt-6 mb-3">Status do Fluxo Kanban</h5>
-                                                <ul>
-                                                    <li><strong>Pendente de Aprovação:</strong> Pedido registrado e aguardando análise e validação interna, conforme regras de negócio, elegibilidade e conformidade.</li>
-                                                    <li><strong>Pendente de Pagamento:</strong> Pedido aprovado, aguardando a realização do pagamento necessário para dar continuidade ao processamento.</li>
-                                                    <li><strong>Pagamentos Efetuados:</strong> Pagamento confirmado com sucesso, liberando o pedido para as etapas operacionais seguintes.</li>
-                                                    <li><strong>Pré-processados:</strong> Pedido validado financeiramente e preparado para execução, com checagens finais de consistência e integração entre sistemas.</li>
-                                                    <li><strong>Processados:</strong> Pedido executado com sucesso, com a movimentação de saldo, ativos, UCSs ou certificados devidamente registrada e concluída.</li>
-                                                    <li><strong>Falhas:</strong> Pedidos que apresentaram inconsistências técnicas, operacionais ou de integração durante o processamento, exigindo correção ou reprocessamento.</li>
-                                                    <li><strong>Negados:</strong> Pedidos reprovados por critérios de negócio, documentação, conformidade ou regras operacionais.</li>
-                                                    <li><strong>Arquivados:</strong> Pedidos finalizados e encerrados, mantidos apenas para fins de histórico, auditoria e rastreabilidade.</li>
-                                                </ul>
-
-                                                <h5 className="font-semibold text-lg mt-6 mb-3">Aplicação do Fluxo por Tipo de Pedido</h5>
-                                                <ul>
-                                                    <li><strong>Pedidos de Compra:</strong> Fluxo completo desde a aprovação até o processamento financeiro e operacional da aquisição.</li>
-                                                    <li><strong>Pedidos de Venda:</strong> Gestão do ciclo de venda, garantindo validação, pagamento, processamento e encerramento da operação.</li>
-                                                    <li><strong>Pedidos de Transferência:</strong> Tratamento das intenções de transferência de ativos e UCSs entre partes, com controle de aprovação, execução e arquivamento.</li>
-                                                    <li>
-                                                        <strong>Pedidos de Certificados:</strong>
-                                                        <p>O fluxo Kanban é aplicado de forma consistente aos diferentes tipos de certificados:</p>
-                                                        <ul className="list-disc pl-6 mt-2">
-                                                            <li>Certificado de Cliente</li>
-                                                            <li>Certificado de Distribuidor Financeiro</li>
-                                                            <li>Certificado de Distribuidor Geral</li>
-                                                            <li>Certificado de SaaS Tesouro Verde</li>
-                                                            <li>Certificado de SaaS BMV</li>
-                                                            <li>Certidão de Disponibilidade de Estoque</li>
-                                                        </ul>
-                                                        <p>Alguns tipos de certificado podem incluir etapas adicionais, como:</p>
-                                                        <ul className="list-disc pl-6 mt-2">
-                                                            <li>Pendente de Validação</li>
-                                                            <li>Pendente de Documentação</li>
-                                                        </ul>
-                                                        <p>Essas etapas garantem conformidade documental e regulatória antes da liberação para pagamento e processamento.</p>
-                                                    </li>
-                                                </ul>
-
-                                                <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
-                                                <p>O fluxo Kanban da BMV Digital padroniza o tratamento de todos os pedidos, assegurando que cada intenção de movimentação percorra um caminho lógico, auditável e controlado, desde a solicitação até a conclusão, independentemente do tipo de operação ou certificado envolvido.</p>
-                                            </section>
-                                            <section>
-                                                <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Módulo de Gestão de Estoque</h4>
-                                                <p>O Módulo de Gestão de Estoque é responsável pelo controle, organização e rastreabilidade dos ativos, UCSs e saldos administrados pela BMV, garantindo que todas as movimentações ocorram de forma segura, validada e integrada aos demais módulos da plataforma.</p>
-                                                <p>Esse módulo sustenta as operações de compra, venda, transferência e certificação, funcionando como a base operacional para a execução das intenções de movimentação.</p>
-
-                                                <h5 className="font-semibold text-lg mt-6 mb-3">Submódulos da Gestão de Estoque</h5>
-                                                <ul>
-                                                    <li>
-                                                        <strong>Safra</strong>
-                                                        <p>Gestão das safras vinculadas aos ativos, permitindo o controle por período, origem e características produtivas, garantindo rastreabilidade desde a geração do estoque.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Abastecimento</strong>
-                                                        <p>Registro das entradas de estoque, seja por geração própria, aquisição, integração externa ou ajustes operacionais, assegurando a correta formação do saldo disponível.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Configuração de Distribuição</strong>
-                                                        <p>Definição das regras de distribuição do estoque entre contas, carteiras, participantes ou programas, estabelecendo critérios de alocação, limites e prioridades.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Movimentações</strong>
-                                                        <p>Histórico completo de todas as entradas, saídas, reservas e transferências de estoque, garantindo transparência, auditoria e rastreabilidade.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Transferência de Titularidade</strong>
-                                                        <p>Gestão da mudança de titularidade dos ativos ou UCSs entre partes, mantendo o histórico, a origem e a conformidade jurídica da operação.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Ajustes entre Contas</strong>
-                                                        <p>Módulo destinado a correções controladas de saldo entre contas, mediante regras de autorização, justificativa e registro auditável.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Bloqueio de UCS</strong>
-                                                        <p>Funcionalidade que permite bloquear UCSs específicas, impedindo sua movimentação até liberação formal, seja por motivos regulatórios, operacionais ou contratuais.</p>
-                                                    </li>
-                                                    <li>
-                                                        <strong>CPR Verde</strong>
-                                                        <p>Gestão dos ativos vinculados à CPR Verde, garantindo controle de estoque, elegibilidade, rastreabilidade e conformidade com os instrumentos financeiros associados.</p>
-                                                    </li>
-                                                </ul>
-
-                                                <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
-                                                <p>O Módulo de Gestão de Estoque assegura que todo ativo ou UCS possua origem, saldo, titularidade e histórico claramente definidos, integrando-se ao fluxo Kanban de pedidos e aos módulos financeiros e de certificação, garantindo governança, segurança e escalabilidade.</p>
-                                            </section>
-                                            <section>
-                                                <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Módulos Administrativos e de Governança da Plataforma</h4>
-                                                <p>Para garantir o correto funcionamento de todos os fluxos operacionais, financeiros e regulatórios da plataforma, foi estruturado um conjunto de módulos administrativos, responsáveis pelo cadastro, gestão, parametrização e governança de todas as entidades que sustentam o ecossistema.</p>
-                                                <p>Esses módulos funcionam como a camada estrutural do sistema, assegurando padronização, controle de acesso, conformidade e flexibilidade operacional.</p>
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
+                                                    <p>A BMV Digital consolida todos os pedidos que representam intenções de movimentação de saldo, ativos e certificados, funcionando como o ponto único de entrada para as operações da BMV, com foco em governança, escalabilidade e segurança operacional.</p>
+                                                </section>
+                                                <section id="wl-tesouro-verde">
+                                                    <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Tesouro Verde</h4>
+                                                    <p>A plataforma Tesouro Verde é responsável pela gestão operacional, financeira e regulatória dos programas ambientais, atuando como o ambiente onde são tratadas, processadas e consolidadas todas as solicitações relacionadas a selos, programas, parceiros e repasses financeiros.</p>
+                                                    <p>Todas as funcionalidades da plataforma operam de forma integrada, seguindo uma lógica de câmbio e processamento, na qual cada pedido percorre etapas bem definidas de validação, aprovação, pagamento e conclusão, garantindo rastreabilidade, conformidade e segurança operacional.</p>
                                                 
-                                                <h5 className="font-semibold text-lg mt-6 mb-3">Módulos de Cadastro e Gestão</h5>
-                                                <ul>
-                                                  <li><strong>Áreas</strong>
-                                                    <p>Módulo destinado ao cadastro e gerenciamento das áreas, permitindo:</p>
-                                                    <ul className="list-disc pl-6 mt-2">
-                                                      <li>Organização estrutural do sistema</li>
-                                                      <li>Análise e validação de documentos</li>
-                                                      <li>Gestão de pastas e arquivos vinculados às áreas</li>
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Módulos da Plataforma</h5>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Parceiros</strong>
+                                                            <p>Gestão de parceiros institucionais, operacionais e comerciais vinculados aos programas do Tesouro Verde, definindo papéis, responsabilidades e regras de atuação.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Programas</strong>
+                                                            <p>Cadastro e administração dos programas ambientais, incluindo critérios, regras de elegibilidade, parâmetros operacionais e vínculo com selos e royalties.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Pedidos de Selos</strong>
+                                                            <p>Módulo central da plataforma, responsável pelo tratamento completo dos pedidos de selos ambientais, desde a solicitação até o encerramento do processo.</p>
+                                                            <p>Os pedidos seguem um fluxo lógico e controlado, passando pelos seguintes status operacionais:</p>
+                                                            <ul className="list-disc pl-6 mt-2">
+                                                                <li>Pendente de Aprovação</li>
+                                                                <li>Pendente de Pagamento</li>
+                                                                <li>Pagamentos Efetuados</li>
+                                                                <li>Pré-processados</li>
+                                                                <li>Processados</li>
+                                                                <li>Falhas</li>
+                                                                <li>Negados</li>
+                                                                <li>Arquivados</li>
+                                                            </ul>
+                                                            <p>Esse fluxo garante que cada pedido seja corretamente analisado, validado, processado e registrado, assegurando consistência entre as etapas financeiras, operacionais e regulatórias.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>DARE / Royalties</strong>
+                                                            <p>Módulo responsável pela gestão financeira e fiscal, incluindo cálculo, controle e repasse de DAREs e royalties associados aos programas e selos, garantindo aderência às regras contratuais e regulatórias.</p>
+                                                        </li>
                                                     </ul>
-                                                  </li>
-                                                  <li><strong>Núcleos</strong><p>Permite o cadastro e a gestão de núcleos, seguindo o mesmo princípio das áreas, possibilitando segmentação operacional, organizacional ou regional.</p></li>
-                                                  <li><strong>Associações</strong><p>Módulo responsável pelo cadastro e gerenciamento de associações e produtores, mantendo o vínculo institucional, operacional e histórico de relacionamento.</p></li>
-                                                  <li><strong>Usuários</strong>
-                                                    <p>Gestão completa de usuários da plataforma, incluindo:</p>
-                                                    <ul className="list-disc pl-6 mt-2">
-                                                      <li>Cadastro e manutenção de usuários</li>
-                                                      <li>Definição de perfis e permissões</li>
-                                                      <li>Controle de acesso por módulos e funcionalidades</li>
-                                                    </ul>
-                                                  </li>
-                                                  <li><strong>Bancos</strong><p>Cadastro e administração das instituições bancárias, utilizadas nos fluxos de pagamento, recebimento e integração financeira.</p></li>
-                                                  <li><strong>Acervo</strong><p>Módulo central de gestão do acervo documental, permitindo organizar, versionar e controlar documentos utilizados ao longo dos processos da plataforma.</p></li>
-                                                  <li><strong>Relatórios</strong>
-                                                    <p>O módulo de Relatórios centraliza a extração de informações operacionais e financeiras, incluindo:</p>
-                                                    <ul className="list-disc pl-6 mt-2">
-                                                      <li>Relatórios de vendas individuais</li>
-                                                      <li>Relatórios de vendas gerais</li>
-                                                      <li>Relatórios de vendas por governo</li>
-                                                      <li>Relatórios de pagamentos a fornecedores</li>
-                                                      <li>Relatórios de pagamentos do Tesouro Verde</li>
-                                                      <li>Relatórios de pagamentos de fornecedores PMBGista</li>
-                                                    </ul>
-                                                    <p>Esse módulo apoia a análise estratégica, auditoria e tomada de decisão.</p>
-                                                  </li>
-                                                </ul>
 
-                                                <h5 className="font-semibold text-lg mt-6 mb-3">Módulos de Configuração e Parametrização</h5>
-                                                <ul>
-                                                  <li><strong>Cotação</strong>
-                                                    <p>Configuração da cotação da UCS, parametrizada por:</p>
-                                                    <ul className="list-disc pl-6 mt-2">
-                                                      <li>Ano e mês</li>
-                                                      <li>Moeda (Real, Dólar e Euro)</li>
-                                                      <li>Índices (CRS)</li>
-                                                    </ul>
-                                                    <p>Gestão do Índice de Cotas Notice de Distribuição Social, atualmente configurado em R$ 2,00, com múltiplos marcadores ajustáveis conforme regras de negócio.</p>
-                                                  </li>
-                                                  <li><strong>Taxas</strong>
-                                                    <p>Cadastro e gerenciamento das taxas cobradas por entrega ou operação, com funcionalidades de:</p>
-                                                    <ul className="list-disc pl-6 mt-2">
-                                                      <li>Inserção</li>
-                                                      <li>Inativação</li>
-                                                      <li>Exclusão</li>
-                                                    </ul>
-                                                  </li>
-                                                  <li><strong>Cupons</strong><p>Gestão de cupons promocionais ou operacionais, utilizados em campanhas, incentivos ou regras comerciais específicas.</p></li>
-                                                  <li><strong>Comissões</strong><p>Configuração das condições e comissões dos vendedores, permitindo flexibilidade nas regras comerciais.</p></li>
-                                                  <li><strong>Modelos de Certificado</strong><p>Cadastro e manutenção dos modelos de certificados emitidos pela plataforma, garantindo padronização, identidade visual e conformidade documental.</p></li>
-                                                  <li><strong>Plataformas</strong><p>Módulo para cadastro e gestão das plataformas integradas ou operadas dentro do ecossistema da BMV.</p></li>
-                                                  <li><strong>Substrate / Blockchain</strong>
-                                                    <p>Gestão das carteiras blockchain, incluindo:</p>
-                                                    <ul className="list-disc pl-6 mt-2">
-                                                      <li>Cadastro de wallets</li>
-                                                      <li>Parametrizações técnicas</li>
-                                                      <li>Controle e segurança das operações on-chain</li>
-                                                    </ul>
-                                                    <p>Este módulo é considerado crítico, pois sustenta a integridade das operações em blockchain.</p>
-                                                  </li>
-                                                  <li><strong>Configurações Gerais</strong><p>Configurações sistêmicas que impactam o comportamento global da plataforma, regras operacionais e integrações.</p></li>
-                                                  <li><strong>API de Parceiros</strong>
-                                                    <p>Módulo dedicado à gestão de integrações externas, permitindo:</p>
-                                                    <ul className="list-disc pl-6 mt-2">
-                                                      <li>Cadastro de usuários de API</li>
-                                                      <li>Definição de senhas e tokens</li>
-                                                      <li>Controle de acesso e segurança para parceiros integrados</li>
-                                                    </ul>
-                                                  </li>
-                                                </ul>
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
+                                                    <p>A plataforma Tesouro Verde funciona como o motor operacional dos programas ambientais, onde todas as solicitações são tratadas de forma integrada, seguindo uma lógica clara de processamento e câmbio de informações entre módulos, assegurando transparência, governança e eficiência do início ao fim do ciclo operacional.</p>
+                                                </section>
+                                                <section id="wl-kanban">
+                                                    <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Fluxo Kanban de Pedidos – BMV Digital</h4>
+                                                    <p>Todos os pedidos da plataforma BMV Digital são tratados por meio de um fluxo Kanban padronizado, que representa visualmente o ciclo completo da intenção de movimentação, desde a solicitação inicial até o encerramento do processo.</p>
+                                                    <p>Esse fluxo garante governança, rastreabilidade, controle operacional e financeiro, permitindo que cada pedido avance de forma lógica e validada entre as etapas.</p>
 
-                                                <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
-                                                <p>Esse conjunto de módulos administrativos garante que toda a plataforma opere de forma organizada, parametrizada, segura e escalável, sustentando os fluxos de pedidos, estoque, certificação, pagamentos e blockchain com governança e confiabilidade.</p>
-                                            </section>
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Status do Fluxo Kanban</h5>
+                                                    <ul>
+                                                        <li><strong>Pendente de Aprovação:</strong> Pedido registrado e aguardando análise e validação interna, conforme regras de negócio, elegibilidade e conformidade.</li>
+                                                        <li><strong>Pendente de Pagamento:</strong> Pedido aprovado, aguardando a realização do pagamento necessário para dar continuidade ao processamento.</li>
+                                                        <li><strong>Pagamentos Efetuados:</strong> Pagamento confirmado com sucesso, liberando o pedido para as etapas operacionais seguintes.</li>
+                                                        <li><strong>Pré-processados:</strong> Pedido validado financeiramente e preparado para execução, com checagens finais de consistência e integração entre sistemas.</li>
+                                                        <li><strong>Processados:</strong> Pedido executado com sucesso, com a movimentação de saldo, ativos, UCSs ou certificados devidamente registrada e concluída.</li>
+                                                        <li><strong>Falhas:</strong> Pedidos que apresentaram inconsistências técnicas, operacionais ou de integração durante o processamento, exigindo correção ou reprocessamento.</li>
+                                                        <li><strong>Negados:</strong> Pedidos reprovados por critérios de negócio, documentação, conformidade ou regras operacionais.</li>
+                                                        <li><strong>Arquivados:</strong> Pedidos finalizados e encerrados, mantidos apenas para fins de histórico, auditoria e rastreabilidade.</li>
+                                                    </ul>
+
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Aplicação do Fluxo por Tipo de Pedido</h5>
+                                                    <ul>
+                                                        <li><strong>Pedidos de Compra:</strong> Fluxo completo desde a aprovação até o processamento financeiro e operacional da aquisição.</li>
+                                                        <li><strong>Pedidos de Venda:</strong> Gestão do ciclo de venda, garantindo validação, pagamento, processamento e encerramento da operação.</li>
+                                                        <li><strong>Pedidos de Transferência:</strong> Tratamento das intenções de transferência de ativos e UCSs entre partes, com controle de aprovação, execução e arquivamento.</li>
+                                                        <li>
+                                                            <strong>Pedidos de Certificados:</strong>
+                                                            <p>O fluxo Kanban é aplicado de forma consistente aos diferentes tipos de certificados:</p>
+                                                            <ul className="list-disc pl-6 mt-2">
+                                                                <li>Certificado de Cliente</li>
+                                                                <li>Certificado de Distribuidor Financeiro</li>
+                                                                <li>Certificado de Distribuidor Geral</li>
+                                                                <li>Certificado de SaaS Tesouro Verde</li>
+                                                                <li>Certificado de SaaS BMV</li>
+                                                                <li>Certidão de Disponibilidade de Estoque</li>
+                                                            </ul>
+                                                            <p>Alguns tipos de certificado podem incluir etapas adicionais, como:</p>
+                                                            <ul className="list-disc pl-6 mt-2">
+                                                                <li>Pendente de Validação</li>
+                                                                <li>Pendente de Documentação</li>
+                                                            </ul>
+                                                            <p>Essas etapas garantem conformidade documental e regulatória antes da liberação para pagamento e processamento.</p>
+                                                        </li>
+                                                    </ul>
+
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
+                                                    <p>O fluxo Kanban da BMV Digital padroniza o tratamento de todos os pedidos, assegurando que cada intenção de movimentação percorra um caminho lógico, auditável e controlado, desde a solicitação até a conclusão, independentemente do tipo de operação ou certificado envolvido.</p>
+                                                </section>
+                                                <section id="wl-estoque">
+                                                    <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Módulo de Gestão de Estoque</h4>
+                                                    <p>O Módulo de Gestão de Estoque é responsável pelo controle, organização e rastreabilidade dos ativos, UCSs e saldos administrados pela BMV, garantindo que todas as movimentações ocorram de forma segura, validada e integrada aos demais módulos da plataforma.</p>
+                                                    <p>Esse módulo sustenta as operações de compra, venda, transferência e certificação, funcionando como a base operacional para a execução das intenções de movimentação.</p>
+
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Submódulos da Gestão de Estoque</h5>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Safra</strong>
+                                                            <p>Gestão das safras vinculadas aos ativos, permitindo o controle por período, origem e características produtivas, garantindo rastreabilidade desde a geração do estoque.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Abastecimento</strong>
+                                                            <p>Registro das entradas de estoque, seja por geração própria, aquisição, integração externa ou ajustes operacionais, assegurando a correta formação do saldo disponível.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Configuração de Distribuição</strong>
+                                                            <p>Definição das regras de distribuição do estoque entre contas, carteiras, participantes ou programas, estabelecendo critérios de alocação, limites e prioridades.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Movimentações</strong>
+                                                            <p>Histórico completo de todas as entradas, saídas, reservas e transferências de estoque, garantindo transparência, auditoria e rastreabilidade.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Transferência de Titularidade</strong>
+                                                            <p>Gestão da mudança de titularidade dos ativos ou UCSs entre partes, mantendo o histórico, a origem e a conformidade jurídica da operação.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Ajustes entre Contas</strong>
+                                                            <p>Módulo destinado a correções controladas de saldo entre contas, mediante regras de autorização, justificativa e registro auditável.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Bloqueio de UCS</strong>
+                                                            <p>Funcionalidade que permite bloquear UCSs específicas, impedindo sua movimentação até liberação formal, seja por motivos regulatórios, operacionais ou contratuais.</p>
+                                                        </li>
+                                                        <li>
+                                                            <strong>CPR Verde</strong>
+                                                            <p>Gestão dos ativos vinculados à CPR Verde, garantindo controle de estoque, elegibilidade, rastreabilidade e conformidade com os instrumentos financeiros associados.</p>
+                                                        </li>
+                                                    </ul>
+
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
+                                                    <p>O Módulo de Gestão de Estoque assegura que todo ativo ou UCS possua origem, saldo, titularidade e histórico claramente definidos, integrando-se ao fluxo Kanban de pedidos e aos módulos financeiros e de certificação, garantindo governança, segurança e escalabilidade.</p>
+                                                </section>
+                                                <section id="wl-admin">
+                                                    <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Módulos Administrativos e de Governança da Plataforma</h4>
+                                                    <p>Para garantir o correto funcionamento de todos os fluxos operacionais, financeiros e regulatórios da plataforma, foi estruturado um conjunto de módulos administrativos, responsáveis pelo cadastro, gestão, parametrização e governança de todas as entidades que sustentam o ecossistema.</p>
+                                                    <p>Esses módulos funcionam como a camada estrutural do sistema, assegurando padronização, controle de acesso, conformidade e flexibilidade operacional.</p>
+                                                    
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Módulos de Cadastro e Gestão</h5>
+                                                    <ul>
+                                                      <li><strong>Áreas</strong>
+                                                        <p>Módulo destinado ao cadastro e gerenciamento das áreas, permitindo:</p>
+                                                        <ul className="list-disc pl-6 mt-2">
+                                                          <li>Organização estrutural do sistema</li>
+                                                          <li>Análise e validação de documentos</li>
+                                                          <li>Gestão de pastas e arquivos vinculados às áreas</li>
+                                                        </ul>
+                                                      </li>
+                                                      <li><strong>Núcleos</strong><p>Permite o cadastro e a gestão de núcleos, seguindo o mesmo princípio das áreas, possibilitando segmentação operacional, organizacional ou regional.</p></li>
+                                                      <li><strong>Associações</strong><p>Módulo responsável pelo cadastro e gerenciamento de associações e produtores, mantendo o vínculo institucional, operacional e histórico de relacionamento.</p></li>
+                                                      <li><strong>Usuários</strong>
+                                                        <p>Gestão completa de usuários da plataforma, incluindo:</p>
+                                                        <ul className="list-disc pl-6 mt-2">
+                                                          <li>Cadastro e manutenção de usuários</li>
+                                                          <li>Definição de perfis e permissões</li>
+                                                          <li>Controle de acesso por módulos e funcionalidades</li>
+                                                        </ul>
+                                                      </li>
+                                                      <li><strong>Bancos</strong><p>Cadastro e administração das instituições bancárias, utilizadas nos fluxos de pagamento, recebimento e integração financeira.</p></li>
+                                                      <li><strong>Acervo</strong><p>Módulo central de gestão do acervo documental, permitindo organizar, versionar e controlar documentos utilizados ao longo dos processos da plataforma.</p></li>
+                                                      <li><strong>Relatórios</strong>
+                                                        <p>O módulo de Relatórios centraliza a extração de informações operacionais e financeiras, incluindo:</p>
+                                                        <ul className="list-disc pl-6 mt-2">
+                                                          <li>Relatórios de vendas individuais</li>
+                                                          <li>Relatórios de vendas gerais</li>
+                                                          <li>Relatórios de vendas por governo</li>
+                                                          <li>Relatórios de pagamentos a fornecedores</li>
+                                                          <li>Relatórios de pagamentos do Tesouro Verde</li>
+                                                          <li>Relatórios de pagamentos de fornecedores PMBGista</li>
+                                                        </ul>
+                                                        <p>Esse módulo apoia a análise estratégica, auditoria e tomada de decisão.</p>
+                                                      </li>
+                                                    </ul>
+
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Módulos de Configuração e Parametrização</h5>
+                                                    <ul>
+                                                      <li><strong>Cotação</strong>
+                                                        <p>Configuração da cotação da UCS, parametrizada por:</p>
+                                                        <ul className="list-disc pl-6 mt-2">
+                                                          <li>Ano e mês</li>
+                                                          <li>Moeda (Real, Dólar e Euro)</li>
+                                                          <li>Índices (CRS)</li>
+                                                        </ul>
+                                                        <p>Gestão do Índice de Cotas Notice de Distribuição Social, atualmente configurado em R$ 2,00, com múltiplos marcadores ajustáveis conforme regras de negócio.</p>
+                                                      </li>
+                                                      <li><strong>Taxas</strong>
+                                                        <p>Cadastro e gerenciamento das taxas cobradas por entrega ou operação, com funcionalidades de:</p>
+                                                        <ul className="list-disc pl-6 mt-2">
+                                                          <li>Inserção</li>
+                                                          <li>Inativação</li>
+                                                          <li>Exclusão</li>
+                                                        </ul>
+                                                      </li>
+                                                      <li><strong>Cupons</strong><p>Gestão de cupons promocionais ou operacionais, utilizados em campanhas, incentivos ou regras comerciais específicas.</p></li>
+                                                      <li><strong>Comissões</strong><p>Configuração das condições e comissões dos vendedores, permitindo flexibilidade nas regras comerciais.</p></li>
+                                                      <li><strong>Modelos de Certificado</strong><p>Cadastro e manutenção dos modelos de certificados emitidos pela plataforma, garantindo padronização, identidade visual e conformidade documental.</p></li>
+                                                      <li><strong>Plataformas</strong><p>Módulo para cadastro e gestão das plataformas integradas ou operadas dentro do ecossistema da BMV.</p></li>
+                                                      <li><strong>Substrate / Blockchain</strong>
+                                                        <p>Gestão das carteiras blockchain, incluindo:</p>
+                                                        <ul className="list-disc pl-6 mt-2">
+                                                          <li>Cadastro de wallets</li>
+                                                          <li>Parametrizações técnicas</li>
+                                                          <li>Controle e segurança das operações on-chain</li>
+                                                        </ul>
+                                                        <p>Este módulo é considerado crítico, pois sustenta a integridade das operações em blockchain.</p>
+                                                      </li>
+                                                      <li><strong>Configurações Gerais</strong><p>Configurações sistêmicas que impactam o comportamento global da plataforma, regras operacionais e integrações.</p></li>
+                                                      <li><strong>API de Parceiros</strong>
+                                                        <p>Módulo dedicado à gestão de integrações externas, permitindo:</p>
+                                                        <ul className="list-disc pl-6 mt-2">
+                                                          <li>Cadastro de usuários de API</li>
+                                                          <li>Definição de senhas e tokens</li>
+                                                          <li>Controle de acesso e segurança para parceiros integrados</li>
+                                                        </ul>
+                                                      </li>
+                                                    </ul>
+
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
+                                                    <p>Esse conjunto de módulos administrativos garante que toda a plataforma opere de forma organizada, parametrizada, segura e escalável, sustentando os fluxos de pedidos, estoque, certificação, pagamentos e blockchain com governança e confiabilidade.</p>
+                                                </section>
+                                            </div>
                                         </div>
                                     </TabsContent>
                                 </CardContent>
@@ -940,6 +955,8 @@ export default function AdminDashboardPage() {
 
 
 
+
+    
 
     
 
