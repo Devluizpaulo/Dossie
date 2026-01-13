@@ -628,6 +628,7 @@ export default function AdminDashboardPage() {
                                                     <h3 className="font-semibold px-3">Navegação</h3>
                                                      <a href="#wl-principio" className="text-sm p-3 rounded-md hover:bg-muted">Princípio do Sistema</a>
                                                      <a href="#wl-arquitetura" className="text-sm p-3 rounded-md hover:bg-muted">Arquitetura e Premissas</a>
+                                                     <a href="#wl-complexidade" className="text-sm p-3 rounded-md hover:bg-muted">Complexidade do Sistema</a>
                                                      <a href="#wl-telas" className="text-sm p-3 rounded-md hover:bg-muted">Telas e Funcionalidades</a>
                                                      <a href="#wl-bmv-digital" className="text-sm p-3 rounded-md hover:bg-muted">BMV Digital</a>
                                                      <a href="#wl-tesouro-verde" className="text-sm p-3 rounded-md hover:bg-muted">Tesouro Verde</a>
@@ -648,6 +649,73 @@ export default function AdminDashboardPage() {
                                                         <li><strong>Multi-Tenancy:</strong> A arquitetura deve suportar múltiplos Operadores (tenants), com total isolamento de dados entre eles. Cada Operador só pode ver e gerenciar seus próprios clientes e dados.</li>
                                                         <li><strong>Administração Central (BMV):</strong> A BMV, como administradora master, deve ter um painel para gerenciar todos os Operadores, visualizar relatórios consolidados e administrar o faturamento.</li>
                                                         <li><strong>Domínio Personalizado:</strong> Cada Operador deve poder apontar seu próprio subdomínio (ex: `app.parceiro.com`) para sua instância da plataforma.</li>
+                                                    </ul>
+                                                </section>
+                                                
+                                                <section id="wl-complexidade">
+                                                    <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Complexidade do Sistema e Engenharia de Ativos</h4>
+                                                    <p>A plataforma foi concebida como um sistema de engenharia própria, com alto nível de complexidade operacional e lógica de negócios, no qual todos os módulos trabalham de forma integrada para garantir a administração, rastreabilidade e governança dos ativos.</p>
+                                                    <p>Grande parte dessa complexidade é tratada por meio do módulo de Estatísticas e CI (Camada de Inteligência), responsável por consolidar regras, validações, cálculos e decisões automáticas utilizadas na administração dos ativos ao longo de todo o ciclo de vida.</p>
+                                                    
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Exemplo Prático – Cadastro e Gestão de Safra</h5>
+                                                    <p>Para ilustrar essa complexidade, o processo de cadastro de uma safra envolve múltiplas camadas de validação, integração e geração de dados estruturados.</p>
+                                                    
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Fluxo Operacional da Safra</h5>
+                                                    <ul>
+                                                        <li><strong>Acesso ao Módulo Safra:</strong> O usuário acessa o módulo de Safra, seleciona o ano da safra e clica em Novo.</li>
+                                                        <li><strong>Abertura de Pop-up de Cadastro:</strong> É exibida uma janela modal (pop-up) onde são inseridas as informações estruturantes da safra.</li>
+                                                        <li><strong>Seleção da Plataforma de Destino:</strong> Definição da plataforma onde os ativos daquela safra serão operados e distribuídos.</li>
+                                                        <li>
+                                                            <strong>Identificação do Produtor:</strong>
+                                                            <p>Informar o CPF do produtor (titular do certificado). A partir desse CPF, o sistema:</p>
+                                                            <ul className="list-disc pl-6 mt-2">
+                                                                <li>Carrega automaticamente o nome do produtor</li>
+                                                                <li>Lista as áreas e fazendas já cadastradas e vinculadas a esse CPF</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Vinculação da Área e Fazenda:</strong>
+                                                            <p>Caso necessário, o cadastro da área é realizado, indicando:</p>
+                                                            <ul className="list-disc pl-6 mt-2">
+                                                                <li>Proprietário</li>
+                                                                <li>Nome da fazenda</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Definição dos Ativos da Safra:</strong>
+                                                            <p>Inserção dos dados produtivos e técnicos:</p>
+                                                            <ul className="list-disc pl-6 mt-2">
+                                                                <li>Quantidade de UCS</li>
+                                                                <li>ISNI</li>
+                                                                <li>Tipo de produto</li>
+                                                                <li>Mensagem adicional (informações complementares)</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Distribuição e Particionamento das UCS:</strong>
+                                                            <p>Com base nas regras configuradas no sistema:</p>
+                                                            <ul className="list-disc pl-6 mt-2">
+                                                                <li>As UCS são distribuídas e particionadas</li>
+                                                                <li>O estoque é estruturado conforme áreas, produtores e plataformas</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Criação da Base Blockchain:</strong>
+                                                            <p>Ao final do processo, o sistema:</p>
+                                                            <ul className="list-disc pl-6 mt-2">
+                                                                <li>Cria a base do ativo na blockchain</li>
+                                                                <li>Vincula a safra, produtor, área, UCS e plataforma</li>
+                                                                <li>Garante rastreabilidade on-chain desde a origem</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+
+                                                    <h5 className="font-semibold text-lg mt-6 mb-3">Visão Técnica e Estratégica</h5>
+                                                    <p>Esse fluxo demonstra que a plataforma não se limita a cadastros simples, mas opera como um sistema de engenharia de ativos digitais e ambientais, onde:</p>
+                                                     <ul className="list-disc pl-6 mt-2">
+                                                        <li>Cada dado cadastrado gera impactos em estoque, certificação, financeiro e blockchain</li>
+                                                        <li>O módulo de Estatísticas e CI assegura coerência lógica, cálculos, validações e consistência</li>
+                                                        <li>A criação da safra já nasce preparada para distribuição, certificação e rastreabilidade on-chain</li>
                                                     </ul>
                                                 </section>
 
