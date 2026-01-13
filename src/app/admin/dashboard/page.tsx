@@ -686,7 +686,7 @@ export default function AdminDashboardPage() {
                                                             <p>Inserção dos dados produtivos e técnicos:</p>
                                                             <ul className="list-disc pl-6 mt-2">
                                                                 <li>Quantidade de UCS</li>
-                                                                <li>ISNI</li>
+                                                                <li>ISIN</li>
                                                                 <li>Tipo de produto</li>
                                                                 <li>Mensagem adicional (informações complementares)</li>
                                                             </ul>
@@ -1033,3 +1033,4 @@ export default function AdminDashboardPage() {
     
 
     
+
