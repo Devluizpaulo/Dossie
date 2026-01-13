@@ -835,6 +835,93 @@ export default function AdminDashboardPage() {
                                                 <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
                                                 <p>O Módulo de Gestão de Estoque assegura que todo ativo ou UCS possua origem, saldo, titularidade e histórico claramente definidos, integrando-se ao fluxo Kanban de pedidos e aos módulos financeiros e de certificação, garantindo governança, segurança e escalabilidade.</p>
                                             </section>
+                                            <section>
+                                                <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Módulos Administrativos e de Governança da Plataforma</h4>
+                                                <p>Para garantir o correto funcionamento de todos os fluxos operacionais, financeiros e regulatórios da plataforma, foi estruturado um conjunto de módulos administrativos, responsáveis pelo cadastro, gestão, parametrização e governança de todas as entidades que sustentam o ecossistema.</p>
+                                                <p>Esses módulos funcionam como a camada estrutural do sistema, assegurando padronização, controle de acesso, conformidade e flexibilidade operacional.</p>
+                                                
+                                                <h5 className="font-semibold text-lg mt-6 mb-3">Módulos de Cadastro e Gestão</h5>
+                                                <ul>
+                                                  <li><strong>Áreas</strong>
+                                                    <p>Módulo destinado ao cadastro e gerenciamento das áreas, permitindo:</p>
+                                                    <ul className="list-disc pl-6 mt-2">
+                                                      <li>Organização estrutural do sistema</li>
+                                                      <li>Análise e validação de documentos</li>
+                                                      <li>Gestão de pastas e arquivos vinculados às áreas</li>
+                                                    </ul>
+                                                  </li>
+                                                  <li><strong>Núcleos</strong><p>Permite o cadastro e a gestão de núcleos, seguindo o mesmo princípio das áreas, possibilitando segmentação operacional, organizacional ou regional.</p></li>
+                                                  <li><strong>Associações</strong><p>Módulo responsável pelo cadastro e gerenciamento de associações e produtores, mantendo o vínculo institucional, operacional e histórico de relacionamento.</p></li>
+                                                  <li><strong>Usuários</strong>
+                                                    <p>Gestão completa de usuários da plataforma, incluindo:</p>
+                                                    <ul className="list-disc pl-6 mt-2">
+                                                      <li>Cadastro e manutenção de usuários</li>
+                                                      <li>Definição de perfis e permissões</li>
+                                                      <li>Controle de acesso por módulos e funcionalidades</li>
+                                                    </ul>
+                                                  </li>
+                                                  <li><strong>Bancos</strong><p>Cadastro e administração das instituições bancárias, utilizadas nos fluxos de pagamento, recebimento e integração financeira.</p></li>
+                                                  <li><strong>Acervo</strong><p>Módulo central de gestão do acervo documental, permitindo organizar, versionar e controlar documentos utilizados ao longo dos processos da plataforma.</p></li>
+                                                  <li><strong>Relatórios</strong>
+                                                    <p>O módulo de Relatórios centraliza a extração de informações operacionais e financeiras, incluindo:</p>
+                                                    <ul className="list-disc pl-6 mt-2">
+                                                      <li>Relatórios de vendas individuais</li>
+                                                      <li>Relatórios de vendas gerais</li>
+                                                      <li>Relatórios de vendas por governo</li>
+                                                      <li>Relatórios de pagamentos a fornecedores</li>
+                                                      <li>Relatórios de pagamentos do Tesouro Verde</li>
+                                                      <li>Relatórios de pagamentos de fornecedores PMBGista</li>
+                                                    </ul>
+                                                    <p>Esse módulo apoia a análise estratégica, auditoria e tomada de decisão.</p>
+                                                  </li>
+                                                </ul>
+
+                                                <h5 className="font-semibold text-lg mt-6 mb-3">Módulos de Configuração e Parametrização</h5>
+                                                <ul>
+                                                  <li><strong>Cotação</strong>
+                                                    <p>Configuração da cotação da UCS, parametrizada por:</p>
+                                                    <ul className="list-disc pl-6 mt-2">
+                                                      <li>Ano e mês</li>
+                                                      <li>Moeda (Real, Dólar e Euro)</li>
+                                                      <li>Índices (CRS)</li>
+                                                    </ul>
+                                                    <p>Gestão do Índice de Cotas Notice de Distribuição Social, atualmente configurado em R$ 2,00, com múltiplos marcadores ajustáveis conforme regras de negócio.</p>
+                                                  </li>
+                                                  <li><strong>Taxas</strong>
+                                                    <p>Cadastro e gerenciamento das taxas cobradas por entrega ou operação, com funcionalidades de:</p>
+                                                    <ul className="list-disc pl-6 mt-2">
+                                                      <li>Inserção</li>
+                                                      <li>Inativação</li>
+                                                      <li>Exclusão</li>
+                                                    </ul>
+                                                  </li>
+                                                  <li><strong>Cupons</strong><p>Gestão de cupons promocionais ou operacionais, utilizados em campanhas, incentivos ou regras comerciais específicas.</p></li>
+                                                  <li><strong>Comissões</strong><p>Configuração das condições e comissões dos vendedores, permitindo flexibilidade nas regras comerciais.</p></li>
+                                                  <li><strong>Modelos de Certificado</strong><p>Cadastro e manutenção dos modelos de certificados emitidos pela plataforma, garantindo padronização, identidade visual e conformidade documental.</p></li>
+                                                  <li><strong>Plataformas</strong><p>Módulo para cadastro e gestão das plataformas integradas ou operadas dentro do ecossistema da BMV.</p></li>
+                                                  <li><strong>Substrate / Blockchain</strong>
+                                                    <p>Gestão das carteiras blockchain, incluindo:</p>
+                                                    <ul className="list-disc pl-6 mt-2">
+                                                      <li>Cadastro de wallets</li>
+                                                      <li>Parametrizações técnicas</li>
+                                                      <li>Controle e segurança das operações on-chain</li>
+                                                    </ul>
+                                                    <p>Este módulo é considerado crítico, pois sustenta a integridade das operações em blockchain.</p>
+                                                  </li>
+                                                  <li><strong>Configurações Gerais</strong><p>Configurações sistêmicas que impactam o comportamento global da plataforma, regras operacionais e integrações.</p></li>
+                                                  <li><strong>API de Parceiros</strong>
+                                                    <p>Módulo dedicado à gestão de integrações externas, permitindo:</p>
+                                                    <ul className="list-disc pl-6 mt-2">
+                                                      <li>Cadastro de usuários de API</li>
+                                                      <li>Definição de senhas e tokens</li>
+                                                      <li>Controle de acesso e segurança para parceiros integrados</li>
+                                                    </ul>
+                                                  </li>
+                                                </ul>
+
+                                                <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
+                                                <p>Esse conjunto de módulos administrativos garante que toda a plataforma opere de forma organizada, parametrizada, segura e escalável, sustentando os fluxos de pedidos, estoque, certificação, pagamentos e blockchain com governança e confiabilidade.</p>
+                                            </section>
                                         </div>
                                     </TabsContent>
                                 </CardContent>
@@ -853,6 +940,8 @@ export default function AdminDashboardPage() {
 
 
 
+
+    
 
     
 
