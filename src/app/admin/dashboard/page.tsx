@@ -706,6 +706,46 @@ export default function AdminDashboardPage() {
                                                 <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
                                                 <p>A BMV Digital consolida todos os pedidos que representam intenções de movimentação de saldo, ativos e certificados, funcionando como o ponto único de entrada para as operações da BMV, com foco em governança, escalabilidade e segurança operacional.</p>
                                             </section>
+                                            <section>
+                                                <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Tesouro Verde</h4>
+                                                <p>A plataforma Tesouro Verde é responsável pela gestão operacional, financeira e regulatória dos programas ambientais, atuando como o ambiente onde são tratadas, processadas e consolidadas todas as solicitações relacionadas a selos, programas, parceiros e repasses financeiros.</p>
+                                                <p>Todas as funcionalidades da plataforma operam de forma integrada, seguindo uma lógica de câmbio e processamento, na qual cada pedido percorre etapas bem definidas de validação, aprovação, pagamento e conclusão, garantindo rastreabilidade, conformidade e segurança operacional.</p>
+                                            
+                                                <h5 className="font-semibold text-lg mt-6 mb-3">Módulos da Plataforma</h5>
+                                                <ul>
+                                                    <li>
+                                                        <strong>Parceiros</strong>
+                                                        <p>Gestão de parceiros institucionais, operacionais e comerciais vinculados aos programas do Tesouro Verde, definindo papéis, responsabilidades e regras de atuação.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Programas</strong>
+                                                        <p>Cadastro e administração dos programas ambientais, incluindo critérios, regras de elegibilidade, parâmetros operacionais e vínculo com selos e royalties.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Pedidos de Selos</strong>
+                                                        <p>Módulo central da plataforma, responsável pelo tratamento completo dos pedidos de selos ambientais, desde a solicitação até o encerramento do processo.</p>
+                                                        <p>Os pedidos seguem um fluxo lógico e controlado, passando pelos seguintes status operacionais:</p>
+                                                        <ul className="list-disc pl-6 mt-2">
+                                                            <li>Pendente de Aprovação</li>
+                                                            <li>Pendente de Pagamento</li>
+                                                            <li>Pagamentos Efetuados</li>
+                                                            <li>Pré-processados</li>
+                                                            <li>Processados</li>
+                                                            <li>Falhas</li>
+                                                            <li>Negados</li>
+                                                            <li>Arquivados</li>
+                                                        </ul>
+                                                        <p>Esse fluxo garante que cada pedido seja corretamente analisado, validado, processado e registrado, assegurando consistência entre as etapas financeiras, operacionais e regulatórias.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>DARE / Royalties</strong>
+                                                        <p>Módulo responsável pela gestão financeira e fiscal, incluindo cálculo, controle e repasse de DAREs e royalties associados aos programas e selos, garantindo aderência às regras contratuais e regulatórias.</p>
+                                                    </li>
+                                                </ul>
+
+                                                <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
+                                                <p>A plataforma Tesouro Verde funciona como o motor operacional dos programas ambientais, onde todas as solicitações são tratadas de forma integrada, seguindo uma lógica clara de processamento e câmbio de informações entre módulos, assegurando transparência, governança e eficiência do início ao fim do ciclo operacional.</p>
+                                            </section>
                                         </div>
                                     </TabsContent>
                                 </CardContent>
