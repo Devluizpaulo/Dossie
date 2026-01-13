@@ -635,6 +635,7 @@ export default function AdminDashboardPage() {
                                                      <a href="#wl-kanban" className="text-sm p-3 rounded-md hover:bg-muted">Fluxo Kanban</a>
                                                      <a href="#wl-estoque" className="text-sm p-3 rounded-md hover:bg-muted">Gestão de Estoque</a>
                                                      <a href="#wl-admin" className="text-sm p-3 rounded-md hover:bg-muted">Módulos Administrativos</a>
+                                                     <a href="#wl-distribuicao" className="text-sm p-3 rounded-md hover:bg-muted">Configuração de Distribuição</a>
                                                 </nav>
                                             </aside>
                                             <div className="space-y-6 prose prose-lg dark:prose-invert max-w-none flex-1">
@@ -733,7 +734,7 @@ export default function AdminDashboardPage() {
                                                     <ul>
                                                         <li><strong>Dashboard do Operador:</strong> Visão geral de sua própria operação (seus clientes, suas transações).</li>
                                                         <li><strong>Gestão de Clientes:</strong> CRUD completo para que o Operador gerencie seus próprios clientes finais. O Operador não pode ver clientes de outros Operadores.</li>
-                                                        <li><strong>Customização da Marca (Branding):</strong>
+                                                        <li><strong>Customização de Marca (Branding):</strong>
                                                             <ul>
                                                                 <li>Upload de logo.</li>
                                                                 <li>Definição de esquema de cores primárias.</li>
@@ -1004,6 +1005,11 @@ export default function AdminDashboardPage() {
                                                     <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
                                                     <p>Esse conjunto de módulos administrativos garante que toda a plataforma opere de forma organizada, parametrizada, segura e escalável, sustentando os fluxos de pedidos, estoque, certificação, pagamentos e blockchain com governança e confiabilidade.</p>
                                                 </section>
+                                                <section id="wl-distribuicao">
+                                                    <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Configuração de Distribuição – Gestão de Filas</h4>
+                                                    <p>O módulo de Configuração de Distribuição é responsável por definir como o sistema processa e distribui as UCS dentro do ecossistema da BMV, utilizando uma lógica baseada em filas de processamento.</p>
+                                                    <p>Cada fila representa um modelo de distribuição, no qual são definidas as regras, prioridades e proporções aplicadas durante a alocação das UCS.</p>
+                                                </section>
                                             </div>
                                         </div>
                                     </TabsContent>
@@ -1033,4 +1039,3 @@ export default function AdminDashboardPage() {
     
 
     
-
