@@ -665,6 +665,47 @@ export default function AdminDashboardPage() {
                                                 <h5>3. Visão do Cliente Final</h5>
                                                 <p>A experiência do cliente final permanece similar à atual, mas totalmente imersa na marca do Operador (logo, cores, URL). O cliente final pertence a um, e somente um, Operador.</p>
                                             </section>
+                                            
+                                            <section>
+                                                <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">BMV Digital</h4>
+                                                <p>A BMV Digital é a plataforma central responsável pela gestão e movimentação de saldo de clientes e produtores, atuando como a camada transacional e orquestradora das operações da BMV.</p>
+                                                <p>Nessa plataforma são registradas todas as intenções de movimentação, que dão origem às operações financeiras, comerciais e operacionais. Essas intenções são formalizadas por meio de pedidos, garantindo rastreabilidade, controle, validações e integração sistêmica antes da efetiva liquidação.</p>
+
+                                                <h5 className="font-semibold text-lg mt-6 mb-3">Funcionalidades e Módulos</h5>
+                                                <ul>
+                                                    <li>
+                                                        <strong>Pedido de Compras:</strong>
+                                                        <p>Registro e controle das intenções de aquisição de ativos, com fluxo de validação e acompanhamento do status da operação.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Pedido de Vendas:</strong>
+                                                        <p>Gestão das intenções de venda, permitindo o controle do ciclo comercial desde a solicitação até a conclusão.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Pedido de Transferência:</strong>
+                                                        <p>Formalização das intenções de transferência de ativos, incluindo UCSs, entre clientes, produtores, carteiras ou sistemas integrados.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Pedido de Certificados:</strong>
+                                                        <p>Gestão das intenções de emissão, movimentação e controle de certificados, organizada por tipo de operação:</p>
+                                                        <ul className="list-disc pl-6 mt-2">
+                                                            <li>Cliente</li>
+                                                            <li>Distribuidor Financeiro</li>
+                                                            <li>Distribuidor Geral</li>
+                                                            <li>SaaS Tesouro Verde</li>
+                                                            <li>SaaS BMV</li>
+                                                            <li>CDE</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Integração de Movimentação:</strong>
+                                                        <p>Módulo responsável por integrar e sincronizar as movimentações entre os sistemas internos e externos, assegurando consistência, automação e confiabilidade dos dados.</p>
+                                                    </li>
+                                                </ul>
+
+                                                <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
+                                                <p>A BMV Digital consolida todos os pedidos que representam intenções de movimentação de saldo, ativos e certificados, funcionando como o ponto único de entrada para as operações da BMV, com foco em governança, escalabilidade e segurança operacional.</p>
+                                            </section>
                                         </div>
                                     </TabsContent>
                                 </CardContent>
@@ -683,5 +724,7 @@ export default function AdminDashboardPage() {
 
 
 
+
+    
 
     
