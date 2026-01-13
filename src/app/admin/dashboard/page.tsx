@@ -746,6 +746,51 @@ export default function AdminDashboardPage() {
                                                 <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
                                                 <p>A plataforma Tesouro Verde funciona como o motor operacional dos programas ambientais, onde todas as solicitações são tratadas de forma integrada, seguindo uma lógica clara de processamento e câmbio de informações entre módulos, assegurando transparência, governança e eficiência do início ao fim do ciclo operacional.</p>
                                             </section>
+                                            <section>
+                                                <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Fluxo Kanban de Pedidos – BMV Digital</h4>
+                                                <p>Todos os pedidos da plataforma BMV Digital são tratados por meio de um fluxo Kanban padronizado, que representa visualmente o ciclo completo da intenção de movimentação, desde a solicitação inicial até o encerramento do processo.</p>
+                                                <p>Esse fluxo garante governança, rastreabilidade, controle operacional e financeiro, permitindo que cada pedido avance de forma lógica e validada entre as etapas.</p>
+
+                                                <h5 className="font-semibold text-lg mt-6 mb-3">Status do Fluxo Kanban</h5>
+                                                <ul>
+                                                    <li><strong>Pendente de Aprovação:</strong> Pedido registrado e aguardando análise e validação interna, conforme regras de negócio, elegibilidade e conformidade.</li>
+                                                    <li><strong>Pendente de Pagamento:</strong> Pedido aprovado, aguardando a realização do pagamento necessário para dar continuidade ao processamento.</li>
+                                                    <li><strong>Pagamentos Efetuados:</strong> Pagamento confirmado com sucesso, liberando o pedido para as etapas operacionais seguintes.</li>
+                                                    <li><strong>Pré-processados:</strong> Pedido validado financeiramente e preparado para execução, com checagens finais de consistência e integração entre sistemas.</li>
+                                                    <li><strong>Processados:</strong> Pedido executado com sucesso, com a movimentação de saldo, ativos, UCSs ou certificados devidamente registrada e concluída.</li>
+                                                    <li><strong>Falhas:</strong> Pedidos que apresentaram inconsistências técnicas, operacionais ou de integração durante o processamento, exigindo correção ou reprocessamento.</li>
+                                                    <li><strong>Negados:</strong> Pedidos reprovados por critérios de negócio, documentação, conformidade ou regras operacionais.</li>
+                                                    <li><strong>Arquivados:</strong> Pedidos finalizados e encerrados, mantidos apenas para fins de histórico, auditoria e rastreabilidade.</li>
+                                                </ul>
+
+                                                <h5 className="font-semibold text-lg mt-6 mb-3">Aplicação do Fluxo por Tipo de Pedido</h5>
+                                                <ul>
+                                                    <li><strong>Pedidos de Compra:</strong> Fluxo completo desde a aprovação até o processamento financeiro e operacional da aquisição.</li>
+                                                    <li><strong>Pedidos de Venda:</strong> Gestão do ciclo de venda, garantindo validação, pagamento, processamento e encerramento da operação.</li>
+                                                    <li><strong>Pedidos de Transferência:</strong> Tratamento das intenções de transferência de ativos e UCSs entre partes, com controle de aprovação, execução e arquivamento.</li>
+                                                    <li>
+                                                        <strong>Pedidos de Certificados:</strong>
+                                                        <p>O fluxo Kanban é aplicado de forma consistente aos diferentes tipos de certificados:</p>
+                                                        <ul className="list-disc pl-6 mt-2">
+                                                            <li>Certificado de Cliente</li>
+                                                            <li>Certificado de Distribuidor Financeiro</li>
+                                                            <li>Certificado de Distribuidor Geral</li>
+                                                            <li>Certificado de SaaS Tesouro Verde</li>
+                                                            <li>Certificado de SaaS BMV</li>
+                                                            <li>Certidão de Disponibilidade de Estoque</li>
+                                                        </ul>
+                                                        <p>Alguns tipos de certificado podem incluir etapas adicionais, como:</p>
+                                                        <ul className="list-disc pl-6 mt-2">
+                                                            <li>Pendente de Validação</li>
+                                                            <li>Pendente de Documentação</li>
+                                                        </ul>
+                                                        <p>Essas etapas garantem conformidade documental e regulatória antes da liberação para pagamento e processamento.</p>
+                                                    </li>
+                                                </ul>
+
+                                                <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
+                                                <p>O fluxo Kanban da BMV Digital padroniza o tratamento de todos os pedidos, assegurando que cada intenção de movimentação percorra um caminho lógico, auditável e controlado, desde a solicitação até a conclusão, independentemente do tipo de operação ou certificado envolvido.</p>
+                                            </section>
                                         </div>
                                     </TabsContent>
                                 </CardContent>
@@ -764,6 +809,8 @@ export default function AdminDashboardPage() {
 
 
 
+
+    
 
     
 
