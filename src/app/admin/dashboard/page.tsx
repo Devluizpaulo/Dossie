@@ -791,6 +791,50 @@ export default function AdminDashboardPage() {
                                                 <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
                                                 <p>O fluxo Kanban da BMV Digital padroniza o tratamento de todos os pedidos, assegurando que cada intenção de movimentação percorra um caminho lógico, auditável e controlado, desde a solicitação até a conclusão, independentemente do tipo de operação ou certificado envolvido.</p>
                                             </section>
+                                            <section>
+                                                <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Módulo de Gestão de Estoque</h4>
+                                                <p>O Módulo de Gestão de Estoque é responsável pelo controle, organização e rastreabilidade dos ativos, UCSs e saldos administrados pela BMV, garantindo que todas as movimentações ocorram de forma segura, validada e integrada aos demais módulos da plataforma.</p>
+                                                <p>Esse módulo sustenta as operações de compra, venda, transferência e certificação, funcionando como a base operacional para a execução das intenções de movimentação.</p>
+
+                                                <h5 className="font-semibold text-lg mt-6 mb-3">Submódulos da Gestão de Estoque</h5>
+                                                <ul>
+                                                    <li>
+                                                        <strong>Safra</strong>
+                                                        <p>Gestão das safras vinculadas aos ativos, permitindo o controle por período, origem e características produtivas, garantindo rastreabilidade desde a geração do estoque.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Abastecimento</strong>
+                                                        <p>Registro das entradas de estoque, seja por geração própria, aquisição, integração externa ou ajustes operacionais, assegurando a correta formação do saldo disponível.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Configuração de Distribuição</strong>
+                                                        <p>Definição das regras de distribuição do estoque entre contas, carteiras, participantes ou programas, estabelecendo critérios de alocação, limites e prioridades.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Movimentações</strong>
+                                                        <p>Histórico completo de todas as entradas, saídas, reservas e transferências de estoque, garantindo transparência, auditoria e rastreabilidade.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Transferência de Titularidade</strong>
+                                                        <p>Gestão da mudança de titularidade dos ativos ou UCSs entre partes, mantendo o histórico, a origem e a conformidade jurídica da operação.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Ajustes entre Contas</strong>
+                                                        <p>Módulo destinado a correções controladas de saldo entre contas, mediante regras de autorização, justificativa e registro auditável.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Bloqueio de UCS</strong>
+                                                        <p>Funcionalidade que permite bloquear UCSs específicas, impedindo sua movimentação até liberação formal, seja por motivos regulatórios, operacionais ou contratuais.</p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>CPR Verde</strong>
+                                                        <p>Gestão dos ativos vinculados à CPR Verde, garantindo controle de estoque, elegibilidade, rastreabilidade e conformidade com os instrumentos financeiros associados.</p>
+                                                    </li>
+                                                </ul>
+
+                                                <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
+                                                <p>O Módulo de Gestão de Estoque assegura que todo ativo ou UCS possua origem, saldo, titularidade e histórico claramente definidos, integrando-se ao fluxo Kanban de pedidos e aos módulos financeiros e de certificação, garantindo governança, segurança e escalabilidade.</p>
+                                            </section>
                                         </div>
                                     </TabsContent>
                                 </CardContent>
