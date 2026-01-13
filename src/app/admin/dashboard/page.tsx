@@ -548,7 +548,7 @@ export default function AdminDashboardPage() {
                                             Visualize e gerencie todos os registros de dossiês gerados e enviados pelo sistema.
                                         </CardDescription>
 
-                                        {dossiersLoading && <p>Carregando emissões de dossiês...</p>}
+                                        {dossiersLoading && <p>Carregando emissões de dossiê...</p>}
 
                                         {!dossiersLoading && (!dossiers || dossiers.length === 0) && (
                                             <div className="text-center py-10 border-2 border-dashed rounded-lg">
@@ -965,13 +965,14 @@ export default function AdminDashboardPage() {
                                                       </li>
                                                       <li><strong>Núcleos</strong><p>Permite o cadastro e a gestão de núcleos, seguindo o mesmo princípio das áreas, possibilitando segmentação operacional, organizacional ou regional.</p></li>
                                                       <li><strong>Associações</strong><p>Módulo responsável pelo cadastro e gerenciamento de associações e produtores, mantendo o vínculo institucional, operacional e histórico de relacionamento.</p></li>
-                                                      <li><strong>Usuários</strong>
-                                                        <p>Gestão completa de usuários da plataforma, incluindo:</p>
-                                                        <ul className="list-disc pl-6 mt-2">
-                                                          <li>Cadastro e manutenção de usuários</li>
-                                                          <li>Definição de perfis e permissões</li>
-                                                          <li>Controle de acesso por módulos e funcionalidades</li>
-                                                        </ul>
+                                                      <li>
+                                                        <strong>Usuários</strong>
+                                                        <p>Gestão completa de usuários da plataforma, incluindo cadastro, manutenção, perfis e permissões.</p>
+                                                        <div className="mt-4 border-l-4 border-blue-500 pl-4 bg-blue-50 dark:bg-blue-950/10 p-3 rounded">
+                                                          <h6 className="font-semibold text-base text-blue-800 dark:text-blue-200">Gestão de Contas Múltiplas</h6>
+                                                          <p className="text-sm mt-1">A funcionalidade de Gestão de Contas permite que um único usuário gerencie múltiplas contas simultaneamente, utilizando um único login. Por meio desse recurso, pode-se acessar diferentes perfis ou entidades, alternar entre contextos operacionais e manter a segregação de permissões, garantindo que as ações sejam auditáveis por conta.</p>
+                                                          <p className="text-sm mt-2"><strong>Visão Geral:</strong> A Gestão de Contas amplia a flexibilidade, permitindo que usuários com múltiplos papéis (gestores, produtores, etc.) atuem de forma centralizada e segura.</p>
+                                                        </div>
                                                       </li>
                                                       <li><strong>Bancos</strong><p>Cadastro e administração das instituições bancárias, utilizadas nos fluxos de pagamento, recebimento e integração financeira.</p></li>
                                                       <li><strong>Acervo</strong><p>Módulo central de gestão do acervo documental, permitindo organizar, versionar e controlar documentos utilizados ao longo dos processos da plataforma.</p></li>
@@ -1059,6 +1060,8 @@ export default function AdminDashboardPage() {
 
 
 
+
+    
 
     
 
