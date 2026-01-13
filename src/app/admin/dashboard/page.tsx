@@ -13,7 +13,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Users, Globe, KeyRound, ListChecks, FileText, LogOut, PlusCircle, MoreHorizontal, Edit, Trash2, Ban, Laptop, Smartphone, Filter, FileSpreadsheet, Download, CheckCircle, XCircle, Palette, Printer, Leaf } from 'lucide-react';
 import { UserForm } from '@/app/admin/dashboard/user-form';
@@ -634,6 +634,7 @@ export default function AdminDashboardPage() {
                                                      <a href="#wl-tesouro-verde" className="text-sm p-3 rounded-md hover:bg-muted">Tesouro Verde</a>
                                                      <a href="#wl-kanban" className="text-sm p-3 rounded-md hover:bg-muted">Fluxo Kanban</a>
                                                      <a href="#wl-estoque" className="text-sm p-3 rounded-md hover:bg-muted">Gestão de Estoque</a>
+                                                     <a href="#wl-abastecimento" className="text-sm p-3 rounded-md hover:bg-muted">Abastecimento de UCS</a>
                                                      <a href="#wl-admin" className="text-sm p-3 rounded-md hover:bg-muted">Módulos Administrativos</a>
                                                      <a href="#wl-distribuicao" className="text-sm p-3 rounded-md hover:bg-muted">Configuração de Distribuição</a>
                                                 </nav>
@@ -918,6 +919,35 @@ export default function AdminDashboardPage() {
                                                     <h5 className="font-semibold text-lg mt-6 mb-3">Visão Geral</h5>
                                                     <p>O Módulo de Gestão de Estoque assegura que todo ativo ou UCS possua origem, saldo, titularidade e histórico claramente definidos, integrando-se ao fluxo Kanban de pedidos e aos módulos financeiros e de certificação, garantindo governança, segurança e escalabilidade.</p>
                                                 </section>
+                                                <section id="wl-abastecimento">
+                                                    <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Abastecimento de UCS</h4>
+                                                    <p>O módulo de Abastecimento é responsável pela movimentação controlada dos ativos de UCS entre a carteira Matheus e a plataforma de custódia, garantindo a disponibilidade dos ativos para transação de forma segura e rastreável.</p>
+                                                    <h5>Lógica Operacional</h5>
+                                                    <p>Por padrão, todos os UCS originados ao sistema são inicialmente direcionados para a carteira Mateus, que atua como um armazém central de ativos.</p>
+                                                    <p>A partir dessa carteira:</p>
+                                                    <ul>
+                                                        <li>Os UCS permanecem armazenados e protegidos</li>
+                                                        <li>Não estão disponíveis para transação direta</li>
+                                                    </ul>
+                                                    <p>O abastecimento da plataforma de custódia ocorre de forma controlada, conforme a demanda operacional.</p>
+                                                    <h5>Processo de Abastecimento</h5>
+                                                    <h6>Origem</h6>
+                                                    <p>Carteira Mateus (armazém de UCS)</p>
+                                                    <h6>Movimentação</h6>
+                                                    <p>Transferência dos UCS conforme regras e autorizações definidas no sistema</p>
+                                                    <h6>Destino</h6>
+                                                    <p>Plataforma de custódia, onde os UCS passam a:</p>
+                                                    <ul>
+                                                        <li>Estar disponíveis para negociação</li>
+                                                        <li>Ser utilizados em vendas, transferências e certificações</li>
+                                                    </ul>
+                                                    <h5>Governança e Segurança</h5>
+                                                    <ul>
+                                                        <li>Todas as movimentações são registradas e auditáveis</li>
+                                                        <li>O processo segue regras de autorização e validação</li>
+                                                        <li>Mantém a integridade do estoque e evita movimentações indevidas</li>
+                                                    </ul>
+                                                </section>
                                                 <section id="wl-admin">
                                                     <h4 className="font-bold text-xl mt-8 mb-4 border-t pt-6">Módulos Administrativos e de Governança da Plataforma</h4>
                                                     <p>Para garantir o correto funcionamento de todos os fluxos operacionais, financeiros e regulatórios da plataforma, foi estruturado um conjunto de módulos administrativos, responsáveis pelo cadastro, gestão, parametrização e governança de todas as entidades que sustentam o ecossistema.</p>
@@ -1029,6 +1059,8 @@ export default function AdminDashboardPage() {
 
 
 
+
+    
 
     
 
