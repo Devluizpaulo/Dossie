@@ -17,6 +17,7 @@ import {
 import { useAuth, useUser } from '@/firebase';
 import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 
 import { ThemeToggle } from './components/dossier/theme-toggle';
@@ -157,8 +158,18 @@ export default function DossierPage() {
                       className="gap-2"
                     >
                         <Printer className="h-4 w-4" />
-                        <span className="hidden sm:inline">Imprimir</span>
+                        <span className="hidden sm:inline">Imprimir Tela</span>
                     </Button>
+                  <Link href="/relatorio-completo">
+                    <Button 
+                        variant="default" 
+                        size="sm"
+                        className="gap-2 shadow-md hover:shadow-lg transition-all"
+                      >
+                          <Printer className="h-4 w-4" />
+                          <span className="hidden sm:inline">Relatório Completo</span>
+                      </Button>
+                  </Link>
                   <ThemeToggle />
                   <Button 
                       variant="outline" 

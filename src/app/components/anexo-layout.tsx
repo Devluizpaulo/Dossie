@@ -45,6 +45,12 @@ export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
               <Printer className="h-4 w-4" />
               <span className="hidden sm:inline">Imprimir</span>
             </Button>
+            <Link href="/relatorio-completo">
+              <Button variant="default" size="sm" className="gap-2">
+                <Printer className="h-4 w-4" />
+                <span className="hidden sm:inline">Relatório Completo</span>
+              </Button>
+            </Link>
             <ThemeToggle />
             {nextAnexo ? (
               <Link href={nextAnexo}>

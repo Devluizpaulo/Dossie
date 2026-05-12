@@ -91,11 +91,11 @@ export const sections = [
     ),
   },
   {
-    title: 'Responsabilidade Técnica',
+    title: 'Gestão Operacional',
     content: (
       <>
         <p className="text-justify"><strong>Área:</strong> Tecnologia da Informação/Gestão Operacional</p>
-        <p className="text-justify"><strong>Responsável:</strong> Luiz Paulo Gonçalves Miguel de Jesus</p>
+        <p className="text-justify"><strong>Gestor Operacional:</strong> Luiz Paulo Gonçalves Miguel de Jesus</p>
         <h3 className="text-xl font-semibold mb-2 mt-4" id={slugify("Data de Emissão")}>Data de Emissão</h3>
         <p className="text-justify">05 de janeiro de 2026</p>
       </>
