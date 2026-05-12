@@ -340,7 +340,7 @@ export default function Anexo2() {
             </CardHeader>
             <CardContent className="space-y-4 pt-6">
               <p className="text-justify">
-                Nesta fase, ocorreram as primeiras interações acompanhadas diretamente pelo responsável técnico pelo relatório, com foco em:
+                Nesta fase, ocorreram as primeiras interações acompanhadas diretamente pelo gestor operacional pelo relatório, com foco em:
               </p>
               
               <ul className="list-disc pl-6 space-y-2">
@@ -381,7 +381,7 @@ export default function Anexo2() {
 
               <Alert className="mt-4">
                 <AlertDescription className="text-justify">
-                  Durante este período, parte significativa das interações exigiu <strong>intervenção direta e insistência</strong> por parte do responsável técnico, indicando limitações no fluxo padrão de suporte.
+                  Durante este período, parte significativa das interações exigiu <strong>intervenção direta e insistência</strong> por parte do gestor operacional, indicando limitações no fluxo padrão de suporte.
                 </AlertDescription>
               </Alert>
             </CardContent>
@@ -524,7 +524,7 @@ export default function Anexo2() {
             <div className="border-t pt-4 mt-6 text-sm text-muted-foreground">
               <p><strong>Período de Análise:</strong> 06 de novembro a 07 de janeiro</p>
               <p><strong>Duração:</strong> Aproximadamente 60 dias</p>
-              <p><strong>Responsável Técnico:</strong> Luiz Paulo</p>
+              <p><strong>Gestor Operacional:</strong> Luiz Paulo</p>
               <p><strong>Versão:</strong> 1.0</p>
             </div>
           </CardContent>
