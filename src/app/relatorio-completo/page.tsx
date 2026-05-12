@@ -12,9 +12,12 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { EvidenceImage } from '@/app/components/evidence-image';
 import { STATS } from '../anexo-6/whatsapp-data';
-import { MessageSquare, Users, Calendar, Activity, AlertTriangle } from 'lucide-react';
+import { MessageSquare, Users, Calendar, Activity, AlertTriangle, Gavel, FileText } from 'lucide-react';
+import { ContractualAnalysisTable } from '../anexo-6/whatsapp-renderer';
+import { WhatsAppTranscript } from '../anexo-6/whatsapp-transcript';
 
 export default function FullReportPage() {
+  const [includeTranscript, setIncludeTranscript] = useState(false);
   const handlePrint = () => {
     window.print();
   };
@@ -33,6 +36,16 @@ export default function FullReportPage() {
           <Printer className="h-4 w-4" />
           Imprimir Relatório Completo
         </Button>
+        <div className="bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg border shadow-sm flex items-center gap-2 text-xs font-medium no-print">
+          <input 
+            type="checkbox" 
+            id="inc-trans" 
+            checked={includeTranscript} 
+            onChange={(e) => setIncludeTranscript(e.target.checked)}
+            className="rounded border-gray-300"
+          />
+          <label htmlFor="inc-trans" className="cursor-pointer">Incluir Transcrição Completa (+50 páginas)</label>
+        </div>
       </div>
 
       <div className="max-w-4xl mx-auto space-y-12 print:space-y-8">
@@ -386,6 +399,13 @@ export default function FullReportPage() {
               </TableBody>
             </Table>
 
+            <div className="mt-12 mb-8">
+              <h3 className="text-xl font-bold mb-6 border-l-4 border-primary pl-4">Análise de Inconformidade Contratual</h3>
+              <div className="print:scale-[0.95] origin-top">
+                <ContractualAnalysisTable />
+              </div>
+            </div>
+
             <h3 className="text-xl font-bold mt-10 mb-4 border-l-4 border-primary pl-4">Análise de Padrões de Falha</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card>
@@ -413,21 +433,12 @@ export default function FullReportPage() {
               <Card>
                 <CardContent className="pt-6 space-y-4">
                   <div className="space-y-2">
-                    <p className="font-bold text-red-600 flex items-center gap-2">
-                      <AlertTriangle className="h-4 w-4" /> Inconformidade de Segurança
-                    </p>
-                    <p className="text-sm text-justify">
-                      Compartilhamento de senhas de produção e seeds de carteiras blockchain em canal de comunicação aberto, 
-                      violando protocolos básicos de segurança digital e governança de dados.
-                    </p>
-                  </div>
-                  <div className="space-y-2">
                     <p className="font-bold text-blue-600 flex items-center gap-2">
-                      <AlertTriangle className="h-4 w-4" /> Lacunas de Regra de Negócio
+                      <AlertTriangle className="h-4 w-4" /> Lacunas de Regra de Negócio e Classificação
                     </p>
                     <p className="text-sm text-justify">
-                      Múltiplos registros onde a equipe técnica do fornecedor demonstra desconhecimento das regras de negócio implementadas, 
-                      resultando em parametrizações incorretas e falhas de lógica transacional.
+                      Múltiplos registros onde a equipe técnica demonstra desconhecimento das regras de negócio. 
+                      <strong> Exemplo real:</strong> A ausência de suporte a clientes internacionais em relatórios foi tratada como uma &quot;melhoria complexa&quot; (27/01) e o módulo de &quot;Bloqueio de UCS&quot; foi entregue sem sequer ter sido testado (22/01), evidenciando a tentativa de classificar falhas de entrega como demandas novas.
                     </p>
                   </div>
                 </CardContent>
@@ -442,6 +453,18 @@ export default function FullReportPage() {
             </Alert>
           </div>
         </section>
+
+        {/* Full Transcript (Optional) */}
+        {includeTranscript && (
+          <section className="print-break-before py-8 border-t-4 border-primary pt-12">
+            <h1 className="text-3xl font-bold mb-8 text-primary uppercase border-b-4 border-primary pb-4">
+              Transcrição Integral das Mensagens
+            </h1>
+            <div className="transcript-container">
+              <WhatsAppTranscript />
+            </div>
+          </section>
+        )}
 
         {/* Signatures */}
         <section className="print-break-before py-20">

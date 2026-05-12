@@ -4,7 +4,8 @@ import { AnexoLayout } from "@/app/components/anexo-layout";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
-import { Gavel } from "lucide-react";
+import { Gavel, Printer } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { STATS } from "./whatsapp-data";
 import {
   WhatsAppStats,
@@ -132,6 +133,14 @@ export default function Anexo6() {
                   Identificadas 53 fazendas não migradas do legado (de 256 existentes, apenas 203 foram copiadas), dados cruzando entre legado e produção, e city_id NULL em 159 registros de endereço, impactando relatórios e planilhas de movimentação.
                 </p>
               </div>
+              <div className="border-l-4 border-indigo-500 pl-4 py-2">
+                <p className="font-semibold text-sm">Classificação Inadequada (Bug vs Melhoria)</p>
+                <p className="text-sm text-muted-foreground text-justify">
+                  <strong>Fato 1:</strong> A funcionalidade de &quot;Bloqueio de UCS&quot; foi entregue inoperante. Ao ser questionado, o fornecedor admitiu que o fluxo &quot;ainda não havia sido testado&quot; (22/01), tratando uma falha de entrega como uma tarefa complexa em desenvolvimento posterior.
+                  <br />
+                  <strong>Fato 2:</strong> A ausência de suporte a endereços internacionais em relatórios foi classificada como uma &quot;melhoria complexa&quot; (27/01), quando na verdade tratava-se de uma lacuna crítica de funcionalidade para uma plataforma global (SaaS Tesouro Verde).
+                </p>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -188,30 +197,6 @@ export default function Anexo6() {
           </CardContent>
         </Card>
 
-        {/* 8. Credenciais expostas (alerta de segurança) */}
-        <Card className="border-red-200 dark:border-red-800">
-          <CardHeader className="bg-red-50 dark:bg-red-950/20">
-            <CardTitle className="text-2xl text-red-700 dark:text-red-300">
-              ⚠️ Alerta de Segurança: Credenciais Expostas em Canal Aberto
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 pt-6">
-            <p className="text-justify text-sm">
-              Durante a análise do registro de comunicação, foram identificadas <strong>credenciais de acesso compartilhadas diretamente no grupo de WhatsApp</strong>, incluindo:
-            </p>
-            <ul className="list-disc pl-6 space-y-1 text-sm">
-              <li>Credenciais do backoffice de produção (usuário e senha)</li>
-              <li>Credenciais do sistema legado (usuário e senha)</li>
-              <li>Seeds de carteiras blockchain (palavras-chave para recuperação)</li>
-            </ul>
-            <Alert variant="destructive">
-              <AlertDescription className="text-sm text-justify">
-                O compartilhamento de credenciais em canais não criptografados de ponta a ponta (grupos com múltiplos participantes) representa <strong>violação de boas práticas de segurança da informação</strong> e expõe o sistema a riscos de acesso não autorizado, comprometimento de contas e responsabilização por uso indevido.
-              </AlertDescription>
-            </Alert>
-          </CardContent>
-        </Card>
-
         {/* 8. Conclusão Técnica */}
         <Card>
           <CardHeader>
@@ -227,8 +212,7 @@ export default function Anexo6() {
               <li><strong>Ausência de ambiente de testes</strong>, com testes sendo realizados diretamente em produção e gerando impactos reais;</li>
               <li><strong>Migração incompleta e defeituosa</strong> do sistema legado, com dados faltantes e inconsistências de integridade;</li>
               <li><strong>Classificação inadequada de bugs como melhorias</strong>, postergando correções mandatórias;</li>
-              <li><strong>Desconhecimento das regras de negócio</strong> por parte do fornecedor que implementou o sistema;</li>
-              <li><strong>Práticas de segurança inadequadas</strong>, incluindo compartilhamento de credenciais em canais abertos.</li>
+              <li><strong>Desconhecimento das regras de negócio</strong> por parte do fornecedor que implementou o sistema.</li>
             </ul>
 
             <Alert variant="destructive">

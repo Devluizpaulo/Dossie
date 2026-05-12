@@ -3,7 +3,6 @@
 import { useState, useEffect, useMemo, useCallback, useRef, createContext, useContext } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
 import {
   MEDIA_FILES,
   SENDER_COLORS,
@@ -11,7 +10,9 @@ import {
   normalizeSender,
   isBMV,
 } from "./whatsapp-data";
+import Image from "next/image";
 import {
+  Printer,
   ChevronDown,
   ChevronUp,
   Search,
@@ -286,10 +287,13 @@ function MsgBubble({ msg }: { msg: ParsedMessage }) {
   const mediaInfo = msg.media ? MEDIA_FILES[msg.media] : undefined;
 
   return (
-    <div className={`flex ${isRight ? "justify-end" : "justify-start"} mb-1.5`}>
-      <div className={`max-w-[85%] md:max-w-[75%] rounded-xl px-3 py-1.5 border text-[13px] ${bgColor}`}>
+    <div className={`flex ${isRight ? "justify-end" : "justify-start"} mb-1.5 msg-bubble`}>
+      <div className="msg-meta hidden print:block text-[8pt] text-muted-foreground min-w-[120px] text-right">
+        {msg.date} {msg.time}
+      </div>
+      <div className={`max-w-[85%] md:max-w-[75%] rounded-xl px-3 py-1.5 border text-[13px] ${bgColor} msg-text`}>
         <p className={`text-[11px] font-bold mb-0.5 ${nameColor}`}>
-          {normalized}
+          {normalized} {isRight && <span className="print:hidden">✓</span>}
         </p>
 
         {/* Image */}
@@ -483,7 +487,7 @@ export function WhatsAppTranscript() {
 
   return (
     <LightboxContext.Provider value={{ openLightbox }}>
-    <div className="space-y-4" ref={containerRef}>
+    <div className="space-y-4 transcript-container" ref={containerRef}>
       {/* Lightbox */}
       {lightbox && (
         <ImageLightbox
@@ -524,13 +528,16 @@ export function WhatsAppTranscript() {
             )}
           </div>
           <div className="flex gap-1">
+            <Button variant="outline" size="sm" onClick={() => window.print()} className="text-xs h-7 gap-1">
+              <Printer className="h-3 w-3" /> Imprimir
+            </Button>
             <Button variant="outline" size="sm" onClick={expandAll} className="text-xs h-7">
               Expandir Todos
             </Button>
             <Button variant="outline" size="sm" onClick={collapseAll} className="text-xs h-7">
               Recolher
             </Button>
-            <Button variant="ghost" size="sm" onClick={() => setExpanded(false)} className="text-xs h-7">
+            <Button variant="ghost" size="sm" onClick={() => setExpanded(false)} className="text-xs h-7 no-print">
               Fechar
             </Button>
           </div>
@@ -547,8 +554,8 @@ export function WhatsAppTranscript() {
                 onClick={() => toggleDay(group.date)}
                 className="w-full flex items-center justify-between px-4 py-2.5 bg-muted/50 hover:bg-muted/80 transition-colors"
               >
-                <div className="flex items-center gap-2">
-                  {isOpen ? <ChevronDown className="h-4 w-4" /> : <ChevronUp className="h-4 w-4 rotate-180" />}
+                <div className="flex items-center gap-2 day-header">
+                  {isOpen ? <ChevronDown className="h-4 w-4 no-print" /> : <ChevronUp className="h-4 w-4 rotate-180 no-print" />}
                   <span className="text-sm font-semibold">{group.dateLabel}</span>
                 </div>
                 <Badge variant="outline" className="text-[10px]">
@@ -575,6 +582,57 @@ export function WhatsAppTranscript() {
         </div>
       )}
     </div>
+    <style jsx global>{`
+      @media print {
+        .no-print { display: none !important; }
+        .print-only { display: block !important; }
+        
+        /* Force expand all days for print */
+        .transcript-container [aria-expanded="false"] + div {
+          display: block !important;
+        }
+        
+        .transcript-container button { display: none !important; }
+        .transcript-container .border { border: none !important; border-bottom: 1px solid #eee !important; }
+        .transcript-container .rounded-xl { border-radius: 0 !important; }
+        .transcript-container { padding: 0 !important; }
+        
+        /* Message styling for print - High density */
+        .transcript-container .msg-bubble {
+          display: flex !important;
+          flex-direction: row !important;
+          gap: 10px !important;
+          margin-bottom: 4px !important;
+          font-size: 9pt !important;
+          border: none !important;
+          padding: 2px 0 !important;
+        }
+        
+        .transcript-container .msg-meta {
+          min-width: 140px !important;
+          font-size: 8pt !important;
+          color: #666 !important;
+          text-align: right !important;
+        }
+        
+        .transcript-container .msg-text {
+          flex: 1 !important;
+          background: none !important;
+          border: none !important;
+          padding: 0 !important;
+        }
+
+        .transcript-container .day-header { 
+          display: block !important; 
+          font-weight: bold !important; 
+          font-size: 11pt !important;
+          border-bottom: 2px solid #000 !important;
+          margin-top: 30px !important;
+          padding-bottom: 5px !important;
+          page-break-after: avoid !important;
+        }
+      }
+    `}</style>
     </LightboxContext.Provider>
   );
 }
