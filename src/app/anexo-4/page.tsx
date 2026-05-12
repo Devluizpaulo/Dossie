@@ -583,7 +583,7 @@ export default function Anexo4() {
             <div className="border-t pt-4 mt-6 text-sm text-muted-foreground">
               <p><strong>Anexo:</strong> IV – Matriz de Paridade Funcional</p>
               <p><strong>Data de Elaboração:</strong> Janeiro/2026</p>
-              <p><strong>Responsável Técnico:</strong> Luiz Paulo</p>
+              <p><strong>Gestor Operacional:</strong> Luiz Paulo</p>
               <p><strong>Referência de Comparação:</strong> Vídeo técnico do Sistema Legado</p>
               <p><strong>Versão:</strong> 1.0</p>
             </div>
