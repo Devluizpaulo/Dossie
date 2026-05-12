@@ -899,7 +899,9 @@ export const sections = [
                     <li>Anexo I – Evidências Técnicas e Operacionais;</li>
                     <li>Anexo II – Linha do Tempo de Suporte;</li>
                     <li>Anexo III – Matriz de Risco;</li>
-                    <li>Anexo IV – Matriz de Paridade Funcional.</li>
+                    <li>Anexo IV – Matriz de Paridade Funcional;</li>
+                    <li>Anexo V – Cenários de Tokenização e Movimentação de UCSs;</li>
+                    <li>Anexo VI – Registro de Comunicação WhatsApp.</li>
                 </ul>
             </>
         )

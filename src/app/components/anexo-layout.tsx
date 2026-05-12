@@ -14,8 +14,8 @@ interface AnexoLayoutProps {
 
 export function AnexoLayout({ children, title, number }: AnexoLayoutProps) {
   const prevAnexo = number > 1 ? `/anexo-${number - 1}` : "/";
-  const nextAnexo = number < 5 ? `/anexo-${number + 1}` : null;
-  const anexos = [1, 2, 3, 4, 5];
+  const nextAnexo = number < 6 ? `/anexo-${number + 1}` : null;
+  const anexos = [1, 2, 3, 4, 5, 6];
 
   const handlePrint = () => {
     window.print();

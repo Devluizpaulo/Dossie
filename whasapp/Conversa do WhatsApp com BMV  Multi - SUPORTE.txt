@@ -1,0 +1,1597 @@
+06/11/2025 10:48 - As mensagens e ligações são protegidas com a criptografia de ponta a ponta. Somente as pessoas que fazem parte da conversa podem ler, ouvir e compartilhar esse conteúdo. *Saiba mais*
+06/11/2025 10:48 - ‎Paulo criou o grupo "BMV <> Multi - SUPORTE"
+06/11/2025 10:48 - ‎Paulo adicionou você
+06/11/2025 10:48 - ‎Paulo atualizou a duração das mensagens temporárias. Todas as novas mensagens desaparecerão desta conversa ‎7 dias após o envio, exceto se salvas na conversa. Toque para saber mais.
+06/11/2025 10:48 - ‎Paulo desativou as mensagens temporárias. Toque para saber mais.
+06/11/2025 10:49 - Você agora é um admin do grupo
+06/11/2025 10:49 - Você adicionou Renata Umbelino
+06/11/2025 10:50 - Paulo: Opa pessoal novo grupo de suporte BMV
+06/11/2025 10:54 - Maria Tereza Umbelino: Bom dia
+06/11/2025 10:55 - Renata Umbelino: Bom dia!
+06/11/2025 11:08 - +55 34 8831-6444: Luiz, preciso do seu email para criar sua conta
+06/11/2025 11:08 - Luiz Paulo Gonçalves Miguel de Jesus: luizpaulo.jesus@bmv.global
+06/11/2025 11:09 - +55 34 8831-6444: Obrigado
+06/11/2025 11:09 - Luiz Paulo Gonçalves Miguel de Jesus: Imagina, eu que agradeço
+06/11/2025 11:12 - Nadini: Bom dia! Sou a Nadini, PM aqui na Multiledgers.  Fico à disposição para qualquer necessidade de suporte ao grupo.
+06/11/2025 11:16 - Nadini: Luiz, já liberei o seu acesso ao vídeo de demonstração do backoffice e blockchain. Também vou compartilhar contigo o manual que criamos a partir desse vídeo.
+06/11/2025 11:16 - Luiz Paulo Gonçalves Miguel de Jesus: Perfeito, já estou assistindo o vídeo. Muito obrigado
+06/11/2025 13:32 - +55 34 8831-6444: Luiz, aqui os dados para seu acesso:
+Site: backoffice.bmv.global/login
+User: luizpaulo.jesus@bmv.global
+Senha: Prosperidade@2025
+06/11/2025 13:34 - Luiz Paulo Gonçalves Miguel de Jesus: Ok, muito obrigado
+06/11/2025 13:34 - +55 34 8831-6444: Tenta acessar e me fala se conseguiu
+06/11/2025 13:38 - Luiz Paulo Gonçalves Miguel de Jesus: Certinho, já consegui logar
+06/11/2025 13:41 - +55 34 8831-6444: Blz
+06/11/2025 13:41 - Luiz Paulo Gonçalves Miguel de Jesus: Muito obrigado
+06/11/2025 17:30 - Luiz Paulo Gonçalves Miguel de Jesus: Boa tarde, Mateus. O canal de suporte para discutir algumas inconsistências seria este mesmo ou teria outro?
+06/11/2025 17:43 - +55 34 8831-6444: Por enquanto, aqui mesmo
+06/11/2025 17:44 - Luiz Paulo Gonçalves Miguel de Jesus: Perfeito eu tenho um caso aqui em específico que está dando divergência o cliente tem saldo mas não consegue transferir
+06/11/2025 17:44 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+06/11/2025 17:44 - Luiz Paulo Gonçalves Miguel de Jesus: Cliente Mauro Sérgio Carrenho não consegue transferir UCS's mesmo com saldo suficiente
+06/11/2025 17:46 - Luiz Paulo Gonçalves Miguel de Jesus: Estou reunindo os demais casos e vou te passando conforme for me inteirando.
+06/11/2025 17:48 - +55 34 8831-6444: Luiz, poderia enviar a foto mostrando a tela inteira? Pois não dá para saber exatamente onde é isso na plataforma
+06/11/2025 17:48 - +55 34 8831-6444: Facilitaria bastante aqui <Mensagem editada>
+06/11/2025 17:48 - Luiz Paulo Gonçalves Miguel de Jesus: esse foi um print enviado pelo cliente
+06/11/2025 17:49 - Luiz Paulo Gonçalves Miguel de Jesus: mas vou solicitar
+07/11/2025 09:18 - Luiz Paulo Gonçalves Miguel de Jesus: Bom dia, Matheus
+07/11/2025 09:18 - Luiz Paulo Gonçalves Miguel de Jesus: Alguns clientes estão reclamando que não recebem o e-mail de confirmação do usuário
+07/11/2025 09:32 - Nadini: Oi Luiz, bom dia. Você consegue pegar com os clientes qual operação foi realizada (pode ser um print da tela toda ou um vídeo, com a url visível)? Assim mapeamos o local onde o problema está ocorrendo. Nos ajudaria bastante a encontrar, entender e corrigir o problema. <Mensagem editada>
+07/11/2025 09:32 - Luiz Paulo Gonçalves Miguel de Jesus: Já solicitei
+07/11/2025 12:59 - +55 34 8831-6444: Olá Luiz, como vai? Queria te atualizar sobre essa questão do e-mail. Estamos já algumas semanas tentando solucionar esse problema. Ele foi primordialmente causado pelo serviço da Locaweb que foi contratado pela BMV. É um provedor de e-mail que vem dando muitos problemas e que há mais de semanas estamos tentando alinhar com a Alessandra um acesso a conta da BMV para que nosso DevOps consiga fazer uma migração para um outro provedor melhor. Estamos aguardando que a BMV libere esse acesso para a gente para darmos continuidade na migração para outro serviço. Atualmente o usuário que a BMV criou para a gente mexer lá não tem permissão para fazer backup dos emails e migrar.
+07/11/2025 13:19 - Luiz Paulo Gonçalves Miguel de Jesus: Estamos conduzindo medidas para implementar uma solução definitiva que elimine a instabilidade dos e-mails da Locaweb. Acredito que, na próxima semana, já teremos uma solução implementada, com a entrega dos e-mails dividida entre o Google e os servidores da Locaweb.
+07/11/2025 15:02 - Nadini: Luiz, boa tarde. Estávamos trabalhando em um pedido da Alessandra /Thaynara, relacionado a um Pedido de SAAS BMV, que na hora de processar retornava um erro na operação. O número do pedido: Pedido 51 SaaS BMV. 
+
+Nosso desenvolvedor está precisando de uma informação: Qual fila podemos utilizar para processar o pedido 51? 
+
+Estou enviando como referência as imagens, para contextualizar e ajuda-lo a levantar essa informação. <Mensagem editada>
+07/11/2025 15:03 - Nadini: <Mídia oculta>
+Pedido de SAAS BMV, número do pedido: 51
+07/11/2025 15:03 - Nadini: <Mídia oculta>
+07/11/2025 15:07 - Luiz Paulo Gonçalves Miguel de Jesus: Boa tarde.
+Por gentileza, apenas um momento — vou verificar.
+07/11/2025 15:20 - Luiz Paulo Gonçalves Miguel de Jesus: Verifiquei aqui no sistema e, aparentemente, trata-se de um teste, e não de uma transação. De toda forma, a Thaynara estará disponível na segunda-feira, e pedirei que ela dê continuidade a essa tratativa. Pode ser? <Mensagem editada>
+07/11/2025 15:22 - Maria Tereza Umbelino: Isto é porque está tendo erros e puxando somente de uma fazenda
+07/11/2025 15:22 - Maria Tereza Umbelino: Não estamos conseguindo modificar
+07/11/2025 15:23 - Maria Tereza Umbelino: Só caí em uma propriedade
+07/11/2025 15:23 - Maria Tereza Umbelino: Ela estavam tentando formar novas filas
+07/11/2025 15:28 - Nadini: Boa tarde Maria Teresa, o dev me passou agora que foi um teste mesmo, mas que ele precisaria saber qual foi a fila que o erro ocorreu durante o teste, para que ele replique o mesmo cenário. Vou fazer o seguinte, vou pedir pra ele testar em todas as filas que ele listou no print, porque em alguma delas o mesmo erro vai surgir.
+07/11/2025 17:02 - Maria Tereza Umbelino: Ótimo. Obrigada
+07/11/2025 17:02 - Maria Tereza Umbelino: Aguardo
+10/11/2025 12:23 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+10/11/2025 12:23 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+10/11/2025 12:24 - Luiz Paulo Gonçalves Miguel de Jesus: Boa tarde, o cliente agora relata que não consegue acessar a conta pois deu como usuário e senha incorreto
+10/11/2025 12:24 - Luiz Paulo Gonçalves Miguel de Jesus: É o mesmo cliente que estava com problemas para transferir
+10/11/2025 12:25 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+10/11/2025 15:55 - Nadini: Oi Luiz, boa tarde, tudo bem? Por gentileza, você poderia pedir para o  cliente Mauro Sérgio acessar novamente a plataforma BMV Digital?  
+
+Para contextualizar: atualmente o sistema mantém cache em um dos serviços e, após longos períodos sem reinicialização, esse cache pode ficar desatualizado. Quando isso acontece, é necessário reiniciar o serviço responsável pelos acessos para normalizar o comportamento. <Mensagem editada>
+10/11/2025 15:58 - Luiz Paulo Gonçalves Miguel de Jesus: Obrigado. Vou solicitar que ele acesse novamente e nos encaminhe as telas para a resolução  do erro em transferência.
+10/11/2025 16:08 - Nadini: Certo, fico no aguardo. Obrigada! <Mensagem editada>
+10/11/2025 16:24 - Nadini: Sobre o teste do pedido de selo (pedido 51): 
+
+Na semana passada, comentei que poderíamos testar o pedido de selo (pedido 51) usando as filas disponíveis até conseguirmos replicar o erro. Ainda podemos seguir dessa forma, mas existe um ponto de atenção: se o erro não acontecer e o processamento finalizar com sucesso, as 6 UCS serão consumidas de fato. Para recuperar essas UCS depois é possível, porém o processo é um pouco mais trabalhoso, e também precisaríamos criar novos pedidos para continuar os testes nas demais filas.
+
+Por isso, antes de continuar, achamos melhor confirmar com vocês. Podemos testar as filas uma por uma, ou conseguimos verificar com a Thaynara se ela se recorda qual fila foi usada no teste dela?
+
+Me avise o que vocês preferem que seguimos por aqui
+10/11/2025 16:25 - Luiz Paulo Gonçalves Miguel de Jesus: Vou alinhar com ela agora
+10/11/2025 16:42 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251110-WA0059.jpg (arquivo anexado)
+10/11/2025 16:42 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251110-WA0060.jpg (arquivo anexado)
+10/11/2025 16:43 - Luiz Paulo Gonçalves Miguel de Jesus: Segue os prints solicitados
+10/11/2025 16:51 - Você adicionou Thaynara Camara
+10/11/2025 16:52 - Luiz Paulo Gonçalves Miguel de Jesus: ‎PTT-20251110-WA0067.opus (arquivo anexado)
+10/11/2025 16:56 - Thaynara Camara: <Mídia oculta>
+Essa é a fila correta que devemos utilizar para processar pedidos.
+Podemos processar o pedido 51 como teste para ver se vai dar erro novamente. Ou processamos o pedido 50, que é um pedido real que já está pago e aguardando para ser processado.
+10/11/2025 17:14 - Nadini: Certo, obrigada Luiz e Thaynara. Vou reportar essa informação para o dev. Em breve volto nesse ponto com vocês.
+10/11/2025 17:22 - Nadini: Luiz, sobre essa questão do saldo: 
+
+Primeiro gostaria de agradecer pelo print mostrando a tela toda, pois nos ajuda a encontrar e corrigir os problemas relatados. 
+
+Havíamos identificado, olhando apenas o código, que o cliente Mauro Sérgio possui apenas *saldo projetado* e essa condição significa que o saldo, de fato, esta dentro da plataforma "CUSTODIA" e portanto não esta disponível para transferência. Com o print, confirmamos que é isso mesmo.
+
+Para que fique disponível para transferir, o cliente não pode ter o saldo nas seguintes plataformas "MATEUS, CUSTODIA, CPR_VERDE". Essa lógica faz parte das regras de negócio do backoffice.
+10/11/2025 17:50 - +55 34 8831-6444: Apenas reforçando a mensagem da Nadini. Pelo que vimos vocês precisam ir no backoffice e fazer as mudanças por lá para que aí o saldo fique disponível. Como esses plataformas como a Mateus são usadas para gerar saldos, para que o cliente utilize o saldo precisa previamente ser movido para outra plataforma pela a ADM da BMV
+10/11/2025 17:52 - +55 34 8831-6444: Luiz seria interessante você dar uma olhada nesse vídeo aqui que traz mais informações sobre o funcionamento da plataforma. Acho que comentei com você sobre esse vídeo naquela call https://youtu.be/WAYd1Myw81k?si=MfGHHspggpInKQ9T
+10/11/2025 17:54 - +55 34 8831-6444: Pois futuramente você pode acabar deparando com alguns problemas que sao devido a próprias regras de funcionamento da plataforma da BMV <Mensagem editada>
+10/11/2025 17:56 - Luiz Paulo Gonçalves Miguel de Jesus: perfeito, muito obrigado
+11/11/2025 11:30 - Thaynara Camara: Pessoal, bom dia!
+@⁨Nadini⁩
+O cliente do pedido 50 está nos cobrando o selo. Podemos tentar processar esse pedido hoje?
+11/11/2025 11:32 - Nadini: Oi a Thaynara, bom dia. Ainda não. O dev relatou mais cedo que conseguiu simular o erro mais ainda não finalizou a correção. Ele está trabalhando nisso. <Mensagem editada>
+11/11/2025 11:34 - Thaynara Camara: Tá ok! Te agradeço pelo posicionamento.
+11/11/2025 11:42 - Thaynara Camara: <Mídia oculta>
+Gostaria de relatar mais um erro importante. Este erro já havia sido corrigido. Mas no outro grupo expliquei que só conseguiria testar quando houvesse outro caso parecido. E hoje tivemos um caso parecido.
+
+Este cliente, pediu para alterarmos o e-mail da conta dela. Neste caso o e-mail é o mesmo utilizado em outra conta da mesma família. E está dando este erro na hora de alterar no backoffice.
+11/11/2025 14:39 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251111-WA0037.jpg (arquivo anexado)
+Não aparece o nome dele novamente.
+Vou verificar se no legado aparecia.
+11/11/2025 14:40 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251111-WA0038.jpg (arquivo anexado)
+É bug
+No legado conseguíamos fazer isso.
+11/11/2025 14:41 - Luiz Paulo Gonçalves Miguel de Jesus: Tentamos realizar a movimentação, porém não foi possível concluir devido à inconsistência identificada durante a verificação.
+11/11/2025 15:42 - Nadini: Essa questão da conta destino a gente tinha lançado uma correção para o cliente Geovanni mas na época não tinham outros casos de testes. Já repassei a demanda para o dev. Uma dúvida: Plataforma de investimentos e plataforma trading são a mesma coisa? <Mensagem editada>
+11/11/2025 15:44 - Nadini: Ainda estamos tratando do caso do erro na fila do pedido 51 (teste) para liberar o pedido 50 (Real). Gostaríamos de saber se essa tarefa do ajuste entre contas é mais prioritária ou se podemos seguir e pegar ela na sequência?
+11/11/2025 15:46 - Thaynara Camara: Sugiro seguir a ordem que foram colocadas aqui no grupo.
+O processamento do pedido 50 primeiro. Pois o cliente já pagou pelo pedido.
+1 - Processamento do pedido 50
+2 - Alteração de e-mail no backoffice
+3 - Ajuste entre contas
+11/11/2025 15:47 - Nadini: Certo
+12/11/2025 09:35 - Luiz Paulo Gonçalves Miguel de Jesus: Bom dia. Assim que possível, eu preciso tirar uma dúvida.
+12/11/2025 09:58 - Nadini: Bom dia Luiz, tudo joia? Você precisa de uma call?
+12/11/2025 10:01 - Luiz Paulo Gonçalves Miguel de Jesus: Não sei se será necessário, eu estou com um pouco de dúvida para configurar as carteiras na blockchain
+12/11/2025 10:24 - Nadini: Vc consegue me enviar um print da tela onde vc está mexendo e qual configuração está tentando fazer, Luiz? Eu consigo agendar uma call com os devs para tirar suas dúvidas, mas queria entender melhor o contexto até para levar a pessoa certa.
+12/11/2025 10:26 - Luiz Paulo Gonçalves Miguel de Jesus: No caso aquele manual que você nos enviou tem uma senha para recuperar as carteiras, a minha dúvida é se eu sigo exatamente como tá no manual ou mudou a senhas?
+12/11/2025 10:26 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251112-WA0000.jpg (arquivo anexado)
+12/11/2025 10:37 - Nadini: A senha vc se refere as palavras-chaves? Essa palavras-chaves elas não mudam, elas são as palavras que devem ser usadas para recuperar a carteira. Mas ao recuperar uma wallet vc vai incluir uma nova senha, para assinar transações e essa senha sim é pessoal. <Mensagem editada>
+12/11/2025 10:38 - Luiz Paulo Gonçalves Miguel de Jesus: Ok, muito obrigado
+12/11/2025 10:39 - Nadini: Se preferir podemos abrir uma call. Só me avisar.
+12/11/2025 11:22 - Luiz Paulo Gonçalves Miguel de Jesus: Acho melhor, tem como me fazer essa gentileza?
+12/11/2025 11:38 - Nadini: Tem sim, consegue falar agora?
+12/11/2025 11:39 - Luiz Paulo Gonçalves Miguel de Jesus: Sim, claro.
+12/11/2025 11:39 - Nadini: Ok, vou abrir uma sala. Só um momento, por favor.
+12/11/2025 11:44 - Nadini: https://meet.google.com/xar-fpns-icu
+12/11/2025 14:08 - Nadini: Oi pessoal, boa tarde.
+Segue um resumo com as atualizações das tarefas em aberto:
+
+1. Processamento do pedido 50
+O teste com o pedido 51 já foi realizado e passou com sucesso.
+Para processar o pedido 50, é necessária uma ação da parte administrativa da BMV, pois o saldo disponível está na plataforma Custódia. Ou seja, primeiro é preciso transferir de Custódia para Trading e, em seguida, processar o pedido 50.
+
+2. Alteração de e-mail no backoffice
+Existe uma regra de negócio na plataforma que não permite usar o mesmo e-mail para autenticação de diferentes contas. Nesse caso, ajustamos a mensagem exibida na tela para explicar ao usuário do backoffice o motivo da falha na operação.
+
+3. Ajuste entre contas
+Havia uma regra implementada no frontend que impedia transferências entre contas do mesmo titular. Por isso, o nome do cliente Mauro Sérgio não estava sendo exibido. Essa regra foi removida.
+
+Já subimos todas as correções em produção e estão liberadas para uso. Abaixo, envio alguns prints com as evidências dos testes e ajustes realizados. <Mensagem editada>
+12/11/2025 14:11 - Nadini: <Mídia oculta>
+12/11/2025 14:11 - Nadini: <Mídia oculta>
+12/11/2025 14:11 - Nadini: <Mídia oculta>
+12/11/2025 14:11 - Nadini: <Mídia oculta>
+12/11/2025 14:17 - Thaynara Camara: <Mídia oculta>
+Boa tarde Nadini,
+Muito obrigada pelo retorno.
+
+1 - A fila ainda tem UCS. Então não há necessidade de transferir UCS para a Trading.
+12/11/2025 14:18 - Thaynara Camara: 2 - Estranho esta colocação, visto que temos vários clientes que administram mais de uma conta com o mesmo e-mail.
+12/11/2025 14:19 - Thaynara Camara: 3 - Ok, faremos o teste.
+12/11/2025 14:20 - Thaynara Camara: <Mídia oculta>
+Tentei processar o pedido 50. Mas deu algum erro.
+Observem que não aparece o nome do erro.
+12/11/2025 14:22 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+Prezados, notei que a janela modal não está responsiva. Dessa forma, os botões “Salvar” e “Cancelar” ficam ocultos para o usuário, não sendo possível realizar o scroll. Foi necessário aplicar zoom out para visualizar o conteúdo completo
+12/11/2025 14:35 - Nadini: Qual fila você está usando, por gentileza?
+12/11/2025 14:36 - Thaynara Camara: Esta fila que está no print
+12/11/2025 14:37 - Nadini: FILA TESTE IMEI (2010) 23/10
+12/11/2025 14:37 - Nadini: A msm usada no teste
+12/11/2025 14:42 - Luiz Paulo Gonçalves Miguel de Jesus: Seria possível, uma Call para tratarmos desse erros?
+12/11/2025 14:55 - Nadini: Ok, vimos aqui no legado que existe um scroll na tela e que no backoffice não está habilitado. Vamos adicionar um scroll para vocês enxergarem os botões no final da tela sem precisar mexer no zoom out.
+12/11/2025 14:56 - Luiz Paulo Gonçalves Miguel de Jesus: Grato pelo retorno
+12/11/2025 17:21 - Nadini: Luiz e Thaynara, estávamos analisando o código primeiro antes de chamar uma call. Mas nesse momento seria necessário incluir vocês porque vamos precisar realizar algumas ações em produção. Vocês conseguem falar por agora?
+12/11/2025 17:23 - Luiz Paulo Gonçalves Miguel de Jesus: Claro, Só um momento.
+12/11/2025 17:28 - Luiz Paulo Gonçalves Miguel de Jesus: vamos lá
+12/11/2025 17:28 - Nadini: Vou abrir a sala, já colo aqui o link, um momento.
+12/11/2025 17:31 - Nadini: https://meet.google.com/bxf-eawy-edz
+12/11/2025 18:32 - Thaynara Camara: <Mídia oculta>
+txt12-11.txt
+12/11/2025 18:33 - Thaynara Camara: <Mídia oculta>
+txt12-11 network.txt
+12/11/2025 18:41 - Luiz Paulo Gonçalves Miguel de Jesus: https://youtu.be/WAYd1Myw81k?t=4478
+12/11/2025 18:42 - Luiz Paulo Gonçalves Miguel de Jesus: A gestão de contas esta nesse momento
+12/11/2025 18:43 - Thaynara Camara: @⁨Nadini⁩ 
+Passando agradecer a todos vocês!
+
+Informo que acabei de tentar processar o pedido 54 (que o vendedor fez agora) e não deu certo.
+12/11/2025 18:46 - Nadini: Oi Thaynara, encerramos a call vc ainda não tinha retornado. Por nada! Obrigada pela ajuda demonstrando as telas tbm. Como eu disse pro Luiz, o time agora vai quebrar um pouco a cabeça, ainda não consiguimos ter uma previsão de retorno mas eu vou atualizando vocês por aqui assim que tiver novidades. 
+
+A prioridade se mantém: O processamento do pedido 50 primeiro. Pois o cliente já pagou pelo pedido.
+1 - Processamento do pedido 50
+2 - ~Alteração~ Vinculação de e-mail no backoffice
+14/11/2025 10:31 - Nadini: Olá pessoal, bom dia! Tudo bem?
+
+Passando para atualizar sobre o pedido 50.
+O Fernando já processou com sucesso. Como essa regra é uma implementação nova, ela estava inicialmente toda referenciada no fluxo do pedido de certificado Tesouro Verde, já que não tínhamos um equivalente no legado do SaaS BMV. Por isso o erro estava acontecendo.
+
+Mas reforço que ainda não conhecemos todas as particularidades desse novo fluxo de certificado no SaaS BMV, podemos dizer que ele acabou de nascer. Então, peço que vocês testem com essa visão e vão nos relatando qualquer comportamento estranho que encontrarem. Isso vai nos ajudar a ajustar tudo rapidamente.
+
+Sobre o pedido 54: ele já está criado no SaaS BMV, mas ainda não executamos porque não sabíamos se cairia na mesma fila. Se vocês quiserem processar esse pedido para validar se a correção está funcionando, seria ótimo.
+14/11/2025 10:37 - Luiz Paulo Gonçalves Miguel de Jesus: Olá, bom dia!
+Agradecemos o retorno e todo o empenho da equipe. Ficamos satisfeitos com a resolução do problema.
+Vamos realizar o processamento dos demais pedidos e, conforme avançarmos, daremos o feedback necessário
+14/11/2025 10:41 - Nadini: Ai Luiz, testa com bastante atenção, lembra que é uma implementação nova e que podem surgir erros, mas achando algum erro, por favor, tira um print da tela toda, que essas evidências nos ajudam a acelerar as correções.
+14/11/2025 10:42 - Luiz Paulo Gonçalves Miguel de Jesus: Ok, muito obrigado
+14/11/2025 10:42 - Nadini: Estamos avançando para a demanda de vinculação de emails para uma mesma conta. Assim que eu tiver um retorno do time atualizo vocês.
+14/11/2025 10:42 - Luiz Paulo Gonçalves Miguel de Jesus: Eu coloquei aqui o tempo do vídeo onde ele explica o componente
+14/11/2025 10:43 - Luiz Paulo Gonçalves Miguel de Jesus: https://youtu.be/WAYd1Myw81k?t=4478
+14/11/2025 11:35 - Nadini: Obrigada, vou passar o min exato para o Fernando.
+17/11/2025 17:53 - Luiz Paulo Gonçalves Miguel de Jesus: Boa tarde, tudo bem
+17/11/2025 17:57 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+Notei dois erros no sistema:
+
+Fluxo do pedido sem validação de documentos:
+Ao processar o pedido sem validar os documentos, ele não é aprovado — o que está correto.
+No entanto, o sistema não permite retornar à etapa anterior para corrigir as pendências, fazendo com que o pedido fique travado sem possibilidade de avançar ou retroceder.
+
+Erro ao alterar as cotações:
+Ao tentar atualizar as cotações, o sistema apresenta um erro de NaN, impedindo que as informações sejam salvas ou atualizadas.
+17/11/2025 17:57 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251117-WA0032.jpg (arquivo anexado)
+17/11/2025 17:58 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251117-WA0030.jpg (arquivo anexado)
+17/11/2025 17:58 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251117-WA0029.jpg (arquivo anexado)
+17/11/2025 17:59 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251117-WA0028.jpg (arquivo anexado)
+17/11/2025 17:59 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251117-WA0031.jpg (arquivo anexado)
+17/11/2025 17:59 - Luiz Paulo Gonçalves Miguel de Jesus: Infelizmente o sistema não permite a correção
+17/11/2025 18:08 - Maria Tereza Umbelino: Manda na miltilegers para lançar
+17/11/2025 18:08 - Maria Tereza Umbelino: E fale q está errado
+17/11/2025 18:09 - Luiz Paulo Gonçalves Miguel de Jesus: Eles estão copiando aqui no grupo, acredito por conta do horário que não seja possível responder, hoje mas vou deixar aqui na minha agenda
+17/11/2025 18:09 - Maria Tereza Umbelino: Ok
+17/11/2025 18:19 - +55 34 8831-6444: Boa noite. Qual a cotação que vocês precisam colocar? Eu posso ajudar a por
+17/11/2025 18:19 - Luiz Paulo Gonçalves Miguel de Jesus: A cotação da UCS
+17/11/2025 18:19 - +55 34 8831-6444: Pode me passar os valores?
+17/11/2025 18:20 - +55 34 8831-6444: Eu coloco aqui rapidamente
+17/11/2025 18:20 - Luiz Paulo Gonçalves Miguel de Jesus: Reais 166,32
+17/11/2025 18:20 - Luiz Paulo Gonçalves Miguel de Jesus: Dólar 26,95
+17/11/2025 18:21 - Luiz Paulo Gonçalves Miguel de Jesus: Euro 31,07
+17/11/2025 18:24 - Luiz Paulo Gonçalves Miguel de Jesus: Muito obrigado pelo suporte viu
+17/11/2025 18:24 - Luiz Paulo Gonçalves Miguel de Jesus: Sei que está um pouco tarde
+17/11/2025 18:27 - +55 34 8831-6444: Foi atualizado. <Mensagem editada>
+18/11/2025 09:40 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+Bom dia, o sistema esta fora do Ar
+18/11/2025 09:40 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+18/11/2025 09:51 - Luiz Paulo Gonçalves Miguel de Jesus: Mensagem apagada
+18/11/2025 10:05 - Nadini: Bom dia Luiz, tudo bem? Foi o sistema do cloudfare. Tudo hospedado em servidor do cloudflare está fora do ar. 
+
+https://www.cloudflarestatus.com
+18/11/2025 10:07 - Nadini: Estamos aguardando eles restabelecerem o serviço para testarmos uma atualização que subimos ontem e liberar pra vcs. Infelizemente teremos que aguardar.
+18/11/2025 10:07 - Luiz Paulo Gonçalves Miguel de Jesus: Percebi, até o GPT caiu
+18/11/2025 10:07 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+18/11/2025 10:15 - Luiz Paulo Gonçalves Miguel de Jesus: Obrigado pelo retorno
+18/11/2025 10:16 - Nadini: Por nada, imagina.
+18/11/2025 12:38 - Nadini: Luiz, a cloud fare já restabeleceu os serviços. A plataforma já está acessível.
+18/11/2025 12:39 - Luiz Paulo Gonçalves Miguel de Jesus: Excelente notícia, muito obrigado. Vou informar o pessoal.
+18/11/2025 12:39 - Maria Tereza Umbelino: Boa
+18/11/2025 12:42 - Nadini: Atualizações: 
+
+Na tela ajuste entre contas > + Novo: 
+
+- O sistema agora repete corretamente o valor a ser transferido da conta de origem para a conta de destino.
+
+- O campo “Conta de Origem” passou a listar corretamente todas as contas, mesmo quando a Plataforma de Origem já está selecionada.
+
+Na tela Gestão de Contas:
+
+- Na área de Gestão de Contas, a busca foi corrigida e agora exibe o cliente correto.
+
+- O sistema agora consegue vincular contas corretamente por meio da funcionalidade de gestão de Contas.
+18/11/2025 12:42 - Luiz Paulo Gonçalves Miguel de Jesus: Maravilhoso
+18/11/2025 12:44 - Luiz Paulo Gonçalves Miguel de Jesus: Ontem listei dois problemas que encontrei. Um deles o Matheus me ajudou a resolver, mas acredito que foi corrigido diretamente via banco. O outro problema ainda persiste e me impediu de concluir o teste do selo, inclusive
+18/11/2025 13:19 - ‎Paulo mudou a imagem deste grupo.
+18/11/2025 14:21 - Nadini: Luiz, esses bugs que vc listou ontem já foram passados para o time e assim que houver uma atualização passo pra vocês.
+18/11/2025 14:31 - Luiz Paulo Gonçalves Miguel de Jesus: Ok, muito obrigado
+18/11/2025 17:50 - Nadini: Luiz, com relação ao pedido 55 e e ao erro relacionado.
+
+A gente verificou no legado que só dava para clicar no botão "Liberar para Pagamento" após a fase "Gerenciar Documentos" ter sido finalizada. Quando construímos o novo backoffice, o frontend não trouxe essa regra, por isso vamos implementar ela agora. Aí a partir dessa nova implementação, primeiro o sistema libera o Gerenciar Documentos para depois desbloquear o Liberar para Pagamento. 
+
+A gente não consegue editar um pedido, no legado, vimos que o pedido liberado para pagamento, pode apenas ser visualizado ou arquivado. Por isso, para avançarmos com o pedido 55, teremos que fazer pelo backend. Podemos usar as informações da imagem que você colocou aqui no grupo para saber a fila, certo?
+18/11/2025 17:52 - Luiz Paulo Gonçalves Miguel de Jesus: No caso esse seria um teste que ficamos de executar
+19/11/2025 14:09 - Nadini: <Mídia oculta>
+Luiz, boa tarde. Atualização sobre a demanda de UI: Incluir scroll no componente de ajuste entre contas. Correção já está em produção.
+
+ Aproveito pra mandar um print da fila de pedido de certificado SaaS BMV com botão de "Liberar  pagamento" desabilitado pra clique, seguindo a regra do legado, primeiro realizar todo o necessário em Gerenciar Documentos e depois, Liberar para Pagamentos.
+19/11/2025 14:09 - Nadini: <Mídia oculta>
+19/11/2025 14:15 - Nadini: Com isso fechamos todos os pedidos abertos no período de 06/11/2025 a 14/11/2025. <Mensagem editada>
+19/11/2025 14:51 - Thaynara Camara: <Mídia oculta>
+Pessoal, boa tarde.
+Vamos fazer nossa primeira transferência de UCS.
+Já no inicio, notei que este valor total está errado. 
+Neste total, repete-se o valor da taxa. Vou deixar logo abaixo um print do legado.
+19/11/2025 14:52 - Thaynara Camara: <Mídia oculta>
+Print legado
+19/11/2025 15:25 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+Prezados, ainda não conseguimos alterar o valor da UCS na aba de cotações. Já realizamos a atualização, mas o componente ainda não está funcionando corretamente.
+19/11/2025 15:38 - Nadini: Luiz, pode encaminhar novamente o print da tela toda?
+19/11/2025 15:39 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+Segue o Print
+19/11/2025 15:40 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+19/11/2025 15:42 - Nadini: Qual o valor da cotação você digitou?
+19/11/2025 15:44 - Luiz Paulo Gonçalves Miguel de Jesus: Eu reduzi um centavo só para testar
+19/11/2025 15:45 - Luiz Paulo Gonçalves Miguel de Jesus: 166,31
+19/11/2025 15:52 - Nadini: Luiz, eu acabei de testar, atualizei o valor para R$166,33 e a cotação foi atualizada com sucesso. Estamos achando estranho porque no seu print aparece NaN que significa que não foi detectado o número quando foi digitado. Tenta colocar com ponto no lugar de vírgula pra ver se funciona?
+19/11/2025 16:15 - Luiz Paulo Gonçalves Miguel de Jesus: Se eu tento colocar. Ele adiciona a casa decimal
+19/11/2025 16:16 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251119-WA0026.jpg (arquivo anexado)
+19/11/2025 16:18 - Nadini: Vc pode falar agora? Vou chamar um dev pra acompanhar essa alteração, com inspecionar elemento aberto.
+19/11/2025 16:18 - Luiz Paulo Gonçalves Miguel de Jesus: posso sim
+19/11/2025 16:32 - Nadini: https://meet.google.com/jwb-uhso-isn?authuser=0
+19/11/2025 17:23 - Nadini: Luiz, para acessar o legado, usamos essas credenciais: 
+
+alekaus@gmail.com
+Prosperidade@2025
+19/11/2025 17:24 - Nadini: Perfil: Administrador
+19/11/2025 17:33 - Luiz Paulo Gonçalves Miguel de Jesus: Muito obrigado
+19/11/2025 17:35 - Nadini: Por nada. Vc precisa da URL para o sistema legado?
+19/11/2025 17:36 - Luiz Paulo Gonçalves Miguel de Jesus: Por favor
+19/11/2025 17:36 - Nadini: https://legado-backoffice.bmv.global/
+21/11/2025 12:21 - Nadini: Boa tarde pessoal, tudo bem? 
+
+Atualização sobre o pedido de transferência:
+
+O valor total já repete o mesmo valor do mostrado em taxa.
+21/11/2025 12:22 - Nadini: <Mídia oculta>
+21/11/2025 12:42 - Thaynara Camara: Boa tarde,
+Muito obrigada Nadini.
+21/11/2025 13:00 - Nadini: Oi Thaynara, por nada, imagina. 
+
+Ainda podem surgir erros pq esse processo está sendo executado pra primeira vez. E como nós não conhecemos a regra de negócio de transferência não podemos nos antecipar nas correções, senão podemos até causar outros erros. Então, estamos atuando conforme vai chegando o chamado. Ok?
+21/11/2025 13:46 - Thaynara Camara: Compreendo.
+21/11/2025 13:49 - Nadini: Obrigada Thaynara.
+24/11/2025 10:39 - Thaynara Camara: <Mídia oculta>
+Prezados, bom dia!
+
+O Ajuste entre Contas #2396 é da conta Custódia para a conta Investimento (mesmo destinatário). Mas conforme imagem, está aparecendo errado.
+24/11/2025 10:40 - Thaynara Camara: <Mídia oculta>
+Quando clico nos 3 pontinhos e escolho Visualizar: aparece corretamente.
+24/11/2025 11:26 - Thaynara Camara: <Mídia oculta>
+24/11/2025 11:26 - Thaynara Camara: <Mídia oculta>
+24/11/2025 11:27 - Thaynara Camara: Agora sobre aquele teste que fizemos.
+*Para um e-mail administrar mais de uma conta.*
+
+Não deu certo 😅
+A cliente demorou um pouco para responder. Mas quando ela acessa a conta aparece apenas uma conta. A do Antônio. <Mensagem editada>
+24/11/2025 11:27 - Thaynara Camara: Quando entramos no backoffice a conta da Rosa está atrelada a conta do Antônio. Mas para a cliente não aparece.
+24/11/2025 12:05 - Nadini: Boa tarde pessoal. Oi Thaynara, eu vou cadastrar esses 2 bugs para o time. Em breve trago atualizações.
+24/11/2025 12:05 - Thaynara Camara: Muito Obrigada Nadini
+24/11/2025 12:05 - Nadini: Essa tela é do backoffice? Como eu chego nela?
+24/11/2025 12:06 - Thaynara Camara: Não. Essa tela é do cliente.
+24/11/2025 12:07 - Thaynara Camara: É a carteira do cliente. 
+Quando ele loga, cai direto nesta conta.
+24/11/2025 12:39 - Nadini: Mensagem apagada
+24/11/2025 12:46 - Nadini: Tá, ela logou pelo email Ludhianaguimaraes@gmail.com e quando ela acessa a carteira do bmv digital tem que aparecer as contas vinculas do Antonio e da Rosa.
+24/11/2025 12:48 - Nadini: Podemos deixar esse perfil bloqueado temporariamente para simular esse cenário? Para isso vamos precisar alterar a senha da conta e bloquear a conta (por no mínimo 4 horas).
+24/11/2025 12:48 - Nadini: Ela não vai conseguir acessar enquanto isso.
+24/11/2025 13:48 - Thaynara Camara: Sem problemas. Podem sim!
+24/11/2025 15:46 - Nadini: Atualização sobre a cotação. 
+
+Luiz, realizamos uma correção para tratar a questão do separador decimal da cotação. Você consegue testar e validar essa entrega? Obrigada!
+24/11/2025 16:00 - Luiz Paulo Gonçalves Miguel de Jesus: Olá boa tarde, consegui realizar
+24/11/2025 16:01 - Luiz Paulo Gonçalves Miguel de Jesus: Obrigado pelo retorno
+24/11/2025 16:04 - Nadini: Por nada, Luiz. Que bom que funcionou. Vamos seguir com as próximos erros relatados.
+25/11/2025 10:05 - Nadini: Pessoal, bom dia, tudo bem?
+Thaynara, você teria outro exemplo de cliente que possua múltiplas contas vinculadas  (conta: email)? Precisamos de mais um caso para analisar. Como não temos acesso ao front do app.bmvdigital, a ideia é fazer uma comparação entre o que funciona e o que fizemos, para entender o comportamento no BMV Digital e a regra de negócio. Se alguém tiver prints, IDs ou exemplos adicionais, por favor compartilhem aqui.
+
+Obrigado!
+25/11/2025 10:10 - Thaynara Camara: Bom dia Nadini,
+Estou bem e você?
+
+A própria Ludhiana possui um outro e-mail ludhiana_guimaraes@hotmail.com onde ela administra duas contas das empresas dela.
+
+Vou procurar mais exemplos.
+25/11/2025 10:19 - Thaynara Camara: departamentofiscal@rscontabilidadeap.com
+25/11/2025 10:21 - Thaynara Camara: thaynara@bmv.global
+25/11/2025 10:36 - Nadini: Obrigada Thaynara, vamos usar essas 3 contas.
+25/11/2025 11:05 - Thaynara Camara: <Mídia oculta>
+25/11/2025 11:05 - Thaynara Camara: Quando vou fazer um cadastro como cliente no bmvdigital.global e insiro um e-mail já existente, o sistema reconhece o e-mail automaticamente e me pergunta se desejo associar a conta. 
+
+Acabei de fazer este teste com o e-mail thaynara_jc@hotmail.com <Mensagem editada>
+25/11/2025 11:08 - Nadini: Será que o vínculo acontece em duas etapas? Porque quando usamos o Gmail ludhiana não fizemos essa parte, apenas vinculamos no backoffice.
+25/11/2025 11:08 - Nadini: Essa regra de negócio ainda na está clara pra gente
+25/11/2025 11:22 - Thaynara Camara: Não.
+Só quis mostrar que o cliente consegue fazer o vínculo quando ele faz um novo cadastro.
+Ou seja, é uma regra de negócio comum.
+
+Geralmente fazemos pelo backoffice quando o cadastro já existe. Pois o cliente não consegue editar o e-mail cadastrado.
+No backoffice é outro procedimento. Tentamos fazer junto com os meninos, mas não deu certo.
+25/11/2025 13:45 - Nadini: Atualização sobre o "ajuste de contas":
+
+Realizada a correção no frontend para buscar e  apresentar a informação da plataforma correta; <Mensagem editada>
+25/11/2025 13:46 - Nadini: <Mídia oculta>
+25/11/2025 14:29 - Thaynara Camara: Certo!
+Obrigada Nadini
+25/11/2025 16:40 - Nadini: Por nada, imagina.
+26/11/2025 11:37 - Nadini: <Mídia oculta>
+Pessoal, bom dia. Conseguimos resolver o cenário de vincular contas. Já retorno com mais um print pra explicar como vocês vão  fazer para novos casos de vincular contas.
+26/11/2025 12:16 - Nadini: <Mídia oculta>
+Para vincular contas a um único email de acesso: 
+
+- Em Usuários, abrir gerenciar e usar o botão "+ novo" para criar uma nova conta; 
+- No modal para criar nova conta, usar o e-mail desejado para o vínculo;
+26/11/2025 12:16 - Nadini: <Mídia oculta>
+26/11/2025 12:17 - Nadini: OBS.: Para os casos onde o email já existir no BD do backoffice, como no caso da Rosa, teremos que desabilitar a conta antiga (via backend) e migrar as informações para a conta nova (via backend).
+26/11/2025 12:19 - Nadini: Essa foi a única forma que encontramos de realizar o vínculo. Foi a única regra que encontramos que *centraliza os acessos de múltiplas contas através de um único email de login* . Visto que nossa condição de não ter o front do bmv digital complica o entendimento das regras do bmvdigital x backoffice.
+26/11/2025 17:58 - Thaynara Camara: Boa tarde Nadini
+26/11/2025 17:58 - Thaynara Camara: Em primeiro lugar, obrigada pelo retorno.
+26/11/2025 17:59 - Thaynara Camara: Bem, então vamos desabilitar o cadastro da Rosa e fazer ele novamente?
+Mas aí ela vai perder as UCS que estão na conta antiga. Não vai?
+26/11/2025 18:08 - Nadini: Boa tarde Thaynara, no caso da Rosa, nós criamos uma conta nova, através do bando de dados e referênciamos os ids antigos. Por isso, ela não vai perder ucs, porque vínculo está para os ids antigos. O saldo dela continua o mesmo que ela já tinha antes.
+26/11/2025 18:10 - Nadini: Ai no caso de um outro cliente que já exista no banco de dados, você poderia criar usando o botão + novo, e depois nos avisar para alteramos os ids para serem os mesmos da conta antiga. Isso para não precisar ter que transferir ucs da conta antiga para a conta nova.
+26/11/2025 18:12 - Nadini: É um pouco confuso mas a gente consegue driblar o cenário de transferir ucs dessa forma. Para tratar o vínculo, o melhor cenário, é vincular uma conta nova. Contas antigas infelizmente vão precisar passar por essa tratativa, devido a regra de negócio do legado . <Mensagem editada>
+26/11/2025 18:13 - Nadini: A gente pode deixar esse ponto anotado para uma futura melhoria.
+26/11/2025 18:14 - Nadini: Por gentileza, pode pedir a ludhiana pra entrar na plataforma e conferir se o saldo da Rosa está correto?  Assim a gente valida a entrega.
+27/11/2025 09:31 - Thaynara Camara: Bom dia Nadini,
+27/11/2025 09:32 - Thaynara Camara: Tá certo. Muito obrigada!
+27/11/2025 09:33 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251127-WA0007.jpg (arquivo anexado)
+Bom dia. Ao subir a safra para esse produtor, o sistema seleciona as duas propriedades ao mesmo tempo; porém, no cadastro, elas possuem IDs diferentes.
+27/11/2025 09:33 - Thaynara Camara: Falei com ela. Assim que ela me retornar te dou um feedback.
+27/11/2025 09:34 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251127-WA0006.jpg (arquivo anexado)
+27/11/2025 09:37 - Thaynara Camara: @⁨Nadini⁩ 
+Só para te explicar o que estamos fazendo:
+Quando a Alessandra foi subir as safras, ela fez algumas observações de erro em uma planilha. 
+Pegamos a planilha dela e notamos que a maioria não estava mais com erro. Então o Luiz está subindo as safras destas fazendas.
+No entanto ele encontrou o erro acima. <Mensagem editada>
+27/11/2025 09:38 - Thaynara Camara: Vimos também na planilha dela que, na hora de subir a safra da fazenda Fazenda Nossa Senhora do Carmo S/A, ela errou a quantidade de UCS.
+Foi realizado alguma correção sobre esse assunto?
+27/11/2025 09:39 - Nadini: Não, nós não tivemos acesso a essa planilha com os apontamentos da Alessandra. Estamos até com uma tarefa, que foi aberta em outubro, com status pendente porque não tivemos esse retorno até agora. <Mensagem editada>
+27/11/2025 09:39 - Nadini: Bom dia
+27/11/2025 09:41 - Thaynara Camara: Me lembro dela relatar que cometeu este erro no outro grupo. Mas não acompanhei os desdobramentos.
+27/11/2025 09:41 - Nadini: Então, ela ficou de olhar uma planilha e retornar pra gente.
+27/11/2025 09:42 - Nadini: Foi no período que eu estava de férias. As conversas no grupo não apontam pra nenhum erro ainda.
+27/11/2025 09:42 - Thaynara Camara: Certo. Eu e o Luiz estamos estudando internamente como corrigir este e outros erros que encontramos.
+27/11/2025 09:43 - Thaynara Camara: Assim que formos realizar estas correções, vamos relatar à vocês.
+Até mesmo para vocês acompanharem.
+27/11/2025 09:43 - Nadini: Obrigada Thaynara. Já vou passar esses 2 primeiros casos para os devs.
+27/11/2025 09:50 - Nadini: Consegue me dar algumas informações? Fiquei com umas dúvidas: 
+- Essa safra é de 2010? 
+- A data de registro pode ser de 2011 mesmo?? 
+- Você pode mostrar como está sendo feito no legado essa seleção(print)? Porque tem o campo de ID e tem o campo de código, qual regra o legado usa? <Mensagem editada>
+27/11/2025 09:59 - Nadini: Sobre esse erro tbm tenho dúvidas: 
+- Qual o valor correto de UCS?
+- O saldo ainda está cadastrado com erro? 
+- Qual a safra usada para a Fazenda Nossa Senhora do Carmo S/A?
+- Qual o ano da safra?
+27/11/2025 10:08 - Luiz Paulo Gonçalves Miguel de Jesus: Só um momento
+27/11/2025 10:11 - Thaynara Camara: Sobre este assunto:
+Peço que não tomem nenhuma providência por enquanto. Eu e o Luiz estamos estudando internamente como resolver.
+Pois se ela subiu a safra, foi para Blockchain. E o erro foi dela e não do sistema. Estamos pensando em subir uma safra complementar.
+Mas se tiverem outra sugestão, estamos abertos.
+
+- Qual o valor correto de UCS? Era para ser 12.242.712
+- O saldo ainda está cadastrado com erro? Sim
+- Qual a safra usada para a Fazenda Nossa Senhora do Carmo S/A? 2010
+- Qual o ano da safra? 2010
+27/11/2025 10:13 - Nadini: Eu vou verificar se os dev tem alguma sugestão para esse caso.
+27/11/2025 10:24 - Nadini: Pessoal, pediram pra vcs tentarem fazer a safra complementar só com o valor que ficou faltando de UCS e nos avisar se ocorrer algum bloqueio por regra de negócio. Isso para a Fazenda Nossa Senhora do Carmo S/A. <Mensagem editada>
+27/11/2025 10:25 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+27/11/2025 10:25 - Luiz Paulo Gonçalves Miguel de Jesus: Mensagem apagada
+27/11/2025 10:26 - Luiz Paulo Gonçalves Miguel de Jesus: *1. Sobre a safra e a data de registro*
+– Sim, a safra é de *2010*.
+– A data correta de registro é *16/12/2011*, conforme consta no legado.
+
+*2. Sobre a seleção das propriedades (legado x sistema novo)*
+No sistema legado é possível selecionar *individualmente* a fazenda, mesmo quando o ID não aparece listado.
+No sistema novo isso não é possível: ao subir a safra o sistema está *selecionando automaticamente as duas propriedades, mesmo elas tendo **IDs diferentes* no cadastro.
+
+
+
+** ID #209 Fazenda São José**
+
+* *Município:* Arinos
+* *Longitude:* -57,319577317397
+* *Latitude:* -12,1967182471261
+* *Área:* 106.893
+* *Código:* BRBMTCPR00Y4
+* *Safra:* 2010
+* *Data de Registro:* 16/12/2011
+* *Produtor:* Jacob Lourenço Tessari
+
+---
+
+### *Registro 2 — ID #208 — Fazenda São José*
+
+* *Município:* Arinos
+* *Longitude:* -57,3124876139229
+* *Latitude:* -12,1107409700266
+* *Área:* 382.432
+* *Código:* BRBMTCPR00Y4
+* *Safra:* 2010
+* *Data de Registro:* 16/12/2011
+* *Produtor:* Jacob Lourenço Tessai
+27/11/2025 10:29 - Thaynara Camara: Nadini,
+Mesmo a Safra sendo de 2010. Optamos por colocar no sistema a data do registro. E fizemos isso para todas as fazendas lançadas até o momento. Não acho que este seja o problema.
+28/11/2025 16:23 - Thaynara Camara: <Mídia oculta>
+Pessoal, boa tarde.
+Tudo bem?
+
+Esse processamento deu falha. Poderiam nos ajudar por favor?
+28/11/2025 16:26 - Nadini: Boa tarde Thaynara. Tudo bem e vc? Vc consegue mandar o print da tela toda? Esse print que vc enviou não mostra o URL e o menu, não temos como saber qual pedido de selo é. <Mensagem editada>
+28/11/2025 16:38 - Thaynara Camara: <Mídia oculta>
+01/12/2025 14:34 - Luiz Paulo Gonçalves Miguel de Jesus: Boa tarde senhoras e senhores, alguma posição referente a este caso?
+01/12/2025 14:39 - Nadini: Oi Luiz, boa tarde. Ainda estamos olhando. Talvez mais pro final do dia tenha alguma atualização.
+01/12/2025 14:40 - Luiz Paulo Gonçalves Miguel de Jesus: Ok muito obrigado
+01/12/2025 15:47 - Nadini: Luiz, preciso de umas informações sobre o pedido 905. Quais são as filas e plataformas que devemos utilizar para processar o pedido?
+01/12/2025 15:48 - Nadini: <Mídia oculta>
+01/12/2025 16:05 - Luiz Paulo Gonçalves Miguel de Jesus: Só um momento, já te passo essa informação
+01/12/2025 16:27 - Thaynara Camara: A fila privada está correta
+A de Governo é a fila do Estado do Amapá
+01/12/2025 16:29 - Thaynara Camara: <Mídia oculta>
+01/12/2025 16:29 - Thaynara Camara: Essa
+01/12/2025 16:34 - Nadini: Ok
+01/12/2025 17:33 - Nadini: Pessoal, boa tarde novamente. 
+
+*Bug* 
+- Nova Safra: ao subir a safra o sistema está selecionando automaticamente as duas propriedades, mesmo elas tendo **IDs diferentes no cadastro. O sistema deve permitir o usuário de escolher qual propriedade quer selecionar, individualmente. O sistema só deve permitir selecionar 1 propriedade por vez. 
+
+*Atualização* : 
+- Foi disponibilizado no ambiente de produção da BMV a correção que possibilita escolher entre fazendas com nomes iguais; 
+*Melhoria* : 
+- Adicionado o código da fazenda, ao lado do nome da fazenda, para ajudar a identificação; <Mensagem editada>
+01/12/2025 17:34 - Nadini: <Mídia oculta>
+01/12/2025 17:43 - Luiz Paulo Gonçalves Miguel de Jesus: Muito obrigado pela resolução deste problema, vou fazer a validação
+01/12/2025 17:52 - Luiz Paulo Gonçalves Miguel de Jesus: Concluído, muito obrigado
+01/12/2025 17:54 - Nadini: Por nada. Ainda estamos trabalhando no pedido 905.
+01/12/2025 17:58 - Luiz Paulo Gonçalves Miguel de Jesus: Compreendido. Agradecemos pelo empenho de toda a equipe. Permanecemos no aguardo.
+02/12/2025 17:17 - Nadini: Boa tarde pessoal, tudo bem? Estamos com problemas pra identificar a regra de negócio sobre o bug que está ocorrendo no pedido 905. Vocês poderiam entrar em chamada pra tirar algumas dúvidas?
+02/12/2025 17:42 - Thaynara Camara: Boa tarde,
+Eu posso Nadini
+02/12/2025 17:46 - Nadini: Boa, vou abrir a sala
+02/12/2025 17:46 - Nadini: só um momento
+02/12/2025 17:49 - Nadini: Thaynara, nosso dev entrou em outra chamada. Vamos precisar deixar para amanhã. Posso deixar agendado um horário amanhã pela manhã?
+02/12/2025 17:50 - Thaynara Camara: Sem problemas.
+Mas poderia ser na parte da tarde?
+02/12/2025 17:51 - Nadini: Pode ser sim, sem problemas. Que horário na parte da tarde? 13h30? 14h?
+02/12/2025 17:51 - Thaynara Camara: 14:00
+02/12/2025 17:51 - Nadini: Certo, vou colocar na agenda
+02/12/2025 17:51 - Thaynara Camara: Muito obrigada Nadini
+02/12/2025 17:53 - Nadini: Por nada, Thaynara, imagina.
+02/12/2025 17:53 - Nadini: Convite enviado para você e Luiz. Obrigada!
+02/12/2025 18:50 - Luiz Paulo Gonçalves Miguel de Jesus: Combinado
+02/12/2025 18:50 - Luiz Paulo Gonçalves Miguel de Jesus: Boa tarde
+03/12/2025 14:51 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251203-WA0033.jpg (arquivo anexado)
+@⁨Nadini⁩ Boa tarde. Poderia encaminhar esta tela ao time de desenvolvimento? Verifiquei, após nossa reunião, que no legado já existem essas opções de fila no livro de ofertas
+03/12/2025 14:51 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251203-WA0034.jpg (arquivo anexado)
+03/12/2025 14:51 - Nadini: Posso sim
+03/12/2025 14:52 - Luiz Paulo Gonçalves Miguel de Jesus: Muito obrigado
+03/12/2025 16:23 - Nadini: Por nada, pessoal!
+04/12/2025 12:14 - Thaynara Camara: <Mídia oculta>
+Bom dia @⁨Nadini⁩ 
+Notamos que o pedido 905 foi processado. Mas há dois lançamentos para este pedido. 2 UCS.
+Era apenas uma UCS.
+04/12/2025 12:22 - Thaynara Camara: <Mídia oculta>
+Encontramos mais uma. Foram 3 UCS
+04/12/2025 12:27 - Nadini: Oi Thaynara, bom dia. Deixa eu conferir com Fernando, acho que ele ainda está testando porque ele na me passou uma conclusão do que causou o problema e o que ele teve que fazer para corrigir.
+04/12/2025 12:28 - Thaynara Camara: <Mídia oculta>
+@⁨Nadini⁩ 
+Notei outro bug.
+Precisamos processar essas duas transferências.
+E está dando erro. 
+Coloca aí na listinha por favor.
+04/12/2025 12:28 - Nadini: Vou alerta-lo sobre esses lançamentos de ucs que já estão surgindo em produção que vc me passou. Obrigada!
+04/12/2025 12:40 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+Ainda sobre este erro, verifiquei que foram aposentadas, ao todo, 4 UCs. Assim, o valor correto para este cliente é de __1UCs.
+04/12/2025 12:43 - Nadini: Ok, ele confirmou que ainda está testando. Ele não fez nenhuma implementação.
+04/12/2025 12:44 - Luiz Paulo Gonçalves Miguel de Jesus: OK, grato pela atenção
+04/12/2025 14:30 - Nadini: Boa tarde pessoal. O Fernando subiu uma implementação em produção agora, e ele gostaria que vcs validassem todo o fluxo relacionado ao pedido 905. Ps.: As operações que apareceram no sistema eram realmente testes e foram removidas do sistema.
+04/12/2025 14:36 - Thaynara Camara: Mensagem apagada
+04/12/2025 14:36 - Thaynara Camara: Mensagem apagada
+04/12/2025 14:36 - Thaynara Camara: Mensagem apagada
+04/12/2025 14:41 - Thaynara Camara: Me desculpem pessoal.
+Era em outro grupo!
+04/12/2025 17:01 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+04/12/2025 17:01 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+Boa tarde, a primeira tela esta correta mas, quando vou ver o saldo do cliente ele consta 4 UCS Aposentada, e uma observação que ocorre no legado é que o status aparece res - apo
+04/12/2025 17:01 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251204-WA0044.jpg (arquivo anexado)
+04/12/2025 17:02 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251204-WA0043.jpg (arquivo anexado)
+Aqui deveria constar somente 1 UCS aposentada?
+04/12/2025 17:07 - Nadini: Luiz, eu não consegui entender direito o que você colocou.
+04/12/2025 17:07 - Nadini: Mensagem apagada
+04/12/2025 17:07 - Luiz Paulo Gonçalves Miguel de Jesus: No legado a legenda da transação aparece dessa forma
+04/12/2025 17:07 - Nadini: <Mídia oculta>
+04/12/2025 17:07 - Nadini: Pode colocar o print da tela toda, por favor?
+04/12/2025 17:08 - Nadini: Esse print é do legado?
+04/12/2025 17:08 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251204-WA0046.jpg (arquivo anexado)
+04/12/2025 17:08 - Luiz Paulo Gonçalves Miguel de Jesus: Ao invés de dis aparece como reservado para aposentadoria
+04/12/2025 17:08 - Luiz Paulo Gonçalves Miguel de Jesus: Esse último é do legado <Mensagem editada>
+04/12/2025 17:09 - Nadini: dis de disponível?
+04/12/2025 17:09 - Luiz Paulo Gonçalves Miguel de Jesus: Sim
+04/12/2025 17:09 - Luiz Paulo Gonçalves Miguel de Jesus: No sistema de produção aparece como dis para dis
+04/12/2025 17:10 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251204-WA0047.jpg (arquivo anexado)
+04/12/2025 17:10 - Luiz Paulo Gonçalves Miguel de Jesus: É só uma observação do front que eu fiz
+04/12/2025 17:11 - Luiz Paulo Gonçalves Miguel de Jesus: No caso seria o saldo destino
+04/12/2025 17:12 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251204-WA0048.jpg (arquivo anexado)
+04/12/2025 17:18 - Nadini: Eu realmente estou com um pouco de dificuldade ainda. Me ajuda aqui: 
+
+- No primeiro print é uma tela do legado e no front o saldo mostra tags erradas. *Correção* : Trocar para *RES* to *APO*
+- No segundo print mostra parcialmente uma tela que tem uma quantidade 4 UCS aposentadas. O certo é exibir 1 UCS. *Correção* : Verificar quantidade de UCS aposentadas;
+- No terceiro print, eu não entendi. O que deveria ser o saldo de destino? 
+
+
+Pessoal, vale lembrar que sempre que puderem trazer o máximo de informação sobre a tela (print, vídeo, descrição sobre o erro). Vale lembrar que nós também não conhecemos todas as regras de negócio do sistema e para agilizar a correção dos bugs precisamos ter uma visão/descrição do que está acontecendo. <Mensagem editada>
+04/12/2025 17:23 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+Vamos lá: este print é o saldo atua do cliente após o processamento do pedido 4 UCS. Ocorre que apenas uma UCS foi efetivamente aposentada. Portanto, o saldo correto de UCS para este cliente deveria ser *1* *UCS  APOSENTADA*
+04/12/2025 17:26 - Luiz Paulo Gonçalves Miguel de Jesus: No segundo print, observei que o sistema atual utiliza filtros distintos para Saldo de Origem e Saldo de Destino, apresentando as categorias Aposentado, Reservado e Disponível.
+
+No entanto, enquanto o ambiente de produção utiliza a legenda DIS > DIS, o sistema legado apresenta a combinação RES > APO para o mesmo tipo de movimentação. Isso indica uma diferença de nomenclatura ou mapeamento entre os dois ambientes
+04/12/2025 17:27 - Luiz Paulo Gonçalves Miguel de Jesus: Peço perdão pela falta de clareza.
+04/12/2025 18:16 - Nadini: Certo. Sobre os filtros distintos: durante o desenvolvimento, apresentamos a tela de movimentações para a Alessandra com menos filtros para acelerar o processo. Essa decisão foi tomada para garantir que a plataforma estivesse disponível rapidamente para as operações com os clientes externos da BMV. Por isso, optamos por priorizar esses três filtros, que já permitiam filtrar todas as movimentações necessárias. Portanto, não se trata de um bug, mas podemos incluir esses filtros adicionais como uma nova demanda. Caso queiram seguir por esse caminho, ajustamos o planejamento e priorizamos essa implementação.
+04/12/2025 18:22 - Nadini: *Atualização* : Este bug já está corrigido. Estava relacionado a uma sujeira no banco de dados devidos aos múltiplos testes que o dev fez para simular a ocorrência do mesmo erro no sistema. 
+
+Por favor, validar se existe algo mais relacionado ao pedido 905 (Tesouro verde -> Pedido de selo) que apresenta erro.
+04/12/2025 19:22 - Luiz Paulo Gonçalves Miguel de Jesus: Vou verificar com a diretoria e retomamos a este assunto futuramente
+05/12/2025 10:27 - Thaynara Camara: Bom dia @⁨Nadini⁩ 
+Acho que a única correção de bug que falta é esta, correto?
+Se puderem priorizar isso. Os clientes estão impacientes.
+05/12/2025 10:30 - Thaynara Camara: Certo. Então @⁨Luiz Paulo Gonçalves Miguel de Jesus⁩ Vamos anotar essa observação para um segundo momento.
+Ainda estão surgindo muitos bugs. Vamos focar neles por enquanto.
+05/12/2025 10:31 - Thaynara Camara: Agora, esta questão acho importante corrigir. 
+Mas peço que o erro em processar as transferências seja priorizado.
+05/12/2025 10:48 - Nadini: Oi Thaynara, bom dia. 
+
+Certo, vamos priorizar esse da transferência. Falamos dele agora pouco, o dev tá tentando entender o cenário ainda. Mas já adianto que como sexta é um pouco corrido, não tenho certeza se vamos conseguir resolver ele ao longo do dia porque é um problema no backend, neste caso. Mas já estamos olhando. 
+
+Como ontem surgiram mtas msgs e não tinha uma diretriz de prioridade acabamos resolvendo problemas de mais simples resolução e não priorizamos a transferência. Mas vou reforçar que seus clientes estão cobrando pra agilizar o nosso lado.
+05/12/2025 10:51 - Nadini: Tem esse e o bug na tela de estoque -> movimentações que na coluna saldos mostra uma label “dis para dis” e precisa mostrar “res para apo” <Mensagem editada>
+05/12/2025 10:54 - Luiz Paulo Gonçalves Miguel de Jesus: Bom dia, Sim, mas esse é de menor prioridade, acredito também que haja um erro nos ícones das transações talvez tenha correlação, se quiser podemos falar sobre estes bugs posteriormente. O que acham?
+05/12/2025 10:58 - Nadini: Bom dia Luiz, esse bug nos ícones já havia sido relatado? Não encontrei aqui no chat uma referência e não tenho uma anotação de entrada dele no nosso board interno. <Mensagem editada>
+05/12/2025 11:00 - Luiz Paulo Gonçalves Miguel de Jesus: Estou fazendo levantamento das anotações e vou passar para vocês aquilo que encontramos pois como tinha outra equipe tratando desse sistema está vendo alguns desencontros.
+05/12/2025 11:01 - Luiz Paulo Gonçalves Miguel de Jesus: Porém como o sistema tá anotando tudo como distribuição às vezes corrigindo a movimentação o ícone seja ajustado automaticamente por isso que pode haver correlação
+10/12/2025 12:59 - Nadini: Olá, boa tarde a todos. Subimos uma correção para o pedido de transferência 340. O dev pediu para vocês validarem  porque essa fase foi processada mas podem surgir outros bugs relacionados.
+10/12/2025 13:01 - Luiz Paulo Gonçalves Miguel de Jesus: Olá, boa tarde. Obrigado pelo retorno. Vamos validar as informações e retornaremos em seguida.
+10/12/2025 14:16 - Thaynara Camara: <Mídia oculta>
+Boa tarde @⁨Nadini⁩ 
+Deu erro. Mas não apareceu qual.
+10/12/2025 14:21 - Luiz Paulo Gonçalves Miguel de Jesus: 
+10/12/2025 14:23 - Nadini: Certo
+10/12/2025 14:33 - Nadini: Thaynara, estamos com uma dúvida na regra de negócio. Quando você está no processamento do pedido, você deveria poder escolher a plataforma de origem Custódia para plataforma destino Investimento?
+10/12/2025 14:49 - Thaynara Camara: Eu acredito que não. Pois, para o cliente conseguir solicitar esta transferência eu preciso movimentar as UCS dele da custódia para Investimento ou Trading.
+10/12/2025 14:51 - Nadini: Você consegue falar por agora?
+10/12/2025 14:53 - Thaynara Camara: Eu acabei de constatar que as UCS do Mauro estão na Trading.
+10/12/2025 14:54 - Thaynara Camara: Vou transferir para Investimentos e ver se vai dar certo.
+10/12/2025 14:54 - Nadini: Ah, certo. Estamos no aguardo.
+10/12/2025 14:57 - Thaynara Camara: Sua pergunta me fez pensar. 😅
+E constatei isso. 
+Acabei de fazer o teste e deu certo. Processou. 😅
+10/12/2025 14:58 - Nadini: Ah, joia! E a outra ordem, a 341?
+10/12/2025 14:58 - Thaynara Camara: Deu certo também!
+10/12/2025 14:58 - Nadini: Opa! Maravilha!
+10/12/2025 14:58 - Luiz Paulo Gonçalves Miguel de Jesus: Boa tarde pessoal
+10/12/2025 15:01 - Thaynara Camara: Muito obrigada @⁨Nadini⁩
+10/12/2025 15:02 - Thaynara Camara: Estamos com um assunto urgente para tratar com vocês.
+Estávamos apenas aguardando finalizarmos esse erro.
+Ao cadastrar as safras, notamos que existem fazendas não cadastradas no sistema. 
+O Luiz irá explanar melhor.
+10/12/2025 15:02 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251210-WA0018.jpg (arquivo anexado)
+Estou subindo as safras de 2010 e notei que diversas fazendas não estão aparecendo corretamente no. Mesmo digitando o nome ou o documento do produtor, o sistema não apresenta nenhuma fazenda vinculada. Isso ocorreu com vários produtores.
+10/12/2025 15:04 - Luiz Paulo Gonçalves Miguel de Jesus: Eu queria dar prioridade 1 nesse tema pois é subida de Safra
+10/12/2025 15:05 - Nadini: Certo
+10/12/2025 15:05 - Luiz Paulo Gonçalves Miguel de Jesus: Se quiser eu tenho uma listagem com as fazendas
+10/12/2025 15:05 - Nadini: Sim, por favor
+10/12/2025 15:05 - Luiz Paulo Gonçalves Miguel de Jesus: Porém eu notei que no sistema negado tem 254 fazendas e no nosso sistema aqui 203
+10/12/2025 15:07 - Nadini: Nesse caso em específico, do Francisco, a conta dele é nova ou ele já existia no legado?
+10/12/2025 15:08 - Luiz Paulo Gonçalves Miguel de Jesus: Estava no legado
+10/12/2025 15:13 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+BMV.pdf
+10/12/2025 15:14 - Luiz Paulo Gonçalves Miguel de Jesus: Fiz uma busca pelo nome das fazendas e também não obtive sucesso
+10/12/2025 15:14 - Luiz Paulo Gonçalves Miguel de Jesus: Fico à disposição para maiores esclarecimentos
+10/12/2025 15:14 - Luiz Paulo Gonçalves Miguel de Jesus: Essas foram as fazendas que eu identifiquei
+10/12/2025 15:15 - Nadini: Certo, estamos olhando, aviso se precisarmos de uma chamada. Só um momento.
+10/12/2025 15:16 - Luiz Paulo Gonçalves Miguel de Jesus: Claro, estou à disposição
+10/12/2025 15:20 - Nadini: Só pra alinharmos, essa correção não será rápida. Será necessário criar um script porque são muitos casos, e isso pode tomar algum tempo. Mas fica como prioridade a correção desse erro.
+10/12/2025 15:21 - Nadini: Vc tem essa lista com os IDs tbm?
+10/12/2025 15:22 - Thaynara Camara: Quando possível, nos dê um prazo Nadini.
+Pois a Tereza pediu prioridade máxima para o Luiz subir essas Safras e agora ele não vai conseguir finalizar.
+10/12/2025 15:23 - Luiz Paulo Gonçalves Miguel de Jesus: Dos produtores?
+10/12/2025 15:24 - Nadini: Sim, ajudaria porque no DB todas as tabelas são relacionadas por ID. Se não tiver tudo bem, a gnt monta, só leva um tempo fazendo esse rastreio produtor x id do produtor.
+10/12/2025 15:26 - Luiz Paulo Gonçalves Miguel de Jesus: Não tenho essa informação aqui de prontidão
+10/12/2025 15:26 - Luiz Paulo Gonçalves Miguel de Jesus: Só tenho mesmo o registro de cada fazenda
+10/12/2025 15:26 - Luiz Paulo Gonçalves Miguel de Jesus: O estranho é que os produtores foram cadastrados somente as propriedades que não estão sendo vinculadas ao CPF
+10/12/2025 15:31 - Nadini: Não entendi, poderia me explicar de novo?
+10/12/2025 15:40 - Luiz Paulo Gonçalves Miguel de Jesus: Os proprietários todos aparecem quando eu digito o CPF e o nome
+10/12/2025 15:40 - Luiz Paulo Gonçalves Miguel de Jesus: Somente as propriedades que não estão aparecendo
+10/12/2025 15:41 - Luiz Paulo Gonçalves Miguel de Jesus: Mas como eu cadastrei os proprietários e não cadastrei as propriedades? pelo que eu entendi esses cadastros foram copiados do legado integralmente
+10/12/2025 15:41 - Luiz Paulo Gonçalves Miguel de Jesus: Por isso a minha dúvida
+10/12/2025 15:42 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251210-WA0031.jpg (arquivo anexado)
+Aqui no sistema atual temos 203 propriedades
+10/12/2025 15:43 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251210-WA0030.jpg (arquivo anexado)
+NO Legado temos 256
+10/12/2025 16:58 - Nadini: Por favor, podem conferir. Quando o banco do legado foi copiado para prod por alguma razão essas fazendas não foram incluídas. Se houver mais casos só avisar.
+10/12/2025 17:03 - Nadini: Sobre esse bug das tags de saldos (Dis para Dis) ter um comportamento diferente do legado: 
+
+- Foi identificado que quando restauramos o código esse valor DIs para Dis veio como hardcoded, ou seja, foi inserido a mão. Não está identificado qual a regra de negócio monta essa distribuição. 
+
+Para avançarmos com essa questão seria necessário entender junto da BMV qual a regra deve ser aplicada para alterar o que hoje está hardcoded. A gente só consegue seguir com a ajuda de vocês.  Poderiam nos passar como é o funcionamento correto para essa regra de negócio? Cobrindo todos os casos possíveis? <Mensagem editada>
+10/12/2025 17:06 - Luiz Paulo Gonçalves Miguel de Jesus: Vou verificar aqui qual é a regra e a gente desenvolve isso mais à frente
+10/12/2025 17:07 - Luiz Paulo Gonçalves Miguel de Jesus: Perfeito vou verificar também qual foi a situação mas tem a possibilidade de subir essas fazendas? Pois só faltam essas fazendas para concluir as safras de 2010
+10/12/2025 17:24 - Thaynara Camara: Não entendi. 😅
+Foi resolvido?
+Ou querem que investiguemos o motivo de não terem copiado essas fazendas?
+10/12/2025 17:25 - Nadini: Foi resolvido, vcs só precisam validar.
+10/12/2025 17:25 - Thaynara Camara: Excelente! 
+@⁨Luiz Paulo Gonçalves Miguel de Jesus⁩ Verifica por favor?
+10/12/2025 17:28 - Luiz Paulo Gonçalves Miguel de Jesus: Eu também não tinha entendido😅 
+
+achei que não era possível subir nesse momento vou validar agora mesmo
+10/12/2025 17:31 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+Fazenda Cachoeira
+10/12/2025 17:31 - Luiz Paulo Gonçalves Miguel de Jesus: Ok, mas temos outro bug
+10/12/2025 17:31 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+10/12/2025 17:31 - Luiz Paulo Gonçalves Miguel de Jesus: Não aparece as fazendas cadastradas no sistema
+10/12/2025 17:33 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+Está tudo assim
+10/12/2025 18:01 - Nadini: Vê se resolveu, por favor.
+10/12/2025 18:09 - Luiz Paulo Gonçalves Miguel de Jesus: Perfeito, tudo ok
+10/12/2025 18:09 - Luiz Paulo Gonçalves Miguel de Jesus: Muito obrigado
+10/12/2025 18:33 - Nadini: Por nada. Desculpa, a gente não reparou que a correção tinha gerado bug em outras telas. Bom que foi fácil de resolver.
+12/12/2025 10:08 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+Bom dia, tudo bem? Nesta fazenda em específico, subi o documento errado inicialmente e, ao tentar validar o documento correto, o sistema apresentou um erro. Solicito que verifiquem, por gentileza, pois não está sendo possível concluir a validação — o problema ocorre exatamente no momento do envio do PIN.
+
+Segue o registro para conferência:
+
+ID: #224
+Nome da Fazenda: Fazenda Aliança
+Proprietária: Elizangela Cristina Martins – CPF 021.540.389-48
+Ano: 2010
+Status: Recusado
+12/12/2025 10:51 - Nadini: Bom dia, o documento errado foi validado e depois o documento certo apresentou erro?
+12/12/2025 10:52 - Nadini: Vou pedir pra olharem o log aqui
+12/12/2025 11:00 - Nadini: Qual horário aconteceu esse erro? <Mensagem editada>
+12/12/2025 11:32 - Luiz Paulo Gonçalves Miguel de Jesus: eu validei vários documentos após esse
+12/12/2025 11:33 - Luiz Paulo Gonçalves Miguel de Jesus: Não tem horário específico pois até o presente momento não consigo processar essa documentação
+12/12/2025 11:33 - Luiz Paulo Gonçalves Miguel de Jesus: Eu não consigo o pin para aprovar a documentação e fica como reprovado
+12/12/2025 11:33 - Luiz Paulo Gonçalves Miguel de Jesus: Se você for até análise de documentos 2010 está como negado
+12/12/2025 11:34 - Luiz Paulo Gonçalves Miguel de Jesus: ID 224
+12/12/2025 11:37 - Nadini: Eu ainda não entendi direito a parte do documento errado. Quando vc subiu o documento errado teve algum processamento?
+12/12/2025 11:50 - Luiz Paulo Gonçalves Miguel de Jesus: O primeiro documento subiu corretamente
+12/12/2025 11:50 - Luiz Paulo Gonçalves Miguel de Jesus: Porém eu subi ele errado
+12/12/2025 11:50 - Luiz Paulo Gonçalves Miguel de Jesus: Ao adicionar o segundo documento eu não consigo aprovar a documentação fica como recusado
+12/12/2025 11:51 - Luiz Paulo Gonçalves Miguel de Jesus: Ele faz o upload dos dois documentos, só não consigo aprovar a documentação
+12/12/2025 11:53 - Luiz Paulo Gonçalves Miguel de Jesus: se preferir posso fazer uma call
+12/12/2025 11:54 - Nadini: Não consigo parar ninguém nesse momento pra fazer esse chamada, hoje está bem corrido.
+12/12/2025 11:58 - Nadini: O dev comentou aqui que pode ser que você tenha que mudar de perfil para conseguir aprovar os documentos e só depois ir pra próxima fase.
+12/12/2025 11:58 - Luiz Paulo Gonçalves Miguel de Jesus: Ok, vou tentar
+12/12/2025 13:10 - Luiz Paulo Gonçalves Miguel de Jesus: *Prezados,*
+
+Ao tentar corrigir o valor da safra referente à propriedade *Fazenda Nossa Senhora do Carmo S/A*  
+(*Registro 07601101006*), verifiquei que o sistema está apresentando uma inconsistência.
+
+O valor atualmente registrado é *44.140 UCS*, porém o valor correto é *12.242.712 UCS*.
+
+Ao tentar ajustar a diferença — *12.198.572 UCS* — o sistema retorna:
+
+*“Erro ao criar safra! Certifique que a área possui informações extras adicionadas, tenha os documentos aprovados e que já não tenha emitido uma safra neste período.”*
+
+Tudo indica que o sistema está tentando *criar uma nova safra*, porém já existe uma safra emitida para o período (*2010*), o que impede o ajuste.
+
+Compreendo que, pela *regra de negócio, não é permitido gerar uma segunda hash **  *(0x33fa925d9138981331bcaaa73277584c89b31333d6d66bda0b64df239f8ce7b0)* para a mesma safra. Entretanto, neste caso específico, a correção é necessária, pois o saldo já foi distribuído entre produtores, associação e IMEI, tornando a exclusão da safra atual inviável.
+
+Solicito que o time responsável *habilite a permissão de ajuste na safra já existente*, garantindo a integridade dos valores.
+12/12/2025 13:10 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+12/12/2025 14:32 - Thaynara Camara: <Mídia oculta>
+Boa tarde,
+Tentei aqui e deu erro ao enviar o pin
+12/12/2025 14:33 - Luiz Paulo Gonçalves Miguel de Jesus: Tentamos com o da THAYNARA e não conseguimos aprovar a nova documentação
+12/12/2025 14:33 - Nadini: Qual o role do perfil?
+12/12/2025 14:34 - Luiz Paulo Gonçalves Miguel de Jesus: Administrador
+12/12/2025 14:34 - Luiz Paulo Gonçalves Miguel de Jesus: Pela lógica ao recusar uma documentação tá na resolução seria adicionar uma documentação nova ele não deveria ir para pendente?
+12/12/2025 14:34 - Nadini: Tenta com um perfil que tenha role de auditor ou de diretor, foi isso que o dev sugeriu.
+12/12/2025 14:36 - Luiz Paulo Gonçalves Miguel de Jesus: <Mídia oculta>
+Entrei como Diretor e não consegui
+12/12/2025 14:53 - Nadini: Certo, eu consegui uma agenda aqui pra gente ver essa questão dos documentos. Você consegue falar agora Luiz?
+12/12/2025 14:55 - Luiz Paulo Gonçalves Miguel de Jesus: Sim
+12/12/2025 14:59 - Nadini: https://meet.google.com/wyq-vzih-iqb?authuser=0
+12/12/2025 14:59 - Nadini: Estamos nessa sala.
+12/12/2025 16:47 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251212-WA0063.jpg (arquivo anexado)
+Acho que o sistema está fora, não estou conseguindo gerar hash
+12/12/2025 16:47 - Luiz Paulo Gonçalves Miguel de Jesus: FATAL: Não foi possível inicializar a API: desconectado de wss://prod-bmv-parachain-rpc-archive-01.multiledgers.com?token=A4G69g3uy0886I9: 1006:: Fechamento Anormal
+12/12/2025 16:53 - Nadini: Só um momento, já vou verificar
+12/12/2025 17:22 - Nadini: Luiz, a rede está ok. O problema está relacionado a api. O dev pediu pra vc abrir a api da polkadot e aceitar a conexão.
+12/12/2025 17:24 - Luiz Paulo Gonçalves Miguel de Jesus: Ok, vou abrir
+12/12/2025 17:24 - Nadini: <Mídia oculta>
+Acessar a extensão da wallet, do polkadot.js e aceitar a nova conexão.
+12/12/2025 17:26 - Luiz Paulo Gonçalves Miguel de Jesus: Sumiu até minha carteira do navegador
+12/12/2025 17:26 - Luiz Paulo Gonçalves Miguel de Jesus: Eu não mexi em nada
+12/12/2025 17:27 - Nadini: Vc pode restaurar a carteira usando sua seed de 12 palavras.
+12/12/2025 17:27 - Luiz Paulo Gonçalves Miguel de Jesus: Ok
+12/12/2025 17:31 - Luiz Paulo Gonçalves Miguel de Jesus: Muito obrigado
+12/12/2025 17:33 - Nadini: Deu certo?
+12/12/2025 17:33 - Luiz Paulo Gonçalves Miguel de Jesus: Sim voltou
+12/12/2025 17:33 - Nadini: boa
+12/12/2025 17:33 - Luiz Paulo Gonçalves Miguel de Jesus: Mas não precisei ativar a nova carteira eu volto sozinho
+12/12/2025 17:33 - Luiz Paulo Gonçalves Miguel de Jesus: Porém a última fazenda que eu subi ainda não gerou o hash
+12/12/2025 17:33 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251212-WA0078.jpg (arquivo anexado)
+12/12/2025 17:34 - Luiz Paulo Gonçalves Miguel de Jesus: Deve ser alguma instabilidade vou aguardar <Mensagem editada>
+15/12/2025 08:14 - Luiz Paulo Gonçalves Miguel de Jesus: Bom dia, tudo bem? 
+
+Na sexta-feira acredito que tivemos algum tipo de instabilidade e não foi possível gerar a hash dessa fazenda, foi tudo distribuído certinho porém a hash não foi gerada.
+
+Teria como verificar essa situação por gentileza 
+
+(Já distribui mais duas fazendas hoje e as mesmas estão 100%, e gerando hash)
+15/12/2025 10:24 - Nadini: Oi Luiz, bom dia. Estou vendo com o time sobre essa demanda do hash.
+15/12/2025 12:00 - Nadini: <Mídia oculta>
+Oi Luiz, encontramos o evento na blockchain e adicionamos o respectivo hash da SAFRA de ID 489
+15/12/2025 12:01 - Luiz Paulo Gonçalves Miguel de Jesus: Grato
+15/12/2025 12:03 - Luiz Paulo Gonçalves Miguel de Jesus: Assim que possível, você poderia fazer um levantamento das demandas em aberto para que possamos alinhá-las?
+15/12/2025 12:35 - Nadini: De 01/12 até hoje, em aberto temos: 
+
+- Baixa prioridade: Labels de Saldo (DIS vs RES/APO) - Aguardando BMV fornecer regra de negócio completa
+
+- Solicitação: Ajuste de Safra Já Emitida - ajustar a diferença — *12.198.572 UCS* - Aguardando análise Multiledgers.
+15/12/2025 12:36 - Luiz Paulo Gonçalves Miguel de Jesus: Perfeito
+15/12/2025 12:37 - Luiz Paulo Gonçalves Miguel de Jesus: Muito obrigado, vamos dar prioridade ao ajuste de safra, o outro a gente discutir assim que concluir esse.
+
+para ficar mais fácil
+15/12/2025 13:00 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251215-WA0036.jpg (arquivo anexado)
+temos mais uma fazenda que não gerou o hash
+15/12/2025 13:01 - Luiz Paulo Gonçalves Miguel de Jesus: esse eu crie em 15/12/202512:06:56
+15/12/2025 16:06 - Nadini: <Mídia oculta>
+Oi Luiz, boa tarde.Adicionamos o respectivo hash da SAFRA de ID 496
+15/12/2025 16:07 - Luiz Paulo Gonçalves Miguel de Jesus: Ok muito obrigado
+17/12/2025 10:17 - Thaynara Camara: <Mídia oculta>
+Bom dia pessoal,
+@⁨Nadini⁩ 
+Estou tentando alterar a senha deste cliente e está dando erro.
+O problema é que não mostra qual é o erro. Então vou precisar da ajuda de vocês.
+17/12/2025 10:22 - Nadini: Oii, bom dia. Podemos falar agora? Esse email do Drauzio est'vinculado em 4 contas.
+17/12/2025 10:23 - Thaynara Camara: Ou seja, é o mesmo problema de sempre.
+Sempre dá erro quanto um e-mail está vinculado a mais de uma conta
+17/12/2025 10:23 - Thaynara Camara: Posso falar sim
+17/12/2025 10:24 - Thaynara Camara: Estou à disposição.
+17/12/2025 10:25 - Nadini: https://meet.google.com/vhy-nacd-jsn?authuser=0
+17/12/2025 10:25 - Nadini: Estamos nessa sala
+17/12/2025 11:12 - Thaynara Camara: Resolvido✅. Muito obrigada pessoal!
+17/12/2025 11:12 - Thaynara Camara: Conforme reunião segue próximos ajustes que precisam ser realizados:
+1º Erro na busca em Movimentações 
+2º Erro de falta de informações na tabela de Movimentações
+3º Melhorar tabela do Menu Usuários - Gerenciar 
+Precisa aparecer o nome completo de todos os usurários
+17/12/2025 11:13 - Thaynara Camara: Precisam dos prints @⁨Nadini⁩ ?
+17/12/2025 11:14 - Nadini: Se puder fazer essa gentileza, precisamos sim,  por favor.
+17/12/2025 11:15 - Luiz Paulo Gonçalves Miguel de Jesus: Mensagem apagada
+17/12/2025 11:15 - Luiz Paulo Gonçalves Miguel de Jesus: Mensagem apagada
+17/12/2025 11:15 - Luiz Paulo Gonçalves Miguel de Jesus: Mensagem apagada
+17/12/2025 11:17 - Nadini: Atualização (Etapa validada com Thaynara e Luiz em videochamadas): 
+
+- Subimos uma correção que permite realizar a safra com valor residual da parte faltante.
+17/12/2025 11:18 - Thaynara Camara: <Mídia oculta>
+1º Print - Erro busca movimentações
+17/12/2025 11:20 - Thaynara Camara: <Mídia oculta>
+2º Print - Erro - falta de informações na tabela
+17/12/2025 11:21 - Thaynara Camara: <Mídia oculta>
+3º Print - Melhorar tabela de Gerenciar Usuários - Precisa aparecer o nome completo de todos os usuários.
+17/12/2025 11:21 - Thaynara Camara: Prontinho. Qualquer dúvida, estou à disposição.
+17/12/2025 11:28 - Nadini: Obrigada!
+17/12/2025 11:33 - Nadini: A ordem de prioridade entre os erros é 1, 2 e 3 mesmo?
+17/12/2025 11:39 - Thaynara Camara: Pode ser.
+23/12/2025 09:53 - Nadini: Bom dia, pessoal. Tudo bem? Estamos com algumas tarefas prontas mas enfrentamos uma instabilidade aqui do nosso lado e por isso ainda não conseguimos subir pra produção. <Mensagem editada>
+23/12/2025 09:56 - Nadini: <Mídia oculta>
+Eu queria tirar uma dúvida sobre a tarefa número 2; O erro da falta de informações na tabela. O dev me passou aqui que: Não temos no banco de dados a informação da origem quando são os cenarios de criação de safra e no legado tambem não temos esses cenarios conforme imagem:
+23/12/2025 09:58 - Nadini: O dev me passou que poderíamos implementar uma melhoria e apresentar na origem a plataforma MATEUS, que é onde as safras são geradas. Mas que isso não é um bug.  O que vcs gostariam de fazer?
+23/12/2025 10:00 - Luiz Paulo Gonçalves Miguel de Jesus: Bom dia
+23/12/2025 10:01 - Luiz Paulo Gonçalves Miguel de Jesus: Acredito que por algum motivo isso foi lançado no sistema legado via banco de dados, pois o tempo de transação entre uma e outra de apenas 30 segundos
+23/12/2025 10:01 - Luiz Paulo Gonçalves Miguel de Jesus: São quatro operações com 50 segundos entre um e outro no máximo
+23/12/2025 10:01 - Luiz Paulo Gonçalves Miguel de Jesus: E são operações de particionamento pelo que eu entendi então foi quando foi criada a safra
+23/12/2025 10:02 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20251223-WA0006.jpg (arquivo anexado)
+23/12/2025 11:19 - Thaynara Camara: Bom dia pessoal, <Mensagem editada>
+23/12/2025 11:22 - Thaynara Camara: @⁨Luiz Paulo Gonçalves Miguel de Jesus⁩  por favor, verifica como aparecia no legado quando a movimentação era geração de safra.
+Verifica também por favor, se é somente quando a movimentação é geração de safra que a origem aparece em branco. Pois se for o caso, acho que não precisa de correção. Não tinha me atentado que era geração de safra.
+23/12/2025 11:24 - Thaynara Camara: Isso é o legado?
+23/12/2025 11:31 - Luiz Paulo Gonçalves Miguel de Jesus: Sim
+23/12/2025 15:39 - Nadini: Boa tarde pessoal, atualizações: 
+
+1: Erro busca movimentações
+- Realizadas devidas correções;
+
+3:  Melhorar tabela de Gerenciar Usuários - Precisa aparecer o nome completo de todos os usuários.
+* Realizadas devidas correções;
+
+2: Aguardando BMV: Erro - falta de informações na tabela;
+- Receber de BMV qual é a regras de negócio que deve ser aplicada à *geração de safra* para preencher o campo origem quando a plataforma de destino é Mateus; <Mensagem editada>
+23/12/2025 15:40 - Nadini: <Mídia oculta>
+23/12/2025 15:40 - Nadini: <Mídia oculta>
+23/12/2025 15:40 - Nadini: <Mídia oculta>
+1: Erro busca movimentações:
+23/12/2025 15:40 - Nadini: <Mídia oculta>
+3:  Melhorar tabela de Gerenciar Usuários - Precisa aparecer o nome completo de todos os usuários.
+23/12/2025 15:42 - Luiz Paulo Gonçalves Miguel de Jesus: Boa tarde, muito obrigado pelo retorno, 
+
+Irei validar e darei um retorno.
+23/12/2025 15:43 - Nadini: Por nada, imagina. Fico no aguardo do entendimento da questão do erro 2 para darmos seguimento tbm.
+31/12/2025 14:48 - Maria Tereza Umbelino: Caros amigos e amigas,
+
+É hora de agradecer as lições valiosas de 2025, para que possamos receber o próximo ano de braços abertos. O que antes era carga agora se transforma em combustível. O que fica é apenas o essencial para a nossa jornada, mais uma vez renovada. 
+
+Desejamos a todos um excelente final de ano com muito amor, prosperidade e foco para o próximo ano. Que as bençãos de Deus e os esplendores da vitória possam habitar sua casa e sua família. Agradecemos sua amizade, parceria e apoio. 
+
+Boas festas e até 2026!
+
+Carlos, Maria Tereza e família.
+05/01/2026 08:31 - Thaynara Camara: Bom dia @⁨Nadini⁩ 
+Feliz Ano Novo para vocês!
+
+Podemos voltar a falar destas atualizações?
+05/01/2026 08:32 - Thaynara Camara: <Mídia oculta>
+1. Erro busca movimentações.
+No meu acesso, ainda não está buscando. O que será que aconteceu?
+05/01/2026 08:35 - Thaynara Camara: 3. Melhorar tabela de Gerenciar Usuários - ✅
+2. Aguardando BMV - Sugiro deixar desta forma por enquanto.
+05/01/2026 10:21 - Nadini: Bom dia @⁨Thaynara Camara⁩!
+
+Feliz ano novo, pessoal. Que seja um ano de muitas conquistas! 
+
+Já estou vendo porque seu usuário não está buscando. Retorno em breve com atualização sobre isso.
+05/01/2026 15:17 - Luiz Paulo Gonçalves Miguel de Jesus: Mensagem apagada
+05/01/2026 15:20 - Luiz Paulo Gonçalves Miguel de Jesus: Feliz Ano Novo! ✨
+Que 2026 traga saúde, paz e muitas conquistas.
+05/01/2026 15:21 - Luiz Paulo Gonçalves Miguel de Jesus: *3. Melhorar Tabela de Gerenciar Usuários*
+
+Agradecemos pelas correções realizadas. No entanto, ainda identificamos uma inconsistência na tabela: em alguns casos, o nome e o sobrenome estão sendo exibidos juntos, sem espaçamento, enquanto em outros casos o espaçamento está correto.
+
+Solicitamos, por gentileza, a verificação para padronizar a exibição do nome completo de todos os usuários
+05/01/2026 15:22 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260105-WA0041.jpg (arquivo anexado)
+05/01/2026 15:46 - Nadini: Oi Luiz, boa tarde. Feliz 2026.
+
+Essa inconsistência reflete uma falta de padronização no momento do cadastro de novos usuários na plataforma, já que hoje o sistema não orienta o usuário sobre como preencher corretamente os campos de informação. Esse mesmo comportamento já existia no legado e, recentemente, fizemos uma melhoria em outra tabela para tratar um problema semelhante.
+
+Com isso, temos alguns nomes cadastrados em letras maiúsculas, outros em letras minúsculas e, em alguns casos, até a ausência de espaço entre os nomes.
+
+Como sugestão de melhoria, podemos aplicar uma correção apenas na visualização dessa tela que você mostrou. O cadastro em si continuaria funcionando da mesma forma. Mas vamos deixar a visualização toda em maiúsculo, para criar um padrão. Como é uma melhoria simples, conseguimos subir junto com a tarefa prioritária que a Thaynara levantou mais cedo. <Mensagem editada>
+05/01/2026 15:51 - Luiz Paulo Gonçalves Miguel de Jesus: Perfeito, poderia incluir?
+05/01/2026 15:52 - Nadini: Sim, por se tratar de uma melhoria simples, já foi solicitado.
+05/01/2026 15:57 - Nadini: Vale destacar que cenários de sobrenomes compostos que foram cadastrados sem separação entre os nomes não têm como ser corrigidos automaticamente, já que não há uma forma segura de identificar onde deveria ocorrer a separação. Nesses casos, como a correção demandaria mais tempo, precisaríamos de uma autorização do Paulo para realizar a melhoria, além de uma maior alocação de tempo para executá-la.
+05/01/2026 16:13 - Thaynara Camara: <Mídia oculta>
+@⁨Nadini⁩ 
+Nos casos citados pelo Luiz, acredito não se tratar de uma falta de padronização no momento do cadastro.
+Por exemplo o Rafael Silveira - cadastrou o nome corretamente como podemos ver no print abaixo.
+06/01/2026 18:17 - Nadini: Boa noite pessoal, subimos atualizações. Podem entrar no backoffice e validar, por favor? 
+
+1. Erro busca movimentações foi corrigido; 
+2. ⁠Melhoria: padronização para sempre mostrar os nomes em usuários > gerenciar em caixa alta. Obs.: Lembrando que a forma como o usuário foi registrada no sistema permanece a mesma, essa melhoria apenas melhora a forma de visualização do nome usuário na tabela.
+
+Obrigada. <Mensagem editada>
+06/01/2026 18:41 - Nadini: Esse caso do Rafael, em específico, era um bug. Que tbm já está corrigido.
+07/01/2026 07:43 - Thaynara Camara: Bom dia @⁨Nadini⁩ 
+Iremos validar  e voltamos com você.
+07/01/2026 10:49 - Thaynara Camara: @⁨Nadini⁩ Validamos as correções. Obrigada.
+07/01/2026 10:52 - Nadini: Bom dia Thaynara. 
+
+Vou informar o dev. Obrigada pelo retorno.
+07/01/2026 10:55 - Thaynara Camara: @⁨Nadini⁩ 
+Hoje vamos passar alguns erros que encontramos durante uma inspeção interna que fizemos no sistema.
+Vou passar uma e o Luiz passará as demais. Podem seguir a ordem que formos colocando aqui.
+07/01/2026 10:56 - Nadini: Certo, fico no aguardo.
+07/01/2026 10:59 - Thaynara Camara: <Mídia oculta>
+1) Menu DARE/Royalties
+
+Os valores apresentados em Total Pedido / Total PUB/ Total PRI estão errados. Os valores corretos são os que aparecem no relatório. Vou mostrar abaixo para vocês.
+07/01/2026 11:00 - Thaynara Camara: <Mídia oculta>
+07/01/2026 12:35 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0033.jpg (arquivo anexado)
+*ID: 01 Cadastro de Usuários | Campos Obrigatórios*
+
+*Problema:*
+O sistema atual não indica claramente quais campos são obrigatórios no cadastro de usuários.
+
+*Descrição:*
+Diferente do legado, não há marcação visual (asterisco) nos campos essenciais. Apenas o CPF aparece como obrigatório, e erros de validação são genéricos, sem indicar o campo incorreto.
+
+
+*Exemplo no sistema atual:*
+Campos sem identificação de obrigatoriedade e mensagens de erro genéricas, obrigando o usuário a tentar campo por campo
+07/01/2026 12:35 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0034.jpg (arquivo anexado)
+Exemplo no sistema legado:
+Campos obrigatórios sinalizados com * (ex.: tipo de documento, nome, sobrenome, CEP), facilitando o preenchimento correto.
+07/01/2026 12:44 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0035.jpg (arquivo anexado)
+*ID 2 :* *Busca por Pedido | Movimentações*
+
+*Problema:*
+A busca por movimentações retorna resultado incorreto ou vazio.
+
+*Contexto:*
+_SaaS Tesouro Verde → Pedido de Certificado → Movimentações_
+
+*Descrição:*
+Ao acessar um pedido processado e selecionar *Visualizar Movimentações* , o sistema aplica automaticamente um filtro pelo *número do pedido* . Contudo, a tela de movimentações não utiliza esse campo como critério de busca, resultando em ausência de dados mesmo quando há movimentações válidas.
+07/01/2026 12:44 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0036.jpg (arquivo anexado)
+*Sistema atual:*
+O filtro é aplicado pelo *número do pedido* , inexistente nos critérios da tela, forçando o operador a realizar buscas manuais por nome ou outros dados.
+07/01/2026 12:44 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0037.jpg (arquivo anexado)
+07/01/2026 12:44 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0038.jpg (arquivo anexado)
+*Sistema legado:*
+A navegação utiliza o *número da distribuição* ( *DIST*) , garantindo rastreabilidade correta entre pedido, distribuição e movimentações.
+07/01/2026 12:50 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0039.jpg (arquivo anexado)
+*ID:03 | Campo “ID Transação NXT” – Detalhes de Certificados*
+
+*Problema:*
+Exibição de campo obsoleto e sem uso funcional.
+
+*Contexto:*
+Módulo de Detalhes de Certificados
+
+*Descrição:*
+Nos modais de detalhes de certificados, é exibida uma linha referente ao “ID Transação NXT”. Esse identificador não é mais utilizado no sistema atual, pois a operação passou a utilizar outra rede.
+No sistema legado, esse campo era funcional; no sistema atual, tornou-se obsoleto e sem qualquer aplicabilidade operacional.
+
+*Sistema legado:*
+Campo utilizado e coerente com a arquitetura da época.
+
+*Sistema atual:*
+Campo exibido sem uso, gerando ruído visual e confusão conceitual.
+
+*Recomendação* :
+Remover o campo ID Transação NXT dos modais de detalhes de certificados, garantindo alinhamento com a arquitetura atual e redução de dívida técnica.
+07/01/2026 12:52 - Nadini: Como esse relatório é gerado? Ele é extraído de qual serviço na plataforma, por favor?
+07/01/2026 12:57 - Nadini: Pode encaminhar esse print novamente, por favor?
+07/01/2026 12:58 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0040.jpg (arquivo anexado)
+Claro, segue.
+07/01/2026 12:59 - Nadini: Esse tbm
+07/01/2026 12:59 - Nadini: Esse tbm, por favor.
+07/01/2026 13:01 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0041.jpg (arquivo anexado)
+07/01/2026 13:01 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0042.jpg (arquivo anexado)
+07/01/2026 13:02 - Nadini: Esses dois prints da tela preta estão relacionados a tarefa de ID2  ou ID3?
+07/01/2026 13:02 - Luiz Paulo Gonçalves Miguel de Jesus: ID2
+07/01/2026 13:03 - Luiz Paulo Gonçalves Miguel de Jesus: Deixo o Legado assim para facilitar a identificacão
+07/01/2026 13:21 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0043.jpg (arquivo anexado)
+*ID: 04 | Ausência de Identificação Visual em Movimentações Financeiras*
+
+*Módulo: Movimentações Financeiras*
+
+*Problema:*
+O sistema atual não possui identificação visual padronizada nas movimentações: não há distinção clara entre saldo de origem e destino, nem uso consistente de tags ( *RES* / *DIS* / *APO* ) ou ícones por tipo de transação.
+
+*Como está no sistema atual:*
+• Movimentações sem diferenciação visual
+• Ausência de tags e ícones
+• Coluna “Tipo” sem padronização semântica
+07/01/2026 13:21 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0044.jpg (arquivo anexado)
+• Ícones e coluna “Tipo” com legenda funcional
+07/01/2026 13:21 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0045.jpg (arquivo anexado)
+Uso de tags RES, DIS e APO
+07/01/2026 13:21 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0046.jpg (arquivo anexado)
+*Como funciona no sistema legado:*
+• Saldo de origem e destino claramente identificados e com filtros
+• Uso de tags RES, DIS e APO
+• Ícones e coluna “Tipo” com legenda funcional
+• Leitura rápida, auditável e intuitiva
+07/01/2026 13:25 - Nadini: Pode me encaminhar esse pac de ícones, por gentileza? Como não temos figma não conseguiremos extrair esses ícones nós mesmos. O formato é o SVG.
+07/01/2026 13:26 - Luiz Paulo Gonçalves Miguel de Jesus: Esse PAC Copiei do legado mas posso ver se consigo algo
+07/01/2026 13:27 - Nadini: Essas imagens não foram possíveis de ser restauradas quando recuperamos o código. Se possível, verificar com designer da BMV se ele tem esses ícones em SVG.
+07/01/2026 13:45 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0047.jpg (arquivo anexado)
+Achei mais um
+07/01/2026 13:45 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260107-WA0048.jpg (arquivo anexado)
+07/01/2026 13:46 - Luiz Paulo Gonçalves Miguel de Jesus: ‎Icones.zip (arquivo anexado)
+Icones.zip
+07/01/2026 13:47 - Luiz Paulo Gonçalves Miguel de Jesus: Para referência, utilizei a fonte Boxicons, https://boxicons.com/ <Mensagem editada>
+07/01/2026 13:54 - Nadini: Essa questão das tags já estava mapeada e precisamos da regra de negócio que contempla o uso dessas tags também, por favor.  Por exemplo: Qual regra de negócio é utilizada para os casos de Disponivel e Reservado? 
+
+Para o caso de aposentadoria o dev disse que consigue descobrir, mas para os outros 2, é interessantes sabermos as condições que eles ocorrerem.
+07/01/2026 13:57 - Luiz Paulo Gonçalves Miguel de Jesus: Vou Buscar essa informação
+07/01/2026 14:58 - Thaynara Camara: <Mídia oculta>
+Ele é gerado no menu - Relatórios
+08/01/2026 14:17 - Thaynara Camara: Boa tarde pessoal,
+@⁨Nadini⁩ qualquer atualização sobre as demandas de ontem, vai nos posicionando por favor. 🌷
+08/01/2026 14:19 - Nadini: Boa tarde Thaynara, pode deixar. Ainda não tenho atualizações mas assim que tiver atualizo o grupo.
+08/01/2026 14:24 - Thaynara Camara: <Mídia oculta>
+Gostaria de acrescentar mais uma questão.
+
+Como está sendo feito o calculo desta taxa de transferência? 
+Poderiam me passar por favor?
+E quais informações preciso passar para vocês para alterarmos este cálculo.
+
+A Tereza quer colocar um teto mínimo de R$250,00 reais por transferência.
+08/01/2026 14:29 - Nadini: Vou verificar com os dev e retorno com essa informação.
+08/01/2026 17:31 - Nadini: Thaynara, segue o resumo da regra:
+
+" *Regra de Cálculo do Pedido de transferencia:*
+1. Criação da ordem (bmv-akses/.../TransferOrderService.java:172-174):
+2. Busca da configuração do BasketFee (hierarquia de prioridade):
+	A. Primeiro busca por usuário específico (availability_type = 'ROLE_USERS')
+	B. Se não encontrar, busca por tipo de perfil (availability_type = 'ROLE_TYPE')
+	C. Se não encontrar, busca configuração geral (availability_type = 'GENERAL')
+3. Fórmula do Cálculo (bmv-core/.../CalculatesBasketFeeImpl.java:102-130):
+Se billingType == MONEY:
+    formula = ucsQuote.getPrice() × remunerationFactor × ucsAmount
+Se billingType == UCS:
+    formula = 1 × remunerationFactor × ucsAmount
+4. Aplicação de limites:
+Se formula > maximumValue → fee = maximumValue
+Se formula < minimumValue → fee = minimumValue
+Caso contrário           → fee = formula
+""
+O cálculo da taxa passa por varias classes, então o dev resumiu dessa forma para ficar mais fácil de entender. <Mensagem editada>
+09/01/2026 09:13 - Thaynara Camara: Bom dia @⁨Nadini⁩ 
+Obrigada pelo retorno.
+Vamos avaliar e voltamos com você.
+09/01/2026 09:20 - Luiz Paulo Gonçalves Miguel de Jesus: *Bom dia, Nadini!*
+
+Muito obrigado pelo detalhamento. Entendemos que o cálculo já considera limites mínimo e máximo. Precisamos garantir que o piso mínimo seja de *R$ 250,00 por transferência* , conforme solicitado pela *Tereza* .
+
+Poderia, por favor, confirmar se podemos incluir esse valor como *minimumValue* na configuração ou se existe algum impacto adicional?
+
+Agradeço desde já pela sua atenção e colaboração!
+09/01/2026 09:37 - Nadini: Bom dia, pessoal. Isso seria uma melhoria. Vou precisar passar pelo Paulo. 
+
+Uma dúvida, esse valor mínimo é pra ucs e dinheiro? Porque são chamadas diferentes. 
+
+Além disso existe um ponto de atenção. Essa mexida vai impactar diretamente no cálculo do imposto.
+09/01/2026 14:05 - Nadini: Boa tarde, pessoal. Atualização sobre a tarefa: 
+
+1) Menu DARE/Royalties: Os valores apresentados em Total Pedido / Total PUB/ Total PRI estão errados. Os valores corretos são os que aparecem no relatório. Vou mostrar abaixo para vocês.
+
+Encontra-se em produção a correção do bug que mostrava valores errados de totais. Por favor,  podem validar se está ok?
+09/01/2026 14:58 - Thaynara Camara: Boa tarde @⁨Nadini⁩ 
+
+Essa valor mínimo é para a taxa de transferência em reais.
+Hoje temos apenas o teto máximo de 1.300,00. Queremos colocar um teto mínimo de R$250,00.
+Isso vai impactar no cálculo de qual imposto? Não entendi.
+09/01/2026 15:04 - Thaynara Camara: Erro corrigido. Obrigada.
+12/01/2026 09:22 - Thaynara Camara: Bom dia a todos,
+@⁨Nadini⁩ 
+Algum retorno sobre as demais demandas citadas pelo Luiz?
+Qualquer dúvida, estamos à disposição.
+12/01/2026 17:20 - Nadini: Oi pessoal, boa tarde. Desculpa a demora, o dia hoje está bastante cheio de chamadas, só consegui dar uma atenção aqui no grupo agora. 
+
+@⁨Thaynara Camara⁩, a respeito da questão sobre o cálculo do fee(imposto) citado acima, o dev me passou que: 
+
+O ajuste em si para definir uma taxa mínima fixa não é complexo do ponto de vista técnico. O ponto de maior atenção está na validação dessa mudança.
+
+Como essa regra não existe no legado, trata-se de uma melhoria, e hoje não temos total visibilidade de todos os fluxos e perfis que utilizam esse mesmo cálculo de taxa. Existem trechos do sistema que podem reutilizar o resultado desse fee para aplicar outras lógicas, e qualquer alteração precisa ser cuidadosamente validada para garantir que não gere impactos colaterais.
+
+Por isso, antes de seguir, seria necessário mapear esses usos, validar os fluxos afetados e garantir que a introdução de uma taxa mínima fixa não comprometa outras funcionalidades. Essa etapa de análise tende a ser a mais demorada. E para implementar essa melhoria precisaríamos também da aprovação junto com o Paulo.
+12/01/2026 17:21 - Nadini: Pra vc ter uma ideia, apenas para mapear o cálculo e trazer a informação para vocês, já consumimos pelo menos 4 horas de desenvolvimento.
+12/01/2026 17:25 - Nadini: Sobre as demandas que o Luiz trouxe: 
+
+Estamos trabalhando no Bug de ID: 01 Cadastro de Usuários | Campos Obrigatórios; Acredito que até amanhã vamos liberar a correção desse Bug em produção, sendo essa a terceira tarefa da lista concluída.
+
+Concluídas até o momento: 
+- Task 9818: Como está sendo feito o calculo desta taxa de transferência?
+- Bug 9809: valores apresentados em Total Pedido / Total PUB/ Total PRI estão errados [Relacionado ao DARE]
+Em progresso: 
+- Bug 9810: ID: 01 Cadastro de Usuários | Campos Obrigatórios
+Próximos: 
+- Bug 9811: ID 2 : Busca por Pedido | Movimentações
+- Task 9813: ID:03 | Campo “ID Transação NXT” – Detalhes de Certificados (Adaptação de NX para Substrate)
+- Bug 9814: ID: 04 | Ausência de Identificação Visual em Movimentações Financeiras
+12/01/2026 21:14 - Thaynara Camara: Boa noite,
+Agradeço o feedback.
+Tá ok, fico no aguardo de um retorno sobre esse assunto.
+12/01/2026 21:14 - Thaynara Camara: Ok, permanecemos no aguardo.
+14/01/2026 10:57 - Nadini: Bom dia pessoal, tudo bem? 
+
+
+Preciso tirar uma dúvida com relação a tarefa - Bug 9814: ID: 04 | Ausência de Identificação Visual em Movimentações Financeiras.
+
+Dúvida: Identificamos que existem 43 "tipos" relacionados a pedidos e vocês nos passaram apenas 13 "tipos" com ícones relacionados nessa imagem. Vocês conseguiriam nos passar todos os ícones e tipos relacionados? Isso seria importante para essa tarefa não precisar ser revisitada no futuro. <Mensagem editada>
+14/01/2026 10:57 - Nadini: <Mídia oculta>
+• Ícones e coluna “Tipo” com legenda funcional
+14/01/2026 11:00 - Nadini: <Mídia oculta>
+Achei mais um
+14/01/2026 11:00 - Nadini: <Mídia oculta>
+14/01/2026 11:07 - Luiz Paulo Gonçalves Miguel de Jesus: bom dia, no caso eu teria que explorar todas as transações, manualmente
+14/01/2026 11:11 - Luiz Paulo Gonçalves Miguel de Jesus: o Dev não consegue um array?
+14/01/2026 12:18 - Nadini: Oi Luiz, o dev me passou essa lista com todos os cenários possíveis.
+14/01/2026 12:18 - Nadini: ‎Cenarios possiveis.pdf (arquivo anexado)
+Cenarios possiveis.pdf
+14/01/2026 14:59 - Luiz Paulo Gonçalves Miguel de Jesus: Perfeito, nós não temos uma base de dados com esses ícones, 
+Essa informação eu peguei baseado no visual que eu pude acompanhar aqui na tabela
+14/01/2026 14:59 - Luiz Paulo Gonçalves Miguel de Jesus: Eu terei que olhar manualmente todas as 5.628 páginas para ver se há algum ícone que ele não listei
+14/01/2026 14:59 - Luiz Paulo Gonçalves Miguel de Jesus: Acredito que seja mais fácil para o dev, pois deve ter em algum lugar do sistema essa informação
+14/01/2026 15:06 - Nadini: Oi Luiz, no sistema só temos essa informação que te passei mesmo. Porque quando recuperamos o código, essas imagens não foram possíveis de ser restauradas e não temos acesso ao figma da BMV ou algum material de design. Até por isso usamos um ícone genérico para todos os casos, porque esses ajustes visuais eram de menor importância comparado à funcionalidade de outros serviços na plataforma.
+14/01/2026 15:09 - Luiz Paulo Gonçalves Miguel de Jesus: Vou fazer uma busca então
+14/01/2026 15:11 - Luiz Paulo Gonçalves Miguel de Jesus: Vou colocar nas minhas demandas então, assim que eu tiver com a tabela completa eu informo a você vamos dar prioridade aos demais bugs
+14/01/2026 15:18 - Nadini: Os outros bugs já estão corrigidos. Estávamos esperando vcs terem essa informação para subir tudo junto para produção. Porém como essa parte demanda do contexto, vou pedir para pausarem essa tarefa até esse retorno e subir as outras correções para produção.
+14/01/2026 16:37 - Nadini: Atualização: Todas as tarefas já se encontram em ambiente de produção e podem ser testadas. Aguardamos validação das correções realizadas.
+
+Concluídas até o momento: 
+- Task 9818: Como está sendo feito o calculo desta taxa de transferência?
+- Bug 9809: valores apresentados em Total Pedido / Total PUB/ Total PRI estão errados [Relacionado ao DARE]
+- Bug 9810: ID: 01 Cadastro de Usuários | Campos Obrigatórios 
+- Bug 9811: ID 2 : Busca por Pedido | Movimentações
+- Task 9813: ID:03 | Campo “ID Transação NXT” – Detalhes de Certificados (Adaptação de NX para Substrate)
+- Bug 9814: ID: 04 | Ausência de Identificação Visual em Movimentações Financeiras (lembrando que a equipe da BMV vai fazer uma nova solicitação de inclusão de ícones quando souberem a lista completa dos relacionamentos com os tipos corretos); <Mensagem editada>
+14/01/2026 16:40 - Nadini: <Mídia oculta>
+Bug 9809: valores apresentados em Total Pedido / Total PUB/ Total PRI estão errados [Relacionado ao DARE]
+14/01/2026 16:40 - Nadini: <Mídia oculta>
+Bug 9810: ID: 01 Cadastro de Usuários | Campos Obrigatórios
+14/01/2026 16:41 - Nadini: <Mídia oculta>
+Task 9813: ID:03 | Campo “ID Transação NXT” – Detalhes de Certificados
+14/01/2026 16:42 - Nadini: <Mídia oculta>
+Bug 9811: ID 2 : Busca por Pedido | Movimentações
+14/01/2026 16:43 - Nadini: <Mídia oculta>
+Bug 9814: ID: 04 | Ausência de Identificação Visual em Movimentações Financeiras
+14/01/2026 16:46 - Nadini: O dev também conseguiu encontrar no sistema uma forma de andar com a tarefa: Bug 9663: Estoque -> Movimentações: Erro ao trazer a tag da coluna SALDOS
+14/01/2026 16:46 - Nadini: <Mídia oculta>
+14/01/2026 17:20 - Luiz Paulo Gonçalves Miguel de Jesus: Boa tarde, estou concluindo uma demanda, assim que possível faço a validação das entregas
+14/01/2026 18:11 - Thaynara Camara: <Mídia oculta>
+@⁨Nadini⁩ 
+Boa tarde,
+Este filtro não está funcionando. Eu achei que já havíamos corrigido isso antes. Mas fui usar hoje e notei que ainda não busca.
+Deveria buscar por nome ou número, conforme legado.
+16/01/2026 10:35 - Luiz Paulo Gonçalves Miguel de Jesus: Bom dia. Estive focado em uma atividade mais urgente e não consegui responder antes. A Thaynara validou parcialmente as entregas; restam apenas os demais tipos de transações para verificarmos se há necessidade de novos ícones. Assim que concluir essa demanda eu vou dar andamento
+20/01/2026 09:25 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260120-WA0012.jpg (arquivo anexado)
+Bom dia Ao acessar a plataforma, foi identificado que o menu aparenta estar incompleto. Por gentileza confirmar se houve alguma alteração recente no sistema, observa-se a ausência de módulos e funcionalidades essenciais, como: estoque, núcleos, áreas, associações, usuários, cotação, plataformas e configurações.
+
+Essa inconsistência pode indicar um problema de carregamento, permissão de acesso ou alguma modificação não prevista na estrutura do menu.?
+20/01/2026 09:27 - Nadini: Oi Luiz, bom dia. Teve sim, já ia avisar que subimos a correção para a busca que a Thaynara relatou na última semana.
+20/01/2026 09:28 - Nadini: Por gentileza Luiz, qual o role do seu usuário? Administrador?
+20/01/2026 09:29 - Luiz Paulo Gonçalves Miguel de Jesus: Administrador, atualizei e o menu voltou
+20/01/2026 09:30 - Luiz Paulo Gonçalves Miguel de Jesus: deve ter travado o carregamento
+20/01/2026 09:30 - Nadini: Ah, tranquilo. A gente não fez nada aqui não. Eu ia relatar o problema agora para o dev.
+20/01/2026 09:30 - Luiz Paulo Gonçalves Miguel de Jesus: Perfeito, obrigado
+20/01/2026 09:30 - Nadini: Se acontecer novamente me avise.
+20/01/2026 09:31 - Luiz Paulo Gonçalves Miguel de Jesus: Por gentileza, quais são as demandas em aberto?
+20/01/2026 09:32 - Nadini: Não tenho mapeada nenhuma demanda em aberto.
+20/01/2026 09:33 - Nadini: Talvez vc tenha entrado com login administrativo ao invés de administrador. Porque o print bate certinho com o menu do outro role.
+20/01/2026 09:35 - Luiz Paulo Gonçalves Miguel de Jesus: Vou conferir, mas eu nem fiz Logoff só atualizei a página
+20/01/2026 09:42 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260120-WA0016.jpg (arquivo anexado)
+Foi identificado que, na página de bloqueio de UCS, aparentam existir dados de *mock* (dados simulados). Não existiam safras de produtores cadastradas, tendo sido adicionadas apenas recentemente.
+
+Dessa forma, não seria possível haver contas ou UCS bloqueadas, uma vez que não havia saldo disponível. Diante disso, solicitamos a verificação se as informações exibidas nessa página correspondem a dados reais provenientes do sistema ou se foram inseridas via código apenas para fins de teste.
+20/01/2026 09:42 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260120-WA0017.jpg (arquivo anexado)
+Conforme evidenciado no segundo print, no legado apresenta exatamente os mesmos dados exibidos na página de bloqueio de UCS.
+20/01/2026 10:03 - +55 34 8831-6444: Bom dia Luiz, se os dados estão no legado é muito provável que durante o levantamento do sistema ele puxou os dados de lá. Contudo, como a BMV pediu para limpar safras e outros dados para início das novas operações, pode ter causado alguma mudança na apresentação das datas dessa tabela. Como são dados que existem no legado e são antes de 2025 são operações realizadas pela BMV antes da recuperação da Multiledgers. Por esse entendimento me parece ser dados reais proveniente do sistema legado. Mas as datas estão desconfiguradas e podem ser ajustadas para ficar igual ao legado.
+20/01/2026 10:19 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260120-WA0019.jpg (arquivo anexado)
+20/01/2026 10:19 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260120-WA0020.jpg (arquivo anexado)
+Bom dia, *Matheus* . Obrigado pelo retorno.
+
+Entendi o ponto. O que ocorre é que foi gerada uma safra completamente nova, portanto os bloqueios deveriam passar a ser aplicados a partir deste momento.
+
+No entanto, as UCS não estão sendo bloqueadas, mesmo com a existência dessa lista. Pode haver um conflito relacionado às datas, pois, em uma verificação rápida realizada aqui, identifiquei que um produtor que deveria constar como bloqueado não está sendo bloqueado pelo sistema atualmente.
+
+Diante disso, acredito que seja necessário validar o tratamento das datas e a regra de aplicação dos bloqueios, para garantir que a lista esteja sendo considerada corretamente na safra recém gerada.
+20/01/2026 10:35 - +55 34 8831-6444: Pode ser que tenha esse conflito de datas impedindo que as UCS sejam bloqueadas corretamente. Vamos checar e traremos um parecer para vocês.
+20/01/2026 10:36 - Luiz Paulo Gonçalves Miguel de Jesus: Ok, muito obrigado
+20/01/2026 11:10 - Luiz Paulo Gonçalves Miguel de Jesus: Matheus, eu acho que seria mais seguro zerar essa tabela e deixar que nós bloqueamos a UCS novamente, pois será preciso revisar os dados.
+
+É possível realizar essa operação?
+20/01/2026 11:49 - +55 34 8831-6444: Acredito que sim. Vamos confirmar com o desenvolvedor  e te passamos uma confirmação da ação antes de executar
+20/01/2026 11:59 - Luiz Paulo Gonçalves Miguel de Jesus: Nesse momento não estou conseguindo fazer bloqueio de UCS, tentei realizar um bloqueio agora e não foi possível
+20/01/2026 12:02 - +55 34 8831-6444: Vou pedir para avaliar isso também. O bloqueio funcionava antes ou é a primeira vez que estamos tentando essa funcionalidade?
+20/01/2026 12:02 - Luiz Paulo Gonçalves Miguel de Jesus: Acredito que não foi testado
+20/01/2026 12:03 - +55 34 8831-6444: Ok, obrigado pelo retorno, vamos olhar e trazer algum parecer sobre a limpeza da tabela e o bloqueio
+20/01/2026 12:03 - Luiz Paulo Gonçalves Miguel de Jesus: Grato
+21/01/2026 09:08 - Luiz Paulo Gonçalves Miguel de Jesus: Bom dia. Poderiam informar se há alguma previsão para a disponibilização da funcionalidade de bloqueio de UCS? Este caso está com prioridade
+21/01/2026 10:23 - Nadini: Oi Luiz, bom dia. 
+
+O dev ainda está avaliando o cenário de deleção dos dados da tabela, como vc pediu, para entender se impactaria outra parte do sistema. Assim que ele terminar eu atualizo vocês, até para pegar a confirmação antes de executar a deleção.
+21/01/2026 11:49 - Nadini: Atualização: 
+Foi verificado que os dados são todos do legado. Existe um bug relacionado à hora exibida em cada transação no frontend; no backend, os dados estão idênticos ao legado.
+
+A exclusão desses registros impacta três tabelas mas como não existem valores (saldos) bloqueados nessas tabelas, o dev validou que é possível deletar toda a base de UCS Bloqueadas sem impacto operacional. Podemos deletar todos os dados da tabela UCS bloqueadas? 
+
+O caso do bloqueio de UCS não estar funcionando ainda está em análise.
+21/01/2026 15:30 - Thaynara Camara: <Mídia oculta>
+Boa tarde @⁨Nadini⁩ 
+Só consegui avaliar hoje.
+Essa correção foi realizada?
+Conforme print, aqui continua não buscando.
+21/01/2026 15:32 - Thaynara Camara: Acredito que podemos apagar.
+O que acha @⁨Luiz Paulo Gonçalves Miguel de Jesus⁩
+21/01/2026 15:33 - Luiz Paulo Gonçalves Miguel de Jesus: Perfeito, vou proceder
+21/01/2026 15:43 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260121-WA0020.jpg (arquivo anexado)
+21/01/2026 15:43 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260121-WA0021.jpg (arquivo anexado)
+@⁨Nadini⁩ o sistema confirma, mas não remove da tabela
+21/01/2026 15:48 - Nadini: Pessoal, como eu disse na última mensagem, estamos aguardando a bmv nos autorizar a deletar os dados (limpar a base) da tabela em estoque - bloquear ucs. 
+
+Ainda não realizamos nenhuma ação sobre isso. Estávamos aguardando. Podemos deletar a base?
+21/01/2026 15:48 - Nadini: Enquanto isso nosso dev está olhando a questão de bloquear ucs que o Luiz relatou.
+21/01/2026 15:48 - Nadini: Vou pedir pra olharem de novo.
+21/01/2026 16:29 - Luiz Paulo Gonçalves Miguel de Jesus: Sim podem
+21/01/2026 16:36 - Nadini: Certo. Assim que tiver outras atualizações eu retorno com vocês.
+21/01/2026 16:36 - Luiz Paulo Gonçalves Miguel de Jesus: Grato
+21/01/2026 16:49 - Nadini: Certo, a base foi limpa. Todas as UCS bloqueadas foram removidas da tabela Bloqueio de UCS.
+21/01/2026 16:51 - Luiz Paulo Gonçalves Miguel de Jesus: muito obrigado
+22/01/2026 10:12 - Nadini: Bom dia pessoal. 
+
+Atualização sobre UCS Bloqueadas. 
+
+Esse fluxo é um dos casos que ainda não havia sido testado, por isso não validamos essa implementação. Ontem na avaliação notamos que faltam partes do fluxo a serem implementadas, e segundo nosso desenvolvedor, essa é uma tarefa de maior complexidade mas que já está em desenvolvimento. Porém é mais provável que a gente só tenha um retorno sobre o assunto na próxima semana.
+22/01/2026 10:18 - Luiz Paulo Gonçalves Miguel de Jesus: Bom dia, muito obrigado pela resposta, fico no aguardo desta demanda
+22/01/2026 16:40 - Thaynara Camara: Bom dia @⁨Nadini⁩ 
+Tudo bem?
+
+Hoje processamos um pedido muito importante, certificamos o Reveillon de Copacabana .
+
+No entanto, quando fui baixar o Report deu erro.
+E quando fui baixar a planilha de movimentações (para lançar no blockchain) também deu erro.
+
+Irei relatar logo abaixo esses erros. Por favor, se puderem priorizar isso. É um cliente importante 😅
+22/01/2026 16:40 - Thaynara Camara: Mensagem apagada
+22/01/2026 16:41 - Thaynara Camara: <Mídia oculta>
+1º Erro ao baixar o report.
+22/01/2026 16:43 - Thaynara Camara: ‎IMG-20260122-WA0052.jpg (arquivo anexado)
+2º Erro na planilha de movimentações.
+Processei o pedido hoje, mas ele não aparece na planilha. 
+O último lançamento foi em 16/01.
+22/01/2026 17:16 - Nadini: Oi, boa tarde. 
+
+Thaynara, por gentileza, é um pedido de certificado de qual tipo? Qual o tipo de report foi pedido para download? E você tem o id do pedido?
+22/01/2026 17:34 - Thaynara Camara: Olá Nadini
+Vou tentar responder suas perguntas:
+
+É um pedido de certificado de qual tipo?
+Selo BMV
+Solicitado no SaaS Tesouro Verde
+22/01/2026 17:35 - Thaynara Camara: <Mídia oculta>
+Qual o tipo de report foi pedido para download? 
+Só temos um tipo de Report, então não entendi a pergunta.
+Mas para facilitar estou tendo dificuldade em baixar o "Certificado". Conforme print acima.
+22/01/2026 17:36 - Thaynara Camara: E você tem o id do pedido?
+Pedido 810 
+Distribuição 40044
+22/01/2026 17:37 - Thaynara Camara: Veja se respondi o que precisava.
+22/01/2026 17:37 - Thaynara Camara: Qualquer dúvida, estou à disposição.
+22/01/2026 17:48 - Nadini: Respondeu, obrigada. Amanhã informo ao dev para mudar a prioridade das tarefas.
+23/01/2026 16:13 - Thaynara Camara: Pessoal, boa tarde.
+Algum retorno?
+Preciso atualizar o cliente.
+23/01/2026 17:39 - Nadini: Oi Thaynara, boa tarde. Estamos subindo uma correção ainda hoje para o 1º Erro ao baixar o report. Estou aguardando o dev finalizar o processo e comunico pra vcs.
+23/01/2026 17:54 - Nadini: ‎IMG-20260123-WA0040.jpg (arquivo anexado)
+Atualização!
+
+Informo que já esta disponível no ambiente de produção da BMV a correção dos seguintes problemas:
+1. Corrigido filtro com perfil da Thaynara na tela "Pedidos de Certificado de Saas Tesouro Verde".
+2. Corrigido download de PDF do pedido 810
+3. Implementado criação de bloqueio de UCSs
+4. Corrigido problema ao desbloquear UCSs
+23/01/2026 17:54 - Nadini: ‎IMG-20260123-WA0041.jpg (arquivo anexado)
+23/01/2026 17:54 - Nadini: ‎IMG-20260123-WA0042.jpg (arquivo anexado)
+23/01/2026 17:54 - Nadini: ‎IMG-20260123-WA0043.jpg (arquivo anexado)
+23/01/2026 17:54 - Nadini: ‎IMG-20260123-WA0044.jpg (arquivo anexado)
+23/01/2026 17:54 - Nadini: ‎IMG-20260123-WA0045.jpg (arquivo anexado)
+23/01/2026 17:54 - Nadini: ‎IMG-20260123-WA0046.jpg (arquivo anexado)
+23/01/2026 17:54 - Nadini: ‎IMG-20260123-WA0047.jpg (arquivo anexado)
+23/01/2026 17:55 - Nadini: Só está faltando resolver o problema da planilha de movimentações.
+23/01/2026 18:53 - Luiz Paulo Gonçalves Miguel de Jesus: Boa noite, obrigado pelo retorno, iremos validar as entregas assim que possível.
+
+um bom final de semana
+26/01/2026 07:12 - Thaynara Camara: Bom dia @⁨Nadini⁩ 
+Verifiquei os itens 1 e 2 da lista e ambos estão corrigidos.
+Aguardo a correção na planilha de movimentações.
+
+@⁨Luiz Paulo Gonçalves Miguel de Jesus⁩ 
+Por favor verificar itens 3 e 4.
+26/01/2026 08:43 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260126-WA0005.jpg (arquivo anexado)
+26/01/2026 08:43 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260126-WA0006.jpg (arquivo anexado)
+Bom dia, uma ótima semana a todos.
+
+Consegui excluir um registro que havia no sistema, porém não foi possível realizar um novo *bloqueio de UCS* , conforme demonstrado nos prints anexos.
+26/01/2026 13:44 - Nadini: Oi Luiz, boa tarde. Por gentileza, pode testar novamente o bloqueio do UCS?
+26/01/2026 13:45 - Nadini: O dev subiu uma correção para contemplar o "producer". Na semana passada a correção só estava contemplando UCS bloqueadas para "Customer". Agora ambos os cenários estão dentro da regra.
+26/01/2026 13:46 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260126-WA0022.jpg (arquivo anexado)
+Temos esse passo, vou aprovar e validar
+26/01/2026 13:47 - Luiz Paulo Gonçalves Miguel de Jesus: Ainda temos um erro de data
+26/01/2026 16:11 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260126-WA0039.jpg (arquivo anexado)
+26/01/2026 16:11 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260126-WA0040.jpg (arquivo anexado)
+Validado o fluxo de Bloqueio de UCS
+26/01/2026 16:15 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260126-WA0042.jpg (arquivo anexado)
+A data está correta, muito obrigado
+26/01/2026 16:16 - Nadini: Boa, obrigada pelo retorno.
+26/01/2026 16:16 - Nadini: Fica pendente a planilha de movimentações que ainda está sendo analisada.
+26/01/2026 16:17 - Thaynara Camara: Certo. Ficamos no aguardo.
+Preciso desta planilha para lançar o pedido no blockchain. <Mensagem editada>
+27/01/2026 10:02 - Nadini: ‎IMG-20260127-WA0000.jpg (arquivo anexado)
+Bom dia pessoal. Atualização sobre a planilha de movimentações. 
+
+
+A princípio, foi identificado que o motivo da distribuição não estar listada no relatório é porque o campo "city_id" do usuario estava NULL e o relatório apenas mostra transações que tenham cidades corretamente cadastradas. Esse problema persiste do legado. Quando o usuário foi cadastrado, por ser um cadastro internacional, não foram preenchidos os campos cidade e estado, o que impacta diretamente na montagem da planilha de movimentações. Para incluir essas transações, seria necessário cadastrar uma cidade para cada caso identificado, porém não existe uma lista de cidades internacionais relacionadas por países, além do Brasil. Para criar cidades para países internacionais teríamos que fazer uma melhoria e não é simples, é complexo de ser feito. Ainda vamos olhar novamente a planilha pra ver se perdemos algo mas a princípio o que causou a não inclusão da transação na planilha foi o cadastra incompleto do usuário. 
+
+Tambem foi identificado que atualmente existem 159 endereços com o campo city_id NULL, conforme podemos ver na imagem:
+27/01/2026 10:17 - Nadini: Para fazer essa análise foi usado a distribuição 40044 em nome de Carlos Augusto Senna Lda.
+27/01/2026 10:19 - Nadini: ‎IMG-20260127-WA0006.jpg (arquivo anexado)
+O dev inclusive fez um teste, configurando uma cidade pelo banco de dados para o cliente Carlos Augusto. Ele usou um city_Id de uma cidade no Brasil e a transação foi incluída na planilha movimentações.
+27/01/2026 11:28 - Thaynara Camara: ‎IMG-20260127-WA0025.jpg (arquivo anexado)
+Bom dia @⁨Nadini⁩ 
+Agradeço o retorno.
+
+Então resumindo, vocês inseriram uma cidade no cadastro do Senna e a movimentação do pedido que ele colocou apareceu em movimentações. Foi isso?
+
+Vocês fizeram o mesmo no legado? Pois fui olhar como o cadastro dele estava no legado e notei que foi alterado.
+27/01/2026 11:35 - Nadini: Thaynara, o dev só mexeu no backoffice atual. O cadastro do usuário no legado não foi alterado pela equipe Multiledgers.
+27/01/2026 11:42 - Thaynara Camara: ‎IMG-20260127-WA0026.jpg (arquivo anexado)
+Estranho, então o cadastro dele no legado já tinha cidade.
+Não era para ter puxado o cadastro todo para o novo sistema?
+Imaginei que vocês teriam alterado, pois coincidentemente é a mesma cidade que está no backoffice atual.
+27/01/2026 11:48 - Nadini: Deixa eu pedir o dev pra confirmar essa informação. Faz sentido, é a mesma cidade que usamos no backoffice atual.
+27/01/2026 11:49 - Luiz Paulo Gonçalves Miguel de Jesus: Bom dia Nadine eu notei que tem algumas informações que estão passando de um sistema para o outro Será que tá tendo um conflito de tabela?
+27/01/2026 11:49 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260127-WA0031.jpg (arquivo anexado)
+27/01/2026 11:50 - Luiz Paulo Gonçalves Miguel de Jesus: Nesse caso aqui por exemplo tenho dois lançamentos foram feitos em dezembro no legado, só que isso não foi feito no legado a gente fez transações dentro do sistema novo somente
+27/01/2026 11:57 - Nadini: Estou conferindo aqui com o dev. Esse ponto que o Luiz levantou pode ser o que está causando a mudança do usuário no legado.
+27/01/2026 11:59 - Luiz Paulo Gonçalves Miguel de Jesus: Perfeito, fico à disposição para maiores esclarecimentos
+27/01/2026 12:08 - Nadini: Pessoal, o dev pediu uma call pra vcs mostrarem esses cenários pra ele. Vocês podem falar que horas?
+27/01/2026 13:00 - Luiz Paulo Gonçalves Miguel de Jesus: Consgue as 14hrs?
+27/01/2026 13:08 - Nadini: Vou colocar na agenda
+02/02/2026 15:50 - Thaynara Camara: ‎IMG-20260202-WA0082.jpg (arquivo anexado)
+Boa tarde @⁨Nadini⁩ 
+Tudo bem?
+
+Em Relatórios: Quando o relatório é por Vendas Gerais, Vendas Individuais ou por Governo, preciso conseguir digitar o nome da pessoa ou governo, conforme era no legado. Pois encontrar um nome na lista está difícil, pois a mesma não está em ordem alfabética.
+02/02/2026 15:51 - Thaynara Camara: ‎IMG-20260202-WA0083.jpg (arquivo anexado)
+Segue como aparecia no legado. Nome completo e CPF.
+02/02/2026 17:20 - Nadini: Oi Thaynara, boa tarde. 
+
+Ok, vou passar a demanda para o dev.
+03/02/2026 09:51 - Thaynara Camara: Bom dia @⁨Nadini⁩ 
+Processamos um pedido pelo SaaS BMV. Aquele que deu erro uma vez.
+Os vendedores estavam evitando usá-lo por medo de dar erro 😅
+
+Processei um pedido e o Report saiu com erro.
+Por favor, me ajudem. Precisamos enviar esse Report ainda hoje para o cliente.
+03/02/2026 09:51 - Thaynara Camara: ‎Report - Pedido 56 SINDIPROM.pdf (arquivo anexado)
+Report - Pedido 56 SINDIPROM.pdf
+03/02/2026 09:53 - Nadini: Bom dia Thaynara. Pode identificar qual o erro do certificado, por favor?
+03/02/2026 09:54 - Thaynara Camara: ‎IMG-20260203-WA0001.jpg (arquivo anexado)
+*Titular* está saindo em branco. E todos os lugares onde o nome da empresa aparece também aparece em branco. 
+
+Os índices de contribuição também estão em branco.
+03/02/2026 09:56 - Thaynara Camara: ‎IMG-20260203-WA0003.jpg (arquivo anexado)
+03/02/2026 09:57 - Thaynara Camara: ‎IMG-20260203-WA0004.jpg (arquivo anexado)
+03/02/2026 09:57 - Thaynara Camara: Vou enviar um Report totalmente preenchido.
+03/02/2026 09:58 - Thaynara Camara: ‎Report - Pedido 808 Corrida de Reis.pdf (arquivo anexado)
+Report - Pedido 808 Corrida de Reis.pdf
+03/02/2026 10:15 - Thaynara Camara: ‎IMG-20260203-WA0010.jpg (arquivo anexado)
+O pedido processado hoje, também não aparece na planilha de movimentações.
+03/02/2026 12:29 - Nadini: Thaynara, todos os chamados foram abertos e a prioridade está no Bug do Report e na sequência Bug da planilha de movimentações. <Mensagem editada>
+03/02/2026 12:32 - Nadini: Assim que eu tiver uma atualização volto pra te informar. Eu pedi urgência na questão do report e o dev já está analisando o cenário para entender o porque do erro. <Mensagem editada>
+03/02/2026 13:29 - Thaynara Camara: Ótimo! Isso mesmo.
+03/02/2026 13:29 - Thaynara Camara: Obrigada Nadini 🙏🏽
+03/02/2026 15:13 - Nadini: ‎IMG-20260203-WA0077.jpg (arquivo anexado)
+Oi Thaynara, atualizações: 
+Caso do Report
+1 - Notamos que o valor usado para preenchimento do report é o nome fantasia do cliente. Neste caso, o nome fantasia está vazio. Por gentileza, editar o usuário inserindo um nome fantasia para validar este cenário. 
+
+2 - O dev solicitou uma informacão: Onde são imputados os valores de kpi's que são listados no report de um certificado SAS Bmv?
+03/02/2026 16:04 - Thaynara Camara: ‎IMG-20260203-WA0078.jpg (arquivo anexado)
+1 - Ao salvar o cadastro deu este erro.
+A senha quem faz é o cliente. Eu não devo alterar.
+Mas alterei para resolver logo e depois corrigimos esse bug.
+03/02/2026 16:05 - Thaynara Camara: 2 - Não faço ideia. Mas acredito que no mesmo lugar que está o do Certificado do SaaS Tesouro Verde.
+03/02/2026 16:05 - Thaynara Camara: O Report do SaaS Tesouro Verde está puxando direitinho.
+03/02/2026 16:10 - Nadini: Entendi. É que os valors dos certificates em  SAS Tesouro verde são differences daquele certificado que você encaminhou.
+03/02/2026 16:12 - Nadini: O dev vai continual avaliando o sistema pra tentar encontrar o que forma esse kpi.
+03/02/2026 16:14 - Thaynara Camara: Não entendi.
+03/02/2026 16:14 - Thaynara Camara: Tá ok!
+Qualquer coisa nos chamem.
+03/02/2026 16:15 - Nadini: Meu corretor hoje está mudando todas as palavras para inglês. Desculpe. 😣
+03/02/2026 16:17 - Thaynara Camara: ‎IMG-20260203-WA0079.jpg (arquivo anexado)
+Não se esqueçam destas palavras por favor. Elas não estão aparecendo no Report.
+03/02/2026 16:17 - Nadini: Eu comentei que os valores de kpis no certificado que você encaminhou e nos certificados que pegamos no backoffice de saas tesouro verde são todos diferentes. Por isso o dev está questionando onde esses valores são imputados antes de  serem impressos no certificado. <Mensagem editada>
+03/02/2026 16:21 - Thaynara Camara: Você quer dizer que não são fixos é isso? Eles variam.
+
+Eles variam pois depende do tamanho da pegada do cliente. Se o impacto ambiental é maior, a contribuição também será.
+03/02/2026 16:22 - Thaynara Camara: Ele vai precisar verificar como o cálculo é feito no SaaS Tesouro Verde e replicar para o SaaS BMV.
+03/02/2026 16:27 - Thaynara Camara: Editei 👆
+03/02/2026 16:29 - Thaynara Camara: ‎IMG-20260203-WA0080.jpg (arquivo anexado)
+Chamei a atenção do vendedor, pois ele não preencheu o nome fantasia. 😅
+
+Ele comentou que percebeu que quando ele preenchia o nome fantasia, aprecia duplicado na página do cliente.
+
+Fui checar e realmente aconteceu.
+03/02/2026 16:30 - Nadini: Essa parte dos títulos é ok. O complexo será o entendimento do cálculo feito em saas tesouro verde e a adaptação para saas bmv. Acho muito pouco provável que essa demanda fique pronta pra hoje.
+03/02/2026 16:30 - Nadini: Ele preenche o nome fantasia usando o backoffice?
+03/02/2026 16:33 - Thaynara Camara: Poxa 😓
+Eu não iria processar esse pedido. Porque eu imaginei que daria erro. Eu iria pedir para o vendedor colocar no SaaS Tesouro Verde.
+
+Mas pensei, precisamos corrigir os erros de uma vez por todas. 
+
+Agora me arrependi, porque o cliente vai ficar chateado. 😞
+03/02/2026 16:34 - Thaynara Camara: Não. No BMV Digital. Quando insere o pedido. 
+Eu coloquei via backoffice.
+03/02/2026 16:37 - Nadini: Thaynara, eu reparei que existiam dois pedidos processados como teste antes desse. Nesses pedidos esses erros dos kpis já estavam acontecendo? Acredito que vocês trataram esses problemas nas semanas que eu estive de recesso, então não tenho o histórico completo de chamadas e afins.
+03/02/2026 16:39 - Thaynara Camara: Pra mim já tinha resolvido tudo. 
+Mas vou olhar o histórico das conversas para ver. Pois eu estava com receio de processar esse pedido e deve ter motivo.
+
+Estou só tentando editar esse Report para o cliente e já olho isso para você. <Mensagem editada>
+03/02/2026 16:41 - Nadini: Eu lembro que vocês abriram chamado para o processamento da fila mas relacionado ao certificado saas bmv.
+03/02/2026 16:42 - Nadini: Que foi toda uma nova implementação que foi realizada entre o final de outubro e início de novembro.
+03/02/2026 16:46 - Thaynara Camara: https://app.bmvdigital.global/#/certificate/ca5ca39e-6be0-44a4-84f7-710426bbec44?t=clc
+03/02/2026 16:47 - Thaynara Camara: Na página do cliente está puxando os KPI’s
+03/02/2026 16:49 - Nadini: Vou passar para o dev mas não tenho certeza se vamos conseguir usar essa informação porque nós não temos acesso ao código das plataformas (apps) bmv digital e tesouro verde.
+03/02/2026 17:20 - Thaynara Camara: @⁨Nadini⁩ 
+Os testes do SaaS BMV ocorreram depois que você voltou de férias e foram relatados já neste grupo. Há mais mensagens sobre este assunto antes e depois desta.
+03/02/2026 17:21 - Thaynara Camara: 👆
+03/02/2026 17:24 - Nadini: Mas vc encontrou o certificado desse pedido? Porque os pedidos já estavam em processados mas eu não encontrei nos registros o certificado do pedido teste. Pq seria a finalização do fluxo ne?
+03/02/2026 17:24 - Thaynara Camara: Estou procurando aqui se finalizamos esta demanda.
+03/02/2026 17:24 - Thaynara Camara: Exato.
+03/02/2026 17:25 - Thaynara Camara: Era isso que estava procurando.
+03/02/2026 17:25 - Nadini: Deveria ter o certificado do pedido 51 e 55
+03/02/2026 17:25 - Nadini: Que são os casos de teste
+04/02/2026 18:53 - Nadini: ‎certificate.pdf (arquivo anexado)
+certificate
+05/02/2026 08:24 - Thaynara Camara: Bom dia @⁨Nadini⁩ 
+Irei verificar. Já já te retorno.
+05/02/2026 10:18 - Thaynara Camara: É isto mesmo.
+Está correto.
+05/02/2026 11:14 - Nadini: Oi Thaynara, bom dia. Obrigada pela validação. Vou passar para o dev.
+05/02/2026 11:15 - Nadini: Vamos seguir para os outros chamados abertos, da planilha de movimentações e na sequência filtro de busca permitir digitar nome e cpf.
+05/02/2026 12:08 - Thaynara Camara: Obrigada @⁨Nadini⁩
+05/02/2026 14:37 - Nadini: OI Thaynara, boa tarde. 
+
+Sobre a planilha de movimentações: após a atualização do cadastro do cliente, com a inclusão do nome fantasia, o pedido passou a ser exibido corretamente na listagem de movimentações. 
+
+Nosso desenvolvedor identificou esse comportamento durante a análise do código. Nesse caso, não se trata de um bug, mas de um erro causado por campos em branco no momento da criação do cliente no backoffice. Portanto, não há uma ação a ser aplicada pela Multiledgers.
+05/02/2026 15:00 - Nadini: Aproveitando, relembramos que já subimos uma correção que impede esse cenário de voltar a acontecer para novos clientes, atendendo a um pedido do Luiz para tornar esses campos obrigatórios.
+05/02/2026 15:25 - Thaynara Camara: Nadini,
+Sabe o que é estranho?
+O campo já era obrigatório. E não estava em branco. Estava com um ponto (.).
+05/02/2026 15:25 - Thaynara Camara: Quando fui preencher o campo notei isso.
+E me esqueci de comentar.
+05/02/2026 15:26 - Thaynara Camara: Por isso no primeiro Report apareceu só um ponto no Titular.
+05/02/2026 15:26 - Nadini: Esse ponto ele estava sendo usado pra montar o certificado mas pra planilha não gerou uma entrada.
+05/02/2026 15:29 - Thaynara Camara: Humm. Estranho.
+Mas o importante é que a planilha está corrigida. 
+Baixei a planilha e vou lançar no blockchain. 
+Obrigada pelo retorno.
+05/02/2026 15:29 - Thaynara Camara: Quando o Report estiver corrigido, me avisa por favor?
+05/02/2026 15:31 - Nadini: A correção já foi lançada no sistema. Assim que vcs validaram o dev já mandou pra produção.
+05/02/2026 15:46 - Thaynara Camara: Excelente. Obrigada.
+05/02/2026 15:46 - Thaynara Camara: ‎IMG-20260205-WA0021.jpg (arquivo anexado)
+No SaaS BMV não dá a opção de salvar hash do blockchain.
+05/02/2026 16:39 - Nadini: Como esse fluxo está sendo executado de ponta a ponta pela primeira vez no SaaS BMV, essa funcionalidade ainda não estava implementada. Vamos criar uma demanda para incluir o salvamento do hash do blockchain na tela de Detalhes do Certificado do SaaS BMV.
+
+Caso a operação já tenha sido realizada na blockchain, você pode nos encaminhar os hashes que conseguimos inseri-los manualmente pelo backend.
+05/02/2026 17:28 - Thaynara Camara: <Mídia oculta>
+@⁨Nadini⁩ 
+Preciso que o sistema pare de me pedir para digitar a senha do cliente quando eu editar um cadastro.
+Eu não sei a senha do cliente e nem devo saber.
+Não sei porque o sistema está pedindo isso agora.
+
+Eu já havia comentado isso aqui anteriormente. Mas não era prioridade. Coloca isso no fluxo  de demandas por favor.
+05/02/2026 17:33 - Thaynara Camara: Quando corrigir eu mesma insiro, sem problemas.
+05/02/2026 17:49 - Nadini: <Mídia oculta>
+1 - Ao salvar o cadastro deu este erro.
+A senha quem faz é o cliente. Eu não devo alterar.
+Mas alterei para resolver logo e depois corrigimos esse bug.
+05/02/2026 17:50 - Nadini: Certo, está aqui o relato sobre o erro relacionado a senha. Vou colocar como prioridade.
+09/02/2026 13:25 - Nadini: ‎IMG-20260209-WA0060.jpg (arquivo anexado)
+Boa tarde pessoal, atualizações.
+
+- Implementado salvamento de dados da blockchain para certificado SaaS BMV
+09/02/2026 13:25 - Nadini: ‎IMG-20260209-WA0061.jpg (arquivo anexado)
+09/02/2026 17:15 - Thaynara Camara: Boa tarde Nadini,
+Certinho. Vi aqui. Vou lançar todos os blockchains. Muito obrigada.
+11/02/2026 17:38 - Nadini: Oi @⁨Thaynara Camara⁩ tudo bem? Precisamos tirar uma dúvida sobre a questão do sistema requerer uma senha. 
+
+Você consegue falar por agora?
+11/02/2026 17:40 - Thaynara Camara: Boa tarde @⁨Nadini⁩ 
+Consigo.
+11/02/2026 17:42 - Nadini: Vou abrir uma sala, um momento
+11/02/2026 17:43 - Nadini: meet.google.com/zfx-rkwr-tip
+23/02/2026 11:16 - Luiz Paulo Gonçalves Miguel de Jesus: Bom dia, tudo bem?
+23/02/2026 11:17 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260223-WA0028.jpg (arquivo anexado)
+o sistema esta fora do ar?
+23/02/2026 11:19 - Nadini: Oi Luiz, bom dia, tudo bem e por ai?
+23/02/2026 11:20 - Nadini: Sim, o sistema está fora do ar. Estamos tentando descobrir o que está causando já tem algum tempo. Nosso devops está vendo isso.
+23/02/2026 11:20 - Maria Tereza Umbelino: Boa tarde. Por gentileza agilizem estamos no meio de uma operação internacional
+23/02/2026 11:21 - Luiz Paulo Gonçalves Miguel de Jesus: ‎IMG-20260223-WA0029.jpg (arquivo anexado)
+Ok, o legado também esta fora
+23/02/2026 11:25 - Nadini: Sim, o nosso devops está relatando latência e intermitência do lado da cloudflare.
+23/02/2026 12:00 - Nadini: Foi no cloudflare mesmo, a máquina estava com disco cheio. O sistema voltou já voltou ao ar.
+23/02/2026 12:01 - Luiz Paulo Gonçalves Miguel de Jesus: Perfeito, muito obrigado
+23/02/2026 12:01 - Nadini: O Devops está estudando como implementar uma *melhoria* pra monitorar o estado da máquina e evitar esse tipo de problema. <Mensagem editada>
+23/02/2026 12:01 - Luiz Paulo Gonçalves Miguel de Jesus: Isso seria excelente
+24/02/2026 10:00 - Nadini: Bom dia pessoal, atualização: 
+
+Poderiam, por gentileza, validar as seguintes implementações?
+- Adaptar filtro de busca em "Relatórios" para ficar igual ao legado.
+- Sistema pede senha do cliente quando perfil administrador tenta editar o mesmo.
+- Incluir campos obrigatórios em Editar Usuário.
+24/02/2026 10:09 - Luiz Paulo Gonçalves Miguel de Jesus: Bom dia, vou validar
+24/02/2026 10:21 - Luiz Paulo Gonçalves Miguel de Jesus: Todas entregas válidas ✅
+24/02/2026 10:43 - Luiz Paulo Gonçalves Miguel de Jesus: Poderia, por gentileza, me informar se temos alguma demanda em aberto?
+24/02/2026 10:51 - Nadini: Obrigada Luiz.
+24/02/2026 10:58 - Nadini: ‎IMG-20260224-WA0026.jpg (arquivo anexado)
+Essas eram as últimas tarefas abertas até o momento.
+24/02/2026 11:01 - Luiz Paulo Gonçalves Miguel de Jesus: Perfeito, muito obrigado
+24/02/2026 11:02 - Luiz Paulo Gonçalves Miguel de Jesus: Vou verificar se temos novas demandas
+03/03/2026 16:40 - ‎Paulo adicionou +55 21 98261-9661
+03/03/2026 16:54 - Nadini: Pessoal, boa tarde 😊
+
+Gostaria de apresentar a vocês a @⁨Marcela R Gonçalves⁩, nossa COO aqui na Multiledgers, que passa a acompanhar este canal junto conosco. 
+
+Ela vai apoiar o acompanhamento do chat e das aberturas de chamados, ajudando na organização das demandas em andamento e na priorização dos próximos passos. A ideia é trazer ainda mais clareza sobre status, testes pendentes e entregas previstas. 
+
+Estamos estruturando internamente uma lista consolidada do que precisa ser testado/validado para garantir que avancemos de forma organizada até a conclusão da plataforma do backoffice da BMV.
+03/03/2026 17:03 - Luiz Paulo Gonçalves Miguel de Jesus: Olá, boa tarde!
+03/03/2026 17:03 - Luiz Paulo Gonçalves Miguel de Jesus: Estaremos a disposição
+03/03/2026 17:07 - +55 21 98261-9661: Boa tarde pessoal!!
+03/03/2026 17:18 - Luiz Paulo Gonçalves Miguel de Jesus: Olá boa tarde
+10/03/2026 09:58 - Thaynara Camara: ‎IMG-20260310-WA0008.jpg (arquivo anexado)
+Pessoal, bom dia!
+
+Notei que o Hash do Pedido 56 (BMV Digital) não ficou salvo. Salvei hoje novamente, mas continua não aparecendo o ✅ .
+10/03/2026 10:00 - +55 21 98261-9661: Bom dia!! Vamos verificar aqui.
+25/03/2026 11:09 - Nadini: ‎IMG-20260325-WA0047.jpg (arquivo anexado)
+Bom dia. Está disponível no ambiente de produção do backoffice, a implementação da coluna substrate em pedido certificado Saas BMV. Seguem prints com algumas evidências.
+25/03/2026 11:09 - Nadini: ‎IMG-20260325-WA0048.jpg (arquivo anexado)
+25/03/2026 11:09 - Nadini: ‎IMG-20260325-WA0049.jpg (arquivo anexado)
+25/03/2026 11:16 - Luiz Paulo Gonçalves Miguel de Jesus: Olá bom dia, muito obrigado pela entrega dessa demanda

@@ -11,6 +11,8 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { EvidenceImage } from '@/app/components/evidence-image';
+import { STATS } from '../anexo-6/whatsapp-data';
+import { MessageSquare, Users, Calendar, Activity, AlertTriangle } from 'lucide-react';
 
 export default function FullReportPage() {
   const handlePrint = () => {
@@ -89,6 +91,9 @@ export default function FullReportPage() {
               </div>
               <div className="flex justify-between border-b border-dotted border-muted-foreground/30">
                 <span>Anexo V – Fluxos de Processo (AS-IS vs TO-BE)</span>
+              </div>
+              <div className="flex justify-between border-b border-dotted border-muted-foreground/30">
+                <span>Anexo VI – Registro de Comunicação WhatsApp (Suporte)</span>
               </div>
             </div>
           </div>
@@ -324,6 +329,117 @@ export default function FullReportPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Annex VI */}
+        <section className="print-break-before py-8 border-t-4 border-primary pt-12">
+          <h1 className="text-3xl font-bold mb-8 text-primary uppercase border-b-4 border-primary pb-4">
+            Anexo VI – Registro de Comunicação WhatsApp
+          </h1>
+          <div className="space-y-8">
+            <p className="text-justify">
+              Este anexo apresenta a análise consolidada da comunicação mantida via WhatsApp no grupo de suporte técnico. 
+              Este registro é fundamental para comprovar o histórico de falhas, tempos de resposta e o padrão de suporte reativo adotado pelo fornecedor.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              <div className="bg-muted p-4 rounded-lg text-center">
+                <p className="text-2xl font-bold text-primary">{STATS.totalMessages}</p>
+                <p className="text-xs uppercase tracking-wider font-semibold">Mensagens</p>
+              </div>
+              <div className="bg-muted p-4 rounded-lg text-center">
+                <p className="text-2xl font-bold text-primary">{STATS.activeDays}</p>
+                <p className="text-xs uppercase tracking-wider font-semibold">Dias Ativos</p>
+              </div>
+              <div className="bg-muted p-4 rounded-lg text-center">
+                <p className="text-2xl font-bold text-primary">{STATS.totalImages}</p>
+                <p className="text-xs uppercase tracking-wider font-semibold">Imagens/Provas</p>
+              </div>
+              <div className="bg-muted p-4 rounded-lg text-center">
+                <p className="text-2xl font-bold text-primary">{STATS.totalCalls}</p>
+                <p className="text-xs uppercase tracking-wider font-semibold">Chamadas</p>
+              </div>
+            </div>
+
+            <h3 className="text-xl font-bold mb-4 border-l-4 border-primary pl-4">Incidentes Críticos Mapeados</h3>
+            <Table className="border w-full text-xs">
+              <TableHeader>
+                <TableRow className="bg-muted hover:bg-muted">
+                  <TableHead className="w-24">Data</TableHead>
+                  <TableHead>Descrição do Incidente</TableHead>
+                  <TableHead className="w-24 text-center">Severidade</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {STATS.keyIncidents.map((inc, i) => (
+                  <TableRow key={i}>
+                    <TableCell className="font-mono">{inc.date}</TableCell>
+                    <TableCell>{inc.title}</TableCell>
+                    <TableCell className="text-center">
+                      <Badge variant={inc.severity === 'critical' ? 'destructive' : 'outline'} className="text-[9px]">
+                        {inc.severity.toUpperCase()}
+                      </Badge>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+
+            <h3 className="text-xl font-bold mt-10 mb-4 border-l-4 border-primary pl-4">Análise de Padrões de Falha</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card>
+                <CardContent className="pt-6 space-y-4">
+                  <div className="space-y-2">
+                    <p className="font-bold text-red-600 flex items-center gap-2">
+                      <AlertTriangle className="h-4 w-4" /> Ciclo de Correção Reativa
+                    </p>
+                    <p className="text-sm text-justify">
+                      Observa-se um padrão onde correções de bugs geram novos efeitos colaterais, criando um ciclo de instabilidade contínua. 
+                      Demandas críticas (como pedidos travados) levaram até 5 dias para resolução paliativa.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="font-bold text-amber-600 flex items-center gap-2">
+                      <AlertTriangle className="h-4 w-4" /> Testes Diretos em Produção
+                    </p>
+                    <p className="text-sm text-justify">
+                      Evidências claras de que o fornecedor realiza testes e manipulações de banco de dados diretamente no ambiente de produção, 
+                      causando "sujeira" nos dados e aposentadoria indevida de ativos (UCS).
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-6 space-y-4">
+                  <div className="space-y-2">
+                    <p className="font-bold text-red-600 flex items-center gap-2">
+                      <AlertTriangle className="h-4 w-4" /> Inconformidade de Segurança
+                    </p>
+                    <p className="text-sm text-justify">
+                      Compartilhamento de senhas de produção e seeds de carteiras blockchain em canal de comunicação aberto, 
+                      violando protocolos básicos de segurança digital e governança de dados.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="font-bold text-blue-600 flex items-center gap-2">
+                      <AlertTriangle className="h-4 w-4" /> Lacunas de Regra de Negócio
+                    </p>
+                    <p className="text-sm text-justify">
+                      Múltiplos registros onde a equipe técnica do fornecedor demonstra desconhecimento das regras de negócio implementadas, 
+                      resultando em parametrizações incorretas e falhas de lógica transacional.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Alert variant="destructive" className="mt-8">
+              <AlertDescription className="text-sm">
+                <strong>CONCLUSÃO DO ANEXO:</strong> O histórico de suporte via WhatsApp serve como prova documental de que o sistema atual não possui maturidade técnica para operação em escala, 
+                apresentando riscos de segurança e integridade de dados que extrapolam o aceitável para um sistema financeiro/tokenizador.
+              </AlertDescription>
+            </Alert>
           </div>
         </section>
 
