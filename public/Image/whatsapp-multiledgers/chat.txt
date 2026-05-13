@@ -1,0 +1,1226 @@
+[11/06/2025, 12:40:31] Multiledgers - suporte BMV: ‎As mensagens e ligações são protegidas com a criptografia de ponta a ponta. Somente as pessoas que fazem parte da conversa podem ler, ouvir e compartilhar esse conteúdo.
+[11/06/2025, 12:40:31] Nadini - Multiledger: ‎Nadini - Multiledger criou este grupo
+[27/08/2025, 16:17:29] Multiledgers - suporte BMV: ‎Nadini - Multiledger adicionou você
+‎[27/08/2025, 16:17:47] BMV Global | Atendimento: curl 'httpsv2-backoffice-api.bmv.gl.txt ‎documento omitido
+[27/08/2025, 20:54:07] ~ Matheus S. Silva: @⁨Alessandra - BMV⁩ conseguimos achar o problema. Amanhã explico melhor o que aconteceu, mas resumidamente foi porque fizemos aquele movimento de deletar o saldo das UCS no banco e ficaram algumas filas de order book ainda com saldo que não sabíamos que tinha.
+[27/08/2025, 20:54:32] ~ Matheus S. Silva: Foi corrigido já
+[27/08/2025, 22:58:36] Alessandra - BMV: Então perfeito amanhã às 9h30 vamos começar fazer a geração da safra.
+‎[28/08/2025, 09:50:22] BMV Global | Atendimento: ‎imagem ocultada
+[28/08/2025, 09:51:43] BMV Global | Atendimento: Bom dia Mateus,
+Tudo bem?
+
+Estamos tentando gerar a safra do Amapá no sistema e não conseguimos aprovar os documentos das áreas.
+Está dando erro no PIN.
+[28/08/2025, 09:52:33] ~ Matheus S. Silva: Bom dia. É aquele problema do e-mail da BMV que não tinha sido autenticado
+‎[28/08/2025, 09:52:46] BMV Global | Atendimento: ‎imagem ocultada
+[28/08/2025, 09:52:46] BMV Global | Atendimento: Na hora de aprovar a documentação do Núcleo apareceu o mesmo erro.
+[28/08/2025, 09:53:06] ~ Matheus S. Silva: Ontem pegamos aquele outro do contato@bmv.global
+[28/08/2025, 09:53:07] BMV Global | Atendimento: Ah sim. Achei que havíamos mudado para contato@bmv.global
+[28/08/2025, 09:53:32] ~ Matheus S. Silva: Ainda não, ficamos até a noite para arrumar o problema da finalização do abastecimento
+[28/08/2025, 09:53:38] BMV Global | Atendimento: Tá ótimo! Quando estiver corrigido me avisa por favor.
+Que tento gerar a safra novamente.
+[28/08/2025, 09:53:46] ~ Matheus S. Silva: Ok, aviso sim
+[28/08/2025, 09:54:00] BMV Global | Atendimento: Muito obrigada 🙏🏼
+[28/08/2025, 11:00:06] ~ Matheus S. Silva: Você chegou a fazer o download da documentação antes de tentar aprovar?
+[28/08/2025, 11:02:44] BMV Global | Atendimento: Sim. Quando eu fui tentar aprovar a do Núcleo pediu para fazer o download e eu fiz. Aí apareceu o espaço para colocar o pin. Mas não chegou o pin.
+[28/08/2025, 11:23:50] ~ Matheus S. Silva: Você chegou a olhar se o PIN chegou no seu email de login da plataforma?
+[28/08/2025, 11:31:39] BMV Global | Atendimento: Sim.
+Chequei no meu e-mail, no compliance e no contato.
+[28/08/2025, 11:44:20] ~ Matheus S. Silva: O seu e-mail é o thaynara@brasilmataviva.com.br? Estamos enviando outro e-mail, dai você confirma pra mim se você recebeu?
+[28/08/2025, 11:59:12] BMV Global | Atendimento: Hummm, não é esse.
+É o thaynara@bmv.global
+Antigamente eu recebia mesmo que mandassem para este antigo (brasilmataviva.com.br) mas não recebo mais.
+[28/08/2025, 11:59:54] BMV Global | Atendimento: Tem como alterar?
+[28/08/2025, 12:04:06] ~ Matheus S. Silva: Trocamos, tenta novamente fazer a aprovação do núcleo para ver se chega o e-mail.
+[28/08/2025, 12:04:45] ~ Matheus S. Silva: Vamos ficar de olho aqui para ver se o email foi disparado corretamente. Pode demorar alguns minutos para chegar o e-mail
+[28/08/2025, 12:12:09] BMV Global | Atendimento: Vou tentar agora
+[28/08/2025, 12:16:07] BMV Global | Atendimento: Consegui aprovar a documentação do Núcleo Amapá ✅🎉
+
+Mas a documentação da área não deu certo. Aparece erro no envio do PIN e não me dá a opção de baixar os docs.
+[28/08/2025, 12:17:35] ~ Matheus S. Silva: Vc chegou a fazer o download dos arquivos da área? Pq em tese é o mesmo jeito de aprovar o núcleo
+[28/08/2025, 12:17:50] ~ Matheus S. Silva: As vezes os documentos ficam dentro de outra pasta
+[28/08/2025, 12:18:56] ~ Matheus S. Silva: Aí você precisa navegar pasta dentro da pasta até achar o documento para fazer o download
+[28/08/2025, 12:59:19] BMV Global | Atendimento: Não fiz. Acredito que seja neste lugar. Em análise de documentos. Mas não deu a opção de baixar. Vou navegar um pouco mais aqui para confirmar.
+[28/08/2025, 13:33:39] BMV Global | Atendimento: Consegui baixar os documentos.
+[28/08/2025, 13:33:51] BMV Global | Atendimento: Mas continua dando erro no PIN
+‎[28/08/2025, 13:51:48] Alessandra - BMV: ‎imagem ocultada
+[28/08/2025, 13:51:48] Alessandra - BMV: A configuração da fila não está parecendo na drop down 
+‎[28/08/2025, 13:52:17] Alessandra - BMV: ‎imagem ocultada
+[28/08/2025, 13:52:17] Alessandra - BMV: Lembrete: O status de UCS pública 
+[28/08/2025, 13:57:32] Alessandra - BMV: Não está abastecendo fila para processar o pedido de selo
+[28/08/2025, 14:16:10] ~ Matheus S. Silva: Isso é por causa da limpeza dos saldos que fizemos no banco
+[28/08/2025, 14:16:40] ~ Matheus S. Silva: Algumas filas tbm tiveram seus saldos zerados. Aí precisa adicionar novamente
+[28/08/2025, 15:22:41] Alessandra - BMV: Adicionamos
+[28/08/2025, 15:22:54] Alessandra - BMV: @⁨~Matheus S. Silva⁩ fizemos o abastecimento de UCS na fila e criamos uma nova fila e não aparece ‎<Mensagem editada>
+‎[28/08/2025, 15:23:04] Alessandra - BMV: ‎<anexado: 00000045-Camila Faraco Lutterbach BMV.vcf>
+[28/08/2025, 15:23:38] Alessandra - BMV: Pode @⁨Nadini - Multiledger⁩  adicionar a Camila por favor? Ela é diretora chegou para nos apoiar na operação da Bmv
+[28/08/2025, 17:24:34] BMV Global | Atendimento: Pessoal, boa tarde.
+Poderiam adicionar a Camila por favor? ‎<Mensagem editada>
+[29/08/2025, 13:18:38] ~ Matheus S. Silva: Olá @⁨Alessandra - BMV⁩
+
+Podemos fazer uma chamada de 30 mim para ver esses itens? Saldos, filas, etc.
+[29/08/2025, 13:28:07] Alessandra - BMV: Podemos sim
+[29/08/2025, 13:28:14] Alessandra - BMV: Muito obrigada
+[29/08/2025, 13:29:06] Alessandra - BMV: Gostaria de solicitar a entrada da Camila por favor, aqui no grupo, pois ela está assumindo a operação do bmv, em meu lugar, então preciso que ela faça parte para futuramente se tiver necessidade de comunicação direta facilitar com vcs. ‎<Mensagem editada>
+[29/08/2025, 13:30:22] ~ Matheus S. Silva: Posso agendar para agora a tarde? Eu não vou poder participar, mas o time responsável já está sabendo e consegue atuar com vocês
+[29/08/2025, 13:30:31] Alessandra - BMV: Sim
+[29/08/2025, 13:30:55] Alessandra - BMV: Pode ser o quanto antes melhor, que fechamos esses pontos para subir as safras hoje ainda
+[29/08/2025, 13:49:49] Camila - BMV: ‎Nadini - Multiledger adicionou Camila - BMV
+[29/08/2025, 13:33:42] ~ Matheus S. Silva: Pode ser 14h15?
+[29/08/2025, 13:35:45] BMV Global | Atendimento: Pode ser sim!
+[29/08/2025, 13:36:06] ~ Matheus S. Silva: Vamos colocar na agenda.
+[29/08/2025, 13:49:18] Nadini - Multiledger: Boa tarde pessoal, desculpa a demora para responder. A agenda estava apertada. 
+
+Vou adicionar a Camila aqui no grupo.
+[29/08/2025, 14:04:58] Alessandra - BMV: muito obrigada!! Nadini
+[29/08/2025, 17:10:19] Camila - BMV: Nadini, podemos já deixar agendada às 14h da segunda-feira a reunião de continuação do suporte? Como já são 17h, provavelmente, se os rapazes conseguirem solucionar o erro hoje ainda, ficará muito tarde para todos.
+[29/08/2025, 17:11:06] Camila - BMV: Peço também, por favor, para me adicionar no convite da reunião: camila.lutterbach@bmv.global
+[29/08/2025, 19:22:35] Nadini - Multiledger: Oi, boa noite Camila, desculpa a hora mas só passar essa atualização: 
+	- foi corrigido os ajustes da call de mais cedo. 
+
+Se possível, nos passarem os demais passos que vão fazer. Assim podemos simular previamente no ambiente de dev e evitamos essas possíveis intervenções durante o processo de aposentadoria. 
+
+Lembrando tbm que na época de desenvolvimento tentamos simular todos esses fluxos, mas alguns deles a Alessandra não conseguiu criar naquele hora. 
+
+Nós gostaríamos de saber: qual ou quais operação que vocês precisam fazer com detalhes (filal que será usada, plataforma usada, etc) pq assim vamos pre-validar melhor e garantir que a operação tenha sucesso. ‎<Mensagem editada>
+[29/08/2025, 19:23:02] Nadini - Multiledger: Pode deixar que vou te incluir no convite a partir de agora
+[29/08/2025, 22:49:38] Alessandra - BMV: Oii Nadini,
+Obrigada pelo retorno.
+Os próximos passos que temos é processar o pedido de selo - aposentadoria que já estão na plataforma da bmv digital (usando os créditos da IMEI) e tesouro verde(usando crédito do governo - Amapá e Codemar e imei) ‎<Mensagem editada>
+[29/08/2025, 22:50:40] Alessandra - BMV: E depois disso gerar as safras de todas as fazendas e fazer as transferências para atualizar os saldos de todos que estão na plataforma legado.
+[29/08/2025, 22:52:37] Alessandra - BMV: Os testes foram feitos, gerar safra, montar fila, processar pedido,  esses erros não apareceram nos testes, eu acredito que devido deletar os saldos, o sistema tem algumas validações e travas.
+[01/09/2025, 09:56:28] Nadini - Multiledger: Oi Alessandra, bom dia. 
+
+Vou passar essas informações para o time para eles testarem os fluxos. Assim garantimos que vamos ter sucesso numa operação. Em breve te enviamos uma atualização.
+[01/09/2025, 11:22:22] Camila - BMV: Nadini, obrigada pelo retorno. Você acredita que conseguimos fazer já um fluxo em call hoje a tarde?
+[01/09/2025, 11:42:44] Camila - BMV: Já subimos algumas safras
+[01/09/2025, 11:42:53] Camila - BMV: e conseguimos fazer todo o fluxo
+[01/09/2025, 11:48:01] Nadini - Multiledger: Camila, bom dia. Ainda estou aguardando o time testar o fluxo e me passar o melhor horário. Lembrando que estamos validando o fluxo para garantir o sucesso e a conclusão de uma operação de aposentadoria. Contudo, sexta realizamos todas as correções mapeadas naquele dia e já subimos para o ambiente, ou seja, vocês já conseguem usar. Fica como sugestão vocês continuarem usando o backoffice para adiantar qualquer processo e também para se encontrarem algum bug novo já relatar aqui, que assim podemos garantir o sucesso da operação.
+[01/09/2025, 11:49:32] Camila - BMV: Já adiantamos bastante coisa e vamos gerar o pedido
+[01/09/2025, 11:49:58] Camila - BMV: De qualquer forma vamos anotando algum problema
+[01/09/2025, 11:50:11] Camila - BMV: e te avisamos
+[01/09/2025, 12:01:00] Nadini - Multiledger: Perfeito. Eu tive um feedback do Fernando agora pouco avisando que não seria possível realizar uma call as duas, que eles vão precisar de mais tempo, eles conseguiram mapear um bug seguindo a informação que a Alessandra passou. Assim que tiver outras atualizações eu retorno pra vcs.
+‎[01/09/2025, 14:06:31] BMV Global | Atendimento: Pessoal, boa tarde.
+Acho que vamos precisar da ajuda de vocês.
+Não estamos conseguindo finalizar o procedimento em blockchain. 😓 ‎imagem ocultada
+[01/09/2025, 14:14:46] Nadini - Multiledger: Esse print é da etapa de abastecimento da plataforma ou de aposentadoria?
+[01/09/2025, 14:16:57] Alessandra - BMV: abastecimento da plataforma
+‎[01/09/2025, 14:17:57] Alessandra - BMV: Fiz dessa forma aqui, mas a carteira não aparece. ‎imagem ocultada
+[01/09/2025, 14:24:19] Alessandra - BMV: no manual está UCSManager, mas utilizei tambem para testar CPRVManager.
+[01/09/2025, 14:25:21] ~ Matheus S. Silva: Alessandra, você pode utilizar aquela extensão para poder fazer. E o bom é que ficando na extensão você faz uma vez só o cadastro para mexer nesse site
+‎[01/09/2025, 14:42:39] Alessandra - BMV: Aqui @⁨~Matheus S. Silva⁩ ? mas continua não aparecendo as outras carteiras, como faço para sincronizar as demais carteiras? ‎imagem ocultada
+[01/09/2025, 14:46:22] Alessandra - BMV: pode falar rapidamente, pq esse passo de adicionar carteira, não está no manual, no substrate.
+[01/09/2025, 18:17:50] Nadini - Multiledger: Oi Alessandra, desculpa a demora. Atualização sobre adicionar a carteira: 
+
+- Foi incluído no manual o passo a passo para instalação e uso da extensão da Polkadot no navegador. Foram descritas as etapas de importar account (importar carteira) e validar account (validar carteira) via extensão.
+
+Com essa informação você será capaz de validar as carteiras e assim enxergar elas na blockchain. 
+
+Não foi possível fazer uma chamada porque a agenda está um pouco apertada e como eu comentei mais cedo, ainda estamos tratando um bug identificado ao seguir os passos que vc nos passou na sexta.
+[01/09/2025, 18:27:39] Alessandra - BMV: Vou verificar novamente então, obrigada pelo retorno
+‎[02/09/2025, 10:21:56] BMV Global | Atendimento: Bom dia pessoal,
+Tudo bem?
+
+Conseguimos marcar uma agenda para hoje? @⁨Nadini - Multiledger⁩ 
+Estou tentando fazer o procedimento da Polkadot, conforme o manual, mas não consegui.
+Preciso processar os pedidos da plataforma BMV e Tesouro Verde ainda hoje.
+Já fomos notificados judicialmente por um dos clientes do Tesouro Verde. E eles vão notificar a SEFAZ AP, o que nos traria muitos problemas com o ministério público. ‎imagem ocultada
+[02/09/2025, 10:34:09] Nadini - Multiledger: Oi Thaynara, bom dia. Já estamos verificando aqui internamente, estamos pedindo urgência para essa correção. Já retorno com alguma atualização e uma sugestão de agenda.
+[02/09/2025, 10:51:54] Nadini - Multiledger: Thaynara, você consegue reunir agora 11h15 para adiantarmos essa parte da aposentadoria? Ainda estamos fazendo uma implementação para pegar o hash no backoffice mas acreditamos que conseguimos desbloquear vocês na blockchain antes disso.
+[02/09/2025, 10:58:06] Alessandra - BMV: Maravilha
+[02/09/2025, 10:58:14] Alessandra - BMV: Vamos fazer sim
+[02/09/2025, 11:27:09] Nadini - Multiledger: https://docs.google.com/document/d/1TbZBc01trc_C_7k7upuY71VUrwh6cXBic1ClgUlrGfk/edit?usp=drive_link
+[02/09/2025, 12:36:11] Alessandra - BMV: Vou  adicionar a versão no nosso drive, se alterarem por gentileza nos avisar
+[02/09/2025, 12:39:54] Nadini - Multiledger: Claro, aviso sim. Mas a única edição feita até agora foi essa inclusão da extensão ontem msm.
+[02/09/2025, 12:41:23] Alessandra - BMV: Maravilha, muito obrigada.
+[02/09/2025, 15:00:44] Nadini - Multiledger: Boa tarde, atualização: 
+
+- Foi incluído no manual o passo a passo das etapas de abastecimento e aposentaria em lote na blockchain. Itens 6 e 7, nas últimas páginas do documento. ‎<Mensagem editada>
+[02/09/2025, 15:52:43] Alessandra - BMV: ‎Mensagem apagada
+[02/09/2025, 15:53:49] Alessandra - BMV: maravilha
+[02/09/2025, 17:24:59] ~ Matheus S. Silva: Estamos liberando uma correção que libera o download do certificado e o QRCode
+[02/09/2025, 17:25:13] ~ Matheus S. Silva: Assim que ficar pronto aviso aqui
+‎[03/09/2025, 10:43:05] ~ Matheus S. Silva: Pessoal, liberamos a opção para fazer QR Code e direcionamento para o site ‎imagem ocultada
+[03/09/2025, 10:45:00] ~ Matheus S. Silva: Liberamos tbm o download do certificado. Mas falta apenas inserir mais algumas informações referentes ao pedido.
+‎[03/09/2025, 10:45:51] ~ Matheus S. Silva: Já estamos ajustando esses dados, para vim todo preenchido ‎imagem ocultada
+[03/09/2025, 10:56:26] Alessandra - BMV: maravilha Mateus
+[03/09/2025, 11:15:46] BMV Global | Atendimento: 👏🏼👏🏼👏🏼👏🏼
+‎[03/09/2025, 12:33:08] BMV Global | Atendimento: Pessoal, bom dia!
+Eu e a Alessandra fizemos a primeira aposentadoria no blockchain. Mas acredito que não deu certo. 😅Tentamos verificar se a transação deu certo, conforme está no manual. Poderiam verificar se estamos fazendo corretamente? Pois jogamos outros hashs e deu errado também. Por isso ficamos em dúvida. ‎imagem ocultada
+[03/09/2025, 13:12:00] Alessandra - BMV: Inclusive as transferências da Mateus para as plataformas não conseguimos verificar, acho que estamos fazendo algo errado
+[03/09/2025, 13:48:23] Nadini - Multiledger: Boa tarde, tudo bem? O Fernando vai atender. Podem falar às 16h?
+[03/09/2025, 13:48:49] Alessandra - BMV: 16h30 pode?
+[03/09/2025, 13:48:58] Nadini - Multiledger: Pode ser
+[03/09/2025, 13:49:03] Nadini - Multiledger: Vou colocar na agenda
+[03/09/2025, 13:49:25] Alessandra - BMV: fechado então.
+‎[03/09/2025, 16:15:48] BMV Global | Atendimento: Pessoal, boa tarde.
+
+Não estou conseguindo baixar o Report.
+Ontem consegui baixar normalmente. ‎imagem ocultada
+[03/09/2025, 16:21:08] BMV Global | Atendimento: Somente no Tesouro Verde.
+No Bmv Digital consegui baixar agora normalmente, mas ainda está com aqueles erros que vocês comentaram mais cedo. ‎<Mensagem editada>
+‎[03/09/2025, 20:49:14] ~ Matheus S. Silva: Pessoal, subimos agora a correção que traz as demais informações no certificado. Inclusive com aquela correção no nome de OBS para ODS ‎imagem ocultada
+[03/09/2025, 20:57:22] Alessandra - BMV: Maravilha
+[03/09/2025, 20:57:44] Alessandra - BMV: Muito Obrigada Mateus amanhã verificamos os link do blockchain.
+[04/09/2025, 08:15:38] BMV Global | Atendimento: Bom dia 
+Muito obrigada Mateus.👏🏼
+Vou verificar.
+‎[04/09/2025, 08:17:23] BMV Global | Atendimento: Pessoal, bom dia.
+Ontem nossa equipe tentou aprovar a documentação de 150 fazendas. Mas o PIN não chegava ou demorava muito para chegar.
+Hoje fiz o teste. Realmente o PIN não chegou. Já tem mais de 15 minutos que testei. ‎imagem ocultada
+[04/09/2025, 09:31:39] Nadini - Multiledger: Bom dia pessoal. Vamos verificar essa questão do envio de email, Thaynara. ‎<Mensagem editada>
+[04/09/2025, 09:32:13] Nadini - Multiledger: Sobre essa questão do download do relatório.
+‎[04/09/2025, 09:33:48] Nadini - Multiledger: Estamos tentando replicar o cenário mas existem muitos casos e não conseguimos ainda achar o erro. Vocês podem nos passar qual foi a informação preenchida por vocês que gerou o bug? ‎imagem ocultada
+‎[04/09/2025, 10:18:03] BMV Global | Atendimento: Bom dia Nadini, @⁨Nadini - Multiledger⁩ 
+Não se trata do relatório e sim o Report.
+Ele até baixa, mas não abre. Essa é a mensagem que aparece no adobe quando tento abrir direto na pasta onde baixei o arquivo.
+O selo baixou normalmente, mas o Report não. ‎imagem ocultada
+‎[04/09/2025, 10:18:25] BMV Global | Atendimento: É aqui que baixamos o Report. ‎imagem ocultada
+[04/09/2025, 10:19:23] BMV Global | Atendimento: Na terça eu consegui baixar normalmente. Mas na quarta não consegui. Hoje também tentei novamente e não consegui.
+[04/09/2025, 10:41:08] BMV Global | Atendimento: Chequei e está saindo direitinho. 👏🏼🎉 Obrigada.
+
+No entanto encontrei um erro. 😅
+‎[04/09/2025, 10:41:26] BMV Global | Atendimento: O Report está puxando o nome do vendedor e não do cliente. ‎imagem ocultada
+‎[04/09/2025, 10:42:13] BMV Global | Atendimento: Tem que aparecer o nome do cliente e não do vendedor. ‎imagem ocultada
+[04/09/2025, 11:44:03] BMV Global | Atendimento: @⁨Nadini - Multiledger⁩ 
+Sobre este bug em especifico.
+Notei que somente o Report do programa Mumbuca Verde que está dando este problema.
+Dentro do Tesouro Verde tem os programas Tesouro Verde Amapá e Mumbuca Verde. 
+O erro está neste Report do Mumbuca. O arquivo está dando erro e *não abre.* ‎<Mensagem editada>
+[04/09/2025, 12:04:25] Alessandra - BMV: @⁨~Matheus S. Silva⁩ seria possível desativar o pin? Para facilitar a subida dos documentos? E não tornar um problema pq está relacionado ao servidor de e-mail.
+[04/09/2025, 12:10:09] BMV Global | Atendimento: Recapitulando os erros que precisamos de correção.
+Sem essas correções não conseguimos prosseguir aqui 😓
+
+1 - Report do Mumbuca Verde não está abrindo. 
+2 - Report do BMV Digital está saindo com nome do vendedor (precisa sair com nome e CNPJ do cliente).
+3 - Desativar o PIN - assim não perdemos tempo com esse erro.
+‎[04/09/2025, 16:09:37] ~ Matheus S. Silva: @⁨Alessandra - BMV⁩ boa tarde
+
+Sobre essa questão do PIN, o pessoal verificou que não seria simples remover essa feature. Melhor seria arrumar o envio, daí vimos que o backoffice está disparando corretamente os emails, conforme essa imagem. ‎imagem ocultada
+‎[04/09/2025, 16:11:07] ~ Matheus S. Silva: Mas mesmo assim os e-mail pararam de chegar, então o Vitor foi uma análise e viu que pode ser na verdade a Locaweb. Aparentemente eles estão indicando que receberam a requisição de envio e que ela foi entregue, apesar de não chegar na caixa de entrada ‎imagem ocultada
+[04/09/2025, 16:13:21] ~ Matheus S. Silva: Aí temos alguma soluções para arrumar isso. Podemos entrar em contato com a Locaweb e abrir um chamado para resolver ou podemos tentar mudar de provedor. Se quiser mudar temos o MailGun que tem um plano gratuito de 100 e-mails por dia de graça. Mas caso precise de mais de 100 envios por dia, terá algum tipo de custo.
+[04/09/2025, 16:13:53] ~ Matheus S. Silva: O que você gostaria de fazer?
+[04/09/2025, 19:20:38] ~ Matheus S. Silva: @⁨Alessandra - BMV⁩ subimos uma correção do Report do Mumbuca Verde e arrumamos o nome no Report do BMV Digital para sair com o nome do cliente e CNPJ
+[04/09/2025, 19:26:45] Alessandra - BMV: Vamos na mail gun o que acha?
+Pq o que me parece que o serviço da locaweb deixa a desejar bastante, vi muita reclamação.
+Para fazer essa mudança exige muito esforço?
+[04/09/2025, 19:27:11] Alessandra - BMV: Maravilha, amanhã pela manhã a Thaynara vai verificar então
+[04/09/2025, 19:35:33] ~ Matheus S. Silva: Você poderia fazer uma chamada de 20 a 30 minutos com o time? Ficamos com algumas dúvidas sobre uma lógica de negócio, que foi um dos motivos que o report do Mumbuca ter dado problema. Daí assim evitamos outros no futuro. Que horários ficaria bom pra você? Temos alguns horários na parte da manhã depois das 10h e alguns na parte da tarde depois das 13h
+[04/09/2025, 19:35:48] ~ Matheus S. Silva: Aí aproveitamos e vemos isso
+[04/09/2025, 20:39:29] Alessandra - BMV: Posso sim
+[04/09/2025, 20:40:01] Alessandra - BMV: 13:30 pode ser?
+[05/09/2025, 10:48:34] ~ Matheus S. Silva: Pode sim, deixei na agenda
+[05/09/2025, 11:10:35] Alessandra - BMV: Bom dia
+[05/09/2025, 11:10:59] Alessandra - BMV: ‎Mensagem apagada
+‎[05/09/2025, 11:21:25] Alessandra - BMV: ‎imagem ocultada
+‎[05/09/2025, 11:21:26] Alessandra - BMV: Identificamos um problema, a transação de aposentadoria da Mary Kay, não está apresentando na planilha de movimentações, sabe dizer o que deve ter acontecido? ‎imagem ocultada
+[05/09/2025, 13:31:33] BMV Global | Atendimento: Boa tarde
+[05/09/2025, 13:31:41] BMV Global | Atendimento: Vocês criaram a sala para as 13:30?
+[05/09/2025, 14:38:41] BMV Global | Atendimento: ‎Mensagem apagada
+‎[05/09/2025, 15:29:10] BMV Global | Atendimento: Pessoal, boa tarde.
+Não estamos conseguindo atualizar a cotação da UCS. ‎imagem ocultada
+[05/09/2025, 16:37:24] Nadini - Multiledger: @⁨BMV Global | Atendimento⁩ , boa tarde. Estamos vendo essa questão da cotação. Me tira uma dúvida: Você usou qual usuário para tentar salvar essa atualização do valor?
+[05/09/2025, 16:38:59] Nadini - Multiledger: Nós fomos simular o valor usando a conta da Alessandra e o valor parece que foi atualizado sem surgir o mesmo erro pra salvar.
+[05/09/2025, 16:40:52] BMV Global | Atendimento: Usei o meu usuário de administrador.
+O da Ale deve ser de diretor né?
+[05/09/2025, 16:41:06] Alessandra - BMV: Vou testar então aqui
+[05/09/2025, 16:41:32] Nadini - Multiledger: A gente testou com o usuário da Alessandra e conseguimos salvar o valor correto.
+[05/09/2025, 16:41:47] Nadini - Multiledger: Já deve tá aparecendo pra vcs
+[05/09/2025, 16:42:38] Alessandra - BMV: Apareceu aqui sim
+[05/09/2025, 16:43:21] Nadini - Multiledger: Então o usuário administrador tbm precisa ter o poder pra atualizar o valor da cotação da ucs. ‎<Mensagem editada>
+[05/09/2025, 16:43:46] Nadini - Multiledger: Vou pedir pro pessoal olhar isso
+[05/09/2025, 16:44:14] BMV Global | Atendimento: Obrigada Nadini! 🙏🏽
+‎[08/09/2025, 14:44:00] Nadini - Multiledger: Boa tarde, tudo bem? 
+
+*Atualização*
+
+As correções já se encontram disponíveis em produção para uso:
+- Tela de safra apresentando propriedades como publica/privada; 
+- Relatório de movimentação incluindo distribuição da Mary Kay; ‎imagem ocultada
+‎[08/09/2025, 14:44:00] Nadini - Multiledger: ‎imagem ocultada
+[08/09/2025, 14:46:01] Nadini - Multiledger: Pendência: 
+
+- Seguimos trabalhando para resolver o Pin que deve ser enviado por email.
+[08/09/2025, 14:49:17] Alessandra - BMV: obrigada
+[08/09/2025, 15:03:45] Alessandra - BMV: @⁨Nadini - Multiledger⁩ verificando a correção do selo de aposentadoria do Tesouro Verde Amapá e Selo BMV. ficaram faltando alguns detalhes no texto, coloquei a versão correta, para ajudar a identificar.
+‎[08/09/2025, 15:04:21] Alessandra - BMV: 2025 BMV - Report - Modelo Final.pptx ‎documento omitido
+‎[08/09/2025, 15:04:22] Alessandra - BMV: 2025 Tesouro Verde - Report - Modelo Final.pptx ‎documento omitido
+‎[08/09/2025, 15:19:02] BMV Global | Atendimento: @⁨Nadini - Multiledger⁩ 
+A Calculadora está saindo trocada aqui.
+Ex.: Este primeiro item deveria ser energia. ‎imagem ocultada
+[08/09/2025, 15:34:30] Nadini - Multiledger: Por gentileza, Thaynara, pode me enviar um print screen completo da tela? Que conste a URL.
+‎[08/09/2025, 15:36:12] BMV Global | Atendimento: Assim? ‎imagem ocultada
+[08/09/2025, 15:45:41] Nadini - Multiledger: Isso, obrigada
+[08/09/2025, 17:16:18] Nadini - Multiledger: Alessandra, vc consegue apontar quais são esses detalhes que deixam o certificado correto? Seria o melhor para termos certeza de qual texto precisa ser modificado, para não correr o risco de alterarmos uma informação e ser outro campo ou ainda ter outros campos faltando que não conseguimos identificar.
+[08/09/2025, 17:17:06] Alessandra - BMV: Vamos fazer isso então
+[08/09/2025, 17:19:33] Nadini - Multiledger: Obrigada!
+‎[09/09/2025, 18:30:02] Nadini - Multiledger: Boa tarde, tudo bem? 
+
+Atualização: 
+
+- Calculadora corrigida e inclusive foi adicionado os outros enums que estavam faltando
+
+Obs.: Seguimos com a pendência do Pin associada ao envio de email. ‎imagem ocultada
+‎[09/09/2025, 18:30:02] Nadini - Multiledger: ‎imagem ocultada
+‎[09/09/2025, 18:30:03] Nadini - Multiledger: ‎imagem ocultada
+‎[10/09/2025, 15:37:13] BMV Global | Atendimento: ‎imagem ocultada
+[10/09/2025, 15:37:13] BMV Global | Atendimento: Boa tarde pessoal,
+Cliente do Tesouro Verde reportou hoje que não conseguiu baixar o Report.
+‎[10/09/2025, 15:38:02] BMV Global | Atendimento: Fiz o teste no BMV Digital e está dando o mesmo erro. ‎imagem ocultada
+[10/09/2025, 15:38:10] BMV Global | Atendimento: No Backoffice consegui baixar normalmente.
+[10/09/2025, 15:38:47] BMV Global | Atendimento: Obrigada @⁨Nadini - Multiledger⁩
+[10/09/2025, 15:44:00] Nadini - Multiledger: Oi, boa tarde
+[10/09/2025, 15:44:42] Nadini - Multiledger: Você consegue nos enviar um print da tela toda, mostrando o url da página?
+‎[10/09/2025, 15:44:59] BMV Global | Atendimento: ‎imagem ocultada
+[10/09/2025, 15:47:45] Nadini - Multiledger: Já pedi pra darem uma olhada.
+[10/09/2025, 16:02:42] BMV Global | Atendimento: Obrigada Nadini
+‎[10/09/2025, 16:06:10] Nadini - Multiledger: Thaynara, o erro foi causado usando o seu usuário? No perfil da Alessandra a gente não conseguiu reproduzir o mesmo erro.
+
+Você poderia nos enviar um print mostrando qual botão que foi vc usou para pegar esse erro?
+
+E também poderia nos indicar qual perfil foi usado? ‎imagem ocultada
+[10/09/2025, 17:57:21] BMV Global | Atendimento: No BMV Digital usei o perfil Saas Tesouro Verde. Pois é onde faço pedido. Este é o perfil usado pelos vendedores para inserir pedido.
+
+Já o cliente que entrou em contato, usou a conta dela no Tesouro Verde.
+‎[10/09/2025, 18:15:03] Nadini - Multiledger: Thaynara, após entrar em saas tesouro verde onde é feito o download? ‎imagem ocultada
+[10/09/2025, 18:17:41] Nadini - Multiledger: Só esclarecendo, nós não conhecemos todo o sistema e por isso precisamos de mais detalhes.
+‎[10/09/2025, 20:57:58] Alessandra - BMV: Nos meus selos ‎imagem ocultada
+[11/09/2025, 09:34:38] Nadini - Multiledger: Bom dia pessoal, tudo bem? 
+
+Usamos o usuário da Alessandra  para simular o cenário do download do Report porém nessa conta não existem selos disponíveis para download. Vamos precisar usar uma conta com selos disponíveis para download. Vocês poderiam nos informar algum email de uma conta que possua o selo?
+‎[11/09/2025, 09:35:04] Nadini - Multiledger: ‎imagem ocultada
+[11/09/2025, 10:16:10] BMV Global | Atendimento: Vou te passar a que eu uso para fazer as certificações Nadini
+[11/09/2025, 10:16:26] BMV Global | Atendimento: Login: imei@bmv.global
+[11/09/2025, 10:16:37] BMV Global | Atendimento: Senha: Imei@2025
+‎[11/09/2025, 10:17:45] BMV Global | Atendimento: Na tela de início mesmo tem a lista de selos ‎imagem ocultada
+[11/09/2025, 10:18:02] Nadini - Multiledger: Obrigada Thaynara, vou passar para o Fernando.
+[11/09/2025, 10:19:09] BMV Global | Atendimento: Se precisar testar o Tesouro Verde também, me avisem que pego um acesso de algum cliente.
+[11/09/2025, 10:20:56] Nadini - Multiledger: Acho que vamos testar o tesouro verde. O Fernando comentou que só precisava do email, ele consegue alterar a senha pelo backoffice. Aí depois o cliente pode alterar a senha novamente para garantir que a conta está segura.
+[11/09/2025, 10:32:27] BMV Global | Atendimento: COMMERCIUM COMERCIAL IMPORTADORA EXPORTADORA LTDA
+
+carmemcaetano20@gmail.com
+‎[11/09/2025, 17:45:44] Alessandra - BMV: @⁨~Matheus S. Silva⁩ fiz um erro na geração de safra. gerei 2 safras para mesma fazenda, no mesmo ano.
+A 12.082 era para ser Sitio Beira Rio ‎imagem ocultada
+[11/09/2025, 17:48:01] Alessandra - BMV: nas coordenadas foram certas, só a fazenda e o produtor que foram erradas 🫠🤪🙀e agora?
+[11/09/2025, 17:51:07] BMV Global | Atendimento: ‎Mensagem apagada
+[11/09/2025, 17:51:13] BMV Global | Atendimento: ‎Mensagem apagada
+[11/09/2025, 18:29:33] Nadini - Multiledger: Alessandra, boa tarde. Hoje o Matheus não vai conseguir olhar essa questão mas eu já passei aqui internamente. Amanhã te retornamos com um direcionamento do que pode ser feito. ‎<Mensagem editada>
+[11/09/2025, 18:31:07] Alessandra - BMV: Obrigada
+[12/09/2025, 10:15:14] ~ Matheus S. Silva: Bom dia Alessandra, vou dar uma olhada no que podemos fazer. Depois te retorno com uma solução
+[12/09/2025, 10:15:43] Alessandra - BMV: Muito obrigada pelo retorno Mateus
+[12/09/2025, 20:06:48] Nadini - Multiledger: Boa noite, atualização:
+
+- Resolvido o problema do Relatório e Selo que são acessados pelo "https://app.bmvdigital.global/".
+[15/09/2025, 09:26:36] ~ Matheus S. Silva: Bom dia
+@⁨Alessandra - BMV⁩ limpamos a Safra #268 na base de dados. Depois basta remover os créditos na Blockchain. Foi só possível porque não houve movimentações depois da criação da Safra
+[15/09/2025, 11:16:32] Alessandra - BMV: Maravilha
+[15/09/2025, 11:16:33] Alessandra - BMV: Para remover na blockchain como faz? Vcs ou não?
+[15/09/2025, 18:16:51] Alessandra - BMV: nós*
+‎[15/09/2025, 18:18:20] Alessandra - BMV: @⁨Nadini - Multiledger⁩ fazendo o registro das safras deu um bug, apenas no front,  demonstra como no print que gerou dois registros, o que parece verificando no registro das movimentações, que o no blockchain foi feito apenas 1. ‎imagem ocultada
+‎[15/09/2025, 18:19:33] Alessandra - BMV: Esse produtor ele está cadastrado núcleo teles pires, nessa tela não está aparecendo. ‎imagem ocultada
+[16/09/2025, 09:36:36] Nadini - Multiledger: Oii bom dia, desculpa a demora. Vou verificar esses erros que vcs listaram ontem e em breve trago atualizações sobre a blockchain.
+[16/09/2025, 11:17:57] Alessandra - BMV: Bom dia,
+Obrigada
+[16/09/2025, 13:03:40] Alessandra - BMV: Vou colocoar mais 2 casos aqui, agora é do nucleo Xingu:
+1. Ilías Antônio de OliveiraAntonio Claret Ferreira
+2. Onício Resende Agropastoril Ltda.
+
+Seguem prints demonstrando, abaixo ‎<Mensagem editada>
+‎[16/09/2025, 13:04:15] Alessandra - BMV: ‎imagem ocultada
+‎[16/09/2025, 13:04:16] Alessandra - BMV: ‎imagem ocultada
+‎[16/09/2025, 13:04:16] Alessandra - BMV: ‎imagem ocultada
+‎[16/09/2025, 13:04:17] Alessandra - BMV: ‎imagem ocultada
+‎[16/09/2025, 14:12:04] Alessandra - BMV: comecei a fazer Arinos agora, percebi que iria dar o bug novamente, e apertei no botão, depois de apertar o botão salvar, ele fica parado sem resposta, fui ver no histórico, não apareceu que gravou no blockchain, veja o print em anexo. ‎imagem ocultada
+‎[16/09/2025, 14:20:24] Nadini - Multiledger: @⁨Alessandra - BMV⁩, já estamos trabalhando na questão da duplicidade de safra. O Edileno reportou outro dois casos: safras #309, #308 são um problema de duplicidade também? ‎imagem ocultada
+[16/09/2025, 14:29:05] Nadini - Multiledger: Alessandra, o Edileno verificou que existe uma regra no momento da criação da safra que valida se já existe uma safra para a mesma area/ano. Caso já exista, é retornado erro na segunda tentativa de criação de safra.
+Podemos habilitar essa regra? Pois ela poderá resolver o problema de duplicidade de safra (mesma area/ano) de definitivo.
+[16/09/2025, 15:00:14] Alessandra - BMV: perfeito, pode sim, mas lembra que vc desabilitaram pq como zerado os saldos, precisou desativar, como não terminamos ficaram 15 fazendas para fora, devido esses erros reportados acima.
+‎[16/09/2025, 15:00:41] Alessandra - BMV: Esse fazendeiro do Arinos - Regis Adriano Desordi Porazzi tambem não aparece na hora da geração. ‎imagem ocultada
+[16/09/2025, 15:01:49] Alessandra - BMV: para facilitar coloquei no google sheets os erros marquei em rosa choque as linhas https://docs.google.com/spreadsheets/d/1velHsUIaSgkFVfTZAYmRIhjSIqLOnQXp/edit?usp=sharing&ouid=101733052886061066462&rtpof=true&sd=true
+[16/09/2025, 15:22:03] Nadini - Multiledger: Alessandra, a princípio você vai poder continuar cadastrando, desde que não seja mais de um cadastro para a mesma area/ano. Vamos habilitar.
+[16/09/2025, 16:02:36] Alessandra - BMV: sim.
+[16/09/2025, 16:42:49] Alessandra - BMV: Sobre a planilha de movimentações aquela demanda da correção do das tabelas, vamos precisar para ajustar o estoque e fazer o lançamento no sistema para aposentar as UCS do estoque.
+[16/09/2025, 16:51:23] Nadini - Multiledger: @⁨Alessandra - BMV⁩ 
+
+Fizemos a correção do erro no campo de busca de produtor, mas depois identificamos que, na verdade, trata-se de uma melhoria no sistema, já que o mesmo comportamento também existe no legado. Poderia, por favor, validar no legado se a tela ou a operação funcionavam corretamente? Peço isso porque, conforme alinhado com o Paulo (que também acompanha aqui no grupo), melhorias precisam de aprovação prévia do Paulo/Matheus para serem feitas.
+[16/09/2025, 17:08:16] Alessandra - BMV: Vou verificar aqui
+[17/09/2025, 10:49:36] Nadini - Multiledger: Bom dia Alessandra. Vamos começar a análise sobre a demanda de movimentações. Por gentileza Alessandra, você conseguiria nos relembrar qual é a correção/ajuste necessário na tabela de movimentações?
+[17/09/2025, 11:34:42] Alessandra - BMV: Realmente no sistema legado está com esse bug também.
+[17/09/2025, 11:35:06] Alessandra - BMV: São os saldos das associações Xingu e Arinos estão sumidos, na planilha
+[17/09/2025, 12:30:06] Nadini - Multiledger: Alessandra, uma atualização sobre esse ponto.
+
+Matheus/Paulo autorizaram a melhoria e já publicamos ela em produção. Vocês já vão conseguir usar. 
+
+Reforço apenas que, daqui em diante, vamos sinalizar quando o problema já existir no legado, e contamos com vocês para também conferir no legado alguns casos antes de nos encaminhar, assim garantimos juntos a aprovação prévia de qualquer melhoria.
+[17/09/2025, 12:48:35] Alessandra - BMV: Maravilha 👌
+‎[17/09/2025, 17:26:48] Nadini - Multiledger: Alessandra, boa tarde novamente. Deixamos xingu e arinos hachurado nessa imagem, como você pode ver. Você consegue verificar se existe algo mais faltando? Os saldos parecem tá na planilha. Pode verificar pra mim? ‎imagem ocultada
+[18/09/2025, 09:27:58] Nadini - Multiledger: Alessandra, bom dia. Tem um
+Feedback sobre essas safras que foram identificadas como duplicadas? Podemos apagar?
+[18/09/2025, 09:28:23] Alessandra - BMV: Oii bom dia
+[18/09/2025, 09:28:35] Alessandra - BMV: Estou verificando com maria Tereza o mais breve possível retorno
+[18/09/2025, 09:28:59] Alessandra - BMV: Ah não tinha visto essa mensagem
+[18/09/2025, 09:29:16] Alessandra - BMV: Isso sobre a planilha de movimentação
+[18/09/2025, 09:29:25] Alessandra - BMV: As duplicadas sim
+[18/09/2025, 09:29:48] Nadini - Multiledger: Ok
+[18/09/2025, 09:30:01] Nadini - Multiledger: Vamos deletar a duplicada
+[18/09/2025, 10:27:25] Alessandra - BMV: Pode mandar em Excel por favor ou csv para verificar se está faltando.
+[18/09/2025, 10:40:32] Nadini - Multiledger: Esse print foi um export que fizemos direto do backoffice mesmo através da tela Estoque - movimentações - baixar movimentações. Se vc puder baixar a planilha diretamente por essa página seria melhor pq assim, caso a planilha volte com saldos vazios, já teremos uma evidência pra análise. Vc consegue fazer isso?
+[18/09/2025, 10:42:48] Alessandra - BMV: Sim consigo
+‎[18/09/2025, 14:56:16] Alessandra - BMV: A planilha no legado não está baixando, achei que tivesse arrumado isso, da ultima vez quem mandou foram vcs. ‎imagem ocultada
+[18/09/2025, 14:58:38] Alessandra - BMV: Peguei a última que vcs me enviaram
+[18/09/2025, 14:58:45] Nadini - Multiledger: Mas é no backoffice normal mesmo nesse caso. Lá não tá baixando?
+[18/09/2025, 14:59:12] Alessandra - BMV: No Backoffice normal está baixando, mas as movimentações precisam ser do legado
+[18/09/2025, 14:59:24] Alessandra - BMV: Para inserir e atualizar o saldo do Backoffice
+[18/09/2025, 14:59:40] Nadini - Multiledger: Ok, vou verificar
+[18/09/2025, 15:40:43] Nadini - Multiledger: Alessandra, só pra esclarecer. Então os saldos estão sumidos na planilha legado?
+[18/09/2025, 15:49:31] Alessandra - BMV: de algumas contas sim.
+[18/09/2025, 15:55:20] Alessandra - BMV: ‎Mensagem apagada
+‎[18/09/2025, 15:56:15] Nadini - Multiledger: transacoes_legado.csv ‎documento omitido
+‎[18/09/2025, 15:56:15] Nadini - Multiledger: transacoes_novo.csv ‎documento omitido
+[19/09/2025, 15:55:08] Alessandra - BMV: Nadini, estou com problema no backoffice na geração do parceiro do tesouro verde
+‎[19/09/2025, 15:58:12] Alessandra - BMV: Erro ao criar o Programa. ‎imagem ocultada
+[19/09/2025, 15:58:33] Alessandra - BMV: preciso criar para entrar na plataforma tesouro verde.
+[19/09/2025, 16:40:01] Alessandra - BMV: está dando bug, podem olhar isso por favor?
+[19/09/2025, 17:00:04] Nadini - Multiledger: Oi Alessandra, boa tarde. Vou passar para o time analisar o problema, mas devido ao horário a atualização  sobre essa demanda pode retornar só na segunda. Tudo bem?
+[19/09/2025, 17:11:57] Alessandra - BMV: claro, sem problemas. Bom final de semana.
+[22/09/2025, 16:31:31] BMV Global | Atendimento: Boa tarde pessoal,
+Espero que estejam todos bem.
+
+Os clientes do Tesouro Verde, não estão conseguindo fazer um novo cadastro na plataforma.
+Fiz o teste e consegui reproduzir o erro.
+Vou enviar o vídeo que um dos clientes enviou.
+‎[22/09/2025, 16:31:44] BMV Global | Atendimento: ‎vídeo omitido
+‎[22/09/2025, 16:31:46] BMV Global | Atendimento: ‎imagem ocultada
+[22/09/2025, 16:37:21] Camila - BMV: ‎Mensagem apagada
+[22/09/2025, 22:17:01] ~ Matheus S. Silva: @⁨Alessandra - BMV⁩ Boa noite, eu descobrir o que aconteceu. O usuário precisa clicar no checkbox da primeira etapa "Acesso" onde ele confirma e autoriza o armazenamento dos dados conforme a lei de proteção de dados.
+[22/09/2025, 22:18:07] ~ Matheus S. Silva: O site de vocês permite que ele não clique e continue todo o processo. Mas na última etapa, depois de ter preenchido tudo, o sistema checa se ele marcou aquele checkbox. E como ele não tinha marcado, aí ele não conseguiu criar a conta ‎<Mensagem editada>
+‎[22/09/2025, 22:18:28] ~ Matheus S. Silva: ‎imagem ocultada
+[23/09/2025, 08:53:01] BMV Global | Atendimento: Bom dia!!
+Muito obrigada Matheus!!
+Irei informar o cliente.
+[23/09/2025, 09:35:53] Nadini - Multiledger: Oi bom dia. 
+
+@⁨Alessandra - BMV⁩, pode tirar uma dúvida nossa? Você trocou a senha do seu usuário alekaus@gmail.com no backoffice?
+[23/09/2025, 09:47:56] Nadini - Multiledger: ‎Mensagem apagada
+[23/09/2025, 09:50:03] Nadini - Multiledger: Alessandra, outro ponto. Precisamos deletar uma dessas safras duplicadas. Você poderia nos informar qual deve ser deletada? #308 ou #309?
+[23/09/2025, 09:55:50] Alessandra - BMV: Eu troquei
+[23/09/2025, 09:56:04] Alessandra - BMV: Esqueci que vcs usavam vou colocar para vcs
+[23/09/2025, 10:20:09] Nadini - Multiledger: @Alessandra, sobre a questão da safra duplicada? Podemos apagar qualquer uma das duas? #308 ou #309?
+[23/09/2025, 13:39:12] Nadini - Multiledger: @⁨Alessandra - BMV⁩, boa tarde. Sobre as duplicadas, buscamos identificar quais safras já possuem hash na blockchain para orientar a deleção. 
+
+*Casos em duplicidades:*
+Fazenda: Estância Mãe
+ID da Area: 97
+*IDs Safra: 308, 309*
+Safra ano: 2010
+UCS: 5.812
+Quantidade Registros na Base: 2
+---------------------------------------
+Fazenda: Fazenda São Francisco
+ID da Area: 211
+*IDs Safra: 381, 382, 383*
+Safra ano: 2010
+UCS: 188.519
+Quantidade Registros na Base: 3
+
+-----------------------------------------------------------------------------------------------------
+Dentre esses casos, os que possuem hash na blockchain: 
+
+*Dos IDs Safra: 308, 309*
+*Apenas o ID 309 possui hash*
+transação: 0x32700b55022e4aafb448b8fb466df4bd9deeaa108f48f3f331a5e1642ede7414
+wallet: 5GKFqRePEWokrdibkX92cUsQT6MjwZFo2bjS5NztuRGxkKAJ
+certificado: 0x41d9a90c28ad98b1e23fd8e8c2828a220122066909859ed99ed543e62ad0be71
+-----------------------------------------------------------------------------------------------------
+*Dos IDs Safra: 381, 382, 383*
+*Os IDs Safra 383, 381 possuem vinculo ao mesmo hash abaixo:*
+harvest_id: 381, 383
+transação: 0x32700b55022e4aafb448b8fb466df4bd9deeaa108f48f3f331a5e1642ede7414
+wallet: 5GKFqRePEWokrdibkX92cUsQT6MjwZFo2bjS5NztuRGxkKAJ
+certificado: 0x0c253417f70d0fd6a2833c6eefc895f492aaf48aafbd07c1036f143f54d25553 ‎<Mensagem editada>
+[23/09/2025, 13:43:26] Nadini - Multiledger: Precisamos das seguintes respostas: 
+- Podemos deletar a safra #308? 
+- Podemos deletar a safra #382? 
+- Qual safra você deseja manter #381 ou #383?
+[23/09/2025, 14:50:19] Alessandra - BMV: Como não tiverem movimentações nelas, pode ser qualquer uma delas.
+[23/09/2025, 16:56:08] Alessandra - BMV: vcs chegaram a ver essa demanda? pq teremos o lançamento desse programa na semana que vem, devemos criar para receber os pedidos de selo. ‎<Mensagem editada>
+[23/09/2025, 17:03:58] Nadini - Multiledger: Ainda não tenho atualização sobre essa demanda do programa. Uma dúvida: No novo backoffice, a função Novo Programa chegou a ser testado e parou de funcionar?
+[24/09/2025, 09:54:08] Nadini - Multiledger: Bom dia @⁨Alessandra - BMV⁩, sobre a criar Novo Programa, poderiam gravar um vídeo ou detalhar os campos que estão sendo informados? Não estamos conseguindo capturar o mesmo erro no ambiente de desenvolvimento e não queremos gerar sujeira, com testes em produção.
+[24/09/2025, 09:55:23] Alessandra - BMV: Vou gravar então
+[24/09/2025, 09:56:06] Alessandra - BMV: Nadini, essa função de criar programa tinha sido testado eu acho, que eu que fiz inclusive.
+‎[24/09/2025, 10:45:03] Alessandra - BMV: Tesouroverde.global na tela de parceiros deveria aparecer também. ‎imagem ocultada
+[24/09/2025, 10:46:04] Nadini - Multiledger: Alessandra, não entendi. Deveria aparecer o que?
+[24/09/2025, 10:49:43] Alessandra - BMV: Nessa tela deveria aparecer CNS
+[24/09/2025, 10:50:32] Alessandra - BMV: Aquela funcionalidade que gravei, é uma opção no front do tesouro verde para fazer o selo.
+[24/09/2025, 10:52:19] Nadini - Multiledger: Esse daqui, certo? Esse erro é novo né? Mas ele tá ligado com o erro novo programa? ‎<Mensagem editada>
+[24/09/2025, 10:52:45] Nadini - Multiledger: A gente precisa da gravação desse erro aqui tbm.
+[24/09/2025, 10:55:39] Alessandra - BMV: Ele não está aparecendo com erro, antes sim, não sei o que aconteceu.
+Mas ele não está salvando veja que criei, não deu mensagem de erro, mas não apareceu na lista de programas
+[24/09/2025, 10:56:03] Alessandra - BMV: Sim, quando crio um programa lá no backoffice deveria aparecer nessa tela
+[24/09/2025, 17:24:06] Alessandra - BMV: @⁨Nadini - Multiledger⁩ vc conseguiu verificar?
+‎[24/09/2025, 18:25:35] Nadini - Multiledger: Alessandra, ainda estamos testando. A gente estava usando o legado pra saber se o erro tbm ocorria lá e conseguimos criar um teste em produção. Criamos esse #16 Teste. ‎imagem ocultada
+[24/09/2025, 18:26:21] Nadini - Multiledger: Uma pergunta: Vocês conseguem editar um programa? Porque se for possível você poderia editar esse #16 enquanto a gente busca o que está causando o problema no backoffice.
+[24/09/2025, 18:27:02] Alessandra - BMV: Pois é, não está gerando em produção essa parte
+[24/09/2025, 18:27:14] Alessandra - BMV: Vou verificar
+[24/09/2025, 18:38:51] Alessandra - BMV: deixa editar, mas quando coloco as UFs todas não deixa salvar.
+[24/09/2025, 18:38:54] Alessandra - BMV: da o erro
+‎[24/09/2025, 18:39:55] Alessandra - BMV: ‎vídeo omitido
+‎[24/09/2025, 18:45:14] Alessandra - BMV: Gravei o erro na edição que não deixa salvar ‎vídeo omitido
+[24/09/2025, 19:48:40] Nadini - Multiledger: Obrigada, vai ajudar a achar o problema.
+[24/09/2025, 19:49:33] Nadini - Multiledger: O edileno ainda está com algumas dúvidas:
+
+- Ela consegue criar o programa no backoffice, ele é listado no backoffice, porém não é listado/reflete no site do Tesouro Verde?
+- ⁠Ela realmente não está conseguindo criar o programa no backoffice?
+[24/09/2025, 19:54:34] Alessandra - BMV: A lista aparece no backoffice, mas reflete no tesouro verde.
+Sim, o programa não está funcionando a criação e não está demonstrando no tesouro verde
+[25/09/2025, 09:54:59] Nadini - Multiledger: Bom dia. 
+
+Nós vimos o vídeo e reparamos que você deixou o campo *Configuração de Unidade* vazio. Se esse campo for preenchido o programa é criado. Não existe bug em programas.
+[25/09/2025, 09:55:21] Nadini - Multiledger: Vou enviar um print com a evidência.
+‎[25/09/2025, 09:56:21] Nadini - Multiledger: ‎imagem ocultada
+[25/09/2025, 09:56:45] Nadini - Multiledger: ‎Mensagem apagada
+‎[25/09/2025, 09:57:29] Nadini - Multiledger: ‎imagem ocultada
+[25/09/2025, 09:57:37] Nadini - Multiledger: Esse campo não pode ficar vazio.
+‎[25/09/2025, 10:03:04] Nadini - Multiledger: ‎imagem ocultada
+[25/09/2025, 11:14:17] Alessandra - BMV: Oii Nadini deu certo agora!
+[25/09/2025, 11:14:48] Alessandra - BMV: só falta aparecer no front na parte de programas. mas isso acho que é no wordpress que temos que inserir
+‎[25/09/2025, 11:17:26] Alessandra - BMV: Agora preciso ter a pagina no programa CNS no site. ‎imagem ocultada
+‎[25/09/2025, 11:18:13] Alessandra - BMV: ‎imagem ocultada
+‎[25/09/2025, 11:18:14] Alessandra - BMV: A CNS lança o Programa de Certificação de Sustentabilidade com o objetivo de transformar a forma como o setor de serviços interage com o meio ambiente. O programa alia inovação, responsabilidade corporativa e valor compartilhado.
+
+Empresas certificadas com o Selo Tesouro Verde | Eu Preservo têm seu impacto ambiental positivo reconhecido por uma certificação robusta, auditada de forma independente, registrada em blockchain e lastreada no BMV Standard. É uma oportunidade de integrar sustentabilidade à estratégia de negócio, com benefícios concretos e visíveis para reputação e competitividade.
+
+Seja protagonista do desenvolvimento sustentável no Brasil. Adote a certificação CNS Tesouro Verde. ‎imagem ocultada
+[25/09/2025, 11:18:34] Alessandra - BMV: @⁨Nadini - Multiledger⁩ quem tem o acesso é o @⁨~Vitor Alves⁩
+‎[25/09/2025, 11:19:35] Alessandra - BMV: Preciso que crie a página e colocar o link aqui Tesouro Verde - CNS ‎imagem ocultada
+[25/09/2025, 11:20:54] Alessandra - BMV: deu certo aqui, entrei no wordpress.
+[25/09/2025, 11:39:53] Alessandra - BMV: vou precisar de ajuda para adicionar a pagina, não estou conseguindo por aqui, está dando erro.
+[25/09/2025, 11:45:12] Alessandra - BMV: @⁨Nadini - Multiledger⁩ tem alguem que consegue me ajudar com wordpress?
+[25/09/2025, 11:45:49] Alessandra - BMV: já tenho todos as informações inserir uma página apenas
+[25/09/2025, 11:49:26] Nadini - Multiledger: Alessandra,seria uma melhoria, certo? Porque nesses casos, minha orientação é para comunicar internamente e aguardar um retorno.
+[25/09/2025, 11:49:56] Nadini - Multiledger: Eu já estou vendo aqui internamente como podemos fazer.
+[25/09/2025, 11:50:41] Alessandra - BMV: não é melhoria, o backoffice deveria adicionar no front, então para resolver, e entregar para o cliente, estou tentando fazendo manual mesmo.
+[25/09/2025, 11:51:00] Alessandra - BMV: pq o wordpress é front do tesouro verde.
+[25/09/2025, 11:51:17] Alessandra - BMV: o programa deveria aparecer aqui da CNS.
+‎[25/09/2025, 11:52:31] Alessandra - BMV: Essa são as informações que deveria constar na página do front do tesouro verde, quando clica no nome do Programa CNS Tesouro Verde ‎imagem ocultada
+[25/09/2025, 11:57:12] Nadini - Multiledger: Certo, eu já comuniquei para o time, vamos verificar o comportamento no legado para identificar porque o backoffice não está reproduzindo da mesma forma. Só que agora não tem ninguém de Wordpress pra ajudar imediatamente a criar essa página pelo Wordpress.
+[25/09/2025, 13:11:21] Nadini - Multiledger: @⁨Alessandra - BMV⁩, estamos mexendo no WordPress pra tentar colocar a página no ar. Pode causar instabilidade no site ou ficar fora do ar por algum tempo. ‎<Mensagem editada>
+[25/09/2025, 13:12:21] Nadini - Multiledger: Podemos fazer?
+[25/09/2025, 13:22:03] Alessandra - BMV: Pode sim por favor
+[25/09/2025, 13:38:43] Nadini - Multiledger: Alessandra, 
+
+Subimos a pág via Wordpress e colocamos o rodapé no site. https://tesouroverde.global/index.php/cns/
+
+E sobre o cadastro duplicado na blockchain:
+Feito a limpeza do item que foi cadastrado duplicado.
+[25/09/2025, 13:39:26] Nadini - Multiledger:
+‎[25/09/2025, 13:39:26] Nadini - Multiledger: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fprod-bmv-parachain-rpc-archive-01.multiledgers.com%3Ftoken%3DA4G69g3uy0886I9#/extrinsics/decode/0xed0284009e77fc1aaf8cef0143bce84c9d8fd267f00ececdb293c247e6ab40e70755d00801be247045c7644736d700791622d86ba8da1d31ff815f6355eaca631562635e51cef80bbe31db114f4082ca3c0315b9b3bfa199f7b2f79cdc5cba1ef3581bb3859502b0000f002808bc0a04d89f71eefaa35a0b511e9f69ea214713f8e092c94c0872aa89f5fcd44871e96886d6350afd352beab5604009887716b835eba17c1795c1cfc27aa56ce63c4475706c6963617465642068617368 ‎imagem ocultada
+‎[25/09/2025, 13:39:26] Nadini - Multiledger: ‎imagem ocultada
+[25/09/2025, 14:01:10] Alessandra - BMV: Muito obrigada!
+[25/09/2025, 14:02:15] Alessandra - BMV: @⁨Nadini - Multiledger⁩ só gostaria de confirmar as propriedades que marquei de rosa, que não estavam aparecendo nem no legado também para na hora da geração da safra se foi resolvida todas, me perdi aqui no histórico.
+‎[25/09/2025, 14:36:27] Nadini - Multiledger: @⁨~Matheus S. Silva⁩ fiz um erro na geração de safra. gerei 2 safras para mesma fazenda, no mesmo ano.
+A 12.082 era para ser Sitio Beira Rio ‎imagem ocultada
+[25/09/2025, 14:36:37] Nadini - Multiledger: Foram essas que apagamos na blockchain.
+[25/09/2025, 14:37:01] Nadini - Multiledger: Não encontrei uma imagem com propriedades em rosa. Pode compartilhar novamente, por gentileza.
+[25/09/2025, 15:26:44] Alessandra - BMV: para facilitar segue acesso do drive https://docs.google.com/spreadsheets/d/1velHsUIaSgkFVfTZAYmRIhjSIqLOnQXp/edit?gid=684293838#gid=684293838
+[25/09/2025, 15:28:26] Nadini - Multiledger: Solicitei acesso ao drive
+[25/09/2025, 15:29:02] Nadini - Multiledger: Mas já posso adiantar que os casos apagados foram os da imagem que enviei acima.
+[25/09/2025, 15:40:11] Nadini - Multiledger: Todas as linhas em rosa são erradas e precisam ser deletadas?
+[25/09/2025, 16:43:17] Alessandra - BMV: As linhas rosas estão com aquele bug que veio do legado que o proprietário não aparece na lista de gerar a safra
+[25/09/2025, 16:43:28] Alessandra - BMV: Liberado
+[26/09/2025, 09:54:36] Alessandra - BMV: ‎Mensagem apagada
+[26/09/2025, 09:54:37] Alessandra - BMV: ‎Mensagem apagada
+[26/09/2025, 09:54:50] Alessandra - BMV: ‎Mensagem apagada
+[26/09/2025, 09:54:58] Alessandra - BMV: ‎Mensagem apagada
+[26/09/2025, 11:10:42] Nadini - Multiledger: Bom dia, algumas atualizações sobre as linhas em rosa:
+[26/09/2025, 11:10:50] Nadini - Multiledger: Linha 125 (Xavante 3): Registro da blockchain exibido conforme o print
+‎[26/09/2025, 11:11:15] Nadini - Multiledger: ‎imagem ocultada
+[26/09/2025, 11:11:25] Nadini - Multiledger: Linhas 132 e 133: Duas fazendas aparecem com o mesmo nome. No legado, não há exibição do código da fazenda (conforme print). Incluir o ID da fazenda seria uma melhoria.
+[26/09/2025, 11:11:42] Nadini - Multiledger: Backoffice novo
+‎[26/09/2025, 11:11:53] Nadini - Multiledger: ‎imagem ocultada
+[26/09/2025, 11:11:59] Alessandra - BMV: nadini, tem um bug no tesouro verde: quando entra pelo caminho https://tesouroverde.global/index.php/cns/ clica para obter a certificação, abre o formulário que não consta o programa CNS e parceiro CNS.
+[26/09/2025, 11:12:05] Nadini - Multiledger: Backoffice antigo
+‎[26/09/2025, 11:12:16] Nadini - Multiledger: ‎imagem ocultada
+[26/09/2025, 11:12:23] Nadini - Multiledger: Linhas 143, 65, 67, 23, 24, 25 e 31: Nome e sobrenome estavam cadastrados no mesmo campo. A correção já foi realizada e está em produção, podem validar os testes.
+[26/09/2025, 11:13:36] Nadini - Multiledger: Existiam 8 linhas em rosa, identificadas por Linha 125, 132, 133, 143, 65, 67, 23, 24, 25 e 31. Não analisamos outros casos além dos apontados.
+[26/09/2025, 11:13:49] Alessandra - BMV: vou verificar já e te volto, no começo da tarde.
+[26/09/2025, 11:14:59] Nadini - Multiledger: Vou ver com o pessoal a respeito desse bug, porque nós não recuperamos o código do app tesouro verde.
+[26/09/2025, 11:17:59] Alessandra - BMV: ok obrigada.
+[26/09/2025, 11:18:32] Nadini - Multiledger: Sobre o site tesouro verde, ontem nós criamos a página usando o wordpress mas no legado do backoffice, o código não está criando uma tela no Wordpress automaticamente após uma criação de um novo programa. Ainda vamos investigar um pouco mais pra ver se encontramos esse código. A implementação para o novo backoffice fica com essa pendência. Só terei retorno na próxima semana.
+[26/09/2025, 11:20:39] Alessandra - BMV: estamos lançando o programa dia 1°, com a CNS, pode apenas verificar pq, ontem estava funcionando o caminho, hoje não mexemos em nada, o parceiro desapareceu. ‎<Mensagem editada>
+[26/09/2025, 11:23:44] Nadini - Multiledger: Já pedi pra olharem, mas nesse caso em específico a gente não fez nenhuma ação corretiva do nosso lado porque a criação do novo programa estava condicionada ao preenchimento dos campos de *Configuração de Unidade Federativa* lembra?
+[26/09/2025, 11:26:07] Nadini - Multiledger: Sobre esse caminho, ontem apenas ajustamos o texto CNS conforme você enviou aqui no grupo. Não alteramos nenhuma rota pra um formulário em específico, até porque não tínhamos essa informação. Se for necessário um ajuste em botão precisamos saber pra qual página ele deve ser redirecionado.
+[26/09/2025, 11:28:09] Nadini - Multiledger: Você poderia enviar um vídeo com a evidência de onde o programa CNS deve ser listado? Se possível com url pra gente observar todos as etapas, por gentileza.
+[26/09/2025, 11:44:56] Alessandra - BMV: sim, claro, vou fazer aqui.
+[26/09/2025, 11:50:17] Alessandra - BMV: então em resumo o caminho ontem do link https://tesouroverde.global/index.php/cns/ estava funcionando, hoje veja o video não aparece mais o parceiro e o programa.
+ o caminho do generico, no botão principal da pagina, funciona normalmente link https://app.tesouroverde.global/#/calculator fiz os dois videos, dos 2 caminhos para demonstrar.
+‎[26/09/2025, 11:52:42] Alessandra - BMV: Esse é o primeiro item, indo pela pagina criada, tentando fazer o certificado através da pagina da CNS direta, que demonstra o erro de não aparecer o programa ‎vídeo omitido
+‎[26/09/2025, 11:52:48] Alessandra - BMV: Esse eu demonstro o caminho genérico, através do botão principal da pagina de certificar agora, e então é o caminho que funciona ainda, e aparece o programa da CNS, e a para mostrar que no final e repito o caminho do programa, mostrando a tela que o programa fica fixo do Amapa. ‎vídeo omitido
+‎[26/09/2025, 11:57:25] Alessandra - BMV: @⁨Nadini - Multiledger⁩ outro assunto o acesso ao substrate não está dando desde ontem, tem alguma configuração de acesso que alterou? pelo link que vc enviou e pelo acesso do link do backoffice está dando essa mensagem, testamos no meu pc e da Thaynara, está dando o mesmo erro. ‎imagem ocultada
+[26/09/2025, 12:05:53] Nadini - Multiledger: Já estamos olhando esse caso.
+[26/09/2025, 13:30:10] Nadini - Multiledger: Alessandra, sobre a blockchain já está resolvido, pode testar, por favor?
+[26/09/2025, 13:33:26] Nadini - Multiledger: E sobre o redirecionamento do wordpress para o app tesouro verde:
+- Cns agora está disponível para o usuário; 
+
+- Os programas CCRB e CNS não virão selecionados de forma automática, o usuário vai precisar ter o trabalho de escolher o programa.   Pra fazer de forma automática nós precisaríamos ter o código do app tesouro verde mas nós não temos acesso a esse código. ‎<Mensagem editada>
+[26/09/2025, 14:17:36] Alessandra - BMV: Maravilha 🤩 isso já funciona
+[26/09/2025, 14:26:30] BMV Global | Atendimento: Muito obrigada.
+Está funcionando.
+‎[26/09/2025, 17:02:22] Nadini - Multiledger: transacoes_legado_com_app_novo_22.09.2025.csv ‎documento omitido
+[26/09/2025, 19:54:44] Alessandra - BMV: muito obrigada Nadini, estamos trabalhando ainda na auditoria das trasnferências, a Maria Tereza comentou qu eestá tudo alinhado.
+[29/09/2025, 10:05:45] Alessandra - BMV: Bom dia, o bmv digital e tesouro verde estão fora do ar ‎<Mensagem editada>
+[29/09/2025, 10:06:10] Alessandra - BMV: Pode me ajudar a ver o que deve ser
+[29/09/2025, 10:40:02] Nadini - Multiledger: Oi Alessandra, bom dia. Já estamos olhado, em breve volto com atualização.
+[29/09/2025, 13:12:00] Nadini - Multiledger: Boa tarde pessoal, confere pra mim se os ambientas já estão funcionando, por favor? ‎<Mensagem editada>
+[29/09/2025, 13:57:30] Alessandra - BMV: voltaram para o ar.
+[29/09/2025, 15:15:33] Alessandra - BMV: https://app.tesouroverde.global/#/auth/login
+1.Cadastro novo: está com problemas no servidor de emails: O e-mail de verificação de usuário não chegou até o presente momento em luizpaulo.jesus@bmv.global.
+
+2.formulários de recuperação de senha e de login também apresentam falhas não abre no site
+[29/09/2025, 17:00:19] Nadini - Multiledger: Essa questão do e-mail, o usuário verificou se o email caiu no spam? Só pra conferir porque esses dias o Edileno fez o teste do cadastro junto comigo e o meu email caiu na caixa de entrada mas o do Edileno caiu no spam. Podem verificar? ‎<Mensagem editada>
+[29/09/2025, 18:31:56] Alessandra - BMV: Nesse caso,  não caiu no spam.
+[29/09/2025, 18:32:27] Alessandra - BMV: @bmv.global coincidência ou não.
+[29/09/2025, 18:33:23] Nadini - Multiledger: Certo, estamos avaliando porque como é app tesouro verde entra naquele caso onde não recuperamos o código. Assim que tiver um retorno comunico aqui.
+[29/09/2025, 18:39:37] Camila - BMV: Hoje fui falar com a localweb porque alguns emails enviam mensagem, mas quando respondemos, eles não recebem.
+[29/09/2025, 18:39:51] Camila - BMV: Eles informaram que há um problemas de DNS
+[29/09/2025, 18:40:04] Camila - BMV: Que precisa ser configurado
+[29/09/2025, 18:40:10] Camila - BMV: Enviaram essas telas
+‎[29/09/2025, 18:40:29] Camila - BMV: ‎imagem ocultada
+[29/09/2025, 18:40:30] Camila - BMV: ‎Mensagem apagada
+‎[29/09/2025, 18:40:58] Camila - BMV: verifiquei aqui e seu domínio esta sem apontamentos de dns, segue um link dos apontamentos necessários: "https://www.locaweb.com.br/ajuda/wiki/como-configurar-o-mx-e-mail-locaweb/", como ele esta na cloudflare esse apontamento precisa ser feito la ‎imagem ocultada
+[30/09/2025, 10:56:55] ~ Vitor Alves: Bom dia pessoal!
+[30/09/2025, 10:57:09] ~ Vitor Alves: Fiz as alterações do NS
+[30/09/2025, 10:57:10] ~ Vitor Alves: DNS
+‎[30/09/2025, 10:57:21] ~ Vitor Alves: ‎imagem ocultada
+‎[30/09/2025, 10:57:38] ~ Vitor Alves: ‎imagem ocultada
+[30/09/2025, 10:59:08] Camila - BMV: Obrigada, Vitor. Vamos testar aqui.
+[30/09/2025, 10:59:34] Camila - BMV: Vamos esperar um pouco para rodar e faço o teste
+‎[30/09/2025, 10:59:36] BMV Global | Atendimento: @⁨Nadini - Multiledger⁩ 
+Quando colocamos o pedido no sistema, inserimos os dados do responsável pelas informações preenchidas. Não está aparecendo quando clico em visualizar. ‎imagem ocultada
+[30/09/2025, 12:20:28] Alessandra - BMV: @⁨Nadini - Multiledger⁩ identificamos uma um bug, na geração do certificado BMV digital, não está puxando a fazenda - núcleo correto. no caso pedido Fazendo Monte Cristo - Núcleo Teles Pires, e no certificado como pode ver abauxi, está saindo núcleo Guariba.
+‎[30/09/2025, 12:20:48] Alessandra - BMV: Report CNS - Pedido 778.pdf ‎documento omitido
+[30/09/2025, 12:32:16] Alessandra - BMV: E outro bug para renderizar o certificado de selo do tesouro verde #901 não está baixando o certificado.
+[30/09/2025, 12:40:53] Camila - BMV: @⁨~Vitor Alves⁩ ainda não está funcionando.  Acredita que ainda é problema de tempo para rodar?
+‎[30/09/2025, 12:47:42] Alessandra - BMV: Segue video, agora deu certo não deu tela de erro, mas não está aparecendo na lista de programas e no site do tesouro verde. ‎vídeo omitido
+[30/09/2025, 12:47:46] ~ Vitor Alves: Acredito que não, já deve ter propagado. Como vc estão simulando o erro?
+[30/09/2025, 13:23:08] Nadini - Multiledger: Alessandra, estava olhando o vídeo. Lembra que comentamos na semana passada que quando vc cria um novo programa vc deve selecionar o campo *Configuração de Unidade Federativa* tbm? No min 1:50 do vídeo a diante, todos os campos ali precisam ser preenchidos antes de para criar o novo programa.
+[30/09/2025, 13:24:05] Nadini - Multiledger: Bom dia. 
+
+Nós vimos o vídeo e reparamos que você deixou o campo *Configuração de Unidade* vazio. Se esse campo for preenchido o programa é criado. Não existe bug em programas.
+‎[30/09/2025, 13:24:06] Nadini - Multiledger: ‎imagem ocultada
+‎[30/09/2025, 13:24:07] Nadini - Multiledger: ‎imagem ocultada
+[30/09/2025, 13:24:08] Nadini - Multiledger: Esse campo não pode ficar vazio.
+‎[30/09/2025, 13:24:09] Nadini - Multiledger: ‎imagem ocultada
+[30/09/2025, 13:28:35] Nadini - Multiledger: O Item 1, erro no envio de email, pode tá associado a correção que o Vitor tá fazendo, por isso vamos aguardar para testar novamente. 
+
+O item 2: *O formulário de recuperação de senha* e aproveito pra adicionar o *formulário para criar novo usuário/conta* são parte do código do front-end do app tesouro verde, e nós não temos esse código. Uma solução paliativa que podemos sugerir é criar um botão no site (wordpress) que envie direto para essas páginas. Essa solução via wordpress funciona pra vcs?
+[30/09/2025, 13:30:40] Nadini - Multiledger: Os erros associados ao backoffice: 
+
+- Erro de download do certificado #901 - Vamos atuar e trago atualização em breve. 
+- Erro no certificado associação fazendo x núcleo - Vamos atuar e trago atualização em breve. 
+- Erro ao visualizar pedido - Vamos atuar e trago atualização em breve.
+[30/09/2025, 13:35:56] Alessandra - BMV: Sim isso, está certo! Esse vídeo tinha ficado da semana passada por algum motivo foi hoje. Está tudo certo! O programa criado, hoje processamos o pedido
+[30/09/2025, 13:36:38] Alessandra - BMV: Item 2, resolve. Em word press
+[30/09/2025, 13:36:56] Alessandra - BMV: Obrigada!
+[30/09/2025, 14:14:20] Camila - BMV: Criamos um e-mail para luizpaulo@bmv.global
+[30/09/2025, 14:14:43] Camila - BMV: Ele entrou no Tesouro Verde para simular
+[30/09/2025, 14:14:53] Camila - BMV: mas não recebe o e-mail do sistema
+[30/09/2025, 14:15:17] Camila - BMV: fiz um teste do meu e-mail pessoal com ele
+[30/09/2025, 14:15:35] Camila - BMV: ele me envia e recebo,mas quando eu respondo, ele não recebe
+‎[30/09/2025, 14:25:33] Alessandra - BMV: Report Tesouro Verde - correcoes.pdf ‎documento omitido
+[30/09/2025, 14:25:33] Alessandra - BMV: Aproveitando que tínhamos combinado de enviar marcando as correções que precisaria fazer na máscara dos certificados segue identificação dos textos para fazer a correção. 
+[30/09/2025, 14:44:57] ~ Vitor Alves: Ele não está recebendo email de ninguém então correto?
+[30/09/2025, 14:45:10] ~ Vitor Alves: Não é só o email do sistema
+[30/09/2025, 15:07:03] Camila - BMV: Se ele só recebe e-mail se for também Localweb. Se for qualquer outro provedor, não recebe.
+[30/09/2025, 15:08:04] Camila - BMV: Dentro do webmail da localweb para e-mail da Localweb há a troca
+[30/09/2025, 15:08:35] Camila - BMV: se for de fora ele(s) não recebe(m)
+[30/09/2025, 15:09:37] Camila - BMV: Então assim como de caixa para caixa, dependendo de onde está hospedado o site, o e-mail não chega
+‎[30/09/2025, 17:56:53] Alessandra - BMV: ‎imagem ocultada
+‎[30/09/2025, 17:56:53] Alessandra - BMV: Report BMV - correcoes.pdf ‎documento omitido
+[30/09/2025, 17:56:54] Alessandra - BMV: o outro certificado base que é da bmv digital
+segue correções.
+
+‎[30/09/2025, 18:05:58] Nadini - Multiledger: Ok. Uma dúvida: O que deve ser feito nessa parte? Remover o número e a unidade? É pra ficar ICRS*: *Índice de Cota de Retribuição Socioambiental? ‎imagem ocultada
+[30/09/2025, 18:07:06] Alessandra - BMV: Correto *Índice de Cota de Retribuição Socioambiental*
+[30/09/2025, 18:07:19] Nadini - Multiledger: Mas porque o número está com riscado?
+[30/09/2025, 18:07:34] Alessandra - BMV: a unidade mantem, .0 decimal não, pq não tem decimal ‎<Mensagem editada>
+[30/09/2025, 18:07:53] Nadini - Multiledger: Entendi, é o decimal
+[30/09/2025, 18:27:58] ~ Vitor Alves: Entendi
+[30/09/2025, 18:32:19] ~ Vitor Alves: Vou dar uma olhada se falta mais alguma configuração
+‎[30/09/2025, 20:14:20] Alessandra - BMV: ‎imagem ocultada
+[30/09/2025, 20:14:21] Alessandra - BMV: essa é a logo que tem que ser no report tambem
+
+[30/09/2025, 20:14:43] Alessandra - BMV: do Tesouro verde esse aqui.
+‎[30/09/2025, 21:54:31] ~ Matheus S. Silva: Boa noite, coloquei no site do Tesouro Verde o botão que redireciona para a recuperação de senha, o botão para criar conta já existia com a URL correta. ‎imagem ocultada
+‎[01/10/2025, 13:04:22] Camila - BMV: Oi, Vitor. Boa tarde. Conseguiu olhar isso e achar algo? Continuam voltando quando mandamos e-mail ‎imagem ocultada
+[01/10/2025, 13:04:55] Alessandra - BMV: Bom dia Mateus,
+Eu testei mas não chegou o e-mail de redefinição
+[01/10/2025, 13:05:55] Nadini - Multiledger: Boa tarde Alessandra, o envio do e-mail provavelmente está associado a questão que o Vitor está olhando.
+[01/10/2025, 13:07:59] Alessandra - BMV: Isso
+[01/10/2025, 13:11:11] ~ Vitor Alves: Boa tarde, ontem conferi as configs de dns e não está faltando nenhuma entrada no MX que é a que faz os emails serem recebidos pela locaweb. Uma dúvida, somente essa conta que está com esse problema? Outras contas da locaweb estão com esse erro de receber email?
+[01/10/2025, 13:12:11] ~ Vitor Alves: @⁨Alessandra - BMV⁩ pode me mandar um token da locaweb?
+‎[01/10/2025, 13:12:21] ~ Vitor Alves: ‎imagem ocultada
+[01/10/2025, 13:13:49] Camila - BMV: Todas as contas da Localweb estão com esse problema, Vitor.
+[01/10/2025, 13:14:14] Camila - BMV: Fiz teste com várias
+[01/10/2025, 13:18:28] ~ Vitor Alves: Assim que puder me mandar o token da locaweb vou dar uma olhada
+[01/10/2025, 13:19:22] Alessandra - BMV: Agora
+[01/10/2025, 13:19:37] Alessandra - BMV: 257423
+[01/10/2025, 13:19:47] Alessandra - BMV: @⁨~Vitor Alves⁩
+[01/10/2025, 13:20:05] ~ Vitor Alves: Obrigado
+[01/10/2025, 13:48:36] ~ Vitor Alves: @⁨Camila - BMV⁩ veja se o benedito@bmv.global recebeu email por favor
+[01/10/2025, 13:48:39] ~ Vitor Alves: Um email de teste
+[01/10/2025, 13:48:58] ~ Vitor Alves: Me passa uma caixa de email que esteja no Google tb para eu poder fazer um teste aqui
+[01/10/2025, 13:49:24] Camila - BMV: tem a minha camila.lutterbach@bmv.com no Google
+[01/10/2025, 13:49:47] Camila - BMV: e poderia testar a luizpaulo@bmv.global no Localweb?
+[01/10/2025, 13:49:55] Camila - BMV: é mais fácio que acessar o Benedito
+[01/10/2025, 13:50:17] ~ Vitor Alves: Enviei um teste para o luiz
+[01/10/2025, 13:53:45] Camila - BMV: Vou checar
+[01/10/2025, 14:34:56] Camila - BMV: Luizlw10@
+[01/10/2025, 14:35:26] Camila - BMV: V6e se alterou
+[01/10/2025, 14:36:11] ~ Vitor Alves: Não entendi
+[01/10/2025, 14:36:37] Camila - BMV: ah errei
+[01/10/2025, 14:36:41] Camila - BMV: era papa Luiz
+[01/10/2025, 14:36:57] ~ Vitor Alves: Ah sim
+[01/10/2025, 14:37:05] Camila - BMV: ele esqueceu a senha
+[01/10/2025, 14:37:10] Camila - BMV: já está checando lá
+[01/10/2025, 14:37:25] ~ Vitor Alves: Certo
+[01/10/2025, 14:46:32] Camila - BMV: @⁨~Vitor Alves⁩ o seu chegou. O que mandei do meu Google para ele não chegou.
+[01/10/2025, 14:47:22] Camila - BMV: o que ele mandou chegou
+[01/10/2025, 14:47:26] Camila - BMV: mas não recebe
+[01/10/2025, 14:48:04] Alessandra - BMV: esse não adianta testar, pq ele está no google, funcionou sempre.
+[01/10/2025, 14:48:49] Camila - BMV: mas esse só chega no Google, mas se respondemos para quem envio (localweb) enão recebe
+‎[01/10/2025, 14:50:26] Camila - BMV: ‎imagem ocultada
+[01/10/2025, 14:50:47] Camila - BMV: Esse foi o que ele mandou para mim pelo localweb
+[01/10/2025, 14:51:08] Camila - BMV: Aí respondi, mas não chega
+[01/10/2025, 14:55:00] Camila - BMV: @⁨~Vitor Alves⁩ , fizemos outro teste. Eu mandei um e-mails do meu Gmail particular do Gmail para o do Luiz na Localweb. Ele recebeu e respondeu.
+[01/10/2025, 14:55:17] Camila - BMV: mas o do google Workspace da BMV não
+‎[01/10/2025, 14:57:00] Camila - BMV: ‎imagem ocultada
+[01/10/2025, 14:57:06] Camila - BMV: Para mim, também não
+[01/10/2025, 14:57:17] ~ Vitor Alves: Certo
+‎[01/10/2025, 15:00:37] ~ Vitor Alves: ‎<anexado: 00000504-AUDIO-2025-10-01-15-00-37.opus>
+[01/10/2025, 15:00:57] ~ Vitor Alves: Precisei mandar um aúdio explicando um pouco o que está acontecendo
+[01/10/2025, 15:01:12] ~ Vitor Alves: Vou voltar a prioridade para o google
+[01/10/2025, 15:10:04] Camila - BMV: E se a gente tirar esse dominio bmv.global
+[01/10/2025, 15:10:12] Camila - BMV: e deixar só o drive?
+[01/10/2025, 15:10:42] Camila - BMV: lá na localwebb
+[01/10/2025, 15:14:56] ~ Vitor Alves: Podemos tirar, mas as caixas de emails que foram criadas na locaweb precisam ir para o Google
+[01/10/2025, 15:15:27] Camila - BMV: como o time de lideranca já está no Google
+[01/10/2025, 15:15:32] ~ Vitor Alves: O ideal é termos somente um provedor de email para cada domínio ou sub-domínio
+[01/10/2025, 15:15:48] Camila - BMV: aí seria o do time
+[01/10/2025, 15:15:55] Camila - BMV: operacional
+[01/10/2025, 15:16:03] Camila - BMV: que acho que não tem grandes e-mails
+[01/10/2025, 15:16:11] Camila - BMV: preciso ver com Alessandra
+[01/10/2025, 15:16:15] ~ Vitor Alves: Certo
+[01/10/2025, 17:47:05] Nadini - Multiledger: Thaynara, boa tarde. Preciso de mais evidências sobre essa questão. Qual é o nome do responsável? E qual o documento do responsável? Se  possível me encaminhar tbm a página anterior, onde vc clicou para visualizar. Obrigada.
+‎[01/10/2025, 17:56:18] BMV Global | Atendimento: Boa tarde @⁨Nadini - Multiledger⁩ 
+Segue tela conforme solicitado.
+
+Os dados do responsável que eu preenchi foram:
+
+Dácio Gomyde Pretoni
+CPF: 146.624.078-42 ‎imagem ocultada
+[02/10/2025, 10:04:44] Nadini - Multiledger: Bom dia @⁨Alessandra - BMV⁩ 
+
+Atualização sobre o certificado #901: 
+
+Identificamos que o programa foi criado usando uma configuração errada. 
+
+Ação corretiva: Administrador deve alterar a configuração do Modelo de Certificado de ID #1 CERTIFICADO_AKSES_GENERICO"
+
+> Alterar a Plataforma que foi feita para CNS:
+> DE: Governo
+> PARA: Trading
+
+Após isso, solicitar novo download de relatório.
+
+
+O motivo do erro é que, o sistema espera encontrar o template para TRADING, e o que existe é apenas de GOV para CNS ‎<Mensagem editada>
+‎[02/10/2025, 10:04:53] Nadini - Multiledger: ‎imagem ocultada
+[02/10/2025, 10:23:39] BMV Global | Atendimento: Bom dia @⁨Nadini - Multiledger⁩ 
+Obrigada pelo retorno.
+
+FEITO ✅ 
+O report está aparecendo normalmente. Obrigada.
+[02/10/2025, 10:24:43] Nadini - Multiledger: Boa! Vou passar pro pessoal aqui para finalizar essa demanda.
+[02/10/2025, 10:26:07] BMV Global | Atendimento: Esta demanda do mapa do Report está na sua listinha?
+Qualquer dúvida, pode me acionar.
+[02/10/2025, 10:27:01] Nadini - Multiledger: Sim, estamos vendo. Inclusive eu tenho uma atualização de outro ponto que notamos quando estávamos entendendo esse caso do núcleo. Deixa só eu montar aqui um print que já passo.
+‎[02/10/2025, 11:13:50] Nadini - Multiledger: Pessoal, notamos que alguns hashes salvos na plataforma não estão corretos. Para facilitar, tirei esses prints ontem para mostrar exatamente qual hash deve ser copiado e colado no campo **Hash do Certificado** e no campo **Hash do Bloco**. ‎imagem ocultada
+‎[02/10/2025, 11:13:50] Nadini - Multiledger: ‎imagem ocultada
+[02/10/2025, 11:13:55] Nadini - Multiledger: Já identificamos alguns casos com erro e estamos aguardando a análise finalizar para aplicar uma correção direta no banco. Entretanto, novos casos devem seguir a tratativa mencionada acima.
+‎[02/10/2025, 11:24:35] BMV Global | Atendimento: Nadini,
+Os prints ficaram muito ruins! 
+O primeiro consegui identificar, mas o segundo não.
+
+O hash do bloco estávamos salvando o hash extrínseco. 
+Ou seja, salvamos tudo errado. 😅
+Como faço para encontrar hash por hash e salvar o correto na planilha e no sistema? ‎imagem ocultada
+[02/10/2025, 11:26:03] BMV Global | Atendimento: Agora o segundo print (hash certificado), estamos usando o hash de origem. Ou seja, também estava errado.
+Não consegui identificar direito no print qual devo salvar.
+[02/10/2025, 11:26:40] BMV Global | Atendimento: Me ensina a entrar no polkadot e visualizar todas as movimentações por favor. Assim eu mesmo corrijo um por um.
+[02/10/2025, 11:28:12] Nadini - Multiledger: Ah, desculpa, caiu a qualidade. Vou salvar de novo.
+‎[02/10/2025, 11:32:20] BMV Global | Atendimento: É esse? ‎imagem ocultada
+[02/10/2025, 11:37:02] Nadini - Multiledger: Thaynara, não tem como vc corrigir, nós estamos vendo como fazer isso pelo backend e pelo banco de dados. Mas os novos devem ser feitos da forma correta. Já vou te passar novamente as imagens.
+[02/10/2025, 11:43:40] BMV Global | Atendimento: Tá certo! Obrigada.
+‎[02/10/2025, 11:57:49] Nadini - Multiledger: O Hash do bloco: ‎imagem ocultada
+‎[02/10/2025, 11:59:43] Nadini - Multiledger: Neste caso do certificado, você pode copiar qualquer um dos 2, são iguais.
+
+Hash do Certificado: ‎imagem ocultada
+[02/10/2025, 12:10:58] BMV Global | Atendimento: Tá certo. Muito obrigada. @⁨Nadini - Multiledger⁩
+[02/10/2025, 12:12:00] BMV Global | Atendimento: Eu gostaria de corrigir esta informação na nossa planilha de controle. 
+Como consigo encontrar isso no polkadot?
+[02/10/2025, 12:12:28] BMV Global | Atendimento: Visto que não tenho o hash do bloco. Não sei como buscar.
+[02/10/2025, 12:13:09] Nadini - Multiledger: Vc sabe qual foi a carteira, certo?
+[02/10/2025, 12:13:14] BMV Global | Atendimento: Me refiro aos antigos.
+Os novos farei corretamente.
+[02/10/2025, 12:13:16] BMV Global | Atendimento: Sim
+‎[02/10/2025, 12:21:12] Nadini - Multiledger: No site da Polkadot vc clica em *Developer* > *Chain State* para chegar nessa tela do *Storage*. Daí, primeiro em *selected state query* seleciona *certificateStorage* ; Em seguida, seleciona uma carteira em *Accountid32*. Do lado direito, pode desabilitar esse toggle Include Option. E pra finalizar clica no +. ‎imagem ocultada
+[02/10/2025, 12:21:53] Nadini - Multiledger: Esse link vai te levar exatamente para essa tela: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fprod-bmv-parachain-rpc-archive-01.multiledgers.com%3Ftoken%3DA4G69g3uy0886I9#/chainstate
+[02/10/2025, 12:36:32] BMV Global | Atendimento: Muuuuito obrigada.🌻
+Vou tentar fazer mais tarde e qualquer dúvida, aciono vocês.
+[02/10/2025, 13:03:35] Nadini - Multiledger: Por nada Thaynara. Só nos avisar.
+[02/10/2025, 14:35:49] Camila - BMV: @⁨~Vitor Alves⁩ falando com a @⁨Alessandra - BMV⁩, definimos por retirar o subdominio @bmv.global da Localweb para deixar apenas no google e criar outros dois: @corp.bmv.global e @bp.bmv.global. Teria como nos orientar nesse processo? Há como fazer backup das atuais caixas bmv.global da Localweb? Os e-mails de grupos, teríamos que ter um apelido para acessar em caixa única, é possível? Como excluir e criar domínios lá?
+[02/10/2025, 18:52:11] Nadini - Multiledger: Boa noite pessoal, preciso confirmar uma informação a respeito dessa safra da Fazenda Monte Cristo. 
+
+Na geração do certificado, o ano da safra está 2022 e verificamos no backoffice (áreas - safra) que neste ano não existe safra para o núcleo teles pires, apenas existem safras da fazenda paraíso com núcleo guariba. A única safra que encontramos no sistema do núcleo teles pires é do ano de 2010. 
+
+Dúvida: Quando vcs geraram esse certificado vcs usaram essa safra de 2010 da fazenda monte cristo do núcleo teles pires? 
+Vocês poderiam nos enviar uma evidência (vídeo) dos passos realizados até o pedido do selo para emissão desse certificado?
+[03/10/2025, 10:43:47] BMV Global | Atendimento: Bom dia @⁨Nadini - Multiledger⁩ 
+
+Na hora de criar a fila de vendas eu não escolho a fazenda. Apenas escolho o ano da Safra.
+Após processado o pedido, eu baixo as movimentações para ver qual fazenda foi usada e lançar no blockchain.
+Foi aí que vimos que foi usada fazenda Monte Cristo e não uma das fazendas do Guariba. 
+
+Vou enviar as telas logo abaixo.
+‎[03/10/2025, 10:45:06] BMV Global | Atendimento: Criando a fila:
+
+Abastecimento - > 2010 -> Novo ‎imagem ocultada
+‎[03/10/2025, 10:46:11] BMV Global | Atendimento: Mando uma quantidade de UCS para custódia ‎imagem ocultada
+‎[03/10/2025, 10:46:50] BMV Global | Atendimento: Da custodia mando para a Trading. ‎imagem ocultada
+‎[03/10/2025, 10:48:07] BMV Global | Atendimento: Ai sim consigo montar a fila
+
+Movimentações -> Livro de Ofertas ‎imagem ocultada
+‎[03/10/2025, 10:50:12] BMV Global | Atendimento: Observe que em momento nenhum escolho a fazenda.
+Eu escolho apenas a Safra.
+Por isso quando apareceu Guariba no Report achamos estranho.
+Quando baixamos as (conforme print), vimos que a fazenda era do Teles Pires e não do Guariba. ‎imagem ocultada
+[03/10/2025, 10:50:44] BMV Global | Atendimento: Se precisar de mais alguma coisa, estou à disposição. 🫡
+[03/10/2025, 10:55:13] Nadini - Multiledger: Peraí, tem que aparecer a fazenda de Guariba? Foi aí que vimos que foi usada fazenda Monte Cristo e não uma das fazendas do Guariba.
+[03/10/2025, 10:56:20] BMV Global | Atendimento: Não.
+Tinha que aparecer *Teles Pires* no mapa.
+Pois a Monte Cristo é do Teles Pires.
+[03/10/2025, 10:57:07] BMV Global | Atendimento: Eu esta explicando quando foi que percebemos que o mapa não estava puxando o núcleo certo.
+[03/10/2025, 16:38:55] Nadini - Multiledger: Atualizações – *Melhorias* :
+Foram implementadas as melhorias dos Certificados Tesouro Verde e BMV Digital, modificados conforme solicitado pela Alessandra.
+
+Obs.:
+
+Criamos uma API no backend capaz de alternar entre pt-BR e en-US; no entanto, este recurso não está disponível pelo frontend do backoffice.
+
+Sobre o cabeçalho dos certificados: o ajuste de troca de imagens precisa ser feito pelo time da BMV, pois todo o cabeçalho é tratado como uma imagem (.png) e pode ser alterado em Modelo de Certificado > Editar Modelo de Certificado.
+‎[03/10/2025, 16:39:45] Nadini - Multiledger: certificate BMV Digital.pdf • ‎1 página ‎documento omitido
+‎[03/10/2025, 16:39:45] Nadini - Multiledger: certificate Tesouro Verde.pdf • ‎1 página ‎documento omitido
+‎[03/10/2025, 16:40:23] Nadini - Multiledger: Para alterar o cabeçalho: ‎imagem ocultada
+‎[03/10/2025, 16:43:33] Nadini - Multiledger: Atualizações – Bugs:
+
+O frontend agora renderiza corretamente o nome do cliente ao clicar em Visualizar. ‎imagem ocultada
+[06/10/2025, 10:12:58] Camila - BMV: Olá, pessoal. Bom dia. Conseguimos hoje dar uma olhada nessa solução para os e-mails? @⁨~Vitor Alves⁩ poderia dar um suporte nisso?
+[06/10/2025, 10:15:39] Nadini - Multiledger: Oi Camila, bom dia. A gnt esta validando internamente como atender essa demanda. Em breve vamos retomar sobre o tema. ‎<Mensagem editada>
+[06/10/2025, 10:15:56] Camila - BMV: Obrigada, Nadini.
+[06/10/2025, 10:50:29] ~ Vitor Alves: Bom dia, sim vou conversar internet com pessoal aqui para vermos um plano de ação
+[06/10/2025, 13:33:41] Nadini - Multiledger: Boa tarde pessoal, vamos precisar fazer uma chamada para tratar esse tema dos emails. A presença da @⁨Alessandra - BMV⁩ é essencial porque vamos precisar liberar acessos para o colaborador que irá tratar da demanda. Vamos aproveitar essa call para explicar qual será o plano de ação e também explicar que, consequentemente, alguns serviços podem ficar off temporariamente. ‎<Mensagem editada>
+[06/10/2025, 13:37:37] Nadini - Multiledger: Hoje temos agenda até de 14h às 15h ou de 16h30 às 17h30. @⁨Alessandra - BMV⁩, algum desses horários te atende? Se não, podemos agendar amanhã.
+[08/10/2025, 09:34:38] Nadini - Multiledger: Oi Pessoal, bom dia. Precisamos fazer essa call, que falei acima, para liberar os acessos do colaborador que vai tratar a demanda dos e-mails. Estamos no aguardo.
+[08/10/2025, 09:40:56] Camila - BMV: @⁨Alessandra - BMV⁩ consegue algum  horário hoje?
+[08/10/2025, 09:45:14] Alessandra - BMV: Bom dia, cosnigo
+[08/10/2025, 09:45:38] Alessandra - BMV: Não tinha visto.
+[08/10/2025, 09:45:43] Alessandra - BMV: Qual a disponibilidade?
+[08/10/2025, 10:07:46] Nadini - Multiledger: Pode ser agora às 11h ou a partir de 14h.
+[08/10/2025, 10:46:30] Camila - BMV: @⁨Nadini - Multiledger⁩ podemos 11h agora? Alessandra tem disponibilidade
+[08/10/2025, 10:47:31] Camila - BMV: Você pode mandar o invite, por favor?
+[08/10/2025, 10:48:03] Nadini - Multiledger: Pode ser sim, vou mandar.
+[08/10/2025, 10:49:22] Nadini - Multiledger: Pronto, está na agenda
+[08/10/2025, 10:49:35] Camila - BMV: recebido, obrigada!
+[08/10/2025, 11:01:54] Alessandra - BMV: pode colocar o link aqui
+[08/10/2025, 11:01:56] Alessandra - BMV: por favor?
+[08/10/2025, 11:01:58] Alessandra - BMV: não chegou
+[08/10/2025, 11:02:10] Camila - BMV: Para participar da videochamada, clique neste link: https://meet.google.com/khq-isnz-dpf
+Para participar por telefone, disque +55 31 3958-9652 e digite este PIN: 426 636 865#
+Para acessar mais números de telefone, clique neste link: https://tel.meet/khq-isnz-dpf?hl=pt_BR&hs=5
+[08/10/2025, 17:02:19] BMV Global | Atendimento: Pessoal, boa tarde.
+Estamos realizando as transferências de Saldo para nossos clientes esta semana.
+
+Ao utilizar o Menu - Ajuste entre Contas - notamos duas questões que tem atrapalhado bastante o nosso serviço.
+Visto que serão centenas de transferências realizadas manualmente. Acredito que seja importante solicitarmos o suporte de vocês.
+‎[08/10/2025, 17:04:44] BMV Global | Atendimento: ‎imagem ocultada
+[08/10/2025, 17:04:44] BMV Global | Atendimento: 1) Tem cliente que não aparece na busca de jeito nenhum. Tento de várias maneiras.
+
+Alguns deles, eu chequei o cadastro (para ver se existia), e notei que são cadastros mais antigos. Aqueles que tem o e-mail (81618450182@brasilmataviva.com.br). ‎<Mensagem editada>
+‎[08/10/2025, 17:09:13] BMV Global | Atendimento: 2) O segundo problema é que eu preciso que apareça o nome completo do cliente na busca. No legado aparecia o nome completo e o CPF/CNPJ. Sem toda a informação está muito difícil buscar pelo nome certo. ‎imagem ocultada
+‎[08/10/2025, 17:09:22] BMV Global | Atendimento: Segue print de como aparecia no legado ‎imagem ocultada
+[08/10/2025, 17:12:34] BMV Global | Atendimento: @⁨Nadini - Multiledger⁩ Se faltar alguma informação, estou à disposição.
+[08/10/2025, 17:14:31] Nadini - Multiledger: Oi Thaynara, ok. Vou passar pro pessoal.
+[09/10/2025, 10:11:46] Nadini - Multiledger: Oi pessoal, bom dia. Vocês conseguiram falar com Alan pra tirar aquela dúvida sobre os preços do google? Estamos aqui no aguardo pra pegar as infos que o Willians vai precisar pra essa demanda.
+[09/10/2025, 11:33:54] Camila - BMV: Nadini
+[09/10/2025, 11:33:59] Camila - BMV: tudo bem?
+[09/10/2025, 11:34:31] Camila - BMV: denifinimos um subdominio para o localweb e leberar o bmv.global apenas para o Google
+[09/10/2025, 11:34:53] Camila - BMV: vou dar acesso ao Willians mas tem como eu ajustar com ele antes em uma call
+[09/10/2025, 11:34:55] Camila - BMV: ?
+[09/10/2025, 11:35:05] Camila - BMV: já alinhamos tudo internamente
+[09/10/2025, 11:50:25] Nadini - Multiledger: Podemos sim, na parte da tarde hoje vc pode?
+[09/10/2025, 11:50:45] Camila - BMV: Posso sim
+[09/10/2025, 11:51:00] Camila - BMV: me ajeito ao horário melhor de vcs
+[09/10/2025, 11:51:00] Nadini - Multiledger: Qual horário Camila?
+[09/10/2025, 11:51:13] Camila - BMV: 15?
+[09/10/2025, 11:53:45] Nadini - Multiledger: Pode ser sim Camila
+[09/10/2025, 11:53:55] Nadini - Multiledger: Vou mandar o convite pra vc
+[09/10/2025, 11:54:04] Camila - BMV: combinado! obrigada!
+[09/10/2025, 15:19:51] Camila - BMV: @⁨Nadini - Multiledger⁩ passa aqui de novo, por favor, o e-mail do Williams. Quando fui colar, não havia copiado direito do chat e perdi.
+[09/10/2025, 15:20:45] Nadini - Multiledger: Oii, segue
+[09/10/2025, 15:20:46] Nadini - Multiledger: willians.coutinho@multiledgers.com
+[09/10/2025, 15:20:59] Camila - BMV: obrigada!!!!!
+[09/10/2025, 15:25:11] Camila - BMV: Mandei o convite Localweb para ele
+[09/10/2025, 15:31:20] Nadini - Multiledger: Ta bom, vou avisar
+[09/10/2025, 15:45:50] Nadini - Multiledger: Willians já finalizou o cadastro mas aparentemente ele está como um usuário comum. Ele ainda não tem acesso a nada.
+[09/10/2025, 15:46:05] Camila - BMV: vou agora dar o acesso
+[09/10/2025, 15:46:10] Nadini - Multiledger: Vc pode verificar se vc tem alguma ação do seu lado?
+[09/10/2025, 15:46:11] Nadini - Multiledger: Isso ‎<Mensagem editada>
+[09/10/2025, 15:46:12] Camila - BMV: tive que fazer assim também
+[09/10/2025, 18:14:16] Camila - BMV: @⁨Alessandra - BMV⁩ meu usuário não consegue dar permissão de adm ao Williams. Ele já fez o cadastro dele. Consegue dar?
+‎[10/10/2025, 09:51:11] Alessandra - BMV: Feito para willians ‎imagem ocultada
+[10/10/2025, 09:51:32] Alessandra - BMV: Bom dia pessoal
+[10/10/2025, 09:56:04] Nadini - Multiledger: Bom dia, obrigada. Vou informar pra ele.
+[10/10/2025, 10:05:33] Nadini - Multiledger: Ainda não surtiu alteração no perfil dele não. Ele ainda não tem acesso a nenhum produto, nem email, nem dns ou hospedagem. Vamos aguardar uns minutos pra ver se isso muda. Eu retorno pra vcs daqui a pouco.
+[10/10/2025, 11:37:07] Nadini - Multiledger: Pessoal, nada ainda. Vocês conseguem fazer uma chamada hoje ou segunda?
+[10/10/2025, 11:44:53] Alessandra - BMV: Consigo
+[10/10/2025, 11:44:58] Alessandra - BMV: Que horas vcs podem?
+[10/10/2025, 13:32:05] Nadini - Multiledger: Alessandra, podemos entre 14h e 16h. Vc consegue falar nesse intervalo? Deve ser uma call rápida, em 15 minutos a gente fecha isso.
+[10/10/2025, 13:46:02] Alessandra - BMV: 14h podemos falar
+[10/10/2025, 13:57:19] Nadini - Multiledger: Vamos, 14h10? Já vou mandar o convite.
+[10/10/2025, 13:58:09] Alessandra - BMV: pode ser
+[10/10/2025, 14:01:24] Alessandra - BMV: ‎Mensagem apagada
+[10/10/2025, 14:03:44] Alessandra - BMV: ‎Mensagem apagada
+[10/10/2025, 14:07:19] Nadini - Multiledger: Vai ser nessa sala aqui : meet.google.com/qxm-ptwi-oip
+‎[10/10/2025, 16:24:07] BMV Global | Atendimento: Pessoal, boa tarde.
+
+Não estou conseguindo alterar os e-mails dos cadastros acima. 
+
+Preciso que todos (exceto o cadastro desativado) possuam o mesmo login e senha:
+
+Login: alezjara@hotmail.com
+Senha: Cliente@2025
+
+Estou pedindo ajuda pois esses cadastros atendem uma determinação judicial, precisamos cumprir com urgência. 
+Logo estes cadastros está dando erro 😅🫣
+
+Desde já agradeço. Qualquer dúvida, estou à disposição. ‎imagem ocultada
+[10/10/2025, 16:30:17] Nadini - Multiledger: Thaynara, boa tarde. Vou pedir ao time mas não sei se consigo pra hoje. Estamos tratando outras demandas que tbm são urgentes. Você consegue receber essa parte na segunda? ‎<Mensagem editada>
+[10/10/2025, 16:30:35] BMV Global | Atendimento: Consigo sim!
+[10/10/2025, 16:31:24] Nadini - Multiledger: Boa, obrigada
+[10/10/2025, 16:31:40] BMV Global | Atendimento: Eu que te agradeço.
+[13/10/2025, 09:49:48] Nadini - Multiledger: @⁨BMV Global | Atendimento⁩, bom dia. Tira uma dúvida? Só tem um email para 5 contas? Como vc diferencia cada um desses clientes depois que faz o login na plataforma, considerando que o login é pelo email?
+[13/10/2025, 10:07:20] BMV Global | Atendimento: Bom dia!!
+Nestes casos, o acesso é o mesmo. Aí a pessoa escolhe qual conta quer acessar após o login. Isso acontece quando o cliente administra mais de uma conta e pede que o login seja o mesmo.
+
+Neste caso específico: Futuramente, cada cliente terá seu e-mail cadastrado. Mas no ofício do juiz só enviaram um e-mail. Por isso fiz desta forma.
+[13/10/2025, 10:13:04] Nadini - Multiledger: Como ele faz pra escolher qual conta quer acessar após o login? Consegue me mandar um print ou vídeo?
+‎[13/10/2025, 10:56:49] BMV Global | Atendimento: ‎imagem ocultada
+[13/10/2025, 10:57:33] BMV Global | Atendimento: Após login aparece a seguinte tela acima.
+[13/10/2025, 15:49:34] Nadini - Multiledger: @⁨BMV Global | Atendimento⁩, atualização:
+
+Aplicamos uma solução paliativa, onde foram alteradas todos os cadastros (exceto o desativado) para:
+Login: alezjara@hotmail.com; Senha: Cliente@2025; como você solicitou. 
+
+Você poderia fazer login e testar?
+[13/10/2025, 15:51:18] Nadini - Multiledger: Nós aplicamos essa solução paliativa para tirar seu impedimento. Mas para uma solução definitiva ainda precisaremos explorar um pouco mais o código. Então retomaremos nesse ponto com uma solução definitiva, ok? ‎<Mensagem editada>
+‎[13/10/2025, 16:16:33] BMV Global | Atendimento: Deu certo. Muito obrigada!
+Assim conseguimos obedecer a ordem judicial. 
+
+A única questão, é que a senha deveria ser temporária. Ou seja: a senha criada direto no backoffice é sempre temporária. Quando o cliente acessa a plataforma, ele é direcionado a alterar a senha imediatamente. Isso não aconteceu.
+
+Mas como você disse, foi uma solução paliativa. E está ótimo!
+Mais uma vez obrigada. ‎imagem ocultada
+[13/10/2025, 16:17:07] BMV Global | Atendimento: Combinado!
+[14/10/2025, 09:55:53] BMV Global | Atendimento: Bom dia pessoal!
+Espero que estejam todos bem!!
+
+@⁨Nadini - Multiledger⁩ 
+Como está esta questão?
+Vamos dar continuidade nas transferências amanhã e desta forma está muito difícil!😥
+[14/10/2025, 10:00:39] Nadini - Multiledger: Oi Thaynara, bom dia. Acabamos de falar sobre esse problema na nossa daily. Temos uma pessoa atuando nele nesse momento. Estamos priorizando esse erro para depois seguir para o erro na fila que monta o certificado. Em breve te trago mais atualizações.
+[14/10/2025, 17:05:24] Nadini - Multiledger: OI @⁨BMV Global | Atendimento⁩, disponivel em produção, com correção do Filtro, mais inclusão do "sobreNome" e "CPF"; Você pode verificar, por favor?
+[14/10/2025, 17:19:16] Nadini - Multiledger: @⁨Alessandra - BMV⁩, vc chegou a criar outro login na locaweb para o Willians? ‎<Mensagem editada>
+[14/10/2025, 17:57:15] Alessandra - BMV: Criei mas está dando errado, abri um chamado na locaweb
+[15/10/2025, 10:13:25] Nadini - Multiledger: Bom dia, @⁨BMV Global | Atendimento⁩, subimos tbm a correção para troca de senhas. Você consegue testar a troca de senha e a busca com nome completo e cpf do cliente (novo ajuste entre contas)? ‎<Mensagem editada>
+[15/10/2025, 10:27:55] BMV Global | Atendimento: Bom dia @⁨Nadini - Multiledger⁩
+[15/10/2025, 10:28:19] BMV Global | Atendimento: Obrigada pelos retornos! 🙏🏼
+‎[15/10/2025, 10:31:22] BMV Global | Atendimento: Ficou bom. Resolve o problema emergencial. Muito obrigada.
+
+Algumas observações:
+1 - Se possível, futuramente, deixar como estava no legado. Lá estava com um layout mais organizado. ‎imagem ocultada
+‎[15/10/2025, 10:31:40] BMV Global | Atendimento: 2 - O filtro só está funcionando no destino. Quando busco na origem, não funciona. ‎imagem ocultada
+[15/10/2025, 10:32:10] Nadini - Multiledger: Sim, no futuro vamos ajustar sim
+[15/10/2025, 10:32:35] Nadini - Multiledger: Vou falar com o time aqui
+‎[15/10/2025, 10:33:50] BMV Global | Atendimento: O em vermelho, não foi corrigido. ❌
+O em azul, foi.✅
+
+Mas como a IMEI é quem vai fazer a maior parte das transferências. Essa correção não é tão urgente. ‎imagem ocultada
+[15/10/2025, 10:36:24] BMV Global | Atendimento: Seria a troca de e-mails ?
+[15/10/2025, 10:37:51] BMV Global | Atendimento: Ou essa questão? ‎<Mensagem editada>
+[15/10/2025, 10:38:50] BMV Global | Atendimento: As senhas temporárias estavam funcionando normalmente. Só neste caso que eu imaginei que não funcionaria.
+[15/10/2025, 10:38:51] Nadini - Multiledger: Sim, a troca de senha pelo backoffice. No primeiro momento realizamos a troca direto no banco pra não deixar sua operação parada.
+[15/10/2025, 10:39:16] BMV Global | Atendimento: Exato. Tá ótimo! Está funcionando. Fiz ontem para um cliente.
+‎[15/10/2025, 10:39:24] Nadini - Multiledger: Pessoal, boa tarde.
+
+Não estou conseguindo alterar os e-mails dos cadastros acima. 
+
+Preciso que todos (exceto o cadastro desativado) possuam o mesmo login e senha:
+
+Login: alezjara@hotmail.com
+Senha: Cliente@2025
+
+Estou pedindo ajuda pois esses cadastros atendem uma determinação judicial, precisamos cumprir com urgência. 
+Logo estes cadastros está dando erro 😅🫣
+
+Desde já agradeço. Qualquer dúvida, estou à disposição. ‎imagem ocultada
+[15/10/2025, 10:39:45] Nadini - Multiledger: Desculpa, falei errado ali, eu me refiro a essa correção acima.
+[15/10/2025, 10:40:57] BMV Global | Atendimento: Ótimo. Então agora está corrigido?
+Excelente!!! Muito obrigada. 
+Este eu só vou conseguir testar quando tivermos outro caso de conta única para vários perfis. 🤔😅
+[15/10/2025, 11:37:40] Nadini - Multiledger: Feito, pode testar por favor?
+[15/10/2025, 11:42:20] BMV Global | Atendimento: Testei! Feito ✅
+‎[15/10/2025, 12:45:21] BMV Global | Atendimento: Pessoal,
+Tivemos nosso primeiro pedido no SaaS BMV.
+Os dados do pedido não aparecem. 
+Vou tirar um print do legado para ajudar. ‎imagem ocultada
+‎[15/10/2025, 12:45:34] BMV Global | Atendimento: ‎imagem ocultada
+[15/10/2025, 12:45:39] BMV Global | Atendimento: Legado
+[15/10/2025, 15:56:33] Nadini - Multiledger: Certo, esses casos do SaaS BMV ainda não tinham sido completamente validados. Já repassei internamente a demanda, assim que tiver retorno atualizo vcs.
+[15/10/2025, 17:27:18] Nadini - Multiledger: Boa tarde pessoal, subimos uma correção para os pedidos 777 e 778. O certificado já está apontando para o núcleo correto e em movimentações também mostra o núcleo correto. 
+
+Ainda estamos em observação sobre essa demanda por que não conseguimos identificar exatamente o que causou esse erro. Vamos continuar monitorando. Inclusive, podemos combinar de fazer um caso juntos, desde a criação de uma nova safra até emissão do certificado, pq assim podemos mapear a evidência do erro. O que vcs acham? ‎<Mensagem editada>
+‎[15/10/2025, 17:28:52] Nadini - Multiledger: certificate.pdf • ‎1 página ‎documento omitido
+‎[15/10/2025, 17:29:11] Nadini - Multiledger: certificate (1).pdf • ‎1 página ‎documento omitido
+‎[15/10/2025, 17:29:55] Nadini - Multiledger: transacoes.csv ‎documento omitido
+[15/10/2025, 17:30:34] Nadini - Multiledger: Referência para achar o pedido 777 e 778 em movimentações 
+
+DISTRIBUICAO_ID:
+39623
+39613
+[15/10/2025, 18:34:01] BMV Global | Atendimento: Boa tarde,
+Muito obrigada pelo retorno.
+Mas houve um equívoco.
+O Pedido 777 foi processado com UCS do Guariba.
+O pedido 778 foi processado com UCS da Fazenda Monte Cristo.
+
+O erro reportado estava apenas no pedido 778.
+[15/10/2025, 18:37:16] Nadini - Multiledger: Vamos retornar o 777 para o estado inicial dele. Já te aviso.
+[15/10/2025, 18:37:25] BMV Global | Atendimento: Após o pedido 778, todos os pedidos deveriam ser processados com UCS da Monte Cristo.
+Pois estamos usando uma fila com UCS de safra 2010.
+Mas isto não está ocorrendo.
+Hoje mesmo processei um pedido e saiu Núcleo Guariba.
+[15/10/2025, 18:37:56] BMV Global | Atendimento: Se precisar podemos sim marcar uma agenda para fazermos todo o processo juntos.
+[15/10/2025, 18:39:01] Nadini - Multiledger: A gnt precisa fazer desde o início, quando cria a sagra, depois monta a fila. Seria ótimo marcar uma agenda pra isso sim. Deixa só eu consultar o Fernando se fica melhor quinta ou sexta e agendamos
+[15/10/2025, 18:39:23] BMV Global | Atendimento: Obrigada Nadini!
+[15/10/2025, 18:42:19] Nadini - Multiledger: Ele disse que podemos fazer amanhã mesmo, se vcs tbm tiverem agenda. A gnt só não consegue de 15 h às 16h, o resto do dia podemos marcar. ‎<Mensagem editada>
+‎[15/10/2025, 19:36:01] Nadini - Multiledger: Pedido 777 ‎<anexado: 00000687-PHOTO-2025-10-15-19-36-01.jpg>
+[15/10/2025, 19:45:40] BMV Global | Atendimento: @⁨Alessandra - BMV⁩ 
+Podemos marcar às 11:00?
+Ou as 14:00?
+[16/10/2025, 09:39:29] Nadini - Multiledger: Bom dia, pessoal. Já definimos o horário da call de hoje?
+[16/10/2025, 09:47:01] Alessandra - BMV: As 11h pode ser?
+[16/10/2025, 09:53:13] Nadini - Multiledger: pode ser, vou agendar
+‎[16/10/2025, 10:49:52] Nadini - Multiledger: Pessoal, notícias sobre o pedido de selo SaaS BMV
+
+Subimos uma correção para a visualização dos dados do pedido. 
+@⁨BMV Global | Atendimento⁩, pode verificar se está funcionando corretamente? ‎imagem ocultada
+‎[16/10/2025, 10:52:54] BMV Global | Atendimento: O Kamban está funcionando. Obrigada pessoal.👏🏼
+
+Lembrando que SaaS BMV funciona como o Tesouro Verde no Backoffice. Deveria ter a opção de *analisar a documentação* nos três pontinhos. (Me desculpem, só notei isso agora) ‎imagem ocultada
+[16/10/2025, 11:00:24] Nadini - Multiledger: Certo, vamos incluir. Funciona exatamente como tesouro verde, analisar documentação traz a mesma informação em ambos os casos, certo?
+‎[16/10/2025, 11:44:24] BMV Global | Atendimento: Status.txt ‎documento omitido
+[17/10/2025, 17:35:04] ~ Jennifer: ‎Nadini - Multiledger adicionou ~ Jennifer
+[17/10/2025, 17:41:02] Nadini - Multiledger: Olá pessoal! Boa tarde!!! Atualizações!
+
+*Apresentando nosso nova ponto de contato:* 
+
+A partir de agora, a @⁨~Jennifer⁩ será nossa principal responsável pelo suporte de desenvolvimento até meu retorno. Ela assumirá todas as demandas e comunicações relacionadas à BMV; 
+
+*Por que a mudança?* Íamos trazer o Fernando, porém decidimos que a Jennifer ficará responsável por esta conta para não sobrecarregar-lo, já que ele atende outros clientes. Isso garante dedicação total e agilidade no atendimento.
+
+*Como funcionará:* 
+- Jennifer será o ponto único de contato 
+- Ela repassará todas as informações necessárias para o time de dev 
+- Fará atualizações constantes sobre o andamento das demandas 
+- Solicitará testes da BMV para validação das entregas 
+- Agendará reuniões quando necessário 
+- Participará das calls do BASA junto com o time para colher informações
+
+⚠️ *IMPORTANTE - Relato de Erros:* 
+
+*Sempre que reportarem algum erro, lembrem de enviar:* 
+- 📸 Print da tela com o erro 
+- 🎥 Vídeo mostrando como reproduzir (se possível) 
+- 📝 Descrição detalhada do que estava fazendo quando o erro ocorreu 
+- 🕐 Dizer se é urgente/impeditivo para a realização de alguma operação (Severidade)
+
+Isso nos ajuda muito a identificar e resolver os problemas mais rapidamente! 🚀
+
+A Jennifer já está alinhada com todo o contexto do projeto e pronta para dar continuidade ao trabalho que vínhamos fazendo juntos.
+
+Qualquer dúvida, podem contar com ela!
+
+Obrigado pela parceria! 💪 ‎<Mensagem editada>
+[17/10/2025, 17:59:17] ~ Jennifer: Boa tarde! Qualquer necessidade estou a disposição... tenham um ótimo fim de semana! 😁
+[17/10/2025, 18:01:46] Pâmela - BMV: Obrigada Nadini @⁨Nadini - Multiledger⁩, sentiremos sua falta.
+
+Seja bem vinda @⁨~Jennifer⁩.
+[17/10/2025, 18:02:16] Pâmela - BMV: Ótimo final de semana para vocês também.
+[17/10/2025, 18:04:53] Nadini - Multiledger: Na próxima semana vamos atualizar sobre duas pendências que estão abertas e ainda estão em desenvolvimento, ok? (A demanda do certificado puxar o núcleo correto e a inclusão do botão de analisar a documentação em saas bmv) ‎<Mensagem editada>
+‎[20/10/2025, 11:49:42] Alessandra - BMV: ‎imagem ocultada
+[20/10/2025, 11:49:42] Alessandra - BMV: Bom dia,
+Nossos sites estão fora do ar, deve ser o que?
+[20/10/2025, 12:04:17] ~ Vitor Alves: A Cloud da AWS teve um incidente e deixou alguns servidores fora do ar
+[20/10/2025, 12:04:27] ~ Vitor Alves: Estamos analisando e vendo se houve impacto
+[20/10/2025, 12:06:50] Alessandra - BMV: Obrigada
+[20/10/2025, 12:11:05] ~ Paulo: https://www.instagram.com/p/DQB3ZxlAFBb/?igsh=MWloamxtZHpzMHBkdQ==
+[20/10/2025, 12:43:04] ~ Jennifer: Boa tarde Alessandra.
+Poderia testar novamente?
+Fernando testou agora pouco e disse que o site abriu
+[20/10/2025, 13:08:08] Alessandra - BMV: Voltou!
+[20/10/2025, 13:08:10] Alessandra - BMV: Muito obrigada
+[20/10/2025, 14:56:17] Alessandra - BMV: @⁨~Jennifer⁩ 
+Você pode verificar por favor com o Fernando se ele conseguiu verificar o bug na hora de processar pedido de aposentadoria da semana passada?
+[20/10/2025, 15:09:15] ~ Jennifer: Sim, claro.
+Já estou verificando, quando souber te dou esse retorno
+[20/10/2025, 15:10:30] Alessandra - BMV: Muito obrigada.
+[20/10/2025, 15:24:41] ~ Jennifer: qual é o numero do pedido?
+[20/10/2025, 15:27:01] BMV Global | Atendimento: É esta demanda aqui 👆🏽
+São todos os pedidos.
+Está puxando a fazenda errada. 
+O Fernando estava investigando o porquê.
+[20/10/2025, 15:29:18] BMV Global | Atendimento: Além dessas duas demandas da semana passada. 
+
+Vou precisar da ajuda de vocês com mais uma:
+
+Clientes Tesouro Verde, não estão conseguindo criar novo cadastro na plataforma. Vou fazer um vídeo.
+‎[20/10/2025, 15:30:05] BMV Global | Atendimento: Fiz o teste.
+Segue vídeo. ‎<anexado: 00000717-VIDEO-2025-10-20-15-30-04.mp4>
+[20/10/2025, 17:22:54] ~ Jennifer: Ele informou que precisa de mais um tempo, pois não conseguiu descobrir o erro. Mas são os bugs que está trabalhando no momento
+[20/10/2025, 17:24:50] BMV Global | Atendimento: Obrigada peço retorno! 🌷
+[21/10/2025, 09:09:15] ~ Jennifer: Pedido cadastrado ✅️
+[21/10/2025, 09:09:28] ~ Jennifer: Bom dia
+[21/10/2025, 09:51:39] ~ Jennifer: Esse link já está funcionando, podem verificar?
+[21/10/2025, 09:55:54] BMV Global | Atendimento: Bom dia Jennifer,
+[21/10/2025, 09:56:08] BMV Global | Atendimento: Acabo de testar e aqui não funcionou.
+‎[21/10/2025, 12:00:04] ~ Matheus S. Silva: Poderia verificar novamente? Tente atualizar a página antes ‎vídeo omitido
+‎[21/10/2025, 12:35:08] BMV Global | Atendimento: Ah entendi.
+Agora está indo para a página correta. É isso?
+Porque antes eu precisava clicar em Crie uma aqui
+
+Agora não preciso mais.
+Antes estava direcionando para a página de login e agora está direcionando para a página de cadastro.
+
+Como as páginas são muito parecidas, não tinha percebido isso.
+
+Muito obrigada pessoal ✅👏🏼👏🏼 ‎imagem ocultada
+[22/10/2025, 07:45:00] Alessandra - BMV: Bom dia pessoal tudo bem? 
+Estamos com algumas dificuldades para identificar as transações da planilha de movimentação de UCS, quem pode auxiliar nessa demanda, pois acredito que tenha algum erro na puxada das tabelas, está dando duplicidade no estoque com as movimentações.
+[22/10/2025, 10:10:59] ~ Jennifer: Bom dia! Tudo certo.
+Precisamos de um horário hoje de reunião para validar uma modificação realizada pelo Fernando: agora na geração dos certificados o sistema só soma UCS da mesma safra da pessoa que está na fila, e não mais de forma aleatória.
+Aí aproveitamos e vemos essa última demanda de hoje que seria interessante vocês mostrarem algum exemplo onde ocorreu esse erro.
+[22/10/2025, 10:11:33] ~ Jennifer: Vocês tem algum horário disponível?
+[22/10/2025, 10:25:20] BMV Global | Atendimento: Podemos marcar hoje as 14:00?
+@⁨Alessandra - BMV⁩ e @⁨Camila - BMV⁩ Vocês estarão disponíveis?
+[22/10/2025, 13:42:19] ~ Jennifer: Confirmado esse horário?
+[22/10/2025, 13:54:54] BMV Global | Atendimento: Acho que não @⁨~Jennifer⁩ 
+Vou tentar falar com a Alessandra e volto com você.
+[22/10/2025, 13:55:18] ~ Jennifer: Ok, fico no aguardo
+[22/10/2025, 15:44:56] Camila - BMV: A Alessandra e Maria Tereza tiveram uma reunião externa em cliente, mas vamos ver um novo horário e informamos.
+[22/10/2025, 15:50:58] ~ Jennifer: Tudo bem
+[22/10/2025, 17:30:27] Alessandra - BMV: Qual horário mais tarde e
+[22/10/2025, 17:30:29] Alessandra - BMV: Olá vcs podem falar hoje ainda? Chegamos agora
+[22/10/2025, 18:12:51] ~ Jennifer: Puxa, agora o Fernando está ocupado... pode ser amanhã?
+[22/10/2025, 18:13:13] ~ Jennifer: Qual horário fica bom pra vocês?
+[22/10/2025, 19:31:30] BMV Global | Atendimento: @⁨Alessandra - BMV⁩ 
+Coloca algumas opções de horário para amanhã por favor 🙏🏽
+[22/10/2025, 20:38:49] Alessandra - BMV: Olá boa noite,
+Amanhã no período da tarde a partir das 13:30  até 15h
+[23/10/2025, 08:17:07] BMV Global | Atendimento: Bom dia!
+Podemos marcar neste horário @⁨~Jennifer⁩ ?
+[23/10/2025, 09:35:41] ~ Jennifer: Podemos marcar 13:30h
+[23/10/2025, 09:46:09] BMV Global | Atendimento: Excelente 👏🏼
+[23/10/2025, 09:46:13] BMV Global | Atendimento: Obrigada
+[23/10/2025, 09:51:08] ~ Jennifer: Marcado ✅️
+[23/10/2025, 11:41:50] Alessandra - BMV: confirmado
+‎[23/10/2025, 14:21:49] BMV Global | Atendimento: Status23-10.txt ‎documento omitido
+[28/10/2025, 10:50:45] Alessandra - BMV: olá bom dia tudo bem?
+[28/10/2025, 10:51:06] Alessandra - BMV: podemos falar hoje ou amanhã sobre o estoque? achei uns erros praticos comparando a listagem do amarelo.
+[28/10/2025, 11:15:28] ~ Jennifer: Bom dia, tudo bem Alessandra!
+Podemos marcar amanhã na parte da tarde?
+[28/10/2025, 11:36:05] BMV Global | Atendimento: @⁨~Jennifer⁩ 
+Bom dia
+
+Sobre aquela questão do apontamento da fazenda.
+Sabe como está o andamento?
+
+Tenho alguns pedidos que ainda não lancei o blockchain, pois estou com medo do sistema estar apontando a fazenda errada.
+Sabe se posso lançar no blockchain normal ou se devo aguardar?
+[28/10/2025, 12:13:10] Alessandra - BMV: Podemos, que horas vcs podem?
+[28/10/2025, 12:13:34] Alessandra - BMV: 13:30?
+[28/10/2025, 14:58:09] ~ Jennifer: Sim, esse horário está bom
+[28/10/2025, 14:59:13] ~ Jennifer: Fernando recomendou aguardar e na reunião de amanhã podemos passar mais atualizações
+[28/10/2025, 15:21:24] BMV Global | Atendimento: Tá ok!
+Agradeço o retorno.
+[29/10/2025, 09:37:28] Alessandra - BMV: Bom dia, 
+Tive um contratempo no voo, estarei em voo duarante a nossa reunião, podemos alterar para depois das 16h?
+[29/10/2025, 11:00:42] ~ Jennifer: Bom dia! Podemos sim, 16:30 está bom?
+[29/10/2025, 11:05:16] Alessandra - BMV: Por mim sim.
+[29/10/2025, 11:15:07] ~ Jennifer: Gostaria de fazer um pedido: para alguém de vocês testar o cenário do certificado que estava indo para safra errada..
+Fernando subiu uma correção ontem a noite.
+[29/10/2025, 11:59:10] Alessandra - BMV: @⁨BMV Global | Atendimento⁩ vc pode testar?
+[29/10/2025, 12:06:23] BMV Global | Atendimento: Claro, irei testar e dou um retorno.
+[29/10/2025, 14:50:16] Alessandra - BMV: Olá boa tarde, já cheguei na minha base de puder antecipar nossa call.
+[29/10/2025, 14:54:48] ~ Jennifer: Boa tarde Alessandra, agora o Fernando está em outra call, sem previsão exata na hora q acaba. Mas se terminar antes de 16:30h aviso aqui
+[29/10/2025, 14:58:53] Alessandra - BMV: combinado.
+[29/10/2025, 16:11:54] BMV Global | Atendimento: Testei aqui e somente o pedido 787 (aquele que fizemos o exercício juntos) foi corrigido.
+Então fica entendido que os demais pedidos de fato puxaram a fazenda correta. Safra 2022 ao invés de 2010.
+[29/10/2025, 16:31:00] Alessandra - BMV: oii @⁨~Jennifer⁩ o link da reunião acho que não foi adicionada na agenda
+[29/10/2025, 16:31:14] Alessandra - BMV: pelo menos não apareceu aqui na minha
+[29/10/2025, 16:31:22] ~ Jennifer: BMV [Atendimento] 
+Quarta-feira, 29 de outubro · 4:30 – 5:30pm
+Fuso horário: America/Sao_Paulo
+Como participar do Google Meet
+Link da videochamada: https://meet.google.com/zdw-fmbw-ajw
+Ou disque: (BR) +55 11 4949-1713 PIN: 834 371 013#
+Outros números de telefone: https://tel.meet/zdw-fmbw-ajw?pin=8405405053101
+[29/10/2025, 16:32:57] Alessandra - BMV: @⁨BMV Global | Atendimento⁩
+‎[31/10/2025, 15:30:19] BMV Global | Atendimento: Pessoal, boa tarde.
+@⁨~Jennifer⁩  Fiz o teste que o Fernando pediu usando o SaaS BMV.
+Fiz todo o processo e deu tudo certo.
+Mas na hora de processar deu *erro na operação.*
+
+Pedido 51 SaaS BMV ‎imagem ocultada
+[31/10/2025, 15:51:18] ~ Jennifer: Boa tarde @⁨BMV Global | Atendimento⁩ ! Erro registrado, assim que tiver alguma atualização avisamos por aqui.
+[31/10/2025, 16:01:44] BMV Global | Atendimento: Obrigada🌷
+[31/10/2025, 16:35:22] ~ Jennifer: Nada 😊
+[04/11/2025, 17:56:11] ‪+55 48 99183‑4975‬: ‎Nadini - Multiledger adicionou ‪+55 48 99183‑4975‬
+[04/11/2025, 17:58:53] Nadini - Multiledger: Oi pessoal, boa tarde. Tudo bem? Estou retomando as atividades por aqui. 
+
+Primeiro quero agradecer a @⁨~Jennifer⁩ pelo suporte oferecido nesse período. Todos os erros relatados foram criados em backlog e estamos trabalhando pra entregar essas soluções. Nos próximos dias vou trazer atualizações dos pontos em aberto. 
+
+Aproveito para comunicar que adicionei o @⁨‪+55 48 99183‑4975‬⁩ aqui no grupo, para facilitar o acompanhamento do suporte, que hoje está sendo tratado diretamente com a Alessandra. Vai facilitar um pouco para todos se concentrarmos toda a comunicação em um só canal.
+[04/11/2025, 18:07:51] Alessandra - BMV: Olá boa tarde,
+Muito obrigada, Nadini welcome back!
+Muito obrigada.
+[06/11/2025, 10:56:47] ~ Paulo: Bom dia a todos,
+
+A pedido da Maria Tereza, o canal de suporte BMV <> Multiledgers será transferido para um novo ambiente.
+
+Este canal será descontinuado em breve, e as próximas comunicações deverão ser feitas pelo novo canal de suporte.
+
+Equipe da Multiledgers serão transferidos por nós para o novo canal,
+Equipe da BMV deverão contactar a Maria Tereza para efetuar a migração. 
+
+Agradecemos a compreensão e colaboração de todos durante essa transição.

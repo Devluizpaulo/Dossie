@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useCallback, useRef, createContext, useContext } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import {
   MEDIA_FILES,
   SENDER_COLORS,
@@ -256,7 +257,7 @@ function parseWhatsAppExport(raw: string): DayGroup[] {
 }
 
 /* ── Message Bubble ── */
-function MsgBubble({ msg }: { msg: ParsedMessage }) {
+function MsgBubble({ msg, basePath }: { msg: ParsedMessage; basePath: string }) {
   const [imgError, setImgError] = useState(false);
   const { openLightbox } = useLightbox();
 
@@ -300,10 +301,10 @@ function MsgBubble({ msg }: { msg: ParsedMessage }) {
         {msg.media && mediaInfo?.type === "image" && !imgError && (
           <div
             className="my-1 cursor-pointer group/img relative"
-            onClick={() => openLightbox(`/Image/whatsapp/${msg.media}`, msg.media!)}
+            onClick={() => openLightbox(`${basePath}/${msg.media}`, msg.media!)}
           >
             <Image
-              src={`/Image/whatsapp/${msg.media}`}
+              src={`${basePath}/${msg.media}`}
               alt={msg.media}
               width={280}
               height={180}
@@ -319,9 +320,20 @@ function MsgBubble({ msg }: { msg: ParsedMessage }) {
           </div>
         )}
 
+        {/* Video */}
+        {msg.media && msg.media.endsWith(".mp4") && (
+          <div className="my-1">
+            <video 
+              src={`${basePath}/${msg.media}`} 
+              controls 
+              className="rounded-lg max-w-full h-auto max-h-[300px]"
+            />
+          </div>
+        )}
+
         {/* PDF */}
         {msg.media && mediaInfo?.type === "pdf" && (
-          <a href={`/Image/whatsapp/${msg.media}`} target="_blank" rel="noopener noreferrer"
+          <a href={`${basePath}/${msg.media}`} target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-2 text-primary hover:underline my-1 text-xs">
             <FileText className="h-4 w-4 text-red-500 flex-shrink-0" />
             {mediaInfo.label || msg.media}
@@ -329,9 +341,12 @@ function MsgBubble({ msg }: { msg: ParsedMessage }) {
         )}
 
         {/* Audio */}
-        {msg.media && mediaInfo?.type === "audio" && (
-          <div className="flex items-center gap-2 text-xs text-muted-foreground my-1">
-            <Music className="h-3 w-3" /> Áudio ({msg.media})
+        {msg.media && (mediaInfo?.type === "audio" || msg.media.endsWith(".opus")) && (
+          <div className="flex flex-col gap-1 my-1">
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <Music className="h-3 w-3" /> Áudio ({msg.media})
+            </div>
+            <audio src={`${basePath}/${msg.media}`} controls className="h-8 w-full max-w-[240px]" />
           </div>
         )}
 
@@ -350,7 +365,11 @@ function MsgBubble({ msg }: { msg: ParsedMessage }) {
 
 /* ── Main Transcript Component ── */
 export function WhatsAppTranscript() {
-  const [rawData, setRawData] = useState<string | null>(null);
+  const [selectedGroup, setSelectedGroup] = useState<"suporte" | "multiledgers">("suporte");
+  const [rawData, setRawData] = useState<Record<string, string | null>>({
+    suporte: null,
+    multiledgers: null,
+  });
   const [loading, setLoading] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -363,16 +382,17 @@ export function WhatsAppTranscript() {
   }, []);
 
   // Fetch and parse
-  const loadData = useCallback(async () => {
-    if (rawData) {
+  const loadData = useCallback(async (group: "suporte" | "multiledgers") => {
+    if (rawData[group]) {
       setExpanded(true);
       return;
     }
     setLoading(true);
     try {
-      const res = await fetch("/Image/whatsapp/chat.txt");
+      const path = group === "suporte" ? "/Image/whatsapp/chat.txt" : "/Image/whatsapp-multiledgers/chat.txt";
+      const res = await fetch(path);
       const text = await res.text();
-      setRawData(text);
+      setRawData(prev => ({ ...prev, [group]: text }));
       setExpanded(true);
     } catch (e) {
       console.error("Erro ao carregar transcrição:", e);
@@ -382,9 +402,10 @@ export function WhatsAppTranscript() {
   }, [rawData]);
 
   const dayGroups = useMemo(() => {
-    if (!rawData) return [];
-    return parseWhatsAppExport(rawData);
-  }, [rawData]);
+    const currentRaw = rawData[selectedGroup];
+    if (!currentRaw) return [];
+    return parseWhatsAppExport(currentRaw);
+  }, [rawData, selectedGroup]);
 
   // Search filter
   const filteredGroups = useMemo(() => {
@@ -427,8 +448,8 @@ export function WhatsAppTranscript() {
       if (!date) return;
 
       // Ensure data is loaded
-      if (!rawData) {
-        loadData().then(() => {
+      if (!rawData[selectedGroup]) {
+        loadData(selectedGroup).then(() => {
           // Retry after data is loaded
           setTimeout(() => {
             window.dispatchEvent(new CustomEvent("whatsapp-scroll-to-date", { detail: { date } }));
@@ -464,23 +485,44 @@ export function WhatsAppTranscript() {
 
     window.addEventListener("whatsapp-scroll-to-date", handleScrollToDate);
     return () => window.removeEventListener("whatsapp-scroll-to-date", handleScrollToDate);
-  }, [rawData, loadData, filteredGroups]);
+  }, [rawData, selectedGroup, loadData, filteredGroups]);
 
   if (!expanded) {
     return (
-      <div className="space-y-3">
-        <p className="text-sm text-muted-foreground text-justify">
-          Clique abaixo para carregar a transcrição completa das {" "}
-          <strong>1.598 mensagens</strong> do grupo de suporte. As mensagens são exibidas 
-          cronologicamente, agrupadas por data, com todas as mídias anexas incorporadas.
-        </p>
-        <Button onClick={loadData} disabled={loading} className="w-full gap-2" size="lg">
-          {loading ? (
-            <><Loader2 className="h-4 w-4 animate-spin" /> Carregando...</>
-          ) : (
-            <><MessageSquare className="h-4 w-4" /> Carregar Transcrição Completa</>
-          )}
-        </Button>
+      <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Card className="cursor-pointer hover:border-primary transition-colors overflow-hidden border-2" onClick={() => { setSelectedGroup("multiledgers"); loadData("multiledgers"); }}>
+            <div className="p-4 space-y-2">
+              <div className="flex justify-between items-start">
+                <Badge variant="outline" className="bg-amber-100 text-amber-800 border-amber-200">Fase 1</Badge>
+                <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-tighter">Jun/25 - Nov/25</span>
+              </div>
+              <h3 className="font-bold text-sm">Multiledgers - suporte BMV</h3>
+              <p className="text-xs text-muted-foreground line-clamp-2">
+                Primeiro canal de suporte. Registro de falhas iniciais, problemas de DNS e migração de sistema legado.
+              </p>
+              <Button variant="secondary" size="sm" className="w-full h-8 text-xs gap-2">
+                <MessageSquare className="h-3 w-3" /> Abrir Histórico
+              </Button>
+            </div>
+          </Card>
+
+          <Card className="cursor-pointer hover:border-primary transition-colors overflow-hidden border-2" onClick={() => { setSelectedGroup("suporte"); loadData("suporte"); }}>
+            <div className="p-4 space-y-2">
+              <div className="flex justify-between items-start">
+                <Badge variant="outline" className="bg-blue-100 text-blue-800 border-blue-200">Fase 2</Badge>
+                <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-tighter">Nov/25 - Mar/26</span>
+              </div>
+              <h3 className="font-bold text-sm">BMV {"<>"} Multi - SUPORTE</h3>
+              <p className="text-xs text-muted-foreground line-clamp-2">
+                Canal consolidado. Registro de incidentes críticos, erros de emissão de UCS e queda total de sistema.
+              </p>
+              <Button variant="secondary" size="sm" className="w-full h-8 text-xs gap-2">
+                <MessageSquare className="h-3 w-3" /> Abrir Histórico
+              </Button>
+            </div>
+          </Card>
+        </div>
       </div>
     );
   }
@@ -498,6 +540,30 @@ export function WhatsAppTranscript() {
       )}
       {/* Controls */}
       <div className="sticky top-0 z-20 bg-background/95 backdrop-blur-sm pb-3 pt-1 border-b space-y-3">
+        <div className="flex items-center justify-between">
+          <div className="flex gap-2">
+            <Button 
+              variant={selectedGroup === "multiledgers" ? "default" : "outline"} 
+              size="sm" 
+              onClick={() => { setSelectedGroup("multiledgers"); loadData("multiledgers"); }}
+              className="text-xs h-7"
+            >
+              Fase 1 (Jun-Nov)
+            </Button>
+            <Button 
+              variant={selectedGroup === "suporte" ? "default" : "outline"} 
+              size="sm" 
+              onClick={() => { setSelectedGroup("suporte"); loadData("suporte"); }}
+              className="text-xs h-7"
+            >
+              Fase 2 (Nov-Mar)
+            </Button>
+          </div>
+          <Button variant="ghost" size="sm" onClick={() => setExpanded(false)} className="text-xs h-7 no-print">
+            Voltar
+          </Button>
+        </div>
+
         {/* Search */}
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -537,9 +603,6 @@ export function WhatsAppTranscript() {
             <Button variant="outline" size="sm" onClick={collapseAll} className="text-xs h-7">
               Recolher
             </Button>
-            <Button variant="ghost" size="sm" onClick={() => setExpanded(false)} className="text-xs h-7 no-print">
-              Fechar
-            </Button>
           </div>
         </div>
       </div>
@@ -566,7 +629,11 @@ export function WhatsAppTranscript() {
               {isOpen && (
                 <div className="px-3 py-3 space-y-0.5 bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,rgba(0,0,0,0.01)_20px,rgba(0,0,0,0.01)_40px)] dark:bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,rgba(255,255,255,0.01)_20px,rgba(255,255,255,0.01)_40px)]">
                   {group.messages.map((msg, i) => (
-                    <MsgBubble key={`${group.date}-${i}`} msg={msg} />
+                    <MsgBubble 
+                      key={`${group.date}-${i}`} 
+                      msg={msg} 
+                      basePath={selectedGroup === "suporte" ? "/Image/whatsapp" : "/Image/whatsapp-multiledgers"} 
+                    />
                   ))}
                 </div>
               )}

@@ -31,7 +31,7 @@ export default function Anexo6() {
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-justify">
-              Este Anexo consolida o <strong>registro integral da comunicação operacional</strong> mantida entre as equipes da <strong>BMV</strong> e da <strong>Multiledgers</strong> no grupo de WhatsApp <em>&quot;BMV {'<>'} Multi - SUPORTE&quot;</em>, no período de <strong>{STATS.period}</strong>.
+              Este Anexo consolida o <strong>registro integral da comunicação operacional</strong> mantida entre as equipes da <strong>BMV</strong> e da <strong>Multiledgers</strong> nos grupos de WhatsApp (Fase 1 e Fase 2), abrangendo o período de <strong>{STATS.period}</strong>.
             </p>
             <p className="text-justify">
               A documentação visa preservar, de forma <strong>rastreável, cronológica e auditável</strong>, todas as interações relativas a:
