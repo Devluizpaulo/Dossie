@@ -193,12 +193,27 @@ function parseWhatsAppExport(raw: string): DayGroup[] {
   let current: ParsedMessage | null = null;
 
   for (const line of lines) {
-    const trimmed = line.replace(/^\uFEFF/, "").replace(/\u200E/g, "");
-    const match = trimmed.match(/^(\d{2}\/\d{2}\/\d{4}) (\d{2}:\d{2}) - (.+)$/);
+    // Strip hidden characters and BOM
+    const trimmed = line.replace(/^\uFEFF/, "").replace(/\u200E/g, "").trim();
+    if (!trimmed) continue;
 
-    if (match) {
+    // Format 1: 06/11/2025 10:48 - Text/Sender: Text
+    const match1 = trimmed.match(/^(\d{2}\/\d{2}\/\d{4}) (\d{2}:\d{2}) - (.+)$/);
+    // Format 2: [11/06/2025, 12:40:31] Sender: Text
+    const match2 = trimmed.match(/^\[(\d{2}\/\d{2}\/\d{4}),\s(\d{2}:\d{2}:\d{2})\]\s(.+)$/);
+
+    if (match1 || match2) {
       if (current) messages.push(current);
-      const [, date, time, rest] = match;
+      
+      let date, time, rest;
+      if (match1) {
+        [, date, time, rest] = match1;
+      } else {
+        [, date, time, rest] = match2!;
+        // Normalize time to HH:MM for internal consistency
+        time = time.slice(0, 5);
+      }
+
       const colonIdx = rest.indexOf(": ");
 
       if (colonIdx === -1) {
@@ -210,21 +225,32 @@ function parseWhatsAppExport(raw: string): DayGroup[] {
 
         // Detect attached file
         let media: string | undefined;
-        const attachMatch = text.match(/^‎?(.+?) \(arquivo anexado\)$/);
+        const attachMatch = text.match(/^(.+?) \(arquivo anexado\)$/) || text.match(/^(.+?) <anexado: .+?>$/) || text.match(/^(.+?) • .+? documento omitido$/);
+        
         if (attachMatch) {
           media = attachMatch[1].trim();
           text = "";
         }
-        // Detect hidden media
+        
+        // Handle specific media markers in text
+        if (text.includes("documento omitido") || text.includes("imagem ocultada") || text.includes("vídeo omitido")) {
+           // Try to extract filename if present
+           const fileMatch = text.match(/^(.+?)\s(documento omitido|imagem ocultada|vídeo omitido)$/);
+           if (fileMatch) {
+             media = fileMatch[1].trim();
+             text = "";
+           }
+        }
+
         if (text === "<Mídia oculta>") {
           current = { date, time, sender, text: "[Mídia não exportada]", isSystem: false, media: undefined };
         } else {
           current = { date, time, sender, text, media, isSystem: false };
         }
       }
-    } else if (current && trimmed) {
+    } else if (current) {
       // Continuation line
-      current.text += "\n" + trimmed;
+      current.text += (current.text ? "\n" : "") + trimmed;
     }
   }
   if (current) messages.push(current);
