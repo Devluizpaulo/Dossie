@@ -4,7 +4,7 @@ import { AnexoLayout } from "@/app/components/anexo-layout";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
-import { Gavel, Printer } from "lucide-react";
+import { Gavel, Printer, ShieldAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { STATS } from "./whatsapp-data";
 import {
@@ -52,6 +52,22 @@ export default function Anexo6() {
                 <p className="text-sm text-justify">
                   Este registro constitui <strong>evidência documental primária</strong> e complementa as análises técnicas apresentadas no corpo principal do dossiê e nos demais anexos, servindo como base probatória para análise de SLA, tempos de resposta e padrões recorrentes de falhas.
                 </p>
+              </AlertDescription>
+            </Alert>
+
+            <Alert className="bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800">
+              <AlertDescription className="space-y-2">
+                <p className="font-semibold text-blue-800 dark:text-blue-300 flex items-center gap-2">
+                  <ShieldAlert className="h-4 w-4 text-blue-600" /> Declaração de Natureza Estritamente Profissional e Comercial
+                </p>
+                <p className="text-sm text-justify text-blue-900 dark:text-blue-400">
+                  Este registro de comunicações é composto <strong>exclusivamente por interações mantidas em grupos de suporte técnico e operacional de caráter comercial</strong> entre as equipes da <strong>BMV</strong> e da <strong>Multiledgers</strong>. Esclarece-se que:
+                </p>
+                <ul className="list-disc pl-6 space-y-1 text-xs text-blue-800 dark:text-blue-400 text-justify">
+                  <li><strong>Ausência de Conteúdo Privativo:</strong> O canal foi criado unicamente para atendimento profissional, não contendo quaisquer dados de cunho pessoal, familiar, íntimo ou privado dos participantes.</li>
+                  <li><strong>Finalidade Forense e Probatória:</strong> A juntada e a transcrição integral destas conversas são fundamentais para demonstrar em juízo o histórico real de falhas operacionais, admissões de erro e o padrão de SLA do fornecedor.</li>
+                  <li><strong>Transparência Processual:</strong> O compartilhamento deste conteúdo atende aos requisitos de transparência e cooperação processual, servindo como meio lícito de prova sob a égide do interesse legítimo corporativo e do direito de defesa.</li>
+                </ul>
               </AlertDescription>
             </Alert>
           </CardContent>

@@ -12,7 +12,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { EvidenceImage } from '@/app/components/evidence-image';
 import { STATS } from '../anexo-6/whatsapp-data';
-import { MessageSquare, Users, Calendar, Activity, AlertTriangle, Gavel, FileText } from 'lucide-react';
+import { MessageSquare, Users, Calendar, Activity, AlertTriangle, Gavel, FileText, ShieldAlert } from 'lucide-react';
 import { ContractualAnalysisTable } from '../anexo-6/whatsapp-renderer';
 import { WhatsAppTranscript } from '../anexo-6/whatsapp-transcript';
 
@@ -356,6 +356,22 @@ export default function FullReportPage() {
               Este registro é fundamental para comprovar o histórico de falhas, tempos de resposta e o padrão de suporte reativo adotado pelo fornecedor.
             </p>
 
+            <Alert className="bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800 my-4">
+              <AlertDescription className="space-y-2">
+                <p className="font-semibold text-blue-800 dark:text-blue-300 flex items-center gap-2">
+                  <ShieldAlert className="h-4 w-4 text-blue-600" /> Declaração de Natureza Estritamente Profissional e Comercial
+                </p>
+                <p className="text-sm text-justify text-blue-900 dark:text-blue-400">
+                  Este registro de comunicações é composto <strong>exclusivamente por interações mantidas em grupos de suporte técnico e operacional de caráter comercial</strong> entre as equipes da <strong>BMV</strong> e da <strong>Multiledgers</strong>. Esclarece-se que:
+                </p>
+                <ul className="list-disc pl-6 space-y-1 text-xs text-blue-800 dark:text-blue-400 text-justify">
+                  <li><strong>Ausência de Conteúdo Privativo:</strong> O canal foi criado unicamente para atendimento profissional, não contendo quaisquer dados de cunho pessoal, familiar, íntimo ou privado dos participantes.</li>
+                  <li><strong>Finalidade Forense e Probatória:</strong> A juntada e a transcrição integral destas conversas são fundamentais para demonstrar em juízo o histórico real de falhas operacionais, admissões de erro e o padrão de SLA do fornecedor.</li>
+                  <li><strong>Transparência Processual:</strong> O compartilhamento deste conteúdo atende aos requisitos de transparência e cooperação processual, servindo como meio lícito de prova sob a égide do interesse legítimo corporativo e do direito de defesa.</li>
+                </ul>
+              </AlertDescription>
+            </Alert>
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               <div className="bg-muted p-4 rounded-lg text-center">
                 <p className="text-2xl font-bold text-primary">{STATS.totalMessages}</p>
@@ -461,7 +477,7 @@ export default function FullReportPage() {
               Transcrição Integral das Mensagens
             </h1>
             <div className="transcript-container">
-              <WhatsAppTranscript />
+              <WhatsAppTranscript printMode={true} />
             </div>
           </section>
         )}

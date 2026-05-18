@@ -390,7 +390,7 @@ function MsgBubble({ msg, basePath }: { msg: ParsedMessage; basePath: string }) 
 }
 
 /* ── Main Transcript Component ── */
-export function WhatsAppTranscript() {
+export function WhatsAppTranscript({ printMode = false }: { printMode?: boolean }) {
   const [selectedGroup, setSelectedGroup] = useState<"suporte" | "multiledgers">("suporte");
   const [rawData, setRawData] = useState<Record<string, string | null>>({
     suporte: null,
@@ -407,7 +407,7 @@ export function WhatsAppTranscript() {
     setLightbox({ src, alt });
   }, []);
 
-  // Fetch and parse
+  // Fetch and parse single group
   const loadData = useCallback(async (group: "suporte" | "multiledgers") => {
     if (rawData[group]) {
       setExpanded(true);
@@ -426,6 +426,58 @@ export function WhatsAppTranscript() {
       setLoading(false);
     }
   }, [rawData]);
+
+  // Load both for printMode
+  useEffect(() => {
+    if (printMode) {
+      const loadAll = async () => {
+        setLoading(true);
+        try {
+          const promises = [];
+          if (!rawData.suporte) {
+            promises.push(
+              fetch("/Image/whatsapp/chat.txt")
+                .then((res) => res.text())
+                .then((text) => ({ group: "suporte", text }))
+            );
+          }
+          if (!rawData.multiledgers) {
+            promises.push(
+              fetch("/Image/whatsapp-multiledgers/chat.txt")
+                .then((res) => res.text())
+                .then((text) => ({ group: "multiledgers", text }))
+            );
+          }
+          if (promises.length > 0) {
+            const results = await Promise.all(promises);
+            setRawData((prev) => {
+              const next = { ...prev };
+              for (const r of results) {
+                next[r.group] = r.text;
+              }
+              return next;
+            });
+          }
+          setExpanded(true);
+        } catch (e) {
+          console.error("Erro ao carregar dados de impressão:", e);
+        } finally {
+          setLoading(false);
+        }
+      };
+      loadAll();
+    }
+  }, [printMode]);
+
+  const multiledgersGroups = useMemo(() => {
+    if (!rawData.multiledgers) return [];
+    return parseWhatsAppExport(rawData.multiledgers);
+  }, [rawData.multiledgers]);
+
+  const suporteGroups = useMemo(() => {
+    if (!rawData.suporte) return [];
+    return parseWhatsAppExport(rawData.suporte);
+  }, [rawData.suporte]);
 
   const dayGroups = useMemo(() => {
     const currentRaw = rawData[selectedGroup];
@@ -469,6 +521,7 @@ export function WhatsAppTranscript() {
 
   // Deep linking listener
   useEffect(() => {
+    if (printMode) return;
     const handleScrollToDate = (e: any) => {
       const { date } = e.detail;
       if (!date) return;
@@ -511,7 +564,74 @@ export function WhatsAppTranscript() {
 
     window.addEventListener("whatsapp-scroll-to-date", handleScrollToDate);
     return () => window.removeEventListener("whatsapp-scroll-to-date", handleScrollToDate);
-  }, [rawData, selectedGroup, loadData, filteredGroups]);
+  }, [rawData, selectedGroup, loadData, filteredGroups, printMode]);
+
+  if (printMode) {
+    if (loading) {
+      return (
+        <div className="flex items-center justify-center p-8">
+          <Loader2 className="h-6 w-6 animate-spin text-primary mr-2" />
+          <span>Carregando transcrições completas para impressão...</span>
+        </div>
+      );
+    }
+
+    return (
+      <div className="space-y-12 print:space-y-8">
+        {/* Fase 1 */}
+        <div className="space-y-4">
+          <div className="border-b-2 border-primary pb-2">
+            <h2 className="text-xl font-bold text-primary">Fase 1: Multiledgers - suporte BMV (Jun/25 - Nov/25)</h2>
+            <p className="text-xs text-muted-foreground">Registro de falhas iniciais, problemas de DNS e migração de sistema legado.</p>
+          </div>
+          <div className="space-y-4">
+            {multiledgersGroups.map((group) => (
+              <div key={`ml-${group.date}`} className="border-b pb-4 page-break-inside-avoid">
+                <div className="day-header font-bold text-sm bg-muted/30 px-3 py-1.5 rounded-lg mb-2">
+                  {group.dateLabel}
+                </div>
+                <div className="space-y-1">
+                  {group.messages.map((msg, i) => (
+                    <MsgBubble 
+                      key={`ml-${group.date}-${i}`} 
+                      msg={msg} 
+                      basePath="/Image/whatsapp-multiledgers" 
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Fase 2 */}
+        <div className="space-y-4">
+          <div className="border-b-2 border-primary pb-2">
+            <h2 className="text-xl font-bold text-primary">Fase 2: BMV {"<>"} Multi - SUPORTE (Nov/25 - Mar/26)</h2>
+            <p className="text-xs text-muted-foreground">Registro de incidentes críticos, erros de emissão de UCS e queda total de sistema.</p>
+          </div>
+          <div className="space-y-4">
+            {suporteGroups.map((group) => (
+              <div key={`sup-${group.date}`} className="border-b pb-4 page-break-inside-avoid">
+                <div className="day-header font-bold text-sm bg-muted/30 px-3 py-1.5 rounded-lg mb-2">
+                  {group.dateLabel}
+                </div>
+                <div className="space-y-1">
+                  {group.messages.map((msg, i) => (
+                    <MsgBubble 
+                      key={`sup-${group.date}-${i}`} 
+                      msg={msg} 
+                      basePath="/Image/whatsapp" 
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!expanded) {
     return (
